@@ -2,62 +2,124 @@
 
 ## Perfis de Usuários
 
-[Enumere e faça o detalhamento dos perfis de usuários. Utilize o modelo de tabela abaixo para sintetizá-los.]
-
 <table>
 <tbody>
 <tr align=center>
-<th colspan="2">Perfil Nome </th>
+<th colspan="2">Moderadores</th>
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
+<td width="600px">Moderadores responsáveis pela análise, validação e inserção dos documentos submetidos pelos acadêmicos no sistema. Geralmente são professores, assistentes ou alunos selecionados com permissões especiais.</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
-<td>...</td>
+<td>Acessar uma área restrita na plataforma para verificar a conformidade dos projetos com os padrões exigidos, garantindo a integridade e a veracidade das informações antes da publicação. Capacidade de avaliar conteúdo técnico, aprovar, rejeitar ou solicitar correções em submissões. Visualizar estatísticas sobre os documentos cadastrados.</td>
 </tr>
 </tbody>
 </table>
 
+<table>
+<tbody>
+<tr align=center>
+<th colspan="2">Acadêmicos</th>
+</tr>
+<tr>
+<td width="150px"><b>Descrição</b></td>
+<td width="600px">Acadêmicos que utilizam a plataforma para o cadastro, criação e pesquisa de projetos. São estudantes de ADS da PUC Minas Virtual que desenvolvem projetos durante o curso e buscam compartilhar seu conhecimento ou consultar trabalhos de outros alunos.</td>
+</tr>
+<tr>
+<td><b>Necessidades</b></td>
+<td>Submeter seus projetos a um moderador que irá inseri-los na plataforma para registro e compartilhamento do conhecimento gerado, permitindo sua consulta e reutilização por outros usuários futuramente. Realizar buscas avançadas para encontrar projetos relevantes para referência ou inspiração. Salvar projetos favoritos para acesso rápido.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr align=center>
+<th colspan="2">Pesquisadores e Educadores</th>
+</tr>
+<tr>
+<td width="150px"><b>Descrição</b></td>
+<td width="600px">Professores, pesquisadores e coordenadores de curso interessados em analisar tendências, metodologias e evolução dos projetos acadêmicos desenvolvidos ao longo do tempo.</td>
+</tr>
+<tr>
+<td><b>Necessidades</b></td>
+<td>Acessar dados estatísticos sobre os tipos de projetos desenvolvidos, tecnologias utilizadas e áreas mais exploradas. Realizar buscas avançadas com filtros específicos para análise acadêmica. Exportar dados para utilização em pesquisas ou como material didático.</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr align=center>
+<th colspan="2">Visitantes</th>
+</tr>
+<tr>
+<td width="150px"><b>Descrição</b></td>
+<td width="600px">Profissionais do mercado, empreendedores, estudantes de outras instituições e interessados em geral que buscam conhecer os projetos desenvolvidos pelos alunos de ADS da PUC Minas Virtual.</td>
+</tr>
+<tr>
+<td><b>Necessidades</b></td>
+<td>Navegar pelo repositório de projetos, realizar buscas por áreas de interesse e acessar os documentos publicados. Visualizar informações básicas sobre os projetos e seus autores. Possivelmente entrar em contato com os criadores de projetos específicos.</td>
+</tr>
+</tbody>
+</table>
 
 ## Histórias de Usuários
 
-[Apresente aqui as histórias de usuários que são relevantes para o projeto da solução.]
-
-> **Link Útil**:
-> - [Como escrever boas histórias de usuário](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-
-[Utilize o modelo de tabela abaixo para apresentar as histórias de usuários.]
-
 |EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
 |--------------------|---------------------------|----------------------------------|
-| ...                | ...                       | ...                              |
-| ...                | ...                       | ...                              |
+| Acadêmico          | Enviar um projeto para ser registrado | Disponibilizar o projeto na plataforma e torná-lo acessível para consulta |
+| Acadêmico          | Receber mensagem de envio bem-sucedido | Confirmar que o documento foi enviado corretamente |
+| Moderador          | Acessar uma página restrita com os documentos enviados | Validar os documentos antes da publicação |
+| Acadêmico          | Pesquisar por projetos acadêmicos utilizando palavras-chave | Encontrar projetos relevantes de forma rápida |
+| Acadêmico          | Filtrar os resultados por ano de publicação, tipo de projeto ou tecnologias utilizadas | Localizar projetos específicos de acordo com meus interesses |
+| Acadêmico          | Ordenar os resultados da pesquisa por diferentes critérios | Priorizar os projetos com maior identificação com a pesquisa durante a navegação |
+| Acadêmico          | Ver uma lista de projetos com título, autores, ano de publicação e resumo | Avaliar rapidamente se o projeto é relevante para minha consulta |
+| Acadêmico          | Ver a quantidade de resultados encontrados na pesquisa | Saber a abrangência da busca |
+| Acadêmico          | Acessar uma página com informações necessárias para o envio do projeto | Seguir corretamente o formato exigido para submissão de documentos |
+| Acadêmico          | Tornar favoritos documentos de interesse | Acessá-los rapidamente no futuro e facilitar as recomendações |
+| Acadêmico          | Baixar os documentos completos dos projetos | Analisar detalhadamente as soluções implementadas |
+| Pesquisador        | Visualizar estatísticas sobre os projetos cadastrados | Identificar tendências e padrões para minhas pesquisas acadêmicas |
+| Moderador          | Solicitar correções em projetos submetidos | Garantir a qualidade e conformidade dos documentos publicados |
+| Acadêmico          | Receber notificações sobre o status da minha submissão | Acompanhar o processo de aprovação do meu projeto |
+| Visitante          | Navegar por categorias de projetos | Explorar soluções desenvolvidas em áreas específicas de meu interesse |
 
 ## Requisitos do Projeto
 
-[Com base nas Histórias de Usuários, enumere os requisitos da solução. Lembre-se que cada requisito deve corresponder a uma, e somente uma, característica alvo da solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.]
-
 ### Requisitos Funcionais
-
-[Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
 
 |ID    | Descrição                | Prioridade |
 |-------|---------------------------------|----|
-| RF-01 |  ...                    | ...   | 
-|  ...  |  ...                    | ...   |
+| RF-01 | A aplicação deve possuir um formulário público para realizar o envio de um documento | Alta | 
+| RF-02 | A aplicação deverá possuir uma página restrita, destinada aos moderadores, para deferir ou indeferir um documento | Alta |
+| RF-03 | A aplicação deverá disponibilizar um campo de busca aberto para que os visitantes possam pesquisar os projetos disponíveis | Alta |
+| RF-04 | A aplicação deverá disponibilizar um formulário para que os visitantes possam filtrar projetos pelos seus atributos de forma específica (autor, ano, tecnologia, disciplina) | Alta |
+| RF-05 | A aplicação deverá permitir que o visitante visualize um projeto da lista apresentando os seus atributos e o botão para download | Alta |
+| RF-06 | A aplicação deverá disponibilizar páginas para divulgar recomendações, tutoriais, ferramentas e outras informações que auxiliem os acadêmicos na confecção de projetos | Baixa |
+| RF-07 | Permitir que o visitante possa marcar como favorito um documento e visualize todos os projetos marcados com esta condição posteriormente | Baixa |
+| RF-08 | A aplicação deve permitir a categorização dos projetos por área de conhecimento, tipo de projeto e tecnologias utilizadas | Média |
+| RF-09 | A aplicação deve apresentar estatísticas sobre os projetos cadastrados (quantidade por período, por área, por tecnologia) | Média |
+| RF-10 | A aplicação deve permitir que moderadores solicitem correções ou complementações nos projetos submetidos | Média |
+| RF-11 | A aplicação deve enviar notificações por email aos acadêmicos sobre o status de suas submissões | Baixa |
+| RF-12 | A aplicação deve permitir a exportação de dados estatísticos para pesquisadores | Baixa |
 
 **Prioridade: Alta / Média / Baixa. 
 
 ### Requisitos não Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos não-funcionais]
-
 |ID      | Descrição               |Prioridade |
 |--------|-------------------------|----|
-| RNF-01 |  ...                    | ...   | 
-| ...    |  ...                    | ...   | 
+| RNF-01 | A aplicação deverá ser responsiva, garantindo usabilidade em diferentes dispositivos e tamanhos de tela | Alta | 
+| RNF-02 | A aplicação deverá realizar backups diários dos documentos e dados armazenados | Alta | 
+| RNF-03 | A aplicação deverá exibir alertas de sucesso, de informações e de erros claros e objetivos para os usuários da plataforma | Média |
+| RNF-04 | A aplicação deverá seguir boas práticas de semântica e acessibilidade garantindo visibilidade nos motores de busca e suporte a leitores de tela | Média |
+| RNF-05 | O sistema deve garantir o tempo de resposta não superior a 3 segundos para buscas simples e 5 segundos para buscas com filtros complexos | Alta |
+| RNF-06 | O sistema deve garantir a segurança dos dados dos usuários e dos documentos submetidos | Alta |
+| RNF-07 | A interface deve ser intuitiva e de fácil navegação, com fluxos de trabalho claros para todas as funcionalidades | Média |
+| RNF-08 | O sistema deve suportar o upload de documentos em diversos formatos (PDF, DOC, DOCX, PPT, ZIP) com tamanho máximo de 50MB | Média |
+| RNF-09 | A aplicação deve ser compatível com os principais navegadores do mercado (Chrome, Firefox, Safari, Edge) | Alta |
+| RNF-10 | O sistema deve manter um registro de auditoria para todas as operações de moderação realizadas | Baixa |
 
 **Prioridade: Alta / Média / Baixa. 
-
