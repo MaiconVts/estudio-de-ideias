@@ -1,25 +1,25 @@
-# Título do Projeto
+# Idea Vault
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de Aplicação Web Front-End`
 
-`SEMESTRE`
+`1o semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
+O projeto IdeaVault é um sistema Web Front-end para Gestão do Conhecimento desenvolvido para o curso de Tecnologia em Análise e Desenvolvimento de Sistemas (ADS) da PUC Minas Virtual. Sua principal função é servir como um repositório digital, semelhante ao Google Scholar, que permite o armazenamento, categorização e recuperação eficiente dos projetos acadêmicos produzidos pelos estudantes durante sua formação.
+A plataforma visa solucionar o problema da perda de conhecimento valioso após a avaliação dos projetos, oferecendo um ambiente onde acadêmicos podem submeter seus trabalhos para moderação e posterior publicação, enquanto pesquisadores, educadores, estudantes e visitantes podem pesquisar, filtrar e acessar esses conteúdos. O sistema inclui funcionalidades como busca avançada, favoritos, categorização por área de conhecimento e estatísticas, garantindo que o conhecimento gerado pelos alunos seja preservado, compartilhado e possa inspirar novos projetos, beneficiando toda a comunidade acadêmica e potencialmente o mercado.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Allan Rodrigues
+* Maicon Theodoro
+* Vinicius Silva
+* Hugo Vaz
+* Eduardo Moreira
 
 ## Orientador
 
-* Nome completo do professor
+* Marco Rodrigo Costa
 
 # Documentação
 
