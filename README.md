@@ -1,4 +1,4 @@
-# Idea Vault
+# Estúdio de Ideias
 
 `Análise e Desenvolvimento de Sistemas`
 
