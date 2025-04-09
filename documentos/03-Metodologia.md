@@ -37,12 +37,11 @@ As atividades previstas, planejadas, em andamento e finalizadas são documentada
   <li>Documentação (documentation)</li>
   <li>Gerência de Projetos (project management)</li>
   <li>Infraestrutura (infrastructure)</li>
-  <li>Testes (tests)</li>
-</ul>
+  <li>Testes (tests)</li></ul>
 
 <figure> 
-  <img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png" alt="Figura 2 - Tela do esquema de cores e categorias" />
-  <figcaption>Figura 2 - Tela do esquema de cores e categorias</figcaption>
+  <img src="./img/labels.png" alt="Figura 2 - Etiquetas disponíveis" />
+  <figcaption>Figura 2 - Etiquetas disponíveis</figcaption>
 </figure> 
   
 ### Ferramentas
