@@ -2,7 +2,6 @@
 
 Esta seção descreve a organização da equipe para a execução das tarefas do projeto e as ferramentas utilizadas para a manutenção dos códigos e demais artefatos.
 
-
 ## Gerenciamento de Projeto
 A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, pois como citam Amaral, Fleury e Isoni (2019, p. 68):
 
@@ -13,7 +12,8 @@ Em times SCRUM, é comum atribuir papéis que definem responsabilidades e ativid
 
 - Scrum Master: Maicon Theodoro;
 - Product Owner: Allan Rodrigues;
-- Desenvolvedores: Allan Rodrigues, Eduardo Moreira, Hugo Vaz, Maicon Theodoro e Vinícius Silva.
+- Desenvolvedores: Allan Rodrigues, Eduardo Moreira, Hugo Vaz, Maicon Theodoro e Vinícius Silva;
+- Designers: Allan Rodrigues, Eduardo Moreira, Hugo Vaz, Maicon Theodoro e Vinícius Silva.
 
 ### Processo
 As atividades previstas, planejadas, em andamento e finalizadas são documentadas no GitHub Projects. Assim, é possível estabelecer uma lista de atividades a serem realizadas, definir prioridades, responsáveis e rastrear o andamento de cada tarefa. As listas são divididas em:
@@ -24,12 +24,12 @@ As atividades previstas, planejadas, em andamento e finalizadas são documentada
 - Concluído: nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para ser entregues ao usuário. Não há mais edições ou revisões necessárias, ele está agendado e pronto para a ação.
 
 <figure> 
-  <img src="./img/kanban.png"
-    <figcaption>Figura 1 - Quadro Kanban utilizado no Github Projects</figcaption>
+  <img src="./img/kanban.png" alt="Figura 1 - Quadro Kanban utilizado no Github Projects" />
+  <figcaption>Figura 1 - Quadro Kanban utilizado no Github Projects</figcaption>
 </figure> 
 
 ### Etiquetas
-<p>As tarefas são, ainda, etiquetadas em função da natureza da atividade e seguem o seguinte esquema de cores/categorias:</p>
+<p>As tarefas são etiquetadas em função da natureza da atividade e seguem o seguinte esquema de cores/categorias:</p>
 
 <ul>
   <li>Bug (erro no código)</li>
@@ -41,12 +41,11 @@ As atividades previstas, planejadas, em andamento e finalizadas são documentada
 </ul>
 
 <figure> 
-  <img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png"
-    <figcaption>Figura 2 - Tela do esquema de cores e categorias</figcaption>
+  <img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png" alt="Figura 2 - Tela do esquema de cores e categorias" />
+  <figcaption>Figura 2 - Tela do esquema de cores e categorias</figcaption>
 </figure> 
   
 ### Ferramentas
-
 O projeto recomenda a utilização de uma série de aplicações e ferramentas a fim de padronizar, simplificar e otimizar os processos adotados pela equipe. São elas:
 
 - Editores de código modernos;
@@ -59,7 +58,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 |-------------------------------------|------------------------------------|----------------------------------------|
 | Repositório de código fonte         | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/tree/main                            |
 | Documentos do projeto               | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/blob/main/README.md                            |
-| Projeto de interface                | Mermaid                              | ...                            |
+| Projeto de interface                | Mermaid e Figma                              | ...                            |
 | Gerenciamento do projeto            | GitHub Projects                    | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1983                            |
 | Comunicação                          | Microsoft Teams                          | [Canal G4_20_00h / Microsoft Teams](https://teams.microsoft.com/l/channel/19%3A3c14c478c8ba461a9f9eedb9987fc321%40thread.tacv2/G4_20_00h?groupId=a5b2bd83-b94d-46d3-b134-f95a5060d710&tenantId=14cbd5a7-ec94-46ba-b314-cc0fc972a161&ngc=true) |
 
