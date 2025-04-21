@@ -26,21 +26,21 @@ Entende-se, assim, que o problema em epígrafe é a ausência de um sistema Web 
 
 ## Objetivos
 
-O objetivo geral deste projeto é desenvolver um sistema Web Front-end para a Gestão do Conhecimento gerado nos projetos realizados pelos discentes do curso de ADS da PUC Minas Virtual, sistema batizado pelo codinome de "IdeaVault".
+O objetivo geral deste projeto é desenvolver um sistema Web Front-end para a Gestão do Conhecimento gerado nos projetos realizados pelos discentes do curso de ADS da PUC Minas Virtual, sistema batizado pelo codinome de "Estudio De Ideias".
 
 Como objetivos específicos, destacam-se:
 
-- Projetar e implementar uma plataforma web que permita o armazenamento, categorização e recuperação eficiente de projetos acadêmicos desenvolvidos por alunos do curso de ADS;
+- Estruturar uma base de dados para armazenar e organizar os projetos acadêmicos de forma categorizada e acessível;
 
-- Desenvolver mecanismos de busca avançada que permitam a localização de projetos por palavras-chave, ano de publicação, autores e outros atributos relevantes;
+- Implementar mecanismos de busca por palavras-chave, autores, data e categorias, otimizando a localização dos projetos;
 
-- Criar um sistema de moderação que garanta a qualidade e conformidade dos projetos cadastrados na plataforma;
+- Desenvolver um sistema de curadoria para validar, revisar e manter a qualidade dos projetos cadastrados;
 
-- Implementar recursos que facilitem o compartilhamento e a reutilização do conhecimento contido nos projetos;
+- Incluir funcionalidades que permitam o compartilhamento e reaproveitamento dos conteúdos pelos usuários da plataforma;
 
-- Proporcionar uma interface responsiva e acessível, garantindo a usabilidade em diferentes dispositivos;
+- Projetar uma interface responsiva, acessível e intuitiva, compatível com diferentes dispositivos e perfis de usuários;
 
-- Fomentar a colaboração e a inspiração entre os alunos, permitindo que novos projetos se beneficiem do conhecimento já produzido.
+- Incentivar a colaboração entre os alunos ao disponibilizar projetos anteriores como referência para novos trabalhos.
 
 ## Justificativa
 
@@ -62,16 +62,14 @@ Sob a perspectiva organizacional da PUC Minas Virtual, a conclusão do projeto p
 
 ## Público-alvo
 
-O público-alvo deste projeto é diversificado e composto pelos seguintes grupos:
+O sistema Estudio de Ideias é voltado a diferentes perfis de usuários que podem se beneficiar do acesso e da gestão eficiente dos projetos acadêmicos do curso de ADS da PUC Minas Virtual:
 
-1. **Alunos do curso de ADS da PUC Minas Virtual**: Principal público beneficiado pelo sistema, tanto como produtores de conteúdo (submetendo seus projetos) quanto como consumidores (pesquisando projetos existentes para referência e inspiração).
+1. **Discentes do curso de ADS**: Usuários principais do sistema, atuando como produtores e consumidores de conteúdo, utilizando a plataforma para registrar, consultar e se inspirar em projetos acadêmicos.
 
-2. **Professores e orientadores**: Poderão utilizar o sistema para acompanhar a evolução dos projetos ao longo do tempo, identificar tendências e utilizar os projetos como exemplos em suas aulas.
+2. **Docentes (professores, orientadores e coordenadores)**: Utilizarão o sistema como ferramenta de apoio pedagógico e estratégico, permitindo acompanhar a evolução dos trabalhos, identificar tendências e avaliar a efetividade do currículo.
+   
+3. **Pesquisadores acadêmicos**: Interessados em extrair dados para análise de metodologias, inovações tecnológicas e evolução das práticas aplicadas nos projetos desenvolvidos ao longo do tempo.
 
-3. **Pesquisadores**: Interessados em analisar o desenvolvimento de competências tecnológicas, tendências de inovação e evolução das metodologias aplicadas nos projetos acadêmicos.
+4. **Empresas e empreendedores**: Potenciais parceiros interessados em identificar talentos, soluções aplicáveis ou estabelecer conexões com alunos a partir dos projetos publicados.
 
-4. **Coordenadores de curso e gestores acadêmicos**: Poderão utilizar as informações do sistema para avaliar a eficácia do currículo e identificar áreas que necessitam de maior atenção ou desenvolvimento.
-
-5. **Empresas e empreendedores**: Potencialmente interessados em identificar talentos, soluções inovadoras ou estabelecer parcerias com alunos que desenvolveram projetos relevantes para o mercado.
-
-O sistema será projetado considerando as necessidades específicas destes diferentes perfis de usuários, garantindo que cada um possa extrair o máximo valor da plataforma de acordo com seus interesses e objetivos particulares.
+A concepção do sistema levará em conta as particularidades de cada grupo de usuários, promovendo uma utilização eficaz e personalizada da plataforma conforme suas demandas específicas.
