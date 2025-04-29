@@ -1,8 +1,7 @@
 # Template padrão da Aplicação
 
-O layout padrão da aplicação foi construído usando as linguagens de marcação HTML e CSS. Sua responsivdade foi feita com a utilização de Media Queries e sua funcionalidade feita a partir da linguagem de programação JavaScript.
-
-As páginas serão formadas de elementos padrões tais como:
+O layout principal da aplicação foi desenvolvido utilizando as linguagens de marcação HTML e CSS. A responsividade será implementada por meio da técnica de Media Queries, permitindo que a interface se adapte a diferentes tamanhos de tela.
+As páginas contarão com elementos padrão, como:
 
 <ul>
 <li>Menu de navegação</li>
