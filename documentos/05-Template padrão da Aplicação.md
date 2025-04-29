@@ -1,8 +1,28 @@
 # Template padrão da Aplicação
 
-Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
+O layout padrão da aplicação foi construído usando as linguagens de marcação HTML e CSS. Sua responsivdade foi feita com a utilização de Media Queries e sua funcionalidade feita a partir da linguagem de programação JavaScript.
 
-[Apresente a estrutura padrão da sua aplicação.]
+As páginas serão formadas de elementos padrões tais como:
+
+<ul>
+<li>Menu de navegação</li>
+<li>Header</li>
+<li>Footer</li>
+</ul>
+
+<hr>
+
+Sua estilização será feita usando como base, os seguintes elementos de identidade visual:
+
+<ul>
+<li>Cores: #0A1931, #185ADB, #D9D9D9, #6B7280 e #1E1E1E.</li>
+<li>Font-family: Montserrat (Bold, SemiBold e Regular), Roboto e sans-serif.</li>
+<li>Font-size: 32px, 24px, 20px e 18px (Títulos e subtítulos) e 16px, 14px e 12px (Parágrafos) </li>
+</ul>
+
+<hr>
+
+<p>Para o logotipo do projeto, foram escolhidos tons claros e escuros de azul, com a intenção de transmitir segurança, confiança e profissionalismo (EBAC, 2023). A lâmpada representa as ideias que serão compartilhadas na plataforma, enquanto o capelo faz referência ao meio acadêmico, destacando que essas ideias vêm dos próprios estudantes e pesquisadores.</p>
 
 > **Links Úteis**:
 >
