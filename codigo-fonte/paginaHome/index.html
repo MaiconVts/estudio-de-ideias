@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estúdio de Ideias</title>
+    <link rel="icon" type="image/png" href="assets/img/logoIcone-azulDark.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <!-- HEADER-->
+    <header class="header-flex-container">
+        <div class="logo-container">
+            <a href="index.html"><img src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png" alt="Logo Estúdio de Ideias" width="100px" height="100px"></a>
+        </div>
+        <a href="index.html" class="link-title"><p class="site-title">ESTÚDIO DE IDEIAS</p></a>
+        <nav class="navbar">
+            <div class="menu-icon">
+                <img src="assets/img/list.png" alt="Menu" width="50" height="50" class="nav-icon">
+                <ul class="dropdown-menu">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--CONTEÚDO PRINCIPAL-->
+    <main>
+        <section class="search-section">
+            <div class="search-container">
+                <form id="search-form" class="search-form">
+                    <input type="text" id="search-input" class="search-input" placeholder="Buscar projetos, autores...">
+                    <button type="submit" class="search-button">Buscar</button>
+                </form>
+                <div class="search-filters">
+                    <div class="filter-item">
+                        <select id="filter-field" class="filter-select">
+                            <option value="all">Campo de Busca</option> 
+                            <option value="title">Título</option>
+                            <option value="author">Autor</option>
+                            <option value="year">Ano</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="sort-by" class="filter-select">
+                            <option value="relevance">Ordenar por</option>
+                            <option value="date-desc">Mais Recente</option>
+                            <option value="date-asc">Mais Antigo</option>
+                            <option value="citations">Mais Citados</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="year-filter" class="filter-select">
+                            <option value="all">Ano</option> <!-- Melhor do que "Todos os Anos" como principal -->
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select id="area-filter" class="filter-select">
+                            <option value="all">Áreas de Atuação</option>
+                            <option value="frontend">Frontend</option>
+                            <option value="backend">Backend</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="redes">Redes</option>
+                            <option value="banco-dados">Banco de Dados</option>
+                            <option value="seguranca">Segurança da Informação</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <article class="project-card">
+            <h3 class="project-title">
+                <a href="pagina-projeto.html" class="project-link">Sistema de Gestão de Bibliotecas</a>
+            </h3>
+            <div class="project-tags">
+                <span class="project-tag">Frontend</span>
+                <span class="project-tag">ReactJS</span>
+                <span class="project-tag">2024</span>
+            </div>
+            <p class="project-description">
+                Desenvolvimento de um sistema web para gerenciamento de empréstimos de livros acadêmicos usando Django.
+            </p>
+            <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque neque officia harum, possimus eum amet earum fugit 
+                nostrum tempora itaque unde aut pariatur enim. Molestiae quisquam dolorum vel ducimus suscipit Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque neque officia harum, possimus eum amet earum fugit 
+                nostrum tempora itaque unde aut pariatur enim.  Molestiae quisquam dolorum vel ducimus suscipit.
+            </p>
+        </article>
+    </main>
+    <!--RODAPÉ-->
+    <footer class="site-footer">
+        <div class="footer-top-bar"></div>
+        <div class="footer-main">
+            <div class="footer-section">
+                <h4 class="footer-title">Sobre o Estúdio</h4>
+                <p class="footer-text">
+                    Um espaço dedicado a conectar estudantes e profissionais através de projetos acadêmicos inovadores.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Áreas</a></li>
+                    <li><a href="#">Publicar Projeto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Recursos Acadêmicos</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Normas de Publicação</a></li>
+                    <li><a href="#">Guia de Apresentação</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Tutoriais Técnicos</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Nova linha azul de contato -->
+        <div class="footer-contact-bar">
+            <div class="footer-contact-container">
+                <h4 class="footer-contact-title">Contato</h4>
+                <ul class="footer-contact-links">
+                    <li><a href="#">Fale Conosco</a></li>
+                    <li><a href="#">Perguntas Frequentes</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">
+                © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
