@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../img/natureza.jpg);
+  background-image: url("../img/natureza.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
