@@ -1,0 +1,123 @@
+
+/* Rodapé geral */
+.site-footer {
+    background-color: #0A1931;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 30px;
+}
+
+/* Barra superior azul fina */
+.footer-top-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #185ADB;
+}
+
+/* Conteúdo principal do footer */
+.footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 40px;
+}
+
+/* Cada seção do footer */
+.footer-section {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+/* Títulos das seções */
+.footer-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Texto breve */
+.footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #D1D5DB;
+}
+
+/* Links dentro das seções */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #D1D5DB;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+}
+
+/* Linha divisória antes da área de contato */
+.footer-contact-bar {
+    width: 100%;
+    border-top: 1px solid #D1D5DB; /* 🎯 Linha divisória cinza clara */
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+/* Container da área de contato */
+.footer-contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+/* Título "Contato" */
+.footer-contact-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Links de contato */
+.footer-contact-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-contact-links li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-links li a:hover {
+    color: #FFFFFF;
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 30px;
+    background-color: #08162D;
+    font-size: 12px;
+}
+
+.footer-copy {
+    color: #9CA3AF;
+}
