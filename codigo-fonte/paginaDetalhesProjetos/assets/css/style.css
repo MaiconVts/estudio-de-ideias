@@ -122,10 +122,10 @@
 
 /* Caixa de cada projeto */
 .project-card {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
   border: 1px solid #dce3f0;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
   padding: 32px;
   margin: 40px auto;
   width: 70%; /* Ocupa 70% da tela */
@@ -133,11 +133,13 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Pequena animação no hover */
 .project-card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
 }
 
 /* Título do projeto */
