@@ -1,44 +1,81 @@
 # Programação de Funcionalidades
 
-Implementação da aplicação descritas por meio dos requisitos codificados. 
+**Pré-requisitos:** Especificação do Projeto, Metodologia, Projeto de Interface, Arquitetura da Solução
 
-[Utilize a estrutura abaixo para cada funcionalidade entregue na etapa]
+---
 
-### Título da funcionalidade
+## Tela de Cadastro (RF-001)
 
-[Adicione imagem da funcionalidade/tela]
+**Responsável:** Hugo Vaz
 
+O acesso à tela de cadastro poderá ser feito através da opção de menu “Cadastre-se”. As estruturas de dados foram baseadas em HTML, CSS e JS.
 
-#### Requisito atendido
+**Exemplo da tela de cadastro:**  
+`<img src="img/tela-cadastro.png" alt="Tela de Cadastro" width="auto">`
 
-[RF-X: adicione a descrição do requisito atendido]
+**Requisito atendido:**  
+RF-001: O site deve permitir ao usuário cadastrar uma conta.
 
+**Artefatos da funcionalidade:**
 
-#### Artefatos da funcionalidade
+- `cadastro.html`
+- `cadastro.css`
+- `cadastro.js`
+- `mobile-navbar.js`
 
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
+**Instruções de acesso:**  
+Abra um navegador e informe a seguinte URL:  
+`https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/`  
+Clique em “Cadastre-se” no menu superior para acessar a tela de cadastro.
 
+---
 
-#### Estrutura de Dados
+## Tela de Login (RF-002)
 
-[Caso exista estrutura de dados, adicione aqui]
+**Responsável:** Hugo Vaz
 
+O acesso à tela de login poderá ser feito através do menu “Entrar”. As estruturas de dados foram baseadas em HTML, CSS e JS.
 
-#### Instruções de acesso
+**Exemplo da tela de login:**  
+`<img src="img/tela-login.png" alt="Tela de Login" width="auto">`
 
-[Adicione as orientações de acesso à funcionalidade]
+**Requisito atendido:**  
+RF-002: O site deve permitir ao usuário fazer o login da sua conta.
 
+**Artefatos da funcionalidade:**
 
-#### Responsável
+- `login.html`
+- `login.css`
+- `login.js`
+- `mobile-navbar.js`
 
-[Adicione nome do responsável pelo desenvolvimento da funcionalidade]
+**Instruções de acesso:**  
+Acesse:  
+`https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/`  
+Clique em “Entrar” no menu superior para acessar a tela de login.
 
+---
 
+## Tela Home com Barra de Pesquisa (RF-003)
 
+**Responsável:** Maicon Theodoro
 
-> **Links Úteis**:
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+Na página inicial, os usuários encontram uma barra de pesquisa centralizada que permite realizar buscas por palavras-chave.
 
+**Exemplo da tela Home com barra de pesquisa:**  
+`<img src="img/tela-home-search.png" alt="Tela Home com Busca" width="auto">`
+
+**Requisito atendido:**  
+RF-003: Campo de busca aberto para pesquisa de projetos.
+
+**Artefatos da funcionalidade:**
+
+- `index.html`
+- `style.css`
+- `home.js`
+- `mobile-navbar.js`
+
+**Instruções de acesso:**  
+Acesse a Home Page em:  
+`https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/`  
+Utilize a barra de busca no centro da página para pesquisar.

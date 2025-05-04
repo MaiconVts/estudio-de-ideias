@@ -26,7 +26,7 @@ Entende-se, assim, que o problema em epígrafe é a ausência de um sistema Web 
 
 ## Objetivos
 
-O objetivo geral deste projeto é desenvolver um sistema Web Front-end para a Gestão do Conhecimento gerado nos projetos realizados pelos discentes do curso de ADS da PUC Minas Virtual, sistema batizado pelo codinome de "Estudio De Ideias".
+O objetivo geral deste projeto é desenvolver um sistema Web Front-end para a Gestão do Conhecimento gerado nos projetos realizados pelos discentes do curso de ADS da PUC Minas Virtual, sistema batizado pelo codinome de "Estúdio de Ideias".
 
 Como objetivos específicos, destacam-se:
 
@@ -46,7 +46,7 @@ Como objetivos específicos, destacam-se:
 
 Do ponto de vista acadêmico, tanto o trabalho de revisão sistemática na literatura sobre a Gestão do Conhecimento, quanto à concepção e o desenvolvimento de um sistema Web Front-end que possa beneficiar e atender a área explorada pelo projeto contribuirá, sobremaneira, para o aprendizado dos discentes.
 
-A implementação de um repositório de projetos acadêmicos como o IdeaVault se justifica por diversos fatores:
+A implementação de um repositório de projetos acadêmicos como o Estúdio de Ideias se justifica por diversos fatores:
 
 1. **Preservação do conhecimento**: Projetos acadêmicos representam um valioso capital intelectual que atualmente é perdido ou subutilizado após o término das disciplinas. O sistema permitirá a preservação deste conhecimento para referência futura.
 
