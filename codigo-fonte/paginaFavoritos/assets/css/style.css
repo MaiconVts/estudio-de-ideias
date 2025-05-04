@@ -164,3 +164,45 @@
   text-decoration: none;
   margin-left: auto;
 }
+
+.login-section, .signup-section {
+   max-width: 400px;
+   margin: 2em auto;
+   background: #fff;
+   padding: 1em;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.login-section h2, .signup-section h2 {
+   text-align: center;
+   margin-bottom: 1em;
+   color: #0a1931;
+}
+
+.login-section form, .signup-section form {
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
+}
+
+.login-section input, .signup-section input {
+   padding: 0.5em;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+.login-section button, .signup-section button {
+   padding: 0.5em;
+   background: #0a1931;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background 0.2s ease-in-out;
+}
+
+.login-section button:hover, .signup-section button:hover {
+   background: #185adb;
+}
