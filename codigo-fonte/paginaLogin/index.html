@@ -37,7 +37,28 @@
     </header>
     <!--CONTEÚDO PRINCIPAL-->
     <main>
-
+        <section class="login-section">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+        <section class="signup-section">
+            <h2>Sign Up</h2>
+            <form action="/signup" method="post">
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" name="name" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
     </main>
     <!--RODAPÉ-->
     <footer class="site-footer">
