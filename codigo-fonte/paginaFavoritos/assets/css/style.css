@@ -122,3 +122,45 @@
   font-size: 14px;
   font-weight: 600;
 }
+
+.auth-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.auth-user__info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fafafa;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.auth-user__info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.auth-user__info-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a1931;
+}
+
+.auth-user__info-email {
+  font-size: 14px;
+  color: #444444;
+}
+
+.auth-user__info-logout {
+  font-size: 14px;
+  color: #0a1931;
+  text-decoration: none;
+  margin-left: auto;
+}
