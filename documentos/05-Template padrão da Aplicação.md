@@ -1,31 +1,91 @@
-# Template padrão da Aplicação
+# 🧩 Template Padrão da Aplicação
 
-O layout principal da aplicação foi desenvolvido utilizando as linguagens de marcação HTML e CSS. A responsividade será implementada por meio da técnica de Media Queries, permitindo que a interface se adapte a diferentes tamanhos de tela.
-As páginas contarão com elementos padrão, como:
+O layout padrão do site **Estúdio de Ideias** foi construído com as linguagens de marcação **HTML** e **CSS**. A linguagem de programação **JavaScript** foi utilizada principalmente para a construção do menu responsivo e das funcionalidades de pesquisa.
 
-<ul>
-<li>Menu de navegação</li>
-<li>Header</li>
-<li>Footer</li>
-</ul>
+As páginas apresentam como elementos padrões:
 
-<hr>
+- **Menu de navegação (Nav)**
+- **Cabeçalho (Header)**
+- **Rodapé (Footer)**
 
-Sua estilização será feita usando como base, os seguintes elementos de identidade visual:
+### Identidade Visual
 
-<ul>
-<li>Cores: #0A1931, #185ADB, #D9D9D9, #6B7280 e #1E1E1E.</li>
-<li>Font-family: Montserrat (Bold, SemiBold e Regular), Roboto e sans-serif.</li>
-<li>Font-size: 32px, 24px, 20px e 18px (Títulos e subtítulos) e 16px, 14px e 12px (Parágrafos) </li>
-</ul>
+A identidade visual do projeto segue a proposta acadêmica e tecnológica, transmitindo **profissionalismo, confiança e modernidade**, com base nos seguintes elementos:
 
-<hr>
+- **Cores principais:**  
+  `#0A1931`, `#185ADB`, `#D9D9D9`, `#6B7280`, `#1E1E1E`
 
-<p>Para o logotipo do projeto, foram escolhidos tons claros e escuros de azul, com a intenção de transmitir segurança, confiança e profissionalismo (EBAC, 2023). A lâmpada representa as ideias que serão compartilhadas na plataforma, enquanto o capelo faz referência ao meio acadêmico, destacando que essas ideias vêm dos próprios estudantes e pesquisadores.</p>
+- **Fontes utilizadas:**  
+  `Montserrat` (Bold, SemiBold e Regular), `Roboto`, `sans-serif`
 
-> **Links Úteis**:
->
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+- **Tamanhos de fonte:**  
+  - Títulos e subtítulos: `32px`, `24px`, `20px`, `18px`  
+  - Parágrafos e textos: `16px`, `14px`, `12px`
+
+---
+
+## Telas do Sistema
+
+### Tela Inicial (Home)
+
+Exibe um resumo da proposta da aplicação e uma barra de busca centralizada com filtros inteligentes para facilitar a pesquisa de projetos acadêmicos.
+
+ *Figura 1 - Tela Home*
+
+---
+
+###  Tela de Exibição de Projetos
+
+Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um resumo do conteúdo. Cada projeto pode ser clicado para visualização completa.
+
+ *Figura 2 - Tela de Projetos*
+
+---
+
+### Tela de Favoritos
+
+Exibe os projetos salvos pelo usuário como favoritos, possibilitando acesso rápido a conteúdos relevantes previamente marcados.
+
+ *Figura 3 - Tela de Favoritos*
+
+---
+
+### Tela de Recomendações de Ferramentas
+
+Oferece dicas, links úteis e tutoriais para auxiliar os usuários no desenvolvimento de projetos acadêmicos.
+
+*Figura 4 - Tela de Ferramentas*
+
+---
+
+###  Tela de Login e Cadastro
+
+Formulário de autenticação e criação de conta. Inclui opções de recuperação de senha e redirecionamento ao painel do usuário.
+
+ *Figura 5 - Tela de Login/Cadastro*
+
+---
+
+### Página do Usuário (Área Logada)
+
+Ambiente pessoal do usuário autenticado, com opções de gerenciamento de perfil e visualização de projetos enviados ou salvos.
+
+ *Figura 6 - Página do Usuário*
+
+---
+
+### Área do Moderador
+
+Ambiente restrito destinado à equipe moderadora, com funcionalidades para aprovação, rejeição ou edição de projetos enviados.
+
+ *Figura 7 - Tela Moderador*
+
+---
+
+## Logotipo
+
+O logotipo do **Estúdio de Ideias** combina o símbolo de uma **lâmpada** (representando ideias criativas) com um **capelo acadêmico**, remetendo ao universo estudantil.
+
+As cores escolhidas, predominantemente em tons de azul, transmitem **seriedade, conhecimento e tecnologia**.
+
+📷 *Figura 8 - Logotipo do projeto*
