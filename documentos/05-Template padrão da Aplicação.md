@@ -1,4 +1,4 @@
-# 🧩 Template Padrão da Aplicação
+# Template Padrão da Aplicação
 
 O layout padrão do site **Estúdio de Ideias** foi construído com as linguagens de marcação **HTML** e **CSS**. A linguagem de programação **JavaScript** foi utilizada principalmente para a construção do menu responsivo e das funcionalidades de pesquisa.
 
