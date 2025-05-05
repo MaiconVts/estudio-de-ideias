@@ -94,7 +94,7 @@ Desenvolvedor responsável: Allan
 
 ---
 
-### [0.1.4] — 05/05/2025  
+### [0.1.4] — 04/05/2025  
 **Página de Login**  
 Desenvolvedor responsável: Hugo  
 - Estrutura HTML e CSS simplificada com foco na responsividade.  
