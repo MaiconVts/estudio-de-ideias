@@ -1,7 +1,5 @@
 # Programação de Funcionalidades
 
-**Pré-requisitos:** Especificação do Projeto, Metodologia, Projeto de Interface, Arquitetura da Solução
-
 ---
 
 ## Tela de Cadastro (RF-001)
