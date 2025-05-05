@@ -9,7 +9,9 @@
 O acesso à tela de cadastro poderá ser feito através da opção de menu “Cadastre-se”. As estruturas de dados foram baseadas em HTML, CSS e JS.
 
 **Exemplo da tela de cadastro:**  
-`<img src="img/tela-cadastro.png" alt="Tela de Cadastro" width="auto">`
+<figure> 
+  <img src="/documentos/img/Login.png"> 
+</figure>
 
 **Requisito atendido:**  
 RF-001: O site deve permitir ao usuário cadastrar uma conta.
