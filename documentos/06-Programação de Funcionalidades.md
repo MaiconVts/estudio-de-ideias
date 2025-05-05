@@ -1,7 +1,5 @@
 # Programação de Funcionalidades
 
-**Pré-requisitos:** Especificação do Projeto, Metodologia, Projeto de Interface, Arquitetura da Solução
-
 ---
 
 ## Tela de Cadastro (RF-001)
@@ -25,7 +23,7 @@ RF-001: O site deve permitir ao usuário cadastrar uma conta.
 
 **Instruções de acesso:**  
 Abra um navegador e informe a seguinte URL:  
-`https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/`  
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaLogin/index.html*  
 Clique em “Cadastre-se” no menu superior para acessar a tela de cadastro.
 
 ---
@@ -51,7 +49,7 @@ RF-002: O site deve permitir ao usuário fazer o login da sua conta.
 
 **Instruções de acesso:**  
 Acesse:  
-`https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/`  
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaLogin/index.html*  
 Clique em “Entrar” no menu superior para acessar a tela de login.
 
 ---
@@ -77,14 +75,14 @@ RF-003: Campo de busca aberto para pesquisa de projetos.
 
 **Instruções de acesso:**  
 Acesse a Home Page em:  
-`https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/`  
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaHome/index.html*  
 Utilize a barra de busca no centro da página para pesquisar.
 
 ---
 
 ## Tela de Administração (RF-004)
 
-**Responsável:** Moderador
+**Responsável:** Allan
 
 Esta tela permite que os moderadores validem e gerenciem os documentos submetidos, com funcionalidade para aprovar, rejeitar ou solicitar correções.
 
@@ -95,13 +93,13 @@ Esta tela permite que os moderadores validem e gerenciem os documentos submetido
 - `paginaAdmin/assets/js/admin_panel.js`
 
 **Instruções de acesso:**  
-Acesse a área de administração através do menu exclusivo para moderadores.
+Acesse a área de administração após fazer o login.
 
 ---
 
 ## Tela de Detalhes do Projeto (RF-005)
 
-**Responsável:** Equipe de Desenvolvimento
+**Responsável:** Hugo Vaz
 
 Esta tela exibe detalhes completos do projeto, incluindo título, autores, resumo e um botão para download do documento.
 
@@ -112,13 +110,14 @@ Esta tela exibe detalhes completos do projeto, incluindo título, autores, resum
 - `paginaDetalhesProjetos/assets/js/script.js`
 
 **Instruções de acesso:**  
-Clique em um projeto na lista para ver seus detalhes.
+Clique em um projeto exibido para ver seus detalhes
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaDetalhesProjetos/index.html*
 
 ---
 
 ## Tela de Ferramentas (RF-006)
 
-**Responsável:** Equipe de Desenvolvimento
+**Responsável:** Eduardo
 
 Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alunos na confecção e pesquisa de projetos.
 
@@ -129,7 +128,8 @@ Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alu
 - `paginaFerramentas/assets/js/script.js`
 
 **Instruções de acesso:**  
-Acesse a seção de ferramentas a partir do menu de navegação.
+Acesse a seção de ferramentas a partir do menu de navegação ou através do link: 
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaFerramentas/index.html*
 
 ---
 
@@ -159,7 +159,7 @@ RF-007: Permitir que o visitante possa marcar como favorito um documento e visua
 
 ## Tela de Projetos (RF-008)
 
-**Responsável:** Equipe de Desenvolvimento
+**Responsável:** Vinicius
 
 Esta tela lista os projetos disponíveis, permitindo ao usuário filtrar e ordenar os resultados de acordo com critérios específicos.
 
@@ -170,13 +170,14 @@ Esta tela lista os projetos disponíveis, permitindo ao usuário filtrar e orden
 - `paginaProjetos/assets/js/script.js`
 
 **Instruções de acesso:**  
-Utilize os filtros e a barra de pesquisa para encontrar projetos de seu interesse.
+Utilize os filtros e a barra de pesquisa para encontrar projetos de seu interesse, e acesse pelo link para visualizar: 
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaProjetos/index.html*
 
 ---
 
-## Tela de Submissão (RF-009)
+## Tela de Submissão(Envio de Projetos) (RF-009)
 
-**Responsável:** Equipe de Desenvolvimento
+**Responsável:** Alan
 
 Esta tela permite aos alunos submeter projetos, preenchendo um formulário com todas as informações necessárias para o registro do projeto.
 
@@ -187,4 +188,5 @@ Esta tela permite aos alunos submeter projetos, preenchendo um formulário com t
 - `paginaSubmissao/assets/js/script.js`
 
 **Instruções de acesso:**  
-Clique na opção de envio de projeto no menu para acessar a tela de submissão.
+Clique na opção de envio de projeto no menu para acessar a tela de submissão, ou acesse pelo link: 
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaSubmissao/index.html*
