@@ -46,6 +46,16 @@ Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um re
 
 ---
 
+### Tela de Detalhes de Projetos
+
+Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um resumo do conteúdo. Cada projeto pode ser clicado para visualização completa.
+
+ <figure> 
+  <img src="/documentos/img/Details.png"> 
+</figure>
+
+---
+
 ### Tela de Favoritos
 
 Exibe os projetos salvos pelo usuário como favoritos, possibilitando acesso rápido a conteúdos relevantes previamente marcados.
@@ -66,23 +76,17 @@ Oferece dicas, links úteis e tutoriais para auxiliar os usuários no desenvolvi
 
 ---
 
-<!-- ### Tela de Login e Cadastro
+### Tela de Login e Cadastro
 
 Formulário de autenticação e criação de conta. Inclui opções de recuperação de senha e redirecionamento ao painel do usuário.
 
-_Figura 5 - Tela de Login/Cadastro_
-
---- -->
-
-<!-- ### Página do Usuário (Área Logada)
-
-Ambiente pessoal do usuário autenticado, com opções de gerenciamento de perfil e visualização de projetos enviados ou salvos.
-
-_Figura 6 - Página do Usuário_
-
+<figure> 
+  <img src="/documentos/img/Login.png"> 
+</figure>
 ---
 
-### Área do Moderador -->
+
+### Área do Moderador
 
 Ambiente restrito destinado à equipe moderadora, com funcionalidades para aprovação, rejeição ou edição de projetos enviados.
 
