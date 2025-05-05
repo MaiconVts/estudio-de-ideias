@@ -85,7 +85,6 @@ Formulário de autenticação e criação de conta. Inclui opções de recupera�
 </figure>
 ---
 
-
 ### Área do Moderador
 
 Ambiente restrito destinado à equipe moderadora, com funcionalidades para aprovação, rejeição ou edição de projetos enviados.
@@ -93,7 +92,15 @@ Ambiente restrito destinado à equipe moderadora, com funcionalidades para aprov
 <figure> 
   <img src="/documentos/img/AreaModerador.png"> 
 </figure>
+---
 
+### Tela de Submissão (Envio de Projetos)
+
+Permite aos alunos submeter projetos, preenchendo um formulário com todas as informações necessárias para o registro do projeto.
+
+<figure> 
+  <img src="/documentos/img/Submission.png"> 
+</figure>
 ---
 
 ## Logotipo
