@@ -18,8 +18,8 @@ A identidade visual do projeto segue a proposta acadêmica e tecnológica, trans
 - **Fontes utilizadas:**  
   `Montserrat` (Bold, SemiBold e Regular), `Roboto`, `sans-serif`
 
-- **Tamanhos de fonte:**  
-  - Títulos e subtítulos: `32px`, `24px`, `20px`, `18px`  
+- **Tamanhos de fonte:**
+  - Títulos e subtítulos: `32px`, `24px`, `20px`, `18px`
   - Parágrafos e textos: `16px`, `14px`, `12px`
 
 ---
@@ -30,15 +30,19 @@ A identidade visual do projeto segue a proposta acadêmica e tecnológica, trans
 
 Exibe um resumo da proposta da aplicação e uma barra de busca centralizada com filtros inteligentes para facilitar a pesquisa de projetos acadêmicos.
 
- *Figura 1 - Tela Home*
+ <figure> 
+  <img src="/documentos/img/Home.png"> 
+</figure>
 
 ---
 
-###  Tela de Exibição de Projetos
+### Tela de Exibição de Projetos
 
 Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um resumo do conteúdo. Cada projeto pode ser clicado para visualização completa.
 
- *Figura 2 - Tela de Projetos*
+ <figure> 
+  <img src="/documentos/img/Projetos.png"> 
+</figure>
 
 ---
 
@@ -46,7 +50,9 @@ Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um re
 
 Exibe os projetos salvos pelo usuário como favoritos, possibilitando acesso rápido a conteúdos relevantes previamente marcados.
 
- *Figura 3 - Tela de Favoritos*
+  <figure> 
+  <img src="/documentos/img/Favoritos.png"> 
+</figure>
 
 ---
 
@@ -54,31 +60,35 @@ Exibe os projetos salvos pelo usuário como favoritos, possibilitando acesso rá
 
 Oferece dicas, links úteis e tutoriais para auxiliar os usuários no desenvolvimento de projetos acadêmicos.
 
-*Figura 4 - Tela de Ferramentas*
+<figure> 
+  <img src="/documentos/img/Ferramentas.png"> 
+</figure>
 
 ---
 
-###  Tela de Login e Cadastro
+<!-- ### Tela de Login e Cadastro
 
 Formulário de autenticação e criação de conta. Inclui opções de recuperação de senha e redirecionamento ao painel do usuário.
 
- *Figura 5 - Tela de Login/Cadastro*
+_Figura 5 - Tela de Login/Cadastro_
 
----
+--- -->
 
-### Página do Usuário (Área Logada)
+<!-- ### Página do Usuário (Área Logada)
 
 Ambiente pessoal do usuário autenticado, com opções de gerenciamento de perfil e visualização de projetos enviados ou salvos.
 
- *Figura 6 - Página do Usuário*
+_Figura 6 - Página do Usuário_
 
 ---
 
-### Área do Moderador
+### Área do Moderador -->
 
 Ambiente restrito destinado à equipe moderadora, com funcionalidades para aprovação, rejeição ou edição de projetos enviados.
 
- *Figura 7 - Tela Moderador*
+<figure> 
+  <img src="/documentos/img/AreaModerador.png"> 
+</figure>
 
 ---
 
@@ -88,4 +98,6 @@ O logotipo do **Estúdio de Ideias** combina o símbolo de uma **lâmpada** (rep
 
 As cores escolhidas, predominantemente em tons de azul, transmitem **seriedade, conhecimento e tecnologia**.
 
-📷 *Figura 8 - Logotipo do projeto*
+<figure> 
+  <img src="/documentos/img/logo.png"> 
+</figure>
