@@ -1,7 +1,5 @@
-# Referências Bibliográficas
+## Referências Bibliográficas 
 
-[Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.]
+MCGEE, J. V.; PRUSAK, L. *Gerenciamento estratégico da informação: aumente a competitividade e a eficiência de sua empresa utilizando a informação como uma ferramenta estratégica.* Rio de Janeiro: Campus, 1994.
 
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+STAREC, C.; GOMES, E. B. P.; CHAVES, J. B. L. (Orgs.). *Gestão Estratégica da Informação e Inteligência Competitiva.* São Paulo: Saraiva, 2005.
