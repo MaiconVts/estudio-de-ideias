@@ -79,3 +79,105 @@ RF-003: Campo de busca aberto para pesquisa de projetos.
 Acesse a Home Page em:  
 `https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/`  
 Utilize a barra de busca no centro da página para pesquisar.
+
+---
+
+## Tela de Administração (RF-004)
+
+**Responsável:** Moderador
+
+Esta tela permite que os moderadores validem e gerenciem os documentos submetidos, com funcionalidade para aprovar, rejeitar ou solicitar correções.
+
+**Artefatos da funcionalidade:**
+
+- `paginaAdmin/index.html`
+- `paginaAdmin/assets/css/admin_panel.css`
+- `paginaAdmin/assets/js/admin_panel.js`
+
+**Instruções de acesso:**  
+Acesse a área de administração através do menu exclusivo para moderadores.
+
+---
+
+## Tela de Detalhes do Projeto (RF-005)
+
+**Responsável:** Equipe de Desenvolvimento
+
+Esta tela exibe detalhes completos do projeto, incluindo título, autores, resumo e um botão para download do documento.
+
+**Artefatos da funcionalidade:**
+
+- `paginaDetalhesProjetos/index.html`
+- `paginaDetalhesProjetos/assets/css/style.css`
+- `paginaDetalhesProjetos/assets/js/script.js`
+
+**Instruções de acesso:**  
+Clique em um projeto na lista para ver seus detalhes.
+
+---
+
+## Tela de Favoritos (RF-006)
+
+**Responsável:** Equipe de Desenvolvimento
+
+Esta tela mostra os projetos que o usuário marcou como favoritos, facilitando o acesso rápido aos documentos de interesse.
+
+**Artefatos da funcionalidade:**
+
+- `paginaFavoritos/index.html`
+- `paginaFavoritos/assets/css/style.css`
+- `paginaFavoritos/assets/js/script.js`
+
+**Instruções de acesso:**  
+Acesse a seção de favoritos após marcar um projeto.
+
+---
+
+## Tela de Ferramentas (RF-007)
+
+**Responsável:** Equipe de Desenvolvimento
+
+Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alunos na confecção e pesquisa de projetos.
+
+**Artefatos da funcionalidade:**
+
+- `paginaFerramentas/index.html`
+- `paginaFerramentas/assets/css/style.css`
+- `paginaFerramentas/assets/js/script.js`
+
+**Instruções de acesso:**  
+Acesse a seção de ferramentas a partir do menu de navegação.
+
+---
+
+## Tela de Projetos (RF-008)
+
+**Responsável:** Equipe de Desenvolvimento
+
+Esta tela lista os projetos disponíveis, permitindo ao usuário filtrar e ordenar os resultados de acordo com critérios específicos.
+
+**Artefatos da funcionalidade:**
+
+- `paginaProjetos/index.html`
+- `paginaProjetos/assets/css/style.css`
+- `paginaProjetos/assets/js/script.js`
+
+**Instruções de acesso:**  
+Utilize os filtros e a barra de pesquisa para encontrar projetos de seu interesse.
+
+---
+
+## Tela de Submissão (RF-009)
+
+**Responsável:** Equipe de Desenvolvimento
+
+Esta tela permite aos alunos submeter projetos, preenchendo um formulário com todas as informações necessárias para o registro do projeto.
+
+**Artefatos da funcionalidade:**
+
+- `paginaSubmissao/index.html`
+- `paginaSubmissao/assets/css/style.css`
+- `paginaSubmissao/assets/js/script.js`
+
+**Instruções de acesso:**  
+Clique na opção de envio de projeto no menu para acessar a tela de submissão.
