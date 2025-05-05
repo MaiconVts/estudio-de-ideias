@@ -116,24 +116,7 @@ Clique em um projeto na lista para ver seus detalhes.
 
 ---
 
-## Tela de Favoritos (RF-006)
-
-**Responsável:** Equipe de Desenvolvimento
-
-Esta tela mostra os projetos que o usuário marcou como favoritos, facilitando o acesso rápido aos documentos de interesse.
-
-**Artefatos da funcionalidade:**
-
-- `paginaFavoritos/index.html`
-- `paginaFavoritos/assets/css/style.css`
-- `paginaFavoritos/assets/js/script.js`
-
-**Instruções de acesso:**  
-Acesse a seção de favoritos após marcar um projeto.
-
----
-
-## Tela de Ferramentas (RF-007)
+## Tela de Ferramentas (RF-006)
 
 **Responsável:** Equipe de Desenvolvimento
 
@@ -147,6 +130,30 @@ Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alu
 
 **Instruções de acesso:**  
 Acesse a seção de ferramentas a partir do menu de navegação.
+
+---
+
+## Tela de favoritos (RF-007)
+
+**Responsável**: Vinícius Silva
+
+Esta tela mostra os projetos que o usuário marcou como favoritos, facilitando o acesso rápido aos documentos de interesse. Para marcar um projeto como favorito, basta clicar em "Adicionar aos favoritos" no cartão de exibição na lista de projetos. A lista dos projetos marcados como favoritos pode ser encontrada na página "Favoritos", através do menu de navegação.
+
+**Exemplo:**
+<img src="./img/pagina-favoritos.png" />
+
+**Requisito atendido:**  
+RF-007: Permitir que o visitante possa marcar como favorito um documento e visualize todos os projetos marcados com esta condição posteriormente
+
+**Artefatos da funcionalidade:**
+
+- `index.html`
+- `style.css`
+- `list.png`
+- `user.png`
+
+**Instruções de acesso:**  
+- Acesse a página em https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaFavoritos/index.html
 
 ---
 
