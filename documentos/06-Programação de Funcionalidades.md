@@ -35,7 +35,9 @@ Clique em “Cadastre-se” no menu superior para acessar a tela de cadastro.
 O acesso à tela de login poderá ser feito através do menu “Entrar”. As estruturas de dados foram baseadas em HTML, CSS e JS.
 
 **Exemplo da tela de login:**  
-`<img src="img/tela-login.png" alt="Tela de Login" width="auto">`
+<figure> 
+  <img src="/documentos/img/Login.png"> 
+</figure>
 
 **Requisito atendido:**  
 RF-002: O site deve permitir ao usuário fazer o login da sua conta.
@@ -61,7 +63,10 @@ Clique em “Entrar” no menu superior para acessar a tela de login.
 Na página inicial, os usuários encontram uma barra de pesquisa centralizada que permite realizar buscas por palavras-chave.
 
 **Exemplo da tela Home com barra de pesquisa:**  
-`<img src="img/tela-home-search.png" alt="Tela Home com Busca" width="auto">`
+ <figure> 
+  <img src="/documentos/img/Home.png"> 
+</figure>
+
 
 **Requisito atendido:**  
 RF-003: Campo de busca aberto para pesquisa de projetos.
@@ -86,6 +91,11 @@ Utilize a barra de busca no centro da página para pesquisar.
 
 Esta tela permite que os moderadores validem e gerenciem os documentos submetidos, com funcionalidade para aprovar, rejeitar ou solicitar correções.
 
+**Exemplo da tela de Administração:**  
+<figure> 
+  <img src="/documentos/img/AreaModerador.png"> 
+</figure>
+
 **Artefatos da funcionalidade:**
 
 - `paginaAdmin/index.html`
@@ -102,6 +112,11 @@ Acesse a área de administração após fazer o login.
 **Responsável:** Hugo Vaz
 
 Esta tela exibe detalhes completos do projeto, incluindo título, autores, resumo e um botão para download do documento.
+
+**Exemplo da tela de Detalhes do Projeto:**  
+ <figure> 
+  <img src="/documentos/img/Details.png"> 
+</figure>
 
 **Artefatos da funcionalidade:**
 
@@ -121,6 +136,11 @@ Clique em um projeto exibido para ver seus detalhes
 
 Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alunos na confecção e pesquisa de projetos.
 
+**Exemplo da tela de Ferramentas:**
+<figure> 
+  <img src="/documentos/img/Ferramentas.png"> 
+</figure>
+
 **Artefatos da funcionalidade:**
 
 - `paginaFerramentas/index.html`
@@ -133,14 +153,16 @@ Acesse a seção de ferramentas a partir do menu de navegação ou através do l
 
 ---
 
-## Tela de favoritos (RF-007)
+## Tela de Favoritos (RF-007)
 
 **Responsável**: Vinícius Silva
 
 Esta tela mostra os projetos que o usuário marcou como favoritos, facilitando o acesso rápido aos documentos de interesse. Para marcar um projeto como favorito, basta clicar em "Adicionar aos favoritos" no cartão de exibição na lista de projetos. A lista dos projetos marcados como favoritos pode ser encontrada na página "Favoritos", através do menu de navegação.
 
-**Exemplo:**
-<img src="./img/pagina-favoritos.png" />
+**Exemplo da tela de Favoritos:**
+ <figure> 
+  <img src="/documentos/img/Favoritos.png"> 
+</figure>
 
 **Requisito atendido:**  
 RF-007: Permitir que o visitante possa marcar como favorito um documento e visualize todos os projetos marcados com esta condição posteriormente
@@ -163,6 +185,11 @@ RF-007: Permitir que o visitante possa marcar como favorito um documento e visua
 
 Esta tela lista os projetos disponíveis, permitindo ao usuário filtrar e ordenar os resultados de acordo com critérios específicos.
 
+**Exemplo da tela de Projetos:**
+<figure> 
+  <img src="/documentos/img/Projetos.png"> 
+</figure>
+
 **Artefatos da funcionalidade:**
 
 - `paginaProjetos/index.html`
@@ -180,6 +207,11 @@ Utilize os filtros e a barra de pesquisa para encontrar projetos de seu interess
 **Responsável:** Alan
 
 Esta tela permite aos alunos submeter projetos, preenchendo um formulário com todas as informações necessárias para o registro do projeto.
+
+**Exemplo da tela de Submissão(Envio de Projetos):**
+<figure> 
+  <img src="/documentos/img/Submission.png"> 
+</figure>
 
 **Artefatos da funcionalidade:**
 
