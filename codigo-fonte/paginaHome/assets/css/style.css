@@ -14,13 +14,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../img/natureza.jpg);
+    background-image: url(../img/natureza.jpg); /* Certifique-se que este caminho está correto */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* Container principal */
+/* Container principal da busca */
 .search-container {
     text-align: center;
     max-width: 1200px;
@@ -32,25 +32,32 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     font-weight: 600;
-    color: #0A1931;
+    color: #0A1931; /* Ajuste a cor se o fundo for escuro e o texto estiver sumindo */
     margin-bottom: 40px;
 }
 
 /* Formulário de busca */
 .search-form {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha */
-    justify-content: center;
-    align-items: center;
+    /* flex-wrap: wrap; /* Podemos manter ou remover dependendo do comportamento desejado em telas muito pequenas */
+                      /* Se remover, os itens tentarão se espremer. Se manter, o botão pode quebrar se não houver espaço. */
+                      /* Para input e botão na mesma linha, o ideal é que caibam. */
+    flex-wrap: nowrap; /* Vamos tentar nowrap para forçar a mesma linha e deixar os itens encolherem se necessário */
+    justify-content: center; 
+    align-items: center; 
     gap: 10px;
     max-width: 800px;
     margin: 0 auto;
+    position: relative; 
 }
 
 /* Campo de input */
-/* Campo de texto da busca */
+/* Campo de input */
 .search-input {
-    flex: 1 1 100%;
+    flex-grow: 1; /* Permite que o input cresça para ocupar o espaço disponível */
+    flex-shrink: 1; /* Permite que o input encolha se necessário */
+    flex-basis: auto; /* Tamanho base automático, mas vai esticar por causa do grow:1 */
+    /* min-width: 200px; */ /* Pode definir um min-width para não ficar muito pequeno */
     padding: 20px;
     font-size: 18px;
     border: none;
@@ -63,7 +70,9 @@
 
 /* Botão principal (ao lado do input) */
 .search-button {
-    flex: 1 1 100%;
+    flex-grow: 0; /* Não deve crescer */
+    flex-shrink: 0; /* Não deve encolher (para manter o tamanho do seu texto/padding) */
+    flex-basis: auto; /* Tamanho baseado no conteúdo e padding */
     padding: 20px;
     font-size: 18px;
     background-color: #0A1931;
@@ -79,25 +88,58 @@
     background-color: #185ADB;
 }
 
+/* Estilos para o container de sugestões */
+.suggestions-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 1001;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    text-align: left;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-item.active {
+    background-color: #e0e0e0;
+}
+
 /* Área de filtros abaixo da search bar */
-/* Área de filtros */
 .search-filters {
     display: flex;
-    flex-wrap: wrap; /* 🎯 Deixa quebrar para a linha de baixo se não couber */
-    justify-content: center; /* Mantém centralizado quando quebra */
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     max-width: 800px;
     margin: 20px auto 0 auto;
-    padding: 0 10px; /* Um pouquinho de padding para não colar nas bordas */
+    padding: 0 10px;
 }
 
-/* Cada botão de filtro */
+/* Cada item de filtro */
 .filter-item {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
+    min-width: 150px;
 }
 
 .filter-select {
-    width: 100%; /* Ocupa todo o espaço disponível do item */
+    width: 100%;
     padding: 10px 20px;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
@@ -114,10 +156,19 @@
 }
 
 /* Área que lista todos os projetos */
-.results-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.projetos-lista {
+    display: grid; /* Muda para layout em grade */
+    /* Cria colunas responsivas: 
+       - 'auto-fit': ajusta o número de colunas para preencher o espaço.
+       - 'minmax(300px, 1fr)': cada coluna terá no mínimo 300px de largura 
+         e no máximo 1 fração do espaço disponível (distribuindo igualmente).
+       Isso significa que em telas largas você pode ter 3-4 colunas, 
+       em telas médias 2, e em telas pequenas 1 coluna. 
+       Ajuste '300px' conforme a largura mínima desejada para seus cards.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; /* Espaçamento entre os cards (horizontal e vertical) */
+    padding: 40px 20px; /* Padding ao redor da grade de cards */
 }
 
 /* Caixa de cada projeto */
@@ -126,62 +177,154 @@
     border: 1px solid #dce3f0;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 32px;
-    margin: 40px auto;
-    width: 70%; /* Ocupa 70% da tela */
-    text-align: center;
-    display: flex;
+    padding: 25px;
+    /* Com o grid, 'margin: auto' para centralizar horizontalmente não é mais necessário,
+       e a largura será controlada pelo 'grid-template-columns'. */
+    /* width: 80%; (Removido ou ajustado) */
+    /* max-width: 700px; (Removido ou ajustado) */
+    width: 100%; /* O card ocupará 100% da célula do grid em que estiver */
+    text-align: left;
+    display: flex; /* Mantém o flex interno para alinhar o conteúdo do card */
     flex-direction: column;
-    gap: 16px;
-  }
-  
-  
+    gap: 16px; /* Espaçamento entre os elementos dentro do card */
+    /* margin-bottom: 30px; (Removido, pois 'gap' do grid já cuida do espaçamento vertical) */
+}
+
 /* Pequena animação no hover */
 .project-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* Título do projeto */
 .project-title {
-    text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     color: #185ADB;
     margin-bottom: 8px;
 }
 
+
+
 /* Link no título */
 .project-link {
     text-decoration: none;
     color: inherit;
-  }
+}
 
-  .project-link:hover {
+.project-link:hover {
     text-decoration: underline;
-  }
+}
 
 /* Tags logo abaixo do título */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
-  }
-  
-
+}
+ 
 /* Estilo das tags */
 .project-tag {
     background-color: #e3edff;
     color: #185ADB;
     padding: 4px 12px;
     border-radius: 20px;
+    font-size: 13px;
     font-weight: 500;
-  }
+}
 
 /* Descrição do projeto */
 .project-description {
-    font-size: 16px;
+    font-size: 15px;
     color: #333;
     line-height: 1.6;
-    font-family: "roboto", sans-serif;
-  }
+    font-family: "Roboto", sans-serif;
+}
+
+/* Mensagem de "Nenhum resultado" */
+.no-results-message {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 18px;
+    color: #555;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Em assets/css/style.css */
+
+/* Container para o botão "Ver mais" (opcional, para centralização) */
+.ver-mais-container {
+    text-align: center; /* Centraliza o botão se ele for inline-block ou inline */
+    padding: 20px 0;    /* Espaçamento acima e abaixo do botão */
+}
+
+/* Estilo principal do botão "Ver mais" */
+.ver-mais-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500; /* Um pouco mais de peso na fonte */
+    background-color: #0A1931; /* Cor similar ao seu botão de busca */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block; /* Para que o text-align do pai funcione e para padding/margin corretos */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.ver-mais-button:hover {
+    background-color: #0c50be; /* Cor do hover similar ao botão de busca */
+    transform: translateY(-2px); /* Leve elevação no hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.ver-mais-button:active { /* Efeito ao clicar */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilo se o botão estiver desabilitado (ex: durante o carregamento, se você implementar isso) */
+.ver-mais-button:disabled { 
+    background-color: #cccccc; /* Cinza claro */
+    color: #666666;
+    cursor: not-allowed;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+
+/* Em assets/css/style.css (ou um CSS específico da home) */
+
+.scroll-to-top-button {
+    display: none; /* JavaScript vai mudar para 'flex' ou 'block' */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000; /* Bem alto para garantir que fique por cima */
+    
+    background-color: #185ADB; /* Cor bem chamativa para teste */
+    color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    
+    /* Para centralizar a seta (se usar display: flex no JS) */
+    align-items: center;
+    justify-content: center;
+    line-height: 1; 
+}
+
+.scroll-to-top-button:hover {
+    background-color: #6ea6ff;
+}

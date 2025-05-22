@@ -1,80 +1,94 @@
+/* assets/css/footer.css ATUALIZADO */
 
 /* Rodapé geral */
 .site-footer {
-    background-color: #0A1931;
-    color: #FFFFFF;
+    background-color: #0A1931; /* Cor de fundo principal escura */
+    color: #E2E8F0; /* Cor de texto padrão mais clara para contraste */
     font-family: 'Roboto', sans-serif;
-    padding-top: 30px;
+    padding-top: 0; /* Padding superior será controlado pela barra ou pelo .footer-main */
 }
 
-/* Barra superior azul fina */
+/* Barra superior azul fina - bom como um acento */
 .footer-top-bar {
     width: 100%;
-    height: 5px;
-    background-color: #185ADB;
+    height: 4px; /* Pode ser um pouco mais sutil */
+    background-color: #185ADB; /* Seu azul de destaque */
+    margin-bottom: 40px; /* Espaço antes do conteúdo principal do footer */
 }
 
-/* Conteúdo principal do footer */
+/* Conteúdo principal do footer (colunas) */
 .footer-main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto 0 auto;
-    padding: 0 40px;
+    justify-content: space-between; /* Ou space-around para mais espaço se as colunas não preencherem */
+    gap: 30px; /* Espaço entre as colunas */
+    max-width: 1200px; /* Mantém a consistência da largura do seu site */
+    margin: 0 auto; /* Centraliza */
+    padding: 0 40px 40px 40px; /* Padding horizontal e inferior */
 }
 
-/* Cada seção do footer */
+/* Cada seção/coluna do footer */
 .footer-section {
-    flex: 1 1 250px;
+    flex: 1 1 220px; /* Permite que cresçam, mas com base e mínimo */
     min-width: 200px;
+    /* margin-bottom: 20px; /* Adicionado para espaçamento em telas menores quando quebrar linha */
 }
 
-/* Títulos das seções */
+/* Títulos das seções (h4) */
 .footer-title {
-    font-size: 20px;
+    font-family: 'Montserrat', sans-serif; /* Fonte de destaque para títulos */
+    font-size: 1.1em; /* Equivalente a aprox. 17-18px se base for 16px */
     font-weight: 600;
-    margin-bottom: 20px;
+    color: #FFFFFF; /* Branco para destaque nos títulos */
+    margin-bottom: 18px; /* Espaço abaixo do título */
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1E293B; /* Borda sutil abaixo do título da seção */
 }
 
-/* Texto breve */
+/* Texto descritivo (ex: "Sobre o Estúdio") */
 .footer-text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #D1D5DB;
+    font-size: 0.9em; /* Equivalente a aprox. 14px */
+    line-height: 1.7;
+    color: #A0AEC0; /* Cinza azulado claro, bom para leitura em fundo escuro */
 }
 
-/* Links dentro das seções */
+/* Listas de links */
 .footer-links {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Espaço entre os links */
+}
+
+.footer-links li:last-child {
+    margin-bottom: 0;
 }
 
 .footer-links a {
-    color: #D1D5DB;
+    color: #A0AEC0; /* Mesma cor do .footer-text para consistência */
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+    font-size: 0.9em;
+    transition: color 0.2s ease, padding-left 0.2s ease; /* Transição suave */
 }
 
-.footer-links a:hover {
-    color: #FFFFFF;
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #FFFFFF; /* Texto branco no hover/focus */
+    /* text-decoration: underline; (Opcional) */
+    padding-left: 5px; /* Pequeno deslocamento no hover para indicar interatividade */
 }
 
-/* Linha divisória antes da área de contato */
+/* Barra/Seção de Contato */
 .footer-contact-bar {
-    width: 100%;
-    border-top: 1px solid #D1D5DB; /* 🎯 Linha divisória cinza clara */
-    margin-top: 40px;
-    padding-top: 30px;
+    background-color: #081424; /* Um tom ligeiramente diferente ou o mesmo do .site-footer */
+    padding: 30px 0;
+    /* border-top: 1px solid #1E293B; (Opcional, se quiser uma linha divisória mais sutil) */
+    margin-top: 20px; /* Espaço acima da barra de contato, se .footer-main não tiver padding-bottom suficiente */
 }
 
-/* Container da área de contato */
 .footer-contact-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -82,42 +96,44 @@
     text-align: center;
 }
 
-/* Título "Contato" */
-.footer-contact-title {
-    font-size: 20px;
+.footer-contact-title { /* Estilo similar ao .footer-title */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
     font-weight: 600;
-    margin-bottom: 15px;
+    color: #FFFFFF;
+    margin-bottom: 18px;
 }
 
-/* Links de contato */
 .footer-contact-links {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px 25px; /* Gap vertical e horizontal */
 }
 
-.footer-contact-links li a {
-    color: #D1D5DB;
+.footer-contact-links li a { /* Estilo similar aos .footer-links a */
+    color: #A0AEC0;
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
 }
 
-.footer-contact-links li a:hover {
+.footer-contact-links li a:hover,
+.footer-contact-links li a:focus {
     color: #FFFFFF;
 }
 
-/* Rodapé inferior */
+/* Rodapé inferior (copyright) */
 .footer-bottom {
     text-align: center;
-    padding: 20px 30px;
-    background-color: #08162D;
-    font-size: 12px;
+    padding: 25px 40px;
+    background-color: #07101D; /* O tom mais escuro para o final */
+    font-size: 0.8em; /* Equivalente a aprox. 12-13px */
 }
 
 .footer-copy {
-    color: #9CA3AF;
+    color: #718096; /* Cinza bem sutil */
+    margin: 0;
 }

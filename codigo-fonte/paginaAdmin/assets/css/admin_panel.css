@@ -1,0 +1,444 @@
+/* admin_panel.css */
+
+/* ---- Configurações Globais e Reset para a Página do Painel ---- */
+body {
+    background-color: #f4f7f9; /* Um cinza bem claro para o fundo da página */
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0; /* Garante que não haja margens do body */
+}
+
+/* ---- Layout Principal do Painel ---- */
+.admin-panel-main {
+    padding: 20px 15px; /* Espaçamento geral para o conteúdo principal */
+}
+
+.admin-panel-container {
+    max-width: 1140px; /* Largura máxima para o conteúdo do painel */
+    margin: 0 auto;    /* Centraliza o container */
+}
+
+/* ---- Card Principal de Moderação ---- */
+.moderation-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    overflow: hidden; /* Para conter bordas arredondadas com o header do card */
+}
+
+.moderation-card-header {
+    background-color: #0A1931; /* Azul escuro principal do tema */
+    color: #ffffff;
+    padding: 20px 25px;
+    border-bottom: 3px solid #185ADB; /* Detalhe com o azul de destaque */
+}
+
+.moderation-card-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem; /* Tamanho para o título do painel */
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.moderation-card-body {
+    padding: 25px;
+}
+
+.moderation-card-body h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    color: #0A1931;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.moderation-card-footer {
+    background-color: #f8f9fa; /* Cinza claro para o rodapé do card */
+    color: #6c757d; /* Cinza para o texto do rodapé do card */
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.moderation-card-footer p {
+    margin: 0;
+}
+
+/* ---- Estilização da Tabela de Projetos ---- */
+.admin-table-wrapper {
+    overflow-x: auto; /* Adiciona rolagem horizontal à tabela em telas pequenas */
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch; /* Melhora a experiência de rolagem em iOS */
+}
+
+table {
+    width: 100%;
+    min-width: 760px; /* Força a barra de rolagem horizontal a aparecer mais cedo */
+                      /* Ajuste este valor conforme o conteúdo das suas colunas */
+    border-collapse: collapse; 
+    font-size: 0.95rem;
+}
+
+table th,
+table td {
+    padding: 12px 15px; 
+    text-align: left;
+    border-bottom: 1px solid #dee2e6; 
+    vertical-align: middle;
+}
+
+/* Colunas que não devem quebrar linha facilmente */
+table th:nth-child(2), /* Membros */
+table td:nth-child(2),
+table th:nth-child(3), /* Data de Submissão */
+table td:nth-child(3),
+table th:nth-child(4), /* Status */
+table td:nth-child(4) {
+    white-space: nowrap; 
+}
+
+/* Coluna de Ações */
+table th:last-child, 
+table td:last-child { 
+    white-space: nowrap; 
+    min-width: 280px; /* Largura mínima para acomodar os botões, ajuste conforme necessário */
+}
+
+
+table thead th {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; 
+    color: #0A1931; 
+    background-color: #e9f0ff; 
+    border-bottom-width: 2px;
+    border-color: #185ADB; 
+}
+
+table tbody tr:hover {
+    background-color: #f8f9fa; 
+}
+
+.details-link {
+    color: #185ADB; 
+    text-decoration: none;
+    font-weight: 500;
+}
+.details-link:hover {
+    color: #0A1931;
+    text-decoration: underline;
+}
+
+/* ---- Estilos para os Status ---- */
+.status-pending,
+.status-approved,
+.status-rejected {
+    font-weight: 500;
+    padding: 0.3em 0.6em;
+    border-radius: 0.25rem;
+    font-size: 0.8em;
+    display: inline-block;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;   
+}
+
+.status-pending {
+    color: #856404; 
+    background-color: #fff3cd; 
+}
+.status-approved {
+    color: #155724;
+    background-color: #d4edda;
+}
+.status-rejected {
+    color: #721c24;
+    background-color: #f8d7da;
+}
+.moderated-text { 
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+
+/* ---- Botões de Ação ---- */
+.action-buttons-group {
+    display: flex;
+    gap: 8px; 
+    flex-wrap: nowrap; /* Força os botões a ficarem na mesma linha */
+}
+
+.action-btn {
+    display: inline-flex; 
+    align-items: center;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none; 
+    color: #fff; 
+}
+
+.action-btn i { 
+    margin-right: 5px;
+}
+
+.approve-btn {
+    background-color: #28a745; 
+    border-color: #28a745;
+}
+.approve-btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.reject-btn {
+    background-color: #dc3545; 
+    border-color: #dc3545;
+}
+.reject-btn:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.correct-btn {
+    background-color: #ffc107; 
+    border-color: #ffc107;
+    color: #212529; 
+}
+.correct-btn:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+
+/* ---- Paginação ---- */
+.admin-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 30px;
+    list-style: none;
+    flex-wrap: wrap; /* Permite que os itens da paginação quebrem para a próxima linha */
+    gap: 5px;        /* Espaçamento entre os itens da paginação */
+}
+
+.admin-pagination li {
+    margin: 0; /* Removido, pois o gap do flex container cuida do espaçamento */
+}
+
+.admin-pagination .page-link {
+    display: block;
+    padding: 8px 12px;
+    color: #185ADB; 
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap; /* Evita que "Anterior" ou "Próxima" quebrem */
+}
+
+.admin-pagination .page-link:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+    color: #0A1931;
+}
+
+.admin-pagination .page-link.active {
+    background-color: #0A1931; 
+    border-color: #0A1931;
+    color: white;
+    font-weight: 600;
+}
+
+.admin-pagination .page-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Ajustes finos para responsividade em telas muito pequenas */
+@media (max-width: 480px) {
+    .admin-pagination .page-link {
+        padding: 6px 10px; 
+        font-size: 0.85rem; 
+    }
+    .admin-table-wrapper table { 
+        font-size: 0.85rem;
+    }
+    .admin-table-wrapper table th,
+    .admin-table-wrapper table td {
+        padding: 8px 10px; 
+    }
+    .action-btn {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+    table th:last-child, 
+    table td:last-child { 
+        min-width: auto; /* Em telas muito pequenas, deixa os botões se ajustarem, 
+                           mas a rolagem da tabela ainda deve funcionar */
+    }
+    /* Se quiser que os botões de ação empilhem em telas minúsculas: */
+    /*
+    .action-buttons-group {
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 5px;
+        width: 100%; 
+    }
+    .action-buttons-group .action-btn {
+        width: 100%; 
+        justify-content: center; 
+    }
+    */
+}
+
+/* Em assets/css/header.css */
+
+/* ÍCONE DO MENU (HAMBURGER) */
+.menu-icon .nav-icon {
+    cursor: pointer;
+    display: none; /* ESCONDIDO POR PADRÃO em telas maiores */
+    width: 40px;   /* Certifique-se que tem tamanho definido */
+    height: 40px;
+}
+
+/* MENU DROPDOWN / LISTA DE NAVEGAÇÃO */
+.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;     /* VISÍVEL E HORIZONTAL em telas maiores (desktop) */
+    align-items: center;
+    gap: 10px;
+    /* As propriedades de transição e posicionamento absoluto serão aplicadas no mobile */
+}
+
+/* ESTILOS RESPONSIVOS PARA O MENU (MOBILE) */
+@media (max-width: 992px) { /* Ajuste este ponto de quebra conforme seu design */
+    .menu-icon .nav-icon {
+        display: block; /* MOSTRA o ícone hamburger em telas menores */
+    }
+
+    .dropdown-menu {
+        /* Transforma em um menu dropdown vertical e escondido */
+        display: none; /* COMEÇA ESCONDIDO em mobile */
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 10px); /* Abaixo do header, com um pequeno espaço */
+        right: 0; 
+        background-color: #FFFFFF;
+        min-width: 220px; 
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+        padding: 10px 0; 
+        gap: 0; 
+        z-index: 1000; 
+
+        /* Propriedades para a animação de entrada/saída */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s linear 0.2s;
+    }
+
+    .dropdown-menu.is-active { /* Classe adicionada via JS para mostrar o menu */
+        display: flex; /* Ou 'block' se os <li> já estiverem com width: 100% */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+        transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    }
+
+    .dropdown-menu li {
+        width: 100%;
+    }
+
+    .dropdown-menu li a {
+        padding: 12px 20px; 
+        width: 100%;
+        border-radius: 0; 
+    }
+    /* ... (outros estilos de link mobile se necessário) ... */
+}
+
+
+/* Em admin_panel.css */
+
+/* ---- Paginação ---- */
+.admin-pagination { /* A tag <nav> */
+    display: flex; /* Faz o <ul> (se for o único filho) centralizar, ou centraliza os LIs se não houver UL */
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.admin-pagination ul { /* O container direto dos LIs */
+    display: flex;
+    flex-direction: row; /* Garante que seja em linha */
+    flex-wrap: wrap;     /* Permite quebrar para a próxima linha se não couber */
+    justify-content: center; /* Centraliza os itens quando quebram linha */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 5px; /* Espaçamento entre os itens da paginação */
+}
+
+.admin-pagination li {
+    margin: 0; /* O gap no UL já cuida do espaçamento */
+}
+
+.admin-pagination .page-link {
+    display: block; /* Importante para que o padding funcione corretamente no <a> */
+    padding: 8px 12px;
+    color: #185ADB; 
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap; 
+}
+
+.admin-pagination .page-link:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+    color: #0A1931;
+}
+
+.admin-pagination .page-link.active {
+    background-color: #0A1931; 
+    border-color: #0A1931;
+    color: white;
+    font-weight: 600;
+}
+
+.admin-pagination .page-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Ajustes para paginação em telas muito pequenas, se necessário */
+@media (max-width: 480px) {
+    .admin-pagination .page-link {
+        padding: 6px 10px; 
+        font-size: 0.85rem; 
+    }
+    .admin-pagination ul {
+        gap: 3px; /* Reduz o gap em telas muito pequenas */
+    }
+}

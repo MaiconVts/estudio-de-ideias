@@ -1,24 +1,23 @@
-// Example: Add confirmation dialogs or interaction logic
-document.querySelectorAll('.btn-approve, .btn-reject, .btn-correct').forEach(button => {
-    button.addEventListener('click', function(event) {
-        const action = this.title;
-        const projectTitle = this.closest('tr').querySelector('.details-link').textContent;
-        // Example confirmation - replace with actual logic (e.g., AJAX call)
-        if (confirm(`Tem certeza que deseja "${action}" o projeto "${projectTitle}"?`)) {
-            console.log(`Ação "${action}" selecionada para "${projectTitle}".`);
-            // Here you would typically send a request to the server
-            // For demonstration, we could change the status locally:
-            const statusCell = this.closest('tr').querySelector('td:nth-child(4)');
-            if (action === 'Aprovar') {
-                statusCell.innerHTML = '<span class="status-approved">Aprovado</span>';
-                this.closest('.btn-group').innerHTML = '<small class="text-muted">Já moderado</small>';
-            } else if (action === 'Rejeitar') {
-                statusCell.innerHTML = '<span class="status-rejected">Rejeitado</span>';
-                this.closest('.btn-group').innerHTML = '<small class="text-muted">Já moderado</small>';
-            } else {
-                alert(`Funcionalidade "${action}" para "${projectTitle}" ainda não implementada.`);
-            }
-        }
-    });
-});
+// Exemplo de como o JS do menu deve funcionar
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIconImage = document.getElementById('menuIconImg');
+    const mainDropdown = document.getElementById('mainDropdownMenu');
 
+    if (menuIconImage && mainDropdown) {
+        menuIconImage.addEventListener('click', (event) => {
+            event.stopPropagation();
+            mainDropdown.classList.toggle('is-active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (mainDropdown.classList.contains('is-active') && 
+                !menuIconImage.closest('.menu-icon').contains(event.target) && // Checa se o clique foi fora do container do ícone
+                !mainDropdown.contains(event.target)) {
+                mainDropdown.classList.remove('is-active');
+            }
+        });
+    } else {
+        // Isso apareceria no console se os elementos não fossem encontrados
+        // console.warn("Ícone do menu ou menu dropdown não encontrado na página do admin panel.");
+    }
+});
