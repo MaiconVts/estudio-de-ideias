@@ -1,0 +1,1896 @@
+{
+  "266e4868-43d3-4f29-b424-e1500cd4855b": {
+    "title": "Plataforma E-learning com Trilhas de Aprendizagem Personalizadas",
+    "author": "Camila Nogueira",
+    "year": 2023,
+    "area": "frontend",
+    "summary": "Desenvolvimento de uma interface web interativa que permite aos usuários criar e seguir trilhas de estudo adaptadas às suas necessidades e progresso individual.",
+    "technologies": [
+      "React",
+      "Redux",
+      "TypeScript",
+      "Firebase",
+      "Material-UI"
+    ],
+    "citations": 45,
+    "file": "plataforma_elearning_trilhas_camila_n.zip"
+  },
+  "eb6d31fa-3de4-4b15-b682-d49994c948f2": {
+    "title": "API RESTful para Gerenciamento de Inventário de Lojas de Varejo",
+    "author": "Ricardo Mendes",
+    "year": 2022,
+    "area": "backend",
+    "summary": "Implementação de uma API segura e escalável para controlar estoque, pedidos e fornecedores, destinada a pequenas e médias empresas do setor varejista.",
+    "technologies": [
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Docker",
+      "JWT"
+    ],
+    "citations": 62,
+    "file": "api_inventario_varejo_ricardo_m.pdf"
+  },
+  "e1448e27-cd3a-4c34-b23a-4bd19e5ead8e": {
+    "title": "Aplicativo Mobile de Realidade Aumentada para Museus Virtuais",
+    "author": "Beatriz Almeida",
+    "year": 2024,
+    "area": "mobile",
+    "summary": "Criação de um app para iOS e Android que sobrepõe informações e modelos 3D em obras de arte visualizadas através da câmera, enriquecendo a experiência de visita a museus.",
+    "technologies": [
+      "Unity",
+      "C#",
+      "ARCore",
+      "ARKit",
+      "Blender"
+    ],
+    "citations": 28,
+    "file": "app_ra_museus_beatriz_a.apk"
+  },
+  "ad639f6e-aaed-4d62-b56b-4efc91eb66b5": {
+    "title": "Sistema de Detecção de Intrusão Baseado em Machine Learning para Redes IoT",
+    "author": "Gustavo Lima",
+    "year": 2023,
+    "area": "redes",
+    "summary": "Um sistema que utiliza algoritmos de aprendizado de máquina para identificar padrões de tráfego anômalos e potenciais ameaças em redes de dispositivos IoT.",
+    "technologies": [
+      "Python",
+      "Scikit-learn",
+      "TensorFlow Lite",
+      "MQTT",
+      "Raspberry Pi"
+    ],
+    "citations": 78,
+    "file": "sids_ml_iot_gustavo_l.zip"
+  },
+  "96303439-1c24-4bdd-927f-b0abf1b9a55f": {
+    "title": "Otimização de Consultas em Banco de Dados NoSQL para Aplicações Big Data",
+    "author": "Fernanda Costa",
+    "year": 2022,
+    "area": "banco-dados",
+    "summary": "Estudo e aplicação de técnicas de modelagem de dados e indexação para melhorar o desempenho de consultas em bancos de dados NoSQL sob alta carga de dados.",
+    "technologies": [
+      "MongoDB",
+      "Cassandra",
+      "Elasticsearch",
+      "Python",
+      "Apache Spark"
+    ],
+    "citations": 51,
+    "file": "otimizacao_nosql_bigdata_fernanda_c.pdf"
+  },
+  "c8fd3f7c-edd0-4d53-a795-c2a81fdffab4": {
+    "title": "Framework de Análise de Vulnerabilidades em Contratos Inteligentes Blockchain",
+    "author": "Lucas Pereira",
+    "year": 2024,
+    "area": "seguranca",
+    "summary": "Desenvolvimento de um conjunto de ferramentas para análise estática e dinâmica de contratos inteligentes na plataforma Ethereum, visando identificar falhas de segurança comuns.",
+    "technologies": [
+      "Solidity",
+      "Python",
+      "Mythril",
+      "Slither",
+      "Ganache"
+    ],
+    "citations": 95,
+    "file": "analise_vuln_smartcontracts_lucas_p.zip"
+  },
+  "c4d7922f-7f37-42d7-a90f-8b47c914ec52": {
+    "title": "Construtor de Landing Pages Dinâmicas com Editor Visual Drag-and-Drop",
+    "author": "Mariana Ferreira",
+    "year": 2023,
+    "area": "frontend",
+    "summary": "Uma aplicação web que permite a usuários sem conhecimento técnico criar e publicar landing pages responsivas através de uma interface intuitiva de arrastar e soltar componentes.",
+    "technologies": [
+      "Vue.js",
+      "Nuxt.js",
+      "Tailwind CSS",
+      "Firebase Hosting",
+      "Fabric.js"
+    ],
+    "citations": 33,
+    "file": "landing_page_builder_mariana_f.zip"
+  },
+  "525c43cf-287f-44a3-92cd-5b85987a675d": {
+    "title": "Microsserviços para Plataforma de Streaming de Vídeo On-Demand",
+    "author": "Rafael Oliveira",
+    "year": 2024,
+    "area": "backend",
+    "summary": "Arquitetura e implementação de microsserviços para ingestão, transcodificação, armazenamento e entrega de conteúdo de vídeo, com foco em alta disponibilidade e escalabilidade.",
+    "technologies": [
+      "Go",
+      "Kubernetes",
+      "Docker",
+      "gRPC",
+      "Kafka",
+      "AWS S3",
+      "FFmpeg"
+    ],
+    "citations": 110,
+    "file": "microsservicos_streaming_rafael_o.pdf"
+  },
+  "a3a925f7-8ca0-4835-96d4-6fa5a1efeec1": {
+    "title": "App de Saúde Mental com Monitoramento de Humor e Conteúdo Terapêutico",
+    "author": "Juliana Santos",
+    "year": 2023,
+    "area": "mobile",
+    "summary": "Aplicativo para iOS que oferece ferramentas de registro de humor, diário, meditações guiadas e artigos sobre bem-estar emocional, com privacidade de dados como prioridade.",
+    "technologies": [
+      "Swift",
+      "CoreData",
+      "HealthKit",
+      "Firebase Auth",
+      "UIKit"
+    ],
+    "citations": 15,
+    "file": "app_saude_mental_juliana_s.zip"
+  },
+  "855c55ed-0bf3-4007-80cb-89d0f19caa56": {
+    "title": "Simulador de Ataques DDoS e Estratégias de Mitigação em Ambientes Cloud",
+    "author": "Thiago Alves",
+    "year": 2022,
+    "area": "redes",
+    "summary": "Uma plataforma para simular diferentes vetores de ataques de negação de serviço distribuído e testar a eficácia de contramedidas em infraestruturas baseadas em nuvem.",
+    "technologies": [
+      "Python",
+      "Ansible",
+      "Terraform",
+      "AWS EC2",
+      "Cloudflare API"
+    ],
+    "citations": 67,
+    "file": "simulador_ddos_cloud_thiago_a.pdf"
+  },
+  "527e9d26-1395-4f89-a5ed-55aa2b56a118": {
+    "title": "Sistema de Gerenciamento de Pacientes para Clínicas Odontológicas",
+    "author": "Larissa Gomes",
+    "year": 2021,
+    "area": "banco-dados",
+    "summary": "Software desktop para agendamento de consultas, armazenamento de prontuários eletrônicos, controle financeiro e emissão de relatórios para clínicas odontológicas.",
+    "technologies": [
+      "Java",
+      "Swing",
+      "MySQL",
+      "JasperReports"
+    ],
+    "citations": 22,
+    "file": "sgp_odontologia_larissa_g.zip"
+  },
+  "797cfdd7-e9f5-4dbe-bb4f-6100631b3237": {
+    "title": "Plataforma Segura de Votação Eletrônica Utilizando Provas de Conhecimento Zero",
+    "author": "Fernando Rodrigues",
+    "year": 2024,
+    "area": "seguranca",
+    "summary": "Proposta e protótipo de um sistema de votação online que garante o anonimato e a verificabilidade do voto através de técnicas criptográficas avançadas.",
+    "technologies": [
+      "Python",
+      "ZoKrates",
+      "Web3.js",
+      "Ethereum (para PoC)"
+    ],
+    "citations": 88,
+    "file": "votacao_zkp_fernando_r.pdf"
+  },
+  "35b2864e-1071-458c-9bc2-9cd67e098f9f": {
+    "title": "Dashboard Interativo para Visualização de Dados da COVID-19 no Brasil",
+    "author": "Patrícia Souza",
+    "year": 2021,
+    "area": "frontend",
+    "summary": "Uma interface web que apresenta gráficos e mapas interativos sobre a evolução da pandemia de COVID-19, utilizando dados públicos de fontes oficiais.",
+    "technologies": [
+      "D3.js",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Leaflet.js"
+    ],
+    "citations": 120,
+    "file": "dashboard_covid19_patricia_s.zip"
+  },
+  "0c0c3634-deb3-4128-987a-0ca154dd035f": {
+    "title": "Motor de Recomendação de Conteúdo para Blogs Técnicos",
+    "author": "Bruno Carvalho",
+    "year": 2023,
+    "area": "backend",
+    "summary": "Desenvolvimento de um sistema de recomendação que sugere artigos de blogs de tecnologia aos usuários com base em seu histórico de leitura e similaridade de conteúdo.",
+    "technologies": [
+      "Python",
+      "Flask",
+      "NLTK",
+      "Gensim",
+      "Redis"
+    ],
+    "citations": 40,
+    "file": "motor_recomendacao_blogs_bruno_c.zip"
+  },
+  "6dadb464-18aa-4d68-88af-37b931a020ef": {
+    "title": "Jogo Educacional Mobile sobre Reciclagem para Crianças",
+    "author": "Amanda Ribeiro",
+    "year": 2022,
+    "area": "mobile",
+    "summary": "Um jogo divertido e educativo para Android que ensina crianças sobre a importância da reciclagem e como separar corretamente os diferentes tipos de lixo.",
+    "technologies": [
+      "Kotlin",
+      "Android Studio",
+      "LibGDX",
+      "SQLite"
+    ],
+    "citations": 9,
+    "file": "jogo_reciclagem_infantil_amanda_r.apk"
+  },
+  "70df712f-373f-4ca3-8fb7-c072fb03555d": {
+    "title": "Análise de Desempenho de Protocolos de Roteamento em Redes Veiculares Ad Hoc (VANETs)",
+    "author": "Felipe Martins",
+    "year": 2023,
+    "area": "redes",
+    "summary": "Estudo comparativo através de simulações do desempenho de protocolos como AODV, DSR e OLSR em cenários de comunicação entre veículos em ambientes urbanos.",
+    "technologies": [
+      "NS-3",
+      "SUMO",
+      "C++",
+      "Python (para análise de resultados)"
+    ],
+    "citations": 55,
+    "file": "analise_protocolos_vanet_felipe_m.pdf"
+  },
+  "8fb1267e-a2d1-44fe-8b13-fb4c50712415": {
+    "title": "Ferramenta de Migração Automatizada de Bancos de Dados Relacionais para NoSQL",
+    "author": "Vanessa Dias",
+    "year": 2024,
+    "area": "banco-dados",
+    "summary": "Um script que auxilia na extração de esquemas e dados de bancos SQL e sua conversão para modelos de documentos apropriados para bancos NoSQL como MongoDB.",
+    "technologies": [
+      "Python",
+      "SQLAlchemy",
+      "Pymongo"
+    ],
+    "citations": 30,
+    "file": "migracao_sql_nosql_vanessa_d.zip"
+  },
+  "0fb62b3d-8e6f-469e-a288-4e3893c544ef": {
+    "title": "Sistema de Autenticação Multifator (MFA) Adaptativo Baseado em Risco",
+    "author": "Igor Ferreira",
+    "year": 2023,
+    "area": "seguranca",
+    "summary": "Implementação de um módulo MFA que ajusta a necessidade de fatores de autenticação adicionais com base no perfil de risco da tentativa de login (localização, dispositivo, etc.).",
+    "technologies": [
+      "OAuth 2.0",
+      "OpenID Connect",
+      "Java",
+      "Spring Security",
+      "Redis"
+    ],
+    "citations": 72,
+    "file": "mfa_adaptativo_risco_igor_f.pdf"
+  },
+  "aad8e628-a789-4a23-aff2-d8d44970c452": {
+    "title": "Gerador de Paletas de Cores Inteligente para Designers Gráficos",
+    "author": "Clara Rocha",
+    "year": 2022,
+    "area": "frontend",
+    "summary": "Uma ferramenta web que utiliza teoria das cores e algoritmos de harmonia para gerar paletas de cores customizáveis, com exportação para diversos formatos.",
+    "technologies": [
+      "JavaScript",
+      "React",
+      "Chroma.js",
+      "SVG"
+    ],
+    "citations": 19,
+    "file": "paleta_cores_inteligente_clara_r.zip"
+  },
+  "97dcd734-6bb5-4713-abc0-558673d7e00b": {
+    "title": "Backend Escalável para Aplicação de Reserva de Eventos Esportivos",
+    "author": "Daniel Barbosa",
+    "year": 2023,
+    "area": "backend",
+    "summary": "Desenvolvimento da infraestrutura de backend para um sistema de reserva de ingressos e assentos para eventos esportivos, suportando alto volume de acessos simultâneos.",
+    "technologies": [
+      "C#",
+      ".NET Core",
+      "Entity Framework Core",
+      "SQL Server",
+      "Azure Functions",
+      "SignalR"
+    ],
+    "citations": 48,
+    "file": "backend_reserva_eventos_daniel_b.zip"
+  },
+  "39a29fa7-31cf-4661-8a26-18b3dc3a12e4": {
+    "title": "Aplicativo de Realidade Virtual para Treinamento de Segurança Industrial",
+    "author": "Sofia Pereira Alves",
+    "year": 2024,
+    "area": "mobile",
+    "summary": "Simulação imersiva em RV de cenários de risco em ambientes industriais, permitindo o treinamento de procedimentos de segurança sem exposição a perigos reais.",
+    "technologies": [
+      "Unreal Engine",
+      "C++",
+      "Oculus SDK",
+      "SteamVR"
+    ],
+    "citations": 35,
+    "file": "rv_treinamento_seguranca_sofia_pa.zip"
+  },
+  "78854e31-57f2-46dc-b556-7ae0268ec700": {
+    "title": "Balanceador de Carga Inteligente para Servidores Web Distribuídos",
+    "author": "Pedro Henrique Vieira",
+    "year": 2023,
+    "area": "redes",
+    "summary": "Implementação de um balanceador de carga que considera não apenas a carga atual dos servidores, mas também a latência da rede e a localização geográfica do usuário.",
+    "technologies": [
+      "Nginx (com Lua scripting)",
+      "Python",
+      "GeoIP",
+      "Consul"
+    ],
+    "citations": 60,
+    "file": "balanceador_carga_inteligente_pedro_hv.pdf"
+  },
+  "9a8b53ca-be2e-4ef4-99b9-7c1adba43974": {
+    "title": "Plataforma de Análise de Dados Genômicos para Pesquisa Médica",
+    "author": "Gabriela Moreira",
+    "year": 2022,
+    "area": "banco-dados",
+    "summary": "Um sistema para armazenamento, processamento e visualização de grandes conjuntos de dados genômicos, facilitando a colaboração entre pesquisadores da área médica.",
+    "technologies": [
+      "Apache Hadoop",
+      "Apache Spark",
+      "HBase",
+      "Python",
+      "R",
+      "D3.js"
+    ],
+    "citations": 85,
+    "file": "plataforma_dados_genomicos_gabriela_m.zip"
+  },
+  "4b9dc62a-09af-4b59-a55d-bd465799d1bd": {
+    "title": "Ferramenta de Detecção de Phishing Baseada em Análise de URL e Conteúdo de Página",
+    "author": "Matheus Cavalcanti",
+    "year": 2024,
+    "area": "seguranca",
+    "summary": "Desenvolvimento de um plugin de navegador que analisa URLs e o conteúdo de páginas web em tempo real para alertar usuários sobre possíveis sites de phishing.",
+    "technologies": [
+      "JavaScript (Browser Extension)",
+      "Python",
+      "Flask (para API de análise)",
+      "Machine Learning (para classificação)"
+    ],
+    "citations": 102,
+    "file": "deteccao_phishing_matheus_c.zip"
+  },
+  "d03c3958-70ac-46ac-b160-15e21b1bd411": {
+    "title": "Biblioteca de Componentes UI Reutilizáveis para Aplicações Web Modernas",
+    "author": "Isabella Pinto",
+    "year": 2023,
+    "area": "frontend",
+    "summary": "Criação de uma biblioteca de componentes de interface do usuário customizáveis e acessíveis, construída com foco em performance e facilidade de integração.",
+    "technologies": [
+      "Stencil.js",
+      "TypeScript",
+      "Storybook",
+      "CSS Modules"
+    ],
+    "citations": 25,
+    "file": "biblioteca_ui_componentes_isabella_p.zip"
+  },
+  "5842cd04-1cdd-457a-bdfe-d1b9dff77755": {
+    "title": "Solução Inovadora para Gestão de Frotas Urbanas",
+    "author": "Vicente Cardoso",
+    "year": 2016,
+    "area": "redes",
+    "summary": "Este projeto visa otimizar o roteamento e monitoramento de veículos em frotas urbanas, utilizando GPS e algoritmos de otimização.",
+    "technologies": [
+      "Java",
+      "Spring Boot",
+      "RabbitMQ",
+      "Leaflet.js"
+    ],
+    "citations": 53,
+    "file": "gestao_frotas_urbanas_vicente_c.zip"
+  },
+  "01322cae-36da-4f53-9485-86efbf78b077": {
+    "title": "Plataforma Gamificada para Aprendizado de Idiomas",
+    "author": "Raquel da Cunha",
+    "year": 2022,
+    "area": "mobile",
+    "summary": "Aplicativo móvel que transforma o aprendizado de novas línguas em uma jornada divertida com desafios, recompensas e interação social.",
+    "technologies": [
+      "Kotlin",
+      "Firebase",
+      "Lottie animations"
+    ],
+    "citations": 58,
+    "file": "app_idiomas_gamificado_raquel_c.apk"
+  },
+  "7c8e2b19-fe5f-44ef-8b57-00b04f65b34c": {
+    "title": "Interface Intuitiva para Análise de Dados de Vendas",
+    "author": "Mariane da Rocha",
+    "year": 2000,
+    "area": "frontend",
+    "summary": "Software web que oferece uma interface amigável para visualização e análise de métricas de vendas, auxiliando na tomada de decisões estratégicas.",
+    "technologies": [
+      "Angular",
+      "TypeScript",
+      "Chart.js",
+      "REST API"
+    ],
+    "citations": 59,
+    "file": "dashboard_vendas_mariane_r.zip"
+  },
+  "6a3e55dc-c149-49eb-8721-8974a1813ba9": {
+    "title": "Sistema de E-commerce com Recomendações Personalizadas",
+    "author": "Nathan da Costa",
+    "year": 2000,
+    "area": "banco-dados",
+    "summary": "Plataforma de comércio eletrônico que utiliza machine learning para oferecer sugestões de produtos altamente relevantes para cada usuário.",
+    "technologies": [
+      "Python",
+      "Flask",
+      "MongoDB",
+      "Content-Based Filtering"
+    ],
+    "citations": 48,
+    "file": "ecommerce_recomendacoes_nathan_c.zip"
+  },
+  "ac159f23-2d8b-4d8c-8575-d43443c6eb05": {
+    "title": "Ferramenta de Acompanhamento de Projetos Ágeis em Tempo Real",
+    "author": "Lorena da Rocha",
+    "year": 2016,
+    "area": "frontend",
+    "summary": "Aplicação web desenvolvida para facilitar o acompanhamento do progresso de tarefas e sprints em equipes que utilizam metodologias ágeis.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "ActionCable",
+      "StimulusJS"
+    ],
+    "citations": 92,
+    "file": "agile_dashboard_lorena_r.zip"
+  },
+  "ae45e7a8-a8db-4eab-aa9d-3f6c73af0b52": {
+    "title": "Análise de Segurança em Dispositivos IoT Residenciais",
+    "author": "Daniela Fernandes",
+    "year": 2021,
+    "area": "seguranca",
+    "summary": "Estudo aprofundado sobre as vulnerabilidades de segurança em dispositivos domésticos inteligentes e desenvolvimento de um guia de boas práticas.",
+    "technologies": [
+      "Wireshark",
+      "Nmap",
+      "Firmware Analysis Tools"
+    ],
+    "citations": 69,
+    "file": "seguranca_iot_residencial_daniela_f.pdf"
+  },
+  "ba0f1873-04ad-4171-a8da-6e744603bb9b": {
+    "title": "Otimizador de Logística para Entregas Urbanas",
+    "author": "Maria Fernanda Campos",
+    "year": 2021,
+    "area": "redes",
+    "summary": "O sistema propõe soluções inovadoras para o planejamento de rotas e otimização de entregas em centros urbanos, considerando tráfego e janelas de entrega.",
+    "technologies": [
+      "Python",
+      "OR-Tools",
+      "GeoPy",
+      "Flask API"
+    ],
+    "citations": 48,
+    "file": "otimizador_logistica_maria_fc.zip"
+  },
+  "93e9c731-9292-452d-aa76-ecff6a87b75e": {
+    "title": "Backend para Plataforma de Crowdfunding de Projetos Sociais",
+    "author": "Amanda Moura",
+    "year": 2006,
+    "area": "backend",
+    "summary": "Desenvolvimento do backend robusto para uma plataforma que conecta investidores a projetos sociais, gerenciando transações e progresso.",
+    "technologies": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "Stripe API"
+    ],
+    "citations": 81,
+    "file": "backend_crowdfunding_amanda_m.zip"
+  },
+  "844f8998-ad5c-4c97-bbe3-c0005e1bcfda": {
+    "title": "Sistema de Gerenciamento Acadêmico para Escolas de Pequeno Porte",
+    "author": "João Vitor da Paz",
+    "year": 2016,
+    "area": "redes",
+    "summary": "Este software oferece uma interface intuitiva para o gerenciamento de notas, frequência e comunicação entre professores, alunos e pais.",
+    "technologies": [
+      "Python",
+      "Django",
+      "SQLite",
+      "Bootstrap"
+    ],
+    "citations": 99,
+    "file": "sga_escolas_joao_vp.zip"
+  },
+  "cef783c9-cf52-4f42-a227-358da7d03a42": {
+    "title": "Ferramenta de Business Intelligence para Análise de Desempenho Comercial",
+    "author": "Carlos Eduardo das Neves",
+    "year": 2020,
+    "area": "seguranca",
+    "summary": "Integra funcionalidades de BI para análise de dados de vendas, KPIs de marketing e desempenho comercial, com foco na segurança dos dados analíticos.",
+    "technologies": [
+      "PowerBI",
+      "SQL Server",
+      "DAX",
+      "Python (para ETL)"
+    ],
+    "citations": 74,
+    "file": "bi_desempenho_comercial_carlos_en.pbix"
+  },
+  "76b65181-070d-4ef5-8321-3fcedb8ff938": {
+    "title": "Software de Usabilidade para Pequenas Empresas de Design",
+    "author": "Lorena Melo",
+    "year": 2001,
+    "area": "banco-dados",
+    "summary": "Desenvolvido para atender às demandas de usabilidade de softwares em pequenas empresas, com foco no armazenamento e análise de feedback de usuários.",
+    "technologies": [
+      "Access VB",
+      "SQL",
+      "UserTesting API"
+    ],
+    "citations": 48,
+    "file": "usabilidade_design_lorena_m.zip"
+  },
+  "1912843c-bbf4-4cc5-b9d8-fd22e7557711": {
+    "title": "Plataforma Colaborativa para Ensino Fundamental com Gamificação",
+    "author": "Nina Almeida",
+    "year": 2013,
+    "area": "backend",
+    "summary": "Uma plataforma que promove uma experiência gamificada para o ensino fundamental, incentivando a colaboração e o aprendizado através de missões e recompensas.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Devise",
+      "Sidekiq"
+    ],
+    "citations": 72,
+    "file": "plat_gamificada_ensino_nina_a.zip"
+  },
+  "b38ca2f8-a2cf-4b8d-af76-86283e276885": {
+    "title": "Sistema de Submissão de Trabalhos Acadêmicos Online",
+    "author": "Bruno da Paz",
+    "year": 2014,
+    "area": "frontend",
+    "summary": "Projeto colaborativo que visa facilitar a submissão, revisão e publicação de trabalhos acadêmicos em conferências e periódicos.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "AWS S3"
+    ],
+    "citations": 28,
+    "file": "submissao_trabalhos_bruno_p.zip"
+  },
+  "d7669f50-96ec-44ba-84d1-73fd5368d7c4": {
+    "title": "Solução Inovadora para Controle de Estoque e Logística de E-commerces",
+    "author": "Emilly Silveira",
+    "year": 2014,
+    "area": "frontend",
+    "summary": "O sistema propõe uma interface moderna para o controle de estoque em tempo real e otimização da logística de envio para lojas virtuais.",
+    "technologies": [
+      "Next.js",
+      "Tailwind CSS",
+      "Supabase",
+      "Vercel"
+    ],
+    "citations": 14,
+    "file": "controle_estoque_ecommerce_emilly_s.zip"
+  },
+  "93c7e1b7-a319-4254-a730-662aa804a66a": {
+    "title": "Aplicativo de Gestão Financeira para Pequenos Empreendedores",
+    "author": "Luiz Otávio da Cunha",
+    "year": 2019,
+    "area": "frontend",
+    "summary": "Desenvolvido para atender às demandas de controle financeiro de micro e pequenos empreendedores, com foco em usabilidade e relatórios simplificados.",
+    "technologies": [
+      "Angular",
+      "Ionic",
+      "Firebase Firestore"
+    ],
+    "citations": 58,
+    "file": "gestao_financeira_mei_luiz_oc.zip"
+  },
+  "e5b56517-d624-42d8-b242-0eee86d6378c": {
+    "title": "Plataforma de Intercâmbio de Conhecimento entre Alunos e Professores",
+    "author": "Pedro Lucas Martins",
+    "year": 2003,
+    "area": "redes",
+    "summary": "Projeto web colaborativo para facilitar a troca de materiais de estudo, dúvidas e organização de grupos de estudo entre alunos e professores.",
+    "technologies": [
+      "PHP",
+      "MySQL",
+      "JavaScript (jQuery)",
+      "Apache"
+    ],
+    "citations": 18,
+    "file": "intercambio_conhecimento_pedro_lm.zip"
+  },
+  "121777aa-d161-4280-858a-ef07879d617d": {
+    "title": "Repositório Digital Acadêmico com Gamificação",
+    "author": "Ana Julia Correia",
+    "year": 2000,
+    "area": "banco-dados",
+    "summary": "A plataforma promove uma experiência gamificada para o arquivamento e consulta de trabalhos acadêmicos, incentivando a participação.",
+    "technologies": [
+      "DSpace (customizado)",
+      "Java",
+      "PostgreSQL",
+      "Solr"
+    ],
+    "citations": 78,
+    "file": "repositorio_gamificado_ana_jc.zip"
+  },
+  "25d691a0-3ad6-4bae-ba0a-9332c35851b4": {
+    "title": "Sistema Web para Organização de Eventos Acadêmicos",
+    "author": "Sra. Rafaela Novaes",
+    "year": 2001,
+    "area": "frontend",
+    "summary": "Projeto colaborativo para gerenciamento completo de eventos acadêmicos, desde a submissão de trabalhos até a emissão de certificados.",
+    "technologies": [
+      "Python",
+      "Django",
+      "Bootstrap",
+      "Celery (para e-mails)"
+    ],
+    "citations": 37,
+    "file": "sistema_eventos_rafaela_n.zip"
+  },
+  "2aed214d-c09e-42bc-966d-cdc441f84249": {
+    "title": "Prontuário Eletrônico e Agendamento Online para Clínicas Médicas",
+    "author": "Igor Costa",
+    "year": 2006,
+    "area": "seguranca",
+    "summary": "Sistema web voltado para clínicas médicas, integrando prontuário eletrônico seguro, agendamento online e gestão de pacientes.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Devise",
+      "HIPAA compliance considerations"
+    ],
+    "citations": 15,
+    "file": "prontuario_online_clinicas_igor_c.zip"
+  },
+  "62ffee3f-3da9-41f6-b5df-a63d61d9ec6d": {
+    "title": "Aplicativo Mobile de Business Intelligence para Varejo",
+    "author": "Paulo Farias",
+    "year": 2002,
+    "area": "mobile",
+    "summary": "App que integra funcionalidades de BI para análise de dados de vendas e desempenho comercial diretamente no dispositivo móvel dos gestores.",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Google Charts"
+    ],
+    "citations": 93,
+    "file": "app_bi_varejo_paulo_f.apk"
+  },
+  "370a4087-b38a-45da-99c6-6f6683f57b3d": {
+    "title": "Plataforma de Ensino à Distância com Foco em Acessibilidade",
+    "author": "Francisco Jesus",
+    "year": 2020,
+    "area": "redes",
+    "summary": "Uma plataforma EAD que promove uma experiência de aprendizado inclusiva, seguindo as diretrizes de acessibilidade WCAG, com recursos para diversos tipos de deficiência.",
+    "technologies": [
+      "Moodle (customizado)",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "ARIA"
+    ],
+    "citations": 72,
+    "file": "ead_acessivel_francisco_j.zip"
+  },
+  "5079d63b-c5fe-436c-80ec-bf971cf03ccb": {
+    "title": "Rede Social Acadêmica para Compartilhamento de Pesquisas",
+    "author": "Olivia Aragão",
+    "year": 2020,
+    "area": "redes",
+    "summary": "Projeto web colaborativo que cria um espaço para pesquisadores compartilharem artigos, dados de pesquisa e colaborarem em projetos científicos.",
+    "technologies": [
+      "Elixir",
+      "Phoenix Framework",
+      "PostgreSQL",
+      "GraphQL"
+    ],
+    "citations": 44,
+    "file": "rede_social_academica_olivia_a.zip"
+  },
+  "c570e1cb-9be5-4293-bb8e-fd92a2674991": {
+    "title": "Dashboard de Métricas de Marketing Digital para PMEs",
+    "author": "Raul Monteiro",
+    "year": 2008,
+    "area": "mobile",
+    "summary": "Aplicativo que integra funcionalidades de BI para análise de dados de campanhas de marketing, tráfego web e desempenho em redes sociais para pequenas e médias empresas.",
+    "technologies": [
+      "React Native",
+      "Firebase",
+      "Google Analytics API",
+      "Facebook API"
+    ],
+    "citations": 54,
+    "file": "dashboard_marketing_pme_raul_m.apk"
+  },
+  "b4367801-102d-4f2c-8eba-0c31a46a49c2": {
+    "title": "Sistema de Ensino Gamificado com Foco em Segurança Cibernética",
+    "author": "Fernando Gomes",
+    "year": 2023,
+    "area": "seguranca",
+    "summary": "A plataforma promove uma experiência gamificada para o ensino de conceitos de segurança cibernética, com desafios práticos e simulações.",
+    "technologies": [
+      "Vue",
+      "Firebase",
+      "Docker (para ambientes de laboratório)"
+    ],
+    "citations": 67,
+    "file": "ensino_cybersec_gamificado_fernando_g.zip"
+  },
+  "cea30aa0-bbc2-4544-9795-3e2c3b8001c4": {
+    "title": "Ferramenta de Análise de Dados de Vendas com BI Integrado",
+    "author": "Sr. João Vitor Aragão",
+    "year": 2019,
+    "area": "backend",
+    "summary": "Sistema que integra funcionalidades de Business Intelligence para análise profunda de dados de vendas, tendências de mercado e desempenho comercial.",
+    "technologies": [
+      "Python",
+      "Flask",
+      "Pandas",
+      "Plotly Dash",
+      "SQLite"
+    ],
+    "citations": 7,
+    "file": "analise_vendas_bi_joao_va.zip"
+  },
+  "e7a26414-8710-4be7-8edc-1e26c46386bb": {
+    "title": "Gestão de Recursos Corporativos com Foco em Sustentabilidade",
+    "author": "Daniela Silva",
+    "year": 2017,
+    "area": "backend",
+    "summary": "Este projeto visa melhorar a gestão de recursos (energia, água, resíduos) em ambientes corporativos, utilizando tecnologias modernas e dashboards de acompanhamento.",
+    "technologies": [
+      "Angular",
+      "Java",
+      "Spring Boot",
+      "Hibernate",
+      "PostgreSQL"
+    ],
+    "citations": 16,
+    "file": "gestao_recursos_sustentavel_daniela_s.zip"
+  },
+  "100b3c11-fef3-43c4-898e-2aba46b88825": {
+    "title": "Software de Gestão de Usabilidade para Equipes de Design",
+    "author": "Bernardo Rodrigues",
+    "year": 2008,
+    "area": "frontend",
+    "summary": "Desenvolvido para atender às demandas de registro e análise de testes de usabilidade, com foco na colaboração entre equipes de design e desenvolvimento.",
+    "technologies": [
+      "React",
+      "Firebase",
+      "Figma API (integração)"
+    ],
+    "citations": 78,
+    "file": "gestao_usabilidade_design_bernardo_r.zip"
+  },
+  "e875f655-f9c6-4f68-b193-62acd3646cbe": {
+    "title": "Monitoramento e Alerta de Ameaças em Redes Industriais (SCADA)",
+    "author": "Thiago Porto",
+    "year": 2010,
+    "area": "mobile",
+    "summary": "Aplicativo focado em segurança da informação para sistemas SCADA, permite monitoramento em tempo real e alerta de ameaças em redes de controle industrial.",
+    "technologies": [
+      "Kotlin",
+      "MQTT",
+      "SQLite",
+      "Node-RED (para backend de alertas)"
+    ],
+    "citations": 97,
+    "file": "monitor_scada_ameacas_thiago_p.apk"
+  },
+  "edebbffc-c324-44b6-958f-d21483e5a650": {
+    "title": "Controle de Estoque Inteligente para Varejo de Moda",
+    "author": "Stella Moura",
+    "year": 2009,
+    "area": "frontend",
+    "summary": "O sistema propõe soluções inovadoras para o controle de estoque de lojas de moda, com sugestões de reposição baseadas em vendas e tendências.",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Firebase Realtime Database",
+      "Cloud Functions"
+    ],
+    "citations": 97,
+    "file": "estoque_moda_inteligente_stella_m.zip"
+  },
+  "b14429b5-b448-48ba-aa62-9bfb87a16833": {
+    "title": "Sistema de Prontuário Eletrônico com Foco em Telemedicina",
+    "author": "Emanuel Pereira",
+    "year": 2001,
+    "area": "frontend",
+    "summary": "Sistema web voltado para clínicas médicas, integrando prontuário eletrônico seguro e funcionalidades para realização de consultas por telemedicina.",
+    "technologies": [
+      "Vue.js",
+      "WebRTC",
+      "Firebase",
+      "Element UI"
+    ],
+    "citations": 89,
+    "file": "prontuario_telemedicina_emanuel_p.zip"
+  },
+  "3fe29d26-0223-4ed1-b21d-b02cbe8d0134": {
+    "title": "Gestão de Recursos Humanos com Tecnologias Web Modernas",
+    "author": "Rebeca da Mota",
+    "year": 2014,
+    "area": "seguranca",
+    "summary": "Este projeto visa melhorar a gestão de processos de RH, desde o recrutamento até a folha de pagamento, com tecnologias web seguras e eficientes.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Devise",
+      "Vue.js (para frontend interno)"
+    ],
+    "citations": 22,
+    "file": "gestao_rh_web_rebeca_m.zip"
+  },
+  "59331ae9-f17a-4271-b462-6651ce18935d": {
+    "title": "Plataforma de Acompanhamento de Dados Fitness em Tempo Real",
+    "author": "Lucas Teixeira",
+    "year": 2008,
+    "area": "seguranca",
+    "summary": "Aplicação web e mobile desenvolvida para facilitar o acompanhamento de dados de atividades físicas e saúde, com sincronização segura em tempo real.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB Atlas",
+      "Socket.IO",
+      "OAuth 2.0"
+    ],
+    "citations": 5,
+    "file": "acompanhamento_fitness_lucas_t.zip"
+  },
+  "0f5ee18a-b2f0-43ad-bbc9-268fc50695bf": {
+    "title": "Ensino Fundamental Gamificado com Realidade Aumentada",
+    "author": "Natália Mendes",
+    "year": 2010,
+    "area": "banco-dados",
+    "summary": "A plataforma promove uma experiência gamificada para o ensino fundamental, utilizando Realidade Aumentada para interagir com o conteúdo e um banco de dados para registrar o progresso.",
+    "technologies": [
+      "Unity",
+      "ARCore/ARKit",
+      "C#",
+      "Firebase Realtime Database"
+    ],
+    "citations": 76,
+    "file": "ensino_ra_gamificado_natalia_m.zip"
+  },
+  "4c564bdf-6880-44b6-b65e-2d219011a591": {
+    "title": "Portal Colaborativo para Submissão de Trabalhos Científicos",
+    "author": "Ana Beatriz da Rosa",
+    "year": 2018,
+    "area": "frontend",
+    "summary": "Projeto web colaborativo entre alunos e professores para facilitar a submissão, revisão por pares e publicação de trabalhos científicos.",
+    "technologies": [
+      "Python",
+      "Django",
+      "JavaScript",
+      "PostgreSQL"
+    ],
+    "citations": 91,
+    "file": "portal_submissao_cientifica_ana_br.zip"
+  },
+  "00cb604c-b2f5-4905-be42-c0f098eba4ec": {
+    "title": "Análise de Dados de Vendas com Business Intelligence e Machine Learning",
+    "author": "Nathan Moreira",
+    "year": 2008,
+    "area": "redes",
+    "summary": "Sistema que integra funcionalidades de BI e modelos de Machine Learning para análise preditiva de vendas e otimização de estratégias comerciais, com monitoramento de rede.",
+    "technologies": [
+      "Python",
+      "Scikit-learn",
+      "Pandas",
+      "Tableau",
+      "Prometheus"
+    ],
+    "citations": 26,
+    "file": "bi_ml_vendas_nathan_m.zip"
+  },
+  "60aaccfc-0090-4843-8c3d-af5b5c0bbe85": {
+    "title": "Controle de Estoque e Logística para E-commerce de Alimentos Frescos",
+    "author": "Catarina da Cunha",
+    "year": 2023,
+    "area": "backend",
+    "summary": "O sistema propõe soluções inovadoras para o controle de estoque de alimentos perecíveis e otimização da logística de entrega 'last-mile'.",
+    "technologies": [
+      "Go",
+      "gRPC",
+      "NATS Streaming",
+      "PostgreSQL (PostGIS)",
+      "Flutter (para app de entregadores)"
+    ],
+    "citations": 51,
+    "file": "estoque_logistica_alimentos_catarina_c.zip"
+  },
+  "0ffdb241-de5d-4413-b210-df14847ab2ce": {
+    "title": "Software Acadêmico com Interface Intuitiva para Gestão de Cursos",
+    "author": "Larissa Sales",
+    "year": 2024,
+    "area": "banco-dados",
+    "summary": "Este software oferece uma interface intuitiva para o gerenciamento de cursos, matrículas, notas e material didático, com um robusto banco de dados por trás.",
+    "technologies": [
+      "Vue",
+      "Firebase",
+      "Vuetify",
+      "Algolia (para busca)"
+    ],
+    "citations": 88,
+    "file": "software_academico_cursos_larissa_s.zip"
+  },
+  "31c18578-0efa-45bf-83cf-de500888ef5f": {
+    "title": "Acompanhamento de Dados em Tempo Real para Indústria 4.0",
+    "author": "Dr. Felipe Cardoso",
+    "year": 2000,
+    "area": "backend",
+    "summary": "A aplicação foi desenvolvida para facilitar o acompanhamento de dados de sensores e máquinas em tempo real no chão de fábrica, com backend de alta performance.",
+    "technologies": [
+      "Kafka",
+      "Apache Flink",
+      "InfluxDB",
+      "Grafana",
+      "Java (Akka)"
+    ],
+    "citations": 22,
+    "file": " industria40_dados_tempo_real_felipe_c.zip"
+  },
+  "8a500bcc-7e7c-4f9d-9dd1-4de494e352ef": {
+    "title": "Plataforma de Desenvolvimento Low-Code para Aplicações Web Simples",
+    "author": "Davi Lucas Costa",
+    "year": 2023,
+    "area": "frontend",
+    "summary": "Ferramenta que permite a criação de aplicações web básicas através de uma interface visual, sem a necessidade de escrita de código complexo, focada no frontend.",
+    "technologies": [
+      "React",
+      "Redux Toolkit",
+      "Dragula.js",
+      "Firebase"
+    ],
+    "citations": 9,
+    "file": "low_code_web_davi_lc.zip"
+  },
+  "c9aee911-77da-4bf9-b21e-10c8cb9307ca": {
+    "title": "Sistema de Gerenciamento de Projetos com Foco em Segurança de Dados",
+    "author": "Maria Vitória Pires",
+    "year": 2013,
+    "area": "seguranca",
+    "summary": "Aplicação desenvolvida para facilitar o acompanhamento de projetos, com criptografia de ponta a ponta para documentos e comunicações.",
+    "technologies": [
+      "Python",
+      "Django",
+      "Cryptography.io",
+      "PostgreSQL"
+    ],
+    "citations": 48,
+    "file": "gerenciamento_projetos_seguro_maria_vp.zip"
+  },
+  "e6bed1a8-3ceb-45f6-b906-e35b7d916a9a": {
+    "title": "Aplicativo Mobile para Logística de Entrega Otimizada por IA",
+    "author": "Brenda Aragão",
+    "year": 2018,
+    "area": "mobile",
+    "summary": "O sistema propõe soluções inovadoras para o controle de rotas de entrega, utilizando IA para otimização em tempo real, diretamente no app do entregador.",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Google OR-Tools API",
+      "Firebase"
+    ],
+    "citations": 44,
+    "file": "app_logistica_ia_brenda_a.apk"
+  },
+  "9afde570-ecf5-49d7-8922-22ca28384f32": {
+    "title": "Interface Intuitiva para Gestão de Tarefas Acadêmicas com Prazos",
+    "author": "Julia Rodrigues",
+    "year": 2020,
+    "area": "seguranca",
+    "summary": "Este software oferece uma interface amigável para o gerenciamento de tarefas acadêmicas, com lembretes de prazos e armazenamento seguro na nuvem.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Heroku",
+      "AWS S3 (para arquivos)"
+    ],
+    "citations": 84,
+    "file": "gestao_tarefas_academicas_julia_r.zip"
+  },
+  "b5d4b021-10f8-4688-b636-40d4cad250da": {
+    "title": "Gestão de Recursos Hídricos em Ambientes Corporativos Modernos",
+    "author": "Olivia da Cunha",
+    "year": 2019,
+    "area": "frontend",
+    "summary": "Este projeto visa melhorar a gestão e monitoramento do consumo de água em grandes corporações, com dashboards interativos e alertas de desperdício.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Chart.js",
+      "MQTT (para sensores IoT)"
+    ],
+    "citations": 47,
+    "file": "gestao_recursos_hidricos_olivia_c.zip"
+  },
+  "729570e7-42e8-44f5-b948-e3bcebf6e239": {
+    "title": "Acompanhamento de Dados de Saúde em Tempo Real com Wearables",
+    "author": "Kaique Pereira",
+    "year": 2004,
+    "area": "banco-dados",
+    "summary": "A aplicação foi desenvolvida para facilitar o acompanhamento de dados de saúde coletados por dispositivos vestíveis, com armazenamento seguro e eficiente em banco de dados.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Fitbit API",
+      "Garmin API"
+    ],
+    "citations": 90,
+    "file": "saude_wearables_dados_kaique_p.zip"
+  },
+  "f3918404-2b2f-46fb-a5f6-a0a9ce044151": {
+    "title": "Software Educacional para Ensino de Criptografia Básica",
+    "author": "Antônio Barros",
+    "year": 2002,
+    "area": "banco-dados",
+    "summary": "Este software oferece uma interface intuitiva para o ensino de conceitos fundamentais de criptografia, com exemplos práticos e um banco de dados para desafios.",
+    "technologies": [
+      "Python",
+      "Tkinter",
+      "SQLite"
+    ],
+    "citations": 20,
+    "file": "ensino_criptografia_antonio_b.zip"
+  },
+  "6583168c-130a-44cd-8607-2d5bb8556304": {
+    "title": "Sistema de Agendamento Online para Pequenas Empresas de Serviços",
+    "author": "Joana Rezende",
+    "year": 2022,
+    "area": "seguranca",
+    "summary": "Desenvolvido para atender às demandas de agendamento de pequenas empresas (salões, consultórios), com foco em usabilidade e segurança dos dados dos clientes.",
+    "technologies": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "FullCalendar.js",
+      "SSL"
+    ],
+    "citations": 32,
+    "file": "agendamento_online_pequenas_empresas_joana_r.zip"
+  },
+  "916203f9-174b-40d0-8e0a-da62fd2f357c": {
+    "title": "Plataforma de Gestão de Recursos Hídricos com IoT e Análise Preditiva",
+    "author": "Dra. Ana Sophia Pires",
+    "year": 2024,
+    "area": "seguranca",
+    "summary": "Este projeto visa melhorar a gestão de recursos hídricos em larga escala, utilizando sensores IoT, análise preditiva de consumo e segurança de dados.",
+    "technologies": [
+      "Vue",
+      "Firebase",
+      "Python (para backend analítico)",
+      "LoRaWAN"
+    ],
+    "citations": 69,
+    "file": "gestao_hidrica_iot_ana_sp.zip"
+  },
+  "017ca506-bac0-454e-bbb7-6a69b5f39776": {
+    "title": "Portal Colaborativo para Desenvolvimento de Software Open Source",
+    "author": "Stella Araújo",
+    "year": 2004,
+    "area": "backend",
+    "summary": "Projeto web colaborativo entre desenvolvedores para facilitar a gestão de projetos open source, com versionamento, issue tracking e fóruns de discussão.",
+    "technologies": [
+      "Angular",
+      "Java",
+      "Spring Boot",
+      "GitLab API Integration"
+    ],
+    "citations": 98,
+    "file": "portal_opensource_stella_a.zip"
+  },
+  "6730dc06-7c07-4f84-b6ad-7860a7672199": {
+    "title": "Sistema de Recomendação de Cursos Online Baseado em Perfil",
+    "author": "Levi da Paz",
+    "year": 2008,
+    "area": "banco-dados",
+    "summary": "Projeto que utiliza algoritmos de filtragem colaborativa e baseada em conteúdo para recomendar cursos online personalizados, armazenando perfis em banco de dados.",
+    "technologies": [
+      "Python",
+      "Flask",
+      "SurpriseLib",
+      "PostgreSQL"
+    ],
+    "citations": 65,
+    "file": "recomendacao_cursos_levi_p.zip"
+  },
+  "4389ba83-3d1e-42c2-beca-c7480e3c2b6b": {
+    "title": "Melhoria da Gestão de Recursos Energéticos em Edifícios Inteligentes",
+    "author": "Sra. Isabella das Neves",
+    "year": 2023,
+    "area": "backend",
+    "summary": "Este projeto visa otimizar o consumo de energia em edifícios comerciais através de um backend inteligente que controla iluminação e HVAC.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "MQTT",
+      "Sidekiq"
+    ],
+    "citations": 22,
+    "file": "gestao_energia_edificios_isabella_n.zip"
+  },
+  "e67bc289-1b93-4852-8ce7-a4afe34c2154": {
+    "title": "Monitoramento e Alerta de Ameaças em Redes Domésticas",
+    "author": "João Caldeira",
+    "year": 2018,
+    "area": "banco-dados",
+    "summary": "Focado em segurança da informação para o usuário doméstico, permite monitoramento da rede Wi-Fi e alerta sobre dispositivos suspeitos ou atividades maliciosas.",
+    "technologies": [
+      "Raspberry Pi",
+      "Python",
+      "Nmap",
+      "SQLite",
+      "Push Notifications (via Firebase)"
+    ],
+    "citations": 72,
+    "file": "monitor_redes_domesticas_joao_c.zip"
+  },
+  "ddc55801-dab3-4311-befd-ab289ba6ac77": {
+    "title": "Software de Usabilidade para Microempresas com Foco em E-commerce",
+    "author": "Vitor Hugo Teixeira",
+    "year": 2022,
+    "area": "backend",
+    "summary": "Desenvolvido para atender às demandas de análise de usabilidade de lojas virtuais de microempresas, com backend para coleta de dados de navegação.",
+    "technologies": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Hotjar (integração de conceito)"
+    ],
+    "citations": 65,
+    "file": "usabilidade_ecommerce_micro_vitor_ht.zip"
+  },
+  "cd7aecf9-44dc-4bde-8b92-e4fb038ee674": {
+    "title": "Plataforma Web para Acompanhamento de Métricas de Saúde em Tempo Real",
+    "author": "Ana Julia Costela",
+    "year": 2025,
+    "area": "frontend",
+    "summary": "Aplicação foi desenvolvida para facilitar o acompanhamento de dados de saúde (pressão, glicose, etc.) inseridos pelo usuário, com gráficos e relatórios.",
+    "technologies": [
+      "C#",
+      ".NET Blazor WASM",
+      "SignalR",
+      "SQLite"
+    ],
+    "citations": 86,
+    "file": "metricas_saude_web_ana_jc.zip"
+  },
+  "75aab6d9-7cf0-42f1-aefb-da07d7faa6ee": {
+    "title": "Sistema de Controle de Estoque e Logística para Pequenos Varejistas",
+    "author": "Bruna Pires",
+    "year": 2003,
+    "area": "backend",
+    "summary": "O sistema propõe soluções inovadoras e acessíveis para o controle de estoque e otimização da logística para pequenos comerciantes.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "ActiveAdmin"
+    ],
+    "citations": 59,
+    "file": "estoque_logistica_varejo_bruna_p.zip"
+  },
+  "7fb9c6c2-d6b7-4079-82d3-d236a471bd2f": {
+    "title": "Análise de Segurança em Redes Wi-Fi Públicas",
+    "author": "Emilly Azevedo",
+    "year": 2022,
+    "area": "redes",
+    "summary": "Estudo focado na segurança da informação em redes Wi-Fi abertas, identificando vulnerabilidades comuns e propondo medidas de proteção para usuários.",
+    "technologies": [
+      "Aircrack-ng Suite",
+      "Wireshark",
+      "Kali Linux"
+    ],
+    "citations": 5,
+    "file": "seguranca_wifi_publico_emilly_a.pdf"
+  },
+  "904fcff8-e09b-44b1-ae77-725e56f70d38": {
+    "title": "Portal Colaborativo para Organização de Grupos de Estudo Acadêmicos",
+    "author": "Kamilly Correia",
+    "year": 2019,
+    "area": "banco-dados",
+    "summary": "Projeto web que facilita a criação e gerenciamento de grupos de estudo, compartilhamento de materiais e agendamento de encontros, com banco de dados robusto.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB Atlas"
+    ],
+    "citations": 7,
+    "file": "portal_grupos_estudo_kamilly_c.zip"
+  },
+  "acf2fb40-0d71-4d73-aecf-684fbb9a8cab": {
+    "title": "Ferramenta de Análise de Dados de Desempenho de Atletas",
+    "author": "Mariane Martins",
+    "year": 2012,
+    "area": "frontend",
+    "summary": "Aplicação web desenvolvida para facilitar o acompanhamento e análise de dados de desempenho de atletas, com visualizações gráficas interativas.",
+    "technologies": [
+      "Angular",
+      "Java",
+      "Spring Boot",
+      "Chart.js"
+    ],
+    "citations": 16,
+    "file": "analise_desempenho_atletas_mariane_m.zip"
+  },
+  "7f275ca2-2ec2-4353-ac1b-035595b5cfc9": {
+    "title": "Gestão de Recursos Hídricos em Ambientes Urbanos com IoT",
+    "author": "Paulo Rocha",
+    "year": 2020,
+    "area": "frontend",
+    "summary": "Este projeto visa melhorar a gestão e monitoramento do consumo de água em áreas urbanas utilizando sensores IoT e uma plataforma web com dashboards.",
+    "technologies": [
+      "Vue.js",
+      "Node.js (para API dos sensores)",
+      "MQTT",
+      "InfluxDB"
+    ],
+    "citations": 52,
+    "file": "gestao_hidrica_urbana_iot_paulo_r.zip"
+  },
+  "c8273b5a-8ed3-4008-a84f-9df3cfca05e5": {
+    "title": "Plataforma Gamificada para Ensino de História Antiga",
+    "author": "Esther Silva",
+    "year": 2004,
+    "area": "banco-dados",
+    "summary": "Uma plataforma que promove uma experiência gamificada para o aprendizado de história antiga, com quizzes, missões e um banco de dados de fatos históricos.",
+    "technologies": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "Phaser.js"
+    ],
+    "citations": 25,
+    "file": "historia_antiga_gamificada_esther_s.zip"
+  },
+  "df3cdd5e-76f6-424e-904c-af6c785ef9b0": {
+    "title": "Análise de Dados de Vendas para Otimização de Campanhas de Marketing",
+    "author": "Marcelo da Rosa",
+    "year": 2019,
+    "area": "seguranca",
+    "summary": "Sistema que integra funcionalidades de BI para análise de dados de vendas e otimização de campanhas de marketing, com foco na proteção dos dados dos clientes.",
+    "technologies": [
+      "Python",
+      "Pandas",
+      "Matplotlib",
+      "Jupyter Notebook",
+      "Criptografia de Dados"
+    ],
+    "citations": 82,
+    "file": "analise_vendas_marketing_marcelo_r.ipynb"
+  },
+  "9b65d107-6188-4724-b6ca-152f446c0480": {
+    "title": "Interface Intuitiva para Gestão de Tarefas em Projetos de Software",
+    "author": "Lavínia Cardoso",
+    "year": 2009,
+    "area": "backend",
+    "summary": "Este software oferece uma interface amigável para o gerenciamento de tarefas, sprints e backlogs em projetos de desenvolvimento de software, com um backend ágil.",
+    "technologies": [
+      "Ruby on Rails",
+      "React (frontend)",
+      "PostgreSQL"
+    ],
+    "citations": 85,
+    "file": "gestao_tarefas_software_lavinia_c.zip"
+  },
+  "5cdfc1c3-f39b-4cc5-9053-4637d85b1452": {
+    "title": "Desenvolvimento de Pequenas Empresas com Foco em Usabilidade de Websites",
+    "author": "Stella Pereira",
+    "year": 2003,
+    "area": "banco-dados",
+    "summary": "Consultoria e desenvolvimento focado em melhorar a usabilidade de websites de pequenas empresas, com análise de dados de navegação.",
+    "technologies": [
+      "WordPress (customização)",
+      "PHP",
+      "Google Analytics",
+      "Hotjar"
+    ],
+    "citations": 54,
+    "file": "usabilidade_websites_pequenas_empresas_stella_p.pdf"
+  },
+  "21ccf068-6bf0-4a8c-bd6e-43bf250b92cc": {
+    "title": "Monitoramento e Alerta de Ameaças em Redes Wi-Fi Domésticas",
+    "author": "Noah Cunha",
+    "year": 2013,
+    "area": "redes",
+    "summary": "Focado em segurança da informação para usuários domésticos, este sistema permite monitoramento da rede Wi-Fi, identificação de dispositivos não autorizados e alerta sobre atividades suspeitas.",
+    "technologies": [
+      "Python",
+      "Scapy",
+      "Raspberry Pi",
+      "Telegram Bot API (para alertas)"
+    ],
+    "citations": 72,
+    "file": "monitor_wifi_domestico_noah_c.zip"
+  },
+  "7ca79b31-90e8-41c7-b769-63ebd2b273ce": {
+    "title": "Gestão de Recursos Hídricos em Ambientes Rurais com IoT",
+    "author": "Fernanda Dias",
+    "year": 2017,
+    "area": "banco-dados",
+    "summary": "Este projeto visa melhorar a gestão e o uso eficiente da água na agricultura, utilizando sensores IoT e um sistema de banco de dados para análise de consumo.",
+    "technologies": [
+      "Arduino",
+      "LoRaWAN",
+      "PHP",
+      "MySQL",
+      "Grafana"
+    ],
+    "citations": 33,
+    "file": "gestao_agua_rural_iot_fernanda_d.zip"
+  },
+  "e6da4f84-2528-4ed7-8105-d9da2a5f2016": {
+    "title": "Plataforma Gamificada para Ensino de Programação para Crianças",
+    "author": "Pedro Lucas Costa",
+    "year": 2010,
+    "area": "frontend",
+    "summary": "Uma plataforma web que promove uma experiência lúdica e gamificada para introduzir conceitos básicos de programação para crianças do ensino fundamental.",
+    "technologies": [
+      "Blockly (Google)",
+      "JavaScript",
+      "HTML5 Canvas"
+    ],
+    "citations": 10,
+    "file": "programacao_criancas_gamificada_pedro_lc.zip"
+  },
+  "0e72bc1b-0645-47d2-9cbd-e3968aae5f5e": {
+    "title": "Gestão de Recursos de TI em Ambientes Corporativos com Cloud Computing",
+    "author": "Vitor Gabriel Fernandes",
+    "year": 2021,
+    "area": "backend",
+    "summary": "Este projeto visa melhorar a gestão de recursos de TI (servidores, armazenamento, etc.) em ambientes corporativos, utilizando soluções de computação em nuvem e um backend de orquestração.",
+    "technologies": [
+      "AWS (EC2, S3, Lambda)",
+      "Python (Boto3)",
+      "Terraform",
+      "Docker"
+    ],
+    "citations": 9,
+    "file": "gestao_recursos_ti_cloud_vitor_gf.zip"
+  },
+  "7f374fc3-f499-489f-a5d2-81af4ac1924b": {
+    "title": "Ferramenta de Acompanhamento de Dados de Performance de Servidores em Tempo Real",
+    "author": "Ian Cavalcanti",
+    "year": 2009,
+    "area": "redes",
+    "summary": "Aplicação desenvolvida para facilitar o acompanhamento de métricas de performance de servidores (CPU, memória, rede) em tempo real, com alertas configuráveis.",
+    "technologies": [
+      "Prometheus",
+      "Grafana",
+      "Node Exporter",
+      "Alertmanager"
+    ],
+    "citations": 90,
+    "file": "monitor_servidores_tempo_real_ian_c.zip"
+  },
+  "bae8e999-a650-44a5-9b9c-34aa02f1ddc2": {
+    "title": "Sistema de Gerenciamento de Clínicas Veterinárias com Foco em Segurança de Dados",
+    "author": "Maria Cecília Silva",
+    "year": 2014,
+    "area": "backend",
+    "summary": "Software focado na segurança da informação para clínicas veterinárias, permitindo gerenciamento de pacientes, agendamentos e prontuários com criptografia.",
+    "technologies": [
+      "C#",
+      ".NET Framework",
+      "SQL Server",
+      "Criptografia AES"
+    ],
+    "citations": 75,
+    "file": "gestao_clinica_vet_segura_maria_cs.zip"
+  },
+  "fb29b011-c801-4a12-a0c0-a06b9ae4682c": {
+    "title": "Interface Intuitiva para Gerenciamento de Finanças Pessoais",
+    "author": "Dra. Caroline Nogueira",
+    "year": 2021,
+    "area": "backend",
+    "summary": "Este software oferece uma interface amigável para o gerenciamento de finanças pessoais, com categorização de despesas, planejamento e relatórios, suportado por um backend seguro.",
+    "technologies": [
+      "React Native (para app)",
+      "Node.js",
+      "Express",
+      "MongoDB Atlas"
+    ],
+    "citations": 98,
+    "file": "financas_pessoais_intuitiva_caroline_n.zip"
+  },
+  "9a595075-76f6-43e6-9394-ba44f2cc50f9": {
+    "title": "Software de Gerenciamento de Tarefas Acadêmicas com Colaboração em Tempo Real",
+    "author": "Maria Alice Cunha",
+    "year": 2017,
+    "area": "banco-dados",
+    "summary": "Este software oferece uma interface intuitiva para o gerenciamento de tarefas acadêmicas em grupo, com funcionalidades de colaboração em tempo real e armazenamento em banco de dados.",
+    "technologies": [
+      "Angular",
+      "Firebase Realtime Database",
+      "Google Authentication"
+    ],
+    "citations": 96,
+    "file": "gestao_tarefas_colaborativa_maria_ac.zip"
+  },
+  "2511a214-cc3e-4f13-9072-60fa613cafa2": {
+    "title": "Sistema de Controle de Estoque e Logística para Pequenos Produtores",
+    "author": "Isadora Lima",
+    "year": 2016,
+    "area": "redes",
+    "summary": "O sistema propõe soluções inovadoras para o controle de estoque e otimização da logística de distribuição para pequenos produtores agrícolas, com comunicação via rede.",
+    "technologies": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "MQTT (para sensores de condição)"
+    ],
+    "citations": 80,
+    "file": "estoque_logistica_pequeno_produtor_isadora_l.zip"
+  },
+  "783775ed-48b6-489a-8f1f-9bf79d319d5e": {
+    "title": "Portal Colaborativo para Compartilhamento de Material de Estudo Universitário",
+    "author": "Ana Sophia Nogueira",
+    "year": 2010,
+    "area": "banco-dados",
+    "summary": "Projeto web que facilita o compartilhamento de resumos, anotações e materiais de estudo entre universitários, com um sistema de versionamento e tags em banco de dados.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "AWS S3 (para arquivos)"
+    ],
+    "citations": 73,
+    "file": "portal_material_estudo_ana_sn.zip"
+  },
+  "f278081d-077b-4045-bb45-7e11db102e7c": {
+    "title": "Otimização de Logística e Controle de Estoque para Indústria Alimentícia",
+    "author": "Pedro Henrique Campos",
+    "year": 2002,
+    "area": "redes",
+    "summary": "O sistema propõe soluções inovadoras para o controle de estoque de produtos perecíveis e otimização da cadeia logística na indústria alimentícia, utilizando redes de sensores.",
+    "technologies": [
+      "Java Enterprise Edition (JEE)",
+      "Oracle DB",
+      "JMS",
+      "RFID"
+    ],
+    "citations": 97,
+    "file": "logistica_alimentos_industria_pedro_hc.zip"
+  },
+  "caf146b0-7e33-4ac3-8546-385de5e93ac1": {
+    "title": "Monitoramento de Redes Sociais para Análise de Reputação de Marcas",
+    "author": "Alexia Barbosa",
+    "year": 2023,
+    "area": "backend",
+    "summary": "Backend focado em coletar e analisar menções de marcas em redes sociais, utilizando processamento de linguagem natural para classificar o sentimento e gerar relatórios de reputação.",
+    "technologies": [
+      "Python",
+      "Tweepy",
+      "NLTK",
+      "Flask",
+      "Elasticsearch"
+    ],
+    "citations": 8,
+    "file": "monitor_reputacao_marcas_alexia_b.zip"
+  },
+  "44aab7a1-441b-4b6d-a250-a5a63191953b": {
+    "title": "Gestão de Recursos em Ambientes de Cloud Híbrida",
+    "author": "Lara Novaes",
+    "year": 2025,
+    "area": "backend",
+    "summary": "Este projeto visa melhorar a gestão e orquestração de recursos computacionais distribuídos em ambientes de nuvem híbrida (pública e privada) através de um backend centralizado.",
+    "technologies": [
+      "Kubernetes",
+      "Terraform",
+      "Python",
+      "Prometheus",
+      "AWS",
+      "OpenStack"
+    ],
+    "citations": 54,
+    "file": "gestao_cloud_hibrida_lara_n.zip"
+  },
+  "38b52922-a7ba-4b6a-9230-7bcf9ea86843": {
+    "title": "Plataforma Gamificada para Reabilitação Fisioterapêutica Domiciliar",
+    "author": "Murilo da Conceição",
+    "year": 2022,
+    "area": "banco-dados",
+    "summary": "Aplicativo que utiliza jogos e sensores de movimento para auxiliar na reabilitação fisioterapêutica em casa, com acompanhamento de progresso salvo em banco de dados.",
+    "technologies": [
+      "Unity",
+      "C#",
+      "Kinect SDK (ou similar)",
+      "Firebase Realtime Database"
+    ],
+    "citations": 62,
+    "file": "reabilitacao_gamificada_murilo_c.zip"
+  },
+  "4d457467-e3a0-4e12-8d18-3cc01109be85": {
+    "title": "Sistema de Gerenciamento de Projetos Científicos em Redes de Pesquisa",
+    "author": "Dra. Maria Cecília da Rocha",
+    "year": 2022,
+    "area": "redes",
+    "summary": "Projeto web colaborativo para facilitar o gerenciamento de projetos de pesquisa entre diferentes instituições, com foco na comunicação e compartilhamento seguro de dados via rede.",
+    "technologies": [
+      "Next.js",
+      "Supabase",
+      "GraphQL",
+      "WebSockets"
+    ],
+    "citations": 63,
+    "file": "gerenciamento_projetos_cientificos_maria_cr.zip"
+  },
+  "e76db3ee-c900-463b-a0b7-2a6f70daeaa3": {
+    "title": "Análise de Dados de Vendas e Desempenho Comercial com BI e IoT",
+    "author": "Carolina Monteiro",
+    "year": 2016,
+    "area": "seguranca",
+    "summary": "Integra funcionalidades de BI com dados de sensores IoT (ex: fluxo de clientes em loja) para análise de vendas e desempenho comercial, com segurança de dados.",
+    "technologies": [
+      "Python",
+      "Flask",
+      "MQTT",
+      "InfluxDB",
+      "Grafana",
+      "TLS/SSL"
+    ],
+    "citations": 38,
+    "file": "bi_iot_vendas_carolina_m.zip"
+  },
+  "c3464997-f5b7-43b5-b411-1d846ca2acf3": {
+    "title": "Monitoramento de Segurança em Redes de Pequenas Empresas",
+    "author": "Sra. Alice da Costa",
+    "year": 2010,
+    "area": "mobile",
+    "summary": "Aplicativo mobile focado em segurança da informação, permite que donos de pequenas empresas monitorem e recebam alertas sobre ameaças em suas redes locais.",
+    "technologies": [
+      "React Native",
+      "Node.js (para backend de alertas)",
+      "Push Notifications",
+      "Nmap (via servidor)"
+    ],
+    "citations": 99,
+    "file": "monitor_seguranca_pme_app_alice_c.apk"
+  },
+  "759e7f1d-3050-4b2b-8a82-ff31c4dd4fe3": {
+    "title": "Gestão de Recursos em Ambientes Corporativos com Foco em Mobilidade",
+    "author": "Sr. Arthur Pinto",
+    "year": 2021,
+    "area": "mobile",
+    "summary": "Este projeto visa melhorar a gestão de recursos (salas de reunião, equipamentos) em ambientes corporativos através de um aplicativo mobile para reservas e check-in/out.",
+    "technologies": [
+      "Flutter",
+      "Firebase Firestore",
+      "Google Calendar API"
+    ],
+    "citations": 90,
+    "file": "gestao_recursos_corp_mobile_arthur_p.zip"
+  },
+  "38124853-adb3-46e1-9829-49c4b929ce57": {
+    "title": "Software Acadêmico com Interface Intuitiva para Gerenciamento de Bibliotecas",
+    "author": "Thiago Mendes",
+    "year": 2009,
+    "area": "banco-dados",
+    "summary": "Este software oferece uma interface amigável para o gerenciamento de acervos, empréstimos e usuários em bibliotecas acadêmicas, com um banco de dados otimizado.",
+    "technologies": [
+      "JavaFX",
+      "SQLite",
+      "Apache Lucene (para busca)"
+    ],
+    "citations": 65,
+    "file": "sga_bibliotecas_thiago_m.zip"
+  },
+  "fe5aef9c-acd3-4060-b7a8-bc2b3b2b17c2": {
+    "title": "Monitoramento e Alerta de Ameaças em Redes de Automação Residencial",
+    "author": "Dra. Alícia Azevedo",
+    "year": 2025,
+    "area": "seguranca",
+    "summary": "Focado em segurança da informação para casas inteligentes, permite monitoramento de dispositivos de automação residencial e alerta sobre vulnerabilidades ou atividades suspeitas.",
+    "technologies": [
+      "Python",
+      "Home Assistant (integração)",
+      "MQTT Secure",
+      "OpenVPN"
+    ],
+    "citations": 19,
+    "file": "seguranca_automacao_residencial_alicia_a.pdf"
+  },
+  "0434c87c-f261-4643-ab7c-b124007a6b44": {
+    "title": "Plataforma Web para Usabilidade e Testes A/B em Landing Pages",
+    "author": "Maysa Campos",
+    "year": 2024,
+    "area": "frontend",
+    "summary": "Desenvolvido para atender às demandas de otimização de conversão, esta plataforma permite criar variações de landing pages e realizar testes A/B para analisar a usabilidade.",
+    "technologies": [
+      "React",
+      "Node.js (para backend de tracking)",
+      "Google Optimize API"
+    ],
+    "citations": 56,
+    "file": "testes_ab_landing_pages_maysa_c.zip"
+  },
+  "ad2f44bd-caab-4357-b599-05d73ef88baa": {
+    "title": "Sistema de Gamificação para Engajamento de Alunos no Ensino Fundamental",
+    "author": "Marcos Vinicius Moreira",
+    "year": 2003,
+    "area": "backend",
+    "summary": "A plataforma promove uma experiência gamificada para aumentar o engajamento de alunos do ensino fundamental, com um backend para gerenciar pontuações e recompensas.",
+    "technologies": [
+      "PHP",
+      "Symfony",
+      "MySQL",
+      "Redis (para leaderboards)"
+    ],
+    "citations": 53,
+    "file": "gamificacao_ensino_fundamental_marcos_vm.zip"
+  },
+  "58b1fbf8-fa76-4149-ae8a-036b50321713": {
+    "title": "Controle de Estoque e Logística para Agricultura Familiar via App Mobile",
+    "author": "Carolina Freitas",
+    "year": 2025,
+    "area": "mobile",
+    "summary": "O sistema propõe soluções inovadoras para o controle de produção e escoamento para pequenos agricultores através de um aplicativo mobile simples e direto.",
+    "technologies": [
+      "React Native",
+      "Supabase (BaaS)",
+      "Offline Sync"
+    ],
+    "citations": 47,
+    "file": "app_agricultura_familiar_carolina_f.apk"
+  },
+  "7e2fbc29-443c-4871-9739-ef8f4eb9ee7f": {
+    "title": "Ferramenta de Segurança para Análise de Tráfego de Rede em Tempo Real",
+    "author": "Ryan Gonçalves",
+    "year": 2017,
+    "area": "frontend",
+    "summary": "Interface web focada em segurança da informação, permite visualização e análise de tráfego de rede em tempo real, com identificação de pacotes suspeitos.",
+    "technologies": [
+      "JavaScript",
+      "Cytoscape.js",
+      "WebSockets",
+      "Node.js (backend para captura)"
+    ],
+    "citations": 47,
+    "file": "analise_trafego_rede_visual_ryan_g.zip"
+  },
+  "bfadd492-2820-4425-a937-114c25aeb719": {
+    "title": "Gestão de Recursos Corporativos com Foco em Eficiência Energética",
+    "author": "Yuri Lopes",
+    "year": 2008,
+    "area": "frontend",
+    "summary": "Este projeto visa melhorar a gestão de consumo energético em ambientes corporativos, com uma interface web moderna para monitoramento e relatórios.",
+    "technologies": [
+      "Vue",
+      "Firebase Realtime Database",
+      "Chart.js",
+      "Material Design"
+    ],
+    "citations": 87,
+    "file": "eficiencia_energetica_dashboard_yuri_l.zip"
+  },
+  "7ef91806-3b08-4485-99ed-66459ca1a8ee": {
+    "title": "Acompanhamento de Dados de Saúde e Bem-Estar em Tempo Real",
+    "author": "Otávio Rocha",
+    "year": 2020,
+    "area": "redes",
+    "summary": "Aplicação desenvolvida para facilitar o acompanhamento de dados de saúde e bem-estar, com transmissão segura e em tempo real para profissionais e pacientes.",
+    "technologies": [
+      "C#",
+      ".NET MAUI",
+      "Azure IoT Hub",
+      "SignalR"
+    ],
+    "citations": 18,
+    "file": "saude_bem_estar_tempo_real_otavio_r.zip"
+  },
+  "e1fad8b5-786e-42ea-a48f-f6132516c041": {
+    "title": "Portal Colaborativo para Projetos de Pesquisa Interdisciplinar",
+    "author": "Laís Farias",
+    "year": 2001,
+    "area": "redes",
+    "summary": "Projeto web que facilita a colaboração entre pesquisadores de diferentes áreas, com ferramentas de comunicação, compartilhamento de arquivos e gestão de cronogramas.",
+    "technologies": [
+      "Angular",
+      "Java",
+      "Spring Cloud",
+      "RabbitMQ"
+    ],
+    "citations": 13,
+    "file": "portal_pesquisa_interdisciplinar_lais_f.zip"
+  },
+  "35df08d8-2494-483a-88f3-2ee1803cb468": {
+    "title": "Sistema de Controle de Acesso Baseado em Biometria e Blockchain",
+    "author": "Sr. Fernando Melo",
+    "year": 2002,
+    "area": "seguranca",
+    "summary": "O sistema propõe uma solução inovadora para controle de acesso físico e lógico, utilizando reconhecimento biométrico e registrando os acessos de forma imutável em blockchain.",
+    "technologies": [
+      "Python",
+      "OpenCV",
+      "Hyperledger Fabric",
+      "Raspberry Pi (para leitores)"
+    ],
+    "citations": 50,
+    "file": "controle_acesso_biometria_blockchain_fernando_m.zip"
+  },
+  "ad6a29b5-b3a8-4123-a9d6-25c342686eec": {
+    "title": "Software de Gerenciamento de Tarefas Acadêmicas com Foco em Produtividade",
+    "author": "Agatha da Conceição",
+    "year": 2008,
+    "area": "mobile",
+    "summary": "Este software mobile oferece uma interface intuitiva para o gerenciamento de tarefas acadêmicas, utilizando técnicas de produtividade como Pomodoro e Eisenhower Matrix.",
+    "technologies": [
+      "Swift (iOS)",
+      "Realm DB",
+      "UserNotifications Framework"
+    ],
+    "citations": 56,
+    "file": "gestao_tarefas_produtividade_agatha_c.ipa"
+  },
+  "cd802aa2-3303-43dc-99e6-9ea499575aec": {
+    "title": "Desenvolvimento de Website Acessível para Organizações Não Governamentais",
+    "author": "Lorenzo da Conceição",
+    "year": 2006,
+    "area": "backend",
+    "summary": "Desenvolvido para atender às demandas de ONGs, este projeto foca na criação de um sistema de gerenciamento de conteúdo (CMS) acessível e fácil de usar para seus websites.",
+    "technologies": [
+      "PHP",
+      "WordPress (desenvolvimento de tema/plugin)",
+      "ACF",
+      "WCAG"
+    ],
+    "citations": 70,
+    "file": "website_ong_acessivel_lorenzo_c.zip"
+  },
+  "580cc083-84a6-4517-a23a-795997d9a3e6": {
+    "title": "Ferramenta de Análise de Usabilidade para Aplicações Mobile",
+    "author": "Natália Viana",
+    "year": 2001,
+    "area": "banco-dados",
+    "summary": "Desenvolvido para coletar e analisar dados de interação de usuários em aplicativos móveis, fornecendo insights sobre usabilidade e pontos de fricção.",
+    "technologies": [
+      "Python (backend de análise)",
+      "MongoDB",
+      "React Native (SDK de coleta)"
+    ],
+    "citations": 92,
+    "file": "analise_usabilidade_mobile_natalia_v.zip"
+  },
+  "2d642e87-f2d6-4105-b7cf-5d55964d98ab": {
+    "title": "Software de Gerenciamento de Projetos de Pesquisa com Foco em Financiamento",
+    "author": "Esther Carvalho",
+    "year": 2023,
+    "area": "seguranca",
+    "summary": "Este software oferece uma interface intuitiva para o gerenciamento de projetos de pesquisa, com módulos específicos para controle de orçamento, prestação de contas e segurança dos dados financeiros.",
+    "technologies": [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "ActiveAdmin",
+      "SSL/TLS"
+    ],
+    "citations": 26,
+    "file": "gestao_projetos_pesquisa_fin_esther_c.zip"
+  },
+  "58dac149-719e-41c3-a688-2e7543c56b72": {
+    "title": "Plataforma Gamificada para Ensino de Conceitos de Finanças Pessoais",
+    "author": "Marcos Vinicius da Paz",
+    "year": 2000,
+    "area": "redes",
+    "summary": "Uma plataforma que promove uma experiência gamificada para o ensino fundamental de finanças, com desafios de orçamento e simulações de investimento, com interação em rede.",
+    "technologies": [
+      "Node.js",
+      "Socket.IO",
+      "React",
+      "MongoDB"
+    ],
+    "citations": 61,
+    "file": "financas_gamificadas_marcos_vp.zip"
+  },
+  "aa2fadb4-c7b9-4202-aae6-e80fd93452f8": {
+    "title": "Sistema de Gestão de Recursos Hídricos para Pequenas Comunidades",
+    "author": "Srta. Sophie Pires",
+    "year": 2016,
+    "area": "mobile",
+    "summary": "Este projeto visa melhorar a gestão e distribuição de água em pequenas comunidades através de um aplicativo mobile para monitoramento de consumo e comunicação de problemas.",
+    "technologies": [
+      "Flutter",
+      "Firebase Realtime Database",
+      "Google Maps API"
+    ],
+    "citations": 30,
+    "file": "gestao_hidrica_comunidades_sophie_p.apk"
+  },
+  "322a89e5-3a9f-4b12-af54-ae5761455944": {
+    "title": "Prontuário Eletrônico Seguro para Clínicas de Fisioterapia",
+    "author": "Sr. Luiz Otávio Ferreira",
+    "year": 2011,
+    "area": "seguranca",
+    "summary": "Sistema web voltado para clínicas de fisioterapia, integrando prontuário eletrônico com histórico de tratamento, agendamento e foco na segurança dos dados do paciente.",
+    "technologies": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "Vue.js (para frontend)",
+      "Criptografia de Dados"
+    ],
+    "citations": 97,
+    "file": "prontuario_fisioterapia_seguro_luiz_of.zip"
+  },
+  "e92aa6ef-0bb9-4609-aa5e-a4f2037532b5": {
+    "title": "Plataforma de Ensino Fundamental com Foco em Pensamento Computacional",
+    "author": "Sarah Rezende",
+    "year": 2014,
+    "area": "seguranca",
+    "summary": "Uma plataforma que promove uma experiência gamificada para o ensino de pensamento computacional e lógica de programação para crianças, em um ambiente online seguro.",
+    "technologies": [
+      "Blockly",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "OAuth 2.0"
+    ],
+    "citations": 87,
+    "file": "pensamento_computacional_kids_sarah_r.zip"
+  },
+  "a62d9cbe-19e8-42e7-98d7-fc881c15a7df": {
+    "title": "Backend para Aplicativo de Rede Social Focado em Hobbies",
+    "author": "Benjamin da Cunha",
+    "year": 2008,
+    "area": "backend",
+    "summary": "Desenvolvimento do backend para um aplicativo mobile que conecta pessoas com hobbies em comum, permitindo a criação de grupos, eventos e compartilhamento de experiências.",
+    "technologies": [
+      "Python",
+      "Django REST framework",
+      "PostgreSQL",
+      "Celery",
+      "Redis"
+    ],
+    "citations": 39,
+    "file": "backend_rede_social_hobbies_benjamin_c.zip"
+  },
+  "b60577b1-935d-44f4-a700-3c6a9e4865d5": {
+    "title": "Sistema de Controle de Acesso Lógico Baseado em Políticas de Segurança Dinâmicas",
+    "author": "Catarina Silveira",
+    "year": 2004,
+    "area": "seguranca",
+    "summary": "O sistema propõe soluções inovadoras para o controle de acesso a sistemas e dados, com políticas de segurança que se adaptam dinamicamente ao contexto do usuário.",
+    "technologies": [
+      "Keycloak",
+      "Java",
+      "Spring Security",
+      "Open Policy Agent (OPA)"
+    ],
+    "citations": 83,
+    "file": "controle_acesso_dinamico_catarina_s.zip"
+  }
+}
