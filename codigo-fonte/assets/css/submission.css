@@ -1,0 +1,305 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Search Section */
+.search-section {
+    width: 100%;
+    min-height: 500px;
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/natureza.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Container principal */
+.search-container {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Header (titulo acima da barra, se quiser usar) */
+.search-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #0A1931;
+    margin-bottom: 40px;
+}
+
+/* Formulário de busca */
+.search-form {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Campo de input */
+/* Campo de texto da busca */
+.search-input {
+    flex: 1 1 100%;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #F5F7FA;
+    color: #0A1931;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+}
+
+/* Botão principal (ao lado do input) */
+.search-button {
+    flex: 1 1 100%;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #0A1931;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #185ADB;
+}
+
+/* Área de filtros abaixo da search bar */
+/* Área de filtros */
+.search-filters {
+    display: flex;
+    flex-wrap: wrap; /* 🎯 Deixa quebrar para a linha de baixo se não couber */
+    justify-content: center; /* Mantém centralizado quando quebra */
+    gap: 10px;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    padding: 0 10px; /* Um pouquinho de padding para não colar nas bordas */
+}
+
+/* Cada botão de filtro */
+.filter-item {
+    flex: 0 1 auto;
+}
+
+.filter-select {
+    width: 100%; /* Ocupa todo o espaço disponível do item */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid #0A1931;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #0A1931;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-select:hover {
+    background-color: #E2E8F0;
+}
+
+/* Área que lista todos os projetos */
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Caixa de cada projeto */
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #dce3f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    margin: 40px auto;
+    width: 70%; /* Ocupa 70% da tela */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  
+/* Pequena animação no hover */
+.project-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do projeto */
+.project-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #185ADB;
+    margin-bottom: 8px;
+}
+
+/* Link no título */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-link:hover {
+    text-decoration: underline;
+  }
+
+/* Tags logo abaixo do título */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+
+/* Estilo das tags */
+.project-tag {
+    background-color: #e3edff;
+    color: #185ADB;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+/* Descrição do projeto */
+.project-description {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5; /* Light grey background */
+    color: #333; /* Charcoal text */
+}
+
+.container {
+    max-width: 800px; /* Limit form width for better readability */
+}
+
+.submission-card {
+    background-color: #ffffff; /* White card background */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+.card-header {
+    background-color: #e0e0e0; /* Lighter grey header */
+    border-bottom: 1px solid #bdbdbd; /* Separator line */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.card-header h1 {
+    font-weight: 500;
+    color: #424242; /* Darker grey for header text */
+}
+
+.card-body {
+    padding: 2rem; /* More padding inside the card */
+}
+
+/* Material Design Inspired Input Fields */
+.form-floating > .form-control {
+    border: none;
+    border-bottom: 1px solid #bdbdbd; /* Bottom border only */
+    border-radius: 0;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.form-floating > .form-control:focus {
+    box-shadow: none;
+    border-bottom: 2px solid #424242; /* Darker border on focus */
+}
+
+.form-floating > label {
+    color: #757575; /* Grey label */
+    padding-left: 0;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    transform: scale(0.85) translateY(-0.8rem) translateX(0.15rem); /* Adjust label animation */
+    color: #424242;
+}
+
+.form-select {
+    border: 1px solid #bdbdbd;
+    background-color: #fafafa;
+}
+
+.form-select:focus {
+    border-color: #424242;
+    box-shadow: none;
+}
+
+
+/* Buttons */
+.file-button {
+    background-color: #eeeeee; /* Light grey button */
+    color: #424242; /* Dark grey text */
+    border: 1px dashed #bdbdbd; /* Dashed border */
+    text-align: left;
+    font-weight: 500;
+}
+
+.file-button:hover {
+    background-color: #e0e0e0;
+    border-color: #9e9e9e;
+}
+
+.submit-button {
+    background-color: #0A1931; /* Charcoal primary button */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+    background-color: #424242; /* Darker charcoal on hover */
+}
+
+/* Checkbox */
+.form-check-input {
+    border-color: #bdbdbd;
+}
+.form-check-input:checked {
+    background-color: #616161;
+    border-color: #616161;
+}
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(97, 97, 97, 0.25); /* Charcoal focus ring */
+}
+
+.form-check-label {
+    color: #616161; /* Medium grey */
+    font-size: 0.9rem;
+}
+
+.card-footer {
+    background-color: #f5f5f5; /* Match body background */
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.85rem;
+}

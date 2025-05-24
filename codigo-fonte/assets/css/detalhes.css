@@ -1,0 +1,367 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto", sans-serif;
+  }
+  
+  /* Search Section */
+  .search-section {
+    width: 100%;
+    min-height: 500px;
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/natureza.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  /* Container principal */
+  .search-container {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  /* Header (titulo acima da barra, se quiser usar) */
+  .search-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #0a1931;
+    margin-bottom: 40px;
+  }
+  
+  /* Formulário de busca */
+  .search-form {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Campo de input */
+  /* Campo de texto da busca */
+  .search-input {
+    flex: 1 1 100%;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f5f7fa;
+    color: #0a1931;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+  }
+  
+  /* Botão principal (ao lado do input) */
+  .search-button {
+    flex: 1 1 100%;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #0a1931;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #185adb;
+  }
+  
+  /* Área de filtros abaixo da search bar */
+  /* Área de filtros */
+  .search-filters {
+    display: flex;
+    flex-wrap: wrap; /* 🎯 Deixa quebrar para a linha de baixo se não couber */
+    justify-content: center; /* Mantém centralizado quando quebra */
+    gap: 10px;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    padding: 0 10px; /* Um pouquinho de padding para não colar nas bordas */
+  }
+  
+  /* Cada botão de filtro */
+  .filter-item {
+    flex: 0 1 auto;
+  }
+  
+  .filter-select {
+    width: 100%; /* Ocupa todo o espaço disponível do item */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0a1931;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #0a1931;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-select:hover {
+    background-color: #e2e8f0;
+  }
+  
+  /* Área que lista todos os projetos */
+  .results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Caixa de cada projeto */
+  .project-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+    border: 1px solid #dce3f0;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    margin: 40px auto;
+    width: 70%; /* Ocupa 70% da tela */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Pequena animação no hover */
+  .project-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+  }
+  
+  /* Título do projeto */
+  .project-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #185adb;
+    margin-bottom: 8px;
+  }
+  
+  /* Link no título */
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .project-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Tags logo abaixo do título */
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  /* Estilo das tags */
+  .project-tag {
+    background-color: #e3edff;
+    color: #185adb;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  
+  /* Descrição do projeto */
+  .project-description {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .auth-user__info-logout {
+    font-size: 14px;
+    color: #0a1931;
+    text-decoration: none;
+    margin-left: auto;
+  }
+  
+  .login-section,
+  .signup-section {
+    max-width: 400px;
+    margin: 2em auto;
+    background: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-section h2,
+  .signup-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #0a1931;
+  }
+  
+  .login-section form,
+  .signup-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .login-section input,
+  .signup-section input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-section button,
+  .signup-section button {
+    padding: 0.5em;
+    background: #0a1931;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .login-section button:hover,
+  .signup-section button:hover {
+    background: #185adb;
+  }
+  
+
+/* Estilos específicos para a página de detalhes do projeto */
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    font-family: "Roboto", sans-serif; /* Garante a fonte base */
+}
+
+/* Container principal para o conteúdo da página de detalhes */
+.project-detail-main-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card principal que exibe todas as informações do projeto */
+.project-detail-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px 40px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* 'display: none;' é controlado via JS para mostrar após o carregamento */
+}
+
+/* Título do projeto na página de detalhes */
+.project-detail-card .project-title {
+    font-size: 2.2em;
+    color: #0A1931;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #185ADB;
+    text-align: left;
+}
+
+/* Cabeçalhos das seções internas do card (Ex: "Resumo", "Equipe") */
+.project-detail-card h3 {
+    font-size: 1.4em;
+    color: #185ADB;
+    margin-bottom: 10px;
+}
+
+/* Estilo base para parágrafos e spans dentro do card */
+.project-detail-card p,
+.project-detail-card span {
+    font-size: 1.05em;
+    color: #455a64;
+    line-height: 1.7;
+}
+
+/* Estilo para os rótulos em negrito (Ex: "Ano de Publicação:") */
+.project-detail-card strong {
+    color: #0A1931;
+    font-weight: 600;
+}
+
+/* Container para o grid de informações pontuais (Ano, Área, Tecnologias, etc.) */
+.project-detail-card .project-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 15px 0;
+}
+
+/* Estilo para cada item de informação dentro do grid */
+.project-detail-card .project-info-grid p {
+    margin: 0;
+    padding: 8px;
+}
+
+/* Seção de download de arquivos */
+.project-detail-card .attached-files a {
+    display: inline-block;
+    background-color: #185ADB;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.project-detail-card .attached-files a:hover {
+    background-color: #0A1931;
+}
+
+/* Mensagem exibida quando um projeto não é encontrado */
+.project-not-found-message {
+    background-color: #fff3cd;
+    color: #664d03;
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+    /* 'display: none;' é controlado via JS */
+}
+
+/* Título dentro da mensagem de "não encontrado" */
+.project-not-found-message h2 {
+    color: #583c00;
+    margin-bottom: 10px;
+}
+
+/* Link dentro da mensagem de "não encontrado" */
+.project-not-found-message a {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+.project-not-found-message a:hover {
+    color: #0a58ca;
+}

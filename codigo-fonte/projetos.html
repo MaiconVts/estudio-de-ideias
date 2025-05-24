@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estúdio de Ideias</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/img/logoIcone-azulDark.png"
+    />
+    <link rel="stylesheet" href="./assets/css/projetos.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <script defer src="./assets/js/header.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header-flex-container">
+    <div class="header-brand"> <div class="logo-container">
+            <a href="./index.html">
+                <img src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png" alt="Logo Estúdio de Ideias" width="60px" height="60px" />
+            </a>
+        </div>
+        <a href="./index.html" class="link-title">
+            <h1 class="site-title">ESTÚDIO DE IDEIAS</h1> </a>
+    </div>
+
+    <nav class="navbar">
+        <div class="menu-icon"> <img src="./assets/img/list.png" alt="Menu" width="40" height="40" class="nav-icon" id="menuIconImg" /> <ul class="dropdown-menu" id="mainDropdownMenu"> <li><a href="./index.html">Início</a></li>
+                <li><a href="./projetos.html">Projetos</a></li>
+                <li><a href="./submissao.html">Envio de Projetos</a></li>
+                <li><a href="./favoritos.html">Favoritos</a></li>
+                <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+                <li><a href="./login.html">Área Restrita</a></li>
+                <li><a href="./login.html" class="nav-login-link">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <main class="main-content">
+      <aside class="sidebar-filter">
+        <h4>Filtrar projetos</h4>
+
+        <form class="filter-form">
+          <input
+            type="text"
+            class="filter-form__input"
+            placeholder="Buscar projetos, autores..."
+          />
+
+          <div class="filter-form__field">
+            <select class="filter-form__select">
+              <option value="all">Todos</option>
+              <option value="title">Título</option>
+              <option value="author">Autor</option>
+              <option value="year">Ano</option>
+            </select>
+          </div>
+
+          <div class="filter-form__field">
+            <select class="filter-form__select">
+              <option value="relevance">Ordenar por</option>
+              <option value="date-desc">Mais Recente</option>
+              <option value="date-asc">Mais Antigo</option>
+              <option value="citations">Mais Citados</option>
+            </select>
+          </div>
+
+          <div class="filter-form__field">
+            <select class="filter-form__select">
+              <option value="all">Ano</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+            </select>
+          </div>
+
+          <div class="filter-form__field">
+            <select class="filter-form__select">
+              <option value="all">Áreas de Atuação</option>
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="mobile">Mobile</option>
+              <option value="redes">Redes</option>
+              <option value="banco-dados">Banco de Dados</option>
+              <option value="seguranca">Segurança da Informação</option>
+            </select>
+          </div>
+
+          <button type="submit" class="filter-form__button">Buscar</button>
+        </form>
+      </aside>
+
+      <section class="projects">
+        <div class="projects__header">
+          <p>Resultados: <strong>3.031</strong></p>
+        </div>
+
+        <div class="projects-list">
+          <article class="project">
+            <h2 class="project__title">
+              1. Sistema de Gerenciamento de Tarefas com React e Node.js
+            </h2>
+            <div class="project__meta">
+              <p>Autor: <strong>Silva, João P.</strong></p>
+              <p>Publicado em <strong>jun/2025</strong></p>
+            </div>
+            <div class="project__actions">
+              <a href="#" class="project__link">Acessar documento</a>
+              <button
+                type="button"
+                class="project__link project__link--reverse"
+              >
+                Adicionar aos favoritos
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <div class="pagination">
+          <button class="pagination__button" disabled>Anterior</button>
+          <span class="pagination__current-page">1</span>
+          <button class="pagination__button">Próximo</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top-bar"></div>
+      <div class="footer-main">
+        <div class="footer-section">
+          <h4 class="footer-title">Sobre o Estúdio</h4>
+          <p class="footer-text">
+            Um espaço dedicado a conectar estudantes e profissionais através de
+            projetos acadêmicos inovadores.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Projetos</a></li>
+            <li><a href="#">Áreas</a></li>
+            <li><a href="#">Publicar Projeto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Recursos Acadêmicos</h4>
+          <ul class="footer-links">
+            <li><a href="#">Normas de Publicação</a></li>
+            <li><a href="#">Guia de Apresentação</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Tutoriais Técnicos</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Nova linha azul de contato -->
+      <div class="footer-contact-bar">
+        <div class="footer-contact-container">
+          <h4 class="footer-contact-title">Contato</h4>
+          <ul class="footer-contact-links">
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
+          direitos reservados.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

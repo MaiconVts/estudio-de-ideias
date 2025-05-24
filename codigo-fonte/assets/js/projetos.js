@@ -65,7 +65,7 @@ const db = {
 
 const projects = {
   async seed() {
-    const response = await fetch('/assets/data/projects.json')
+    const response = await fetch('./assets/data/projects.json')
     const data = await response.json()
     db.setCollection(collections.projects, data)
   },
