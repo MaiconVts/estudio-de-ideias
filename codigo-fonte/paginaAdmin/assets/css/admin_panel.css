@@ -442,3 +442,148 @@ table tbody tr:hover {
         gap: 3px; /* Reduz o gap em telas muito pequenas */
     }
 }
+
+/* Em admin_panel.css */
+
+/* ... (Reset básico, body, .admin-panel-main, .admin-panel-container, .moderation-card e seus filhos como na última versão) ... */
+
+/* ---- Estilização da Tabela de Projetos ---- */
+.admin-table-wrapper {
+    overflow-x: auto; /* ESSENCIAL: Adiciona rolagem horizontal à tabela em telas pequenas */
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch; 
+}
+
+table {
+    width: 100%;
+    min-width: 800px; /* AUMENTEI: Força a tabela a ter uma largura mínima.
+                         Se a tela for menor que isso, a rolagem horizontal no wrapper será ativada.
+                         Ajuste este valor baseado no conteúdo mínimo que suas colunas precisam. */
+    border-collapse: collapse; 
+    font-size: 0.9rem; /* Fonte um pouco menor para caber mais */
+}
+
+table th,
+table td {
+    padding: 10px 12px; 
+    text-align: left;
+    border-bottom: 1px solid #dee2e6; 
+    vertical-align: middle;
+}
+
+/* Colunas que podem ter conteúdo que não deve quebrar facilmente */
+table th:nth-child(1), /* Título do Projeto - pode ser longo */
+table td:nth-child(1),
+table th:nth-child(2), /* Membros */
+table td:nth-child(2),
+table th:nth-child(3), /* Data de Submissão */
+table td:nth-child(3) {
+    white-space: nowrap; /* Evita quebra de linha indesejada nessas colunas */
+}
+
+/* Status - também geralmente curto */
+table th:nth-child(4), 
+table td:nth-child(4) {
+    white-space: nowrap;
+}
+
+
+/* Coluna de Ações */
+table th:last-child, 
+table td:last-child { 
+    white-space: nowrap; 
+    min-width: 260px; /* Largura mínima para acomodar os botões. Ajuste se necessário. */
+                      /* Se os botões ainda quebrarem o layout, pode ser necessário quebrar o .action-buttons-group em telas menores */
+}
+
+table thead th {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; 
+    color: #0A1931; 
+    background-color: #e9f0ff; 
+    border-bottom-width: 2px;
+    border-color: #185ADB; 
+    white-space: nowrap; /* Evita quebra de linha nos cabeçalhos */
+}
+
+/* ... (estilos de .details-link, .status-*, .moderated-text como antes) ... */
+
+/* ---- Botões de Ação ---- */
+.action-buttons-group {
+    display: flex;
+    gap: 6px; /* Espaço menor entre os botões */
+    flex-wrap: nowrap; /* IMPORTANTE: Força os botões a ficarem na mesma linha. A rolagem da tabela tratará o excesso. */
+}
+
+.action-btn {
+    display: inline-flex; 
+    align-items: center;
+    padding: 5px 10px; /* Padding um pouco menor */
+    font-size: 0.8rem; /* Fonte um pouco menor */
+    /* ... (resto dos estilos do .action-btn como antes) ... */
+}
+/* ... (estilos de .approve-btn, .reject-btn, .correct-btn como antes) ... */
+
+
+/* ---- Paginação ---- */
+.admin-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 0;
+    margin-top: 30px;
+    list-style: none;
+}
+
+.admin-pagination ul { /* O container direto dos LIs */
+    display: flex;
+    flex-direction: row; /* GARANTE QUE FIQUE EM LINHA */
+    flex-wrap: wrap;     /* Permite quebrar para a próxima linha se não couber */
+    justify-content: center; 
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 5px;        
+}
+
+.admin-pagination li {
+    margin: 0; 
+}
+
+/* ... (resto dos estilos da paginação como antes, .page-link, :hover, .active, .disabled) ... */
+
+/* ---- Ajustes para telas muito pequenas ---- */
+@media (max-width: 576px) { /* Ponto de quebra um pouco maior que 480px */
+    .admin-table-wrapper table { 
+        font-size: 0.85rem; /* Ajuste fino da fonte */
+        min-width: 600px; /* Pode reduzir o min-width se quiser menos rolagem, mas pode espremer colunas */
+    }
+    .admin-table-wrapper table th,
+    .admin-table-wrapper table td {
+        padding: 8px 10px; 
+    }
+    .admin-table-wrapper table td:first-child a { /* Título do projeto */
+        white-space: normal; /* Permite que o título quebre em telas muito pequenas */
+        word-break: break-word;
+    }
+
+    /* Para os botões de ação, se ainda estiverem problemáticos */
+    /* .action-buttons-group {
+        flex-direction: column; /* Empilha os botões */
+    /* align-items: flex-start; /* Alinha à esquerda */
+    /* gap: 5px;
+    /* }
+    /* .action-buttons-group .action-btn {
+        width: 100%; /* Botões ocupam largura total */
+    /* justify-content: center; /* Centraliza texto/ícone no botão */
+    /* } */
+    /* table th:last-child, table td:last-child { min-width: auto; } */ /* Remove min-width da coluna de ações */
+
+    .admin-pagination .page-link {
+        padding: 6px 8px; 
+        font-size: 0.8rem; 
+    }
+     .admin-pagination ul {
+        gap: 2px;
+    }
+}
