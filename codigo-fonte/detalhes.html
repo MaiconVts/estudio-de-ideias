@@ -1,72 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes do Projeto - Estúdio de Ideias</title>
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
-    <link rel="stylesheet" href="./assets/css/detalhes.css">
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/detalhes.css" />
+    <script defer src="./assets/js/projetos.js"></script>
     <script defer src="./assets/js/header.js"></script>
-    <link rel="icon" type="image/png" href="./assets/img/logoIcone-azulDark.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/img/logoIcone-azulDark.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="header-flex-container">
-        <div class="logo-container">
-            <a href="./index.html"><img src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png" alt="Logo Estúdio de Ideias" width="100px" height="100px"></a>
+      <div class="logo-container">
+        <a href="./index.html"
+          ><img
+            src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+            alt="Logo Estúdio de Ideias"
+            width="100px"
+            height="100px"
+        /></a>
+      </div>
+      <a href="./index.html" class="link-title"
+        ><p class="site-title">ESTÚDIO DE IDEIAS</p></a
+      >
+      <nav class="navbar">
+        <div class="menu-icon">
+          <img
+            src="./assets/img/list.png"
+            alt="Menu"
+            width="50"
+            height="50"
+            class="nav-icon"
+          />
+          <ul class="dropdown-menu">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
+            <li><a href="./submissao.html">Envio de Projetos</a></li>
+            <li><a href="./favoritos.html">Favoritos</a></li>
+            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+            <li><a href="./login.html">Área Restrita</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
         </div>
-        <a href="./index.html" class="link-title"><p class="site-title">ESTÚDIO DE IDEIAS</p></a>
-        <nav class="navbar">
-            <div class="menu-icon">
-                <img src="./assets/img/list.png" alt="Menu" width="50" height="50" class="nav-icon">
-                <ul class="dropdown-menu">
-                    <li><a href="./index.html">Início</a></li>
-                    <li><a href="./projetos.html">Projetos</a></li>
-                    <li><a href="./submissao.html">Envio de Projetos</a></li>
-                    <li><a href="./favoritos.html">Favoritos</a></li>
-                    <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-                    <li><a href="./login.html">Área Restrita</a></li>
-                    <li><a href="./login.html">Login</a></li>
-                </ul>
-            </div>
-        </nav>
+      </nav>
     </header>
 
-    <main class="project-detail-main-container"> <article class="project-detail-card" id="project-detail-content" style="display: none;"> <h2 class="project-title" id="detail-project-title">Carregando Título...</h2>
-    
-            <section class="project-team">
-                <h3>Autor(es)</h3>
-                <p id="detail-project-author">Carregando autor...</p> 
-            </section>
-    
-            <section class="project-summary">
-                <h3>Resumo</h3>
-                <p id="detail-project-summary">Carregando resumo...</p>
-            </section>
-            
-            <div class="project-info-grid">
-                <p><strong>Ano de Publicação:</strong> <span id="detail-project-year">...</span></p>
-                <p><strong>Área de Atuação:</strong> <span id="detail-project-area">...</span></p>
-                <p><strong>Tecnologias Utilizadas:</strong> <span id="detail-project-technologies">...</span></p>
-                <p><strong>Citações:</strong> <span id="detail-project-citations">...</span></p>
-                <p><strong>Tipo/Categoria do Projeto:</strong> <span id="detail-project-type">Não especificado</span></p> 
-                <p><strong>Disciplina Associada:</strong> <span id="detail-project-discipline">Não especificada</span></p> 
-            </div>
-    
-            <section class="attached-files">
-                <h3>Download do Projeto</h3>
-                <p>
-                    <a id="detail-project-download-link" href="#" target="_blank">Carregando link...</a>
-                </p>
-            </section>         
-        </article>
+    <main class="project-detail-main-container">
+      <article
+        class="project-detail-card"
+        id="project-detail-content"
+        style="display: none"
+      >
+        <h2 class="project-title" id="detail-project-title">
+          Carregando Título...
+        </h2>
 
-        <div id="project-not-found" class="project-not-found-message" style="text-align: center; padding: 40px; display: none;">
-            </div>
+        <section class="project-team">
+          <h3>Autor(es)</h3>
+          <p id="detail-project-author">Carregando autor...</p>
+        </section>
+
+        <section class="project-summary">
+          <h3>Resumo</h3>
+          <p id="detail-project-summary">Carregando resumo...</p>
+        </section>
+
+        <div class="project-info-grid">
+          <p>
+            <strong>Ano de Publicação:</strong>
+            <span id="detail-project-year">...</span>
+          </p>
+          <p>
+            <strong>Área de Atuação:</strong>
+            <span id="detail-project-area">...</span>
+          </p>
+          <p>
+            <strong>Tecnologias Utilizadas:</strong>
+            <span id="detail-project-technologies">...</span>
+          </p>
+          <p>
+            <strong>Citações:</strong>
+            <span id="detail-project-citations">...</span>
+          </p>
+          <p>
+            <strong>Tipo/Categoria do Projeto:</strong>
+            <span id="detail-project-type">Não especificado</span>
+          </p>
+          <p>
+            <strong>Disciplina Associada:</strong>
+            <span id="detail-project-discipline">Não especificada</span>
+          </p>
+        </div>
+
+        <section class="attached-files">
+          <h3>Download do Projeto</h3>
+          <p>
+            <a id="detail-project-download-link" href="#" target="_blank"
+              >Carregando link...</a
+            >
+          </p>
+        </section>
+      </article>
+
+      <div
+        id="project-not-found"
+        class="project-not-found-message"
+        style="text-align: center; padding: 40px; display: none"
+      ></div>
     </main>
-    
-<footer class="site-footer">
+
+    <footer class="site-footer">
       <div class="footer-top-bar"></div>
       <div class="footer-main">
         <div class="footer-section">
@@ -115,6 +168,6 @@
       </div>
     </footer>
 
-    <script defer src="./assets/js/detalhes.js"></script> 
-</body>
+    <script defer src="./assets/js/detalhes.js"></script>
+  </body>
 </html>

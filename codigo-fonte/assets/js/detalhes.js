@@ -1,130 +1,221 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Detalhes.js: DOMContentLoaded disparado.");
+document.addEventListener("DOMContentLoaded", () => {
+  // console.log("Detalhes.js: DOMContentLoaded.");
 
-    // Seletores dos elementos na página de detalhes
-    const projectTitleEl = document.getElementById('detail-project-title');
-    const projectAuthorEl = document.getElementById('detail-project-author');
-    const projectSummaryEl = document.getElementById('detail-project-summary');
-    const projectYearEl = document.getElementById('detail-project-year');
-    const projectAreaEl = document.getElementById('detail-project-area');
-    const projectTechnologiesEl = document.getElementById('detail-project-technologies');
-    const projectCitationsEl = document.getElementById('detail-project-citations');
-    const projectTypeEl = document.getElementById('detail-project-type');
-    const projectDisciplineEl = document.getElementById('detail-project-discipline');
-    const projectDownloadLinkEl = document.getElementById('detail-project-download-link');
-    
-    const projectDetailCardEl = document.getElementById('project-detail-content'); // ID que demos ao article
-    const projectNotFoundEl = document.getElementById('project-not-found');
+  // Objeto para armazenar referências aos elementos do DOM
+  const elements = {
+    title: document.getElementById("detail-project-title"),
+    author: document.getElementById("detail-project-author"),
+    summary: document.getElementById("detail-project-summary"),
+    year: document.getElementById("detail-project-year"),
+    area: document.getElementById("detail-project-area"),
+    technologies: document.getElementById("detail-project-technologies"),
+    citations: document.getElementById("detail-project-citations"),
+    type: document.getElementById("detail-project-type"), // Campo para tipo/categoria
+    discipline: document.getElementById("detail-project-discipline"), // Campo para disciplina
+    downloadLink: document.getElementById("detail-project-download-link"),
+    cardContent: document.getElementById("project-detail-content"), // O <article> principal
+    notFoundMessage: document.getElementById("project-not-found"), // O <div> para mensagens de erro
+  };
 
-    console.log("Detalhes.js: Seletores DOM definidos.", {
-        projectTitleEl, projectAuthorEl, projectSummaryEl, projectYearEl,
-        projectAreaEl, projectTechnologiesEl, projectCitationsEl, projectTypeEl,
-        projectDisciplineEl, projectDownloadLinkEl, projectDetailCardEl, projectNotFoundEl
-    });
+  // Função auxiliar para formatar a exibição da área
+  function getDisplayArea(areaValue) {
+    if (!areaValue) return "Não especificada";
+    const areaMap = {
+      redes: "Redes",
+      frontend: "Frontend",
+      backend: "Backend",
+      mobile: "Mobile",
+      "banco-dados": "Banco de Dados",
+      seguranca: "Segurança da Informação",
+      // Mantenha mapeamentos se o JSON usar valores diferentes dos que você quer exibir
+      networking: "Redes",
+      database: "Banco de Dados",
+      cybersecurity: "Segurança da Informação",
+    };
+    return areaMap[String(areaValue).toLowerCase()] || areaValue;
+  }
 
+  // Função para preencher os detalhes do projeto na página
+  function populateProjectDetails(project) {
+    if (!project) {
+      displayProjectNotFoundError(
+        "Dados do projeto não puderam ser carregados ou projeto inválido."
+      );
+      return;
+    }
+    // console.log("Detalhes.js: Populando detalhes para:", project);
+    document.title = `${
+      project.title || "Detalhes do Projeto"
+    } - Estúdio de Ideias`;
 
-    function getDisplayArea(areaValue) {
-        if (!areaValue) return "Não especificada";
-        const areaMap = {
-            "networking": "Redes", "frontend": "Frontend", "backend": "Backend",
-            "mobile": "Mobile", "banco-dados": "Banco de Dados", "seguranca": "Segurança da Informação"
-        };
-        return areaMap[areaValue.toLowerCase()] || areaValue;
+    if (elements.title)
+      elements.title.textContent = project.title || "Título não disponível";
+    if (elements.author)
+      elements.author.textContent = project.author || "Autor não disponível";
+    if (elements.summary)
+      elements.summary.innerHTML = project.summary
+        ? project.summary.replace(/\n/g, "<br>")
+        : "Resumo não disponível.";
+    if (elements.year) elements.year.textContent = project.year || "N/A";
+    if (elements.area) elements.area.textContent = getDisplayArea(project.area);
+    if (elements.technologies)
+      elements.technologies.textContent = Array.isArray(project.technologies)
+        ? project.technologies.join(", ")
+        : "N/A";
+    if (elements.citations)
+      elements.citations.textContent =
+        project.citations !== undefined ? project.citations.toString() : "N/A";
+
+    // Para campos que podem ou não existir no seu JSON principal (type, discipline)
+    if (elements.type)
+      elements.type.textContent = project.type || "Não especificado";
+    if (elements.discipline)
+      elements.discipline.textContent =
+        project.discipline || "Não especificada";
+
+    if (elements.downloadLink) {
+      if (project.file) {
+        // IMPORTANTE: Ajuste este caminho base para seus arquivos de download!
+        // Exemplo: se seus arquivos ZIP/PDF estiverem na pasta 'assets/data/downloadable_files/'
+        // e seu HTML está na raiz, o caminho seria 'assets/data/downloadable_files/'
+        const basePathForDownloads = "assets/data/downloadable_files/"; // <--- AJUSTE ESTE CAMINHO!!!
+        elements.downloadLink.href = `${basePathForDownloads}${project.file}`;
+        elements.downloadLink.textContent = `Baixar ${project.file}`;
+        elements.downloadLink.style.pointerEvents = "auto";
+        elements.downloadLink.style.color = "";
+      } else {
+        elements.downloadLink.textContent = "Arquivo não disponível";
+        elements.downloadLink.removeAttribute("href");
+        elements.downloadLink.style.pointerEvents = "none";
+        elements.downloadLink.style.color = "grey";
+      }
     }
 
-    async function loadProjectDetails() {
-        console.log("Detalhes.js: Iniciando loadProjectDetails().");
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectFileIdentifier = urlParams.get('file');
-        console.log("Detalhes.js: projectFileIdentifier da URL:", projectFileIdentifier);
+    if (elements.cardContent) elements.cardContent.style.display = "block";
+    if (elements.notFoundMessage)
+      elements.notFoundMessage.style.display = "none";
+  }
 
-        if (!projectFileIdentifier) {
-            console.error("Detalhes.js: Nenhum identificador 'file' encontrado na URL.");
-            displayProjectNotFoundError("Identificador do projeto não encontrado na URL.");
-            return;
-        }
+  // Função para exibir a mensagem de erro "Projeto não encontrado"
+  function displayProjectNotFoundError(customMessage) {
+    console.warn(
+      "Detalhes.js: Exibindo mensagem de projeto não encontrado/erro.",
+      customMessage
+    );
+    if (elements.cardContent) elements.cardContent.style.display = "none";
+    if (elements.notFoundMessage) {
+      elements.notFoundMessage.style.display = "block";
+      let messageP = elements.notFoundMessage.querySelector("p");
+      if (!messageP) {
+        messageP = document.createElement("p");
+        elements.notFoundMessage.appendChild(messageP);
+      }
+      messageP.textContent =
+        customMessage ||
+        "O projeto que você está procurando não foi encontrado.";
 
-        // Verifica se os elementos principais do card de detalhes existem antes de prosseguir
-        if (!projectDetailCardEl || !projectNotFoundEl || !projectTitleEl) {
-            console.error("Detalhes.js: Um ou mais elementos HTML principais da página de detalhes não foram encontrados. Verifique os IDs no HTML.");
-            // Poderia exibir uma mensagem de erro mais genérica no body se nem o projectNotFoundEl existir.
-            document.body.innerHTML = "<p style='text-align:center; color:red; padding:20px;'>Erro crítico: Estrutura da página de detalhes está incompleta.</p>";
-            return;
-        }
+      let homeLink = elements.notFoundMessage.querySelector("a");
+      if (!homeLink && customMessage) {
+        // Adiciona link para home se não existir e houver mensagem customizada
+        homeLink = document.createElement("a");
+        homeLink.href = "index.html"; // Assumindo que a home principal é index.html na raiz
+        homeLink.textContent = " Voltar para a Home.";
+        homeLink.style.marginLeft = "5px";
+        messageP.appendChild(homeLink);
+      } else if (!homeLink && !customMessage) {
+        // Adiciona link para home se não existir e não houver mensagem customizada
+        elements.notFoundMessage.innerHTML = `<p>O projeto que você está procurando não foi encontrado. <a href="index.html">Voltar para a Home</a>.</p>`;
+      }
+    }
+    if (elements.title) elements.title.textContent = "Projeto Não Encontrado";
+  }
 
-        try {
-            const jsonPath = './assets/data/projetosIniciais.json'; // Caminho relativo ao HTML da página de detalhes
-            console.log(`Detalhes.js: Tentando buscar JSON em: ${jsonPath}`);
-            const response = await fetch(jsonPath);
-            console.log(`Detalhes.js: Resposta do fetch para JSON. OK: ${response.ok}, Status: ${response.status}`);
+  // Função principal para inicializar a página de detalhes
+  function initializeDetailsPage() {
+    // console.log("Detalhes.js: Iniciando initializeDetailsPage().");
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectIdFromUrl = urlParams.get("id"); // Lê o parâmetro 'id' da URL
+    // console.log("Detalhes.js: ID do projeto da URL:", projectIdFromUrl);
 
-            if (!response.ok) {
-                throw new Error(`Erro ao carregar dados dos projetos: ${response.status} ${response.statusText}`);
-            }
-            const allProjects = await response.json();
-            console.log("Detalhes.js: JSON carregado e parseado. Total de projetos:", allProjects.length);
-
-            const project = allProjects.find(p => p.file === projectFileIdentifier);
-
-            if (project) {
-                console.log("Detalhes.js: Projeto encontrado:", project);
-                document.title = `${project.title || 'Detalhes do Projeto'} - Estúdio de Ideias`;
-
-                projectTitleEl.textContent = project.title || "Título não disponível";
-                projectAuthorEl.textContent = project.author || "Autor não disponível";
-                projectSummaryEl.innerHTML = project.summary ? project.summary.replace(/\n/g, '<br>') : "Resumo não disponível."; // Preserva quebras de linha no resumo
-                projectYearEl.textContent = project.year || "N/A";
-                projectAreaEl.textContent = getDisplayArea(project.area);
-                projectTechnologiesEl.textContent = Array.isArray(project.technologies) ? project.technologies.join(', ') : "N/A";
-                projectCitationsEl.textContent = project.citations !== undefined ? project.citations.toString() : "N/A";
-                
-                projectTypeEl.textContent = project.type || "Não especificado"; 
-                projectDisciplineEl.textContent = project.discipline || "Não especificada"; // Assumindo campo 'discipline' no JSON
-
-                if (project.file) {
-                    // IMPORTANTE: Defina o caminho base correto para seus arquivos de download!
-                    // Se seus arquivos ZIP/PDF estiverem na pasta 'paginaHome/arquivos_download/', por exemplo:
-                    const basePathForDownloads = "../paginaHome/downloads/"; // <--- AJUSTE ESTE CAMINHO!!!
-                    projectDownloadLinkEl.href = `${basePathForDownloads}${project.file}`;
-                    projectDownloadLinkEl.textContent = `Baixar ${project.file}`;
-                } else {
-                    projectDownloadLinkEl.textContent = "Arquivo não disponível";
-                    projectDownloadLinkEl.removeAttribute('href');
-                    projectDownloadLinkEl.style.pointerEvents = "none";
-                    projectDownloadLinkEl.style.color = "grey";
-                }
-
-                projectDetailCardEl.style.display = 'block'; // Ou 'flex', etc., conforme seu CSS
-                projectNotFoundEl.style.display = 'none';
-                console.log("Detalhes.js: Detalhes do projeto preenchidos e exibidos.");
-
-            } else {
-                console.warn(`Detalhes.js: Projeto com arquivo "${projectFileIdentifier}" não encontrado no JSON.`);
-                displayProjectNotFoundError(`O projeto especificado (${projectFileIdentifier}) não foi encontrado.`);
-            }
-        } catch (error) {
-            console.error("Detalhes.js: Erro em loadProjectDetails:", error);
-            displayProjectNotFoundError("Ocorreu um erro ao tentar carregar os dados do projeto.");
-        }
+    if (!projectIdFromUrl) {
+      console.error("Detalhes.js: Nenhum 'id' de projeto encontrado na URL.");
+      displayProjectNotFoundError(
+        "Nenhum projeto especificado para visualização."
+      );
+      return;
     }
 
-    function displayProjectNotFoundError(customMessage) {
-        console.log("Detalhes.js: Exibindo mensagem de projeto não encontrado.");
-        if(projectDetailCardEl) projectDetailCardEl.style.display = 'none';
-        if(projectNotFoundEl) {
-            projectNotFoundEl.style.display = 'block';
-            const messageParagraph = projectNotFoundEl.querySelector('p') || projectNotFoundEl; // Tenta achar o <p> ou usa o próprio div
-            let baseMessage = "O projeto que você está procurando não foi encontrado.";
-            if (customMessage) {
-                messageParagraph.textContent = customMessage;
-            } else {
-                 messageParagraph.innerHTML = `${baseMessage} <a href="./index.html">Voltar para a Home</a>.`;
-            }
-        } else {
-            // Fallback se até o div 'project-not-found' não existir
-             if(projectTitleEl) projectTitleEl.textContent = customMessage || "Projeto Não Encontrado";
-        }
+    if (!window.estudioIdeias || !window.estudioIdeias.projects) {
+      console.error(
+        "Detalhes.js: API estudioIdeias.projects não está pronta ou não foi encontrada."
+      );
+      displayProjectNotFoundError(
+        "A base de dados de projetos não está acessível no momento."
+      );
+      return;
     }
 
-    loadProjectDetails();
+    if (!elements.cardContent || !elements.notFoundMessage) {
+      console.error(
+        "Detalhes.js: Elementos HTML base (cardContent ou notFoundMessage) não encontrados no DOM."
+      );
+      document.body.innerHTML =
+        "<p style='text-align:center; color:red; padding:20px;'>Erro crítico na estrutura da página de detalhes.</p>";
+      return;
+    }
+
+    const project = window.estudioIdeias.projects.get(projectIdFromUrl); // Usa a API para buscar o projeto pelo ID
+
+    if (project) {
+      populateProjectDetails(project);
+    } else {
+      console.warn(
+        `Detalhes.js: Projeto com ID "${projectIdFromUrl}" não encontrado pela API.`
+      );
+      displayProjectNotFoundError(
+        `O projeto com o identificador "${projectIdFromUrl}" não foi encontrado.`
+      );
+    }
+  }
+
+  // Espera a API estar pronta (escutando o evento 'estudioApiReady' disparado pela api_estudio.js)
+  if (window.estudioIdeias && window.estudioIdeias.projects) {
+    // Verifica se a API já está pronta
+    // console.log("Detalhes.js: API estudioIdeias já está pronta na carga inicial. Inicializando...");
+    initializeDetailsPage();
+  } else {
+    // console.log("Detalhes.js: API estudioIdeias ainda não pronta. Aguardando evento 'estudioApiReady'...");
+    document.addEventListener(
+      "estudioApiReady",
+      function handler() {
+        // console.log("Detalhes.js: Evento 'estudioApiReady' recebido. Inicializando página de detalhes.");
+        document.removeEventListener("estudioApiReady", handler); // Garante que rode apenas uma vez
+        initializeDetailsPage();
+      },
+      { once: true }
+    );
+
+    // Fallback com timeout caso o evento não seja capturado ou a API demore muito
+    setTimeout(() => {
+      if (
+        window.estudioIdeias &&
+        window.estudioIdeias.projects &&
+        !document.body.dataset.detailsApiInitialized
+      ) {
+        // console.warn("Detalhes.js: Inicializando via fallback setTimeout (API pode ter carregado, mas evento não capturado).");
+        document.body.dataset.detailsApiInitialized = "true"; // Evita dupla inicialização
+        initializeDetailsPage();
+      } else if (
+        !window.estudioIdeias &&
+        !document.body.dataset.detailsApiInitialized
+      ) {
+        console.error(
+          "Detalhes.js: API não carregou após timeout. Verifique o script da API (ex: projetos.js)."
+        );
+        displayProjectNotFoundError(
+          "Não foi possível carregar a base de dados dos projetos (timeout)."
+        );
+      }
+    }, 1200); // Timeout um pouco maior para dar chance à API
+  }
 });

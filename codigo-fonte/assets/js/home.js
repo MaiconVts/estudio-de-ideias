@@ -1,3 +1,5 @@
+// paginaHome/assets/js/script.js (Refatorado para usar a API em window.estudioIdeias)
+
 document.addEventListener("DOMContentLoaded", () => {
   // Seletores DOM Globais
   const searchInput = document.getElementById("search-input");
@@ -8,106 +10,52 @@ document.addEventListener("DOMContentLoaded", () => {
   const areaFilterSelect = document.getElementById("area-filter");
   const projectListContainer = document.getElementById("lista-projetos");
   const projectTemplate = document.getElementById("projeto-template");
-  console.log(
-    "DEBUG: Elemento projectTemplate encontrado no DOM:",
-    projectTemplate
-  );
+  // console.log('DEBUG: Elemento projectTemplate encontrado no DOM:', projectTemplate);
   const suggestionsContainer = document.getElementById("search-suggestions");
   const verMaisBtn = document.getElementById("ver-mais-btn");
 
-  let allProjects = [];
-  let currentFilteredResults = [];
-  const PROJECTS_PER_PAGE = 8;
-  let projectsCurrentlyDisplayedCount = 0;
-  let activeSuggestionIndex = -1;
+  // Variáveis de estado para filtros e paginação
+  let currentPage = 1;
+  const PROJECTS_PER_LOAD = 8; // Quantos projetos carregar por vez
 
-  // --- 1. CARREGAMENTO E PREPARAÇÃO DOS DADOS ---
-  async function fetchProjects() {
-    // console.log('Iniciando fetchProjects...'); // Log mais verboso removido
-    try {
-      const filePath = "./assets/data/projetosIniciais.json";
-      // console.log(`Tentando buscar o arquivo: ${filePath}`); // Log mais verboso removido
-      const response = await fetch(filePath);
-      // console.log('Resposta do fetch recebida. Status OK:', response.ok, 'Status:', response.status); // Log mais verboso removido
+  // Estado atual dos filtros
+  let currentSearchTerm = "";
+  let currentSearchBy = "all";
+  let currentSortBy = "relevance"; // Valor inicial do select
+  let currentYear = ""; // Vazio para "Todos"
+  let currentArea = ""; // Vazio para "Todas"
 
-      if (!response.ok) {
-        throw new Error(
-          `Erro HTTP! Status: ${response.status} - ${response.statusText}`
-        );
-      }
-      const data = await response.json();
-      // console.log('JSON parseado com sucesso. Número de projetos carregados:', data ? data.length : 0); // Log mais verboso removido
-
-      if (Array.isArray(data)) {
-        allProjects = data;
-        currentFilteredResults = [...allProjects];
-      } else {
-        console.error("Os dados carregados do JSON não são um array:", data);
-        allProjects = [];
-        currentFilteredResults = [];
-        throw new Error("Formato de dados inválido no arquivo JSON.");
-      }
-
-      if (!projectTemplate) {
-        console.error(
-          "CRÍTICO: O elemento <template id='projeto-template'> não foi encontrado no HTML!"
-        );
-        projectListContainer.innerHTML =
-          "<p class='no-results-message'>Erro crítico: Template de projeto não encontrado.</p>";
-        if (verMaisBtn) verMaisBtn.style.display = "none";
-        return;
-      }
-
-      populateYearFilter();
-      resetAndDisplayProjects();
-      setupEventListeners();
-    } catch (error) {
-      console.error("Falha ao carregar ou processar projetos:", error);
-      projectListContainer.innerHTML =
-        "<p class='no-results-message'>Desculpe, não foi possível carregar os projetos.</p>";
-      if (verMaisBtn) verMaisBtn.style.display = "none";
-    }
+  // Mapeamento dos valores do select de ordenação para os valores da API
+  function mapSortValue(selectValue) {
+    const map = {
+      "date-desc": "newest",
+      relevance: "newest",
+      "date-asc": "oldest",
+      citations: "citations",
+    };
+    return map[selectValue] || "newest"; // Default para 'newest' se não mapeado
   }
 
-  function populateYearFilter() {
-    if (!allProjects || allProjects.length === 0 || !yearFilterSelect) return;
-    const years = [
-      ...new Set(
-        allProjects.map((project) => project.year).filter((year) => year)
-      ),
-    ].sort((a, b) => b - a);
-
-    const defaultOption = yearFilterSelect.options[0];
-    yearFilterSelect.innerHTML = "";
-    if (defaultOption) yearFilterSelect.appendChild(defaultOption);
-
-    years.forEach((year) => {
-      const option = document.createElement("option");
-      option.value = year;
-      option.textContent = year;
-      yearFilterSelect.appendChild(option);
-    });
-  }
-
-  // --- 2. RENDERIZAÇÃO DOS CARDS ---
+  // --- FUNÇÕES DE RENDERIZAÇÃO ---
   function getDisplayArea(areaValue) {
     if (!areaValue) return "Não especificada";
     const areaMap = {
-      networking: "Redes",
+      networking: "Redes", // Se o JSON da API ainda usa 'networking'
       frontend: "Frontend",
       backend: "Backend",
       mobile: "Mobile",
-      "banco-dados": "Banco de Dados",
-      seguranca: "Segurança da Informação",
+      "banco-dados": "Banco de Dados", // Se o JSON da API usa 'banco-dados'
+      seguranca: "Segurança da Informação", // Se o JSON da API usa 'seguranca'
+      database: "Banco de Dados", // Fallback se a API usar 'database'
+      cybersecurity: "Segurança da Informação", // Fallback se a API usar 'cybersecurity'
     };
-    return areaMap[areaValue.toLowerCase()] || areaValue;
+    return areaMap[String(areaValue).toLowerCase()] || areaValue;
   }
 
-  // Substitua a função renderProjectCard existente por esta:
   function renderProjectCard(project) {
     if (!projectTemplate || !projectTemplate.content) {
       console.error(
-        "ERRO em renderProjectCard: projectTemplate ou projectTemplate.content é inválido."
+        "ERRO em renderProjectCard: projectTemplate ou .content é inválido."
       );
       const errorDiv = document.createElement("div");
       errorDiv.classList.add("project-card-error");
@@ -115,61 +63,45 @@ document.addEventListener("DOMContentLoaded", () => {
       errorDiv.style.color = "red";
       return errorDiv;
     }
-
     const cardContent = projectTemplate.content.cloneNode(true);
     const cardElement = cardContent.firstElementChild;
-
     if (!cardElement) {
       console.error(
         "ERRO em renderProjectCard: Nenhum elemento filho encontrado dentro do template."
       );
       const errorDiv = document.createElement("div");
-      errorDiv.classList.add("project-card-error");
-      errorDiv.textContent = `Erro: Estrutura interna do template inválida.`;
+      errorDiv.textContent = "Erro interno no template do card.";
       errorDiv.style.color = "red";
       return errorDiv;
     }
 
-    // Log para ver os dados do projeto atual (pode remover depois que funcionar)
-    // console.log(`Renderizando card para: "${project.title}"`, project);
-
     const titleLink = cardElement.querySelector(".project-title a");
     if (titleLink) {
       titleLink.textContent = project.title || "Título Indisponível";
-      titleLink.href = `./detalhes.html?file=${encodeURIComponent(
-        project.file || ""
+      // A API (db.readAsSet) adiciona 'id' (UUID) ao objeto projeto.
+      // Ajuste 'detalhes_projeto.html' para o nome correto da sua página de detalhes, se diferente.
+      titleLink.href = `detalhes.html?id=${encodeURIComponent(
+        project.id || ""
       )}`;
     }
 
-    // --- ATUALIZANDO AUTOR E CITAÇÕES COM OS SELETORES CORRETOS ---
-    const authorNameValueSpan = cardElement.querySelector(".author-name-value"); // Procura por <span class="author-name-value">
-    // console.log(`  - Buscando .author-name-value:`, authorNameValueSpan); // Log de depuração
-    if (authorNameValueSpan) {
-      // console.log(`    - Valor de project.author:`, project.author); // Log de depuração
-      authorNameValueSpan.textContent = project.author || "Desconhecido";
-    } else {
-      console.warn(
-        `    - Elemento com classe '.author-name-value' NÃO encontrado no card para "${project.title}"`
-      );
+    // Preenche o nome do autor no span com classe 'author-name-value'
+    const authorNameSpan = cardElement.querySelector(".author-name-value");
+    if (authorNameSpan) {
+      authorNameSpan.textContent = project.author || "Desconhecido";
     }
 
-    const citationsCountValueSpan = cardElement.querySelector(
+    // Preenche o número de citações no span com classe 'citations-count-value'
+    const citationsCountSpan = cardElement.querySelector(
       ".citations-count-value"
-    ); // Procura por <span class="citations-count-value">
-    // console.log(`  - Buscando .citations-count-value:`, citationsCountValueSpan); // Log de depuração
-    if (citationsCountValueSpan) {
-      // console.log(`    - Valor de project.citations:`, project.citations); // Log de depuração
-      citationsCountValueSpan.textContent =
+    );
+    if (citationsCountSpan) {
+      citationsCountSpan.textContent =
         project.citations !== undefined ? project.citations.toString() : "0";
-    } else {
-      console.warn(
-        `    - Elemento com classe '.citations-count-value' NÃO encontrado no card para "${project.title}"`
-      );
     }
-    // --- FIM DA ATUALIZAÇÃO ---
 
     const areaTag = cardElement.querySelector(".area-tag");
-    if (areaTag) areaTag.textContent = getDisplayArea(project.area); // getDisplayArea já foi definida antes
+    if (areaTag) areaTag.textContent = getDisplayArea(project.area);
 
     const techTag = cardElement.querySelector(".tech-tag");
     if (techTag)
@@ -187,63 +119,132 @@ document.addEventListener("DOMContentLoaded", () => {
     return cardElement;
   }
 
-  // --- 3. LÓGICA DE EXIBIÇÃO E "VER MAIS" ---
-  function updateVerMaisButton() {
+  // --- LÓGICA DE EXIBIÇÃO E "VER MAIS" COM A API ---
+  function updateVerMaisButton(totalProjectsInFilter, projectsFetchedThisTime) {
     if (!verMaisBtn) return;
-    if (projectsCurrentlyDisplayedCount < currentFilteredResults.length) {
+    const totalCurrentlyVisible =
+      (currentPage - 1) * PROJECTS_PER_LOAD + projectsFetchedThisTime;
+
+    if (totalCurrentlyVisible < totalProjectsInFilter) {
       verMaisBtn.style.display = "inline-block";
     } else {
       verMaisBtn.style.display = "none";
     }
   }
 
-  function loadMoreProjects() {
-    if (!Array.isArray(currentFilteredResults) || !projectListContainer) return;
+  function displayFilteredProjects() {
+    if (!window.estudioIdeias || !window.estudioIdeias.projects) {
+      console.error("HOME JS: API estudioIdeias.projects não está pronta.");
+      if (projectListContainer)
+        projectListContainer.innerHTML =
+          "<p class='no-results-message'>Erro ao carregar API de dados dos projetos.</p>";
+      if (verMaisBtn) verMaisBtn.style.display = "none";
+      return;
+    }
+    if (!projectListContainer) {
+      console.error(
+        "HOME JS: Container da lista de projetos (lista-projetos) não encontrado."
+      );
+      return;
+    }
 
-    const startIndex = projectsCurrentlyDisplayedCount;
-    const endIndex = startIndex + PROJECTS_PER_PAGE;
-    const batchToDisplay = currentFilteredResults.slice(startIndex, endIndex);
+    const params = {
+      page: currentPage,
+      perPage: PROJECTS_PER_LOAD,
+      search: currentSearchTerm || null,
+      searchBy: currentSearchBy,
+      orderBy: mapSortValue(currentSortBy),
+      year: currentYear || null,
+      area: currentArea || null,
+    };
+
+    const paginatedData = window.estudioIdeias.projects.paginate(params);
+
+    if (currentPage === 1) {
+      projectListContainer.innerHTML = "";
+    }
 
     if (
-      batchToDisplay.length === 0 &&
-      startIndex === 0 &&
-      projectListContainer.innerHTML.trim() === ""
+      paginatedData &&
+      paginatedData.results &&
+      paginatedData.results.length > 0
     ) {
-      projectListContainer.innerHTML =
-        '<p class="no-results-message">Nenhum projeto encontrado com os critérios selecionados.</p>';
-    } else {
-      batchToDisplay.forEach((project) => {
+      paginatedData.results.forEach((project) => {
         if (project) {
           const projectCardElement = renderProjectCard(project);
           projectListContainer.appendChild(projectCardElement);
         }
       });
-    }
-
-    projectsCurrentlyDisplayedCount += batchToDisplay.length;
-    updateVerMaisButton();
-  }
-
-  function resetAndDisplayProjects() {
-    if (!projectListContainer) return;
-
-    projectListContainer.innerHTML = "";
-    projectsCurrentlyDisplayedCount = 0;
-
-    if (
-      !Array.isArray(currentFilteredResults) ||
-      currentFilteredResults.length === 0
-    ) {
+      updateVerMaisButton(paginatedData.total, paginatedData.results.length);
+    } else if (currentPage === 1) {
       projectListContainer.innerHTML =
         '<p class="no-results-message">Nenhum projeto encontrado com os critérios selecionados.</p>';
+      updateVerMaisButton(0, 0);
+    } else {
+      updateVerMaisButton(paginatedData.total, 0);
     }
-    loadMoreProjects();
-    updateVerMaisButton();
   }
 
-  // --- 4. SUGESTÕES, FILTRAGEM E ORDENAÇÃO ---
-  function updateSearchSuggestions() {
-    if (!searchInput || !filterFieldSelect || !suggestionsContainer) return;
+  function handleFilterOrSortChange() {
+    currentPage = 1;
+    currentSearchTerm = searchInput
+      ? searchInput.value.toLowerCase().trim()
+      : "";
+    currentSearchBy = filterFieldSelect ? filterFieldSelect.value : "all";
+    currentSortBy = sortBySelect ? sortBySelect.value : "relevance";
+    currentYear = yearFilterSelect
+      ? yearFilterSelect.value === "all"
+        ? ""
+        : yearFilterSelect.value
+      : "";
+    currentArea = areaFilterSelect
+      ? areaFilterSelect.value === "all"
+        ? ""
+        : areaFilterSelect.value
+      : "";
+
+    displayFilteredProjects();
+  }
+
+  function loadMoreProjectsOnClick() {
+    currentPage++;
+    displayFilteredProjects();
+  }
+
+  // --- POPULAR FILTRO DE ANO COM A API ---
+  function populateYearFilterWithApi() {
+    if (
+      !window.estudioIdeias ||
+      !window.estudioIdeias.projects ||
+      !yearFilterSelect
+    )
+      return;
+
+    const years = window.estudioIdeias.projects.getAvailableYears();
+
+    const defaultOption = yearFilterSelect.options[0];
+    yearFilterSelect.innerHTML = "";
+    if (defaultOption) yearFilterSelect.appendChild(defaultOption);
+
+    if (years && years.length > 0) {
+      years.forEach((year) => {
+        const option = document.createElement("option");
+        option.value = year;
+        option.textContent = year;
+        yearFilterSelect.appendChild(option);
+      });
+    }
+  }
+
+  // --- SUGESTÕES DE BUSCA COM A API ---
+  function updateSearchSuggestionsWithApi() {
+    if (
+      !window.estudioIdeias ||
+      !searchInput ||
+      !filterFieldSelect ||
+      !suggestionsContainer
+    )
+      return;
 
     const searchTerm = searchInput.value.toLowerCase().trim();
     const searchField = filterFieldSelect.value;
@@ -255,49 +256,51 @@ document.addEventListener("DOMContentLoaded", () => {
       suggestionsContainer.style.display = "none";
       return;
     }
+    const paginatedSuggestions = window.estudioIdeias.projects.paginate({
+      search: searchTerm,
+      searchBy: searchField,
+      perPage: 5,
+    });
 
-    const MAX_SUGGESTIONS = 5;
-    let suggestedItems = [];
-
-    if (!Array.isArray(allProjects)) {
-      console.warn("allProjects não é um array ao tentar gerar sugestões.");
-      suggestionsContainer.style.display = "none";
-      return;
-    }
-
-    for (const project of allProjects) {
-      if (suggestedItems.length >= MAX_SUGGESTIONS) break;
-      if (!project) continue;
-
-      let matchText = null;
-      let originalTextToFillInput = project.title || "";
-
-      if (searchField === "title" || searchField === "all") {
-        if (project.title && project.title.toLowerCase().includes(searchTerm)) {
-          matchText = project.title;
+    const suggestedItems = [];
+    if (
+      paginatedSuggestions &&
+      paginatedSuggestions.results &&
+      paginatedSuggestions.results.length > 0
+    ) {
+      paginatedSuggestions.results.forEach((project) => {
+        let matchText = null;
+        let originalTextToFillInput = project.title || "";
+        if (searchField === "title" || searchField === "all") {
+          if (
+            project.title &&
+            project.title.toLowerCase().includes(searchTerm)
+          ) {
+            matchText = project.title;
+          }
         }
-      }
-      if (!matchText && (searchField === "author" || searchField === "all")) {
+        if (!matchText && (searchField === "author" || searchField === "all")) {
+          if (
+            project.author &&
+            project.author.toLowerCase().includes(searchTerm)
+          ) {
+            matchText = `${project.author} (Autor)`;
+            originalTextToFillInput = project.author;
+          }
+        }
+
         if (
-          project.author &&
-          project.author.toLowerCase().includes(searchTerm)
+          matchText &&
+          !suggestedItems.some(
+            (item) => item.text.toLowerCase() === matchText.toLowerCase()
+          )
         ) {
-          matchText = `${project.author} (Autor)`;
-          originalTextToFillInput = project.author;
+          suggestedItems.push({
+            text: matchText,
+            fillValue: originalTextToFillInput,
+          });
         }
-      }
-
-      if (
-        matchText &&
-        !suggestedItems.some(
-          (item) => item.text.toLowerCase() === matchText.toLowerCase()
-        )
-      ) {
-        suggestedItems.push({
-          text: matchText,
-          fillValue: originalTextToFillInput,
-        });
-      }
+      });
     }
 
     if (suggestedItems.length > 0) {
@@ -312,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
           suggestionsContainer.innerHTML = "";
           suggestionsContainer.style.display = "none";
           activeSuggestionIndex = -1;
-          handleSearchAndFilter();
+          handleFilterOrSortChange();
         });
         suggestionsContainer.appendChild(suggestionDiv);
       });
@@ -321,137 +324,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function mapJsonAreaToFilterValue(jsonArea) {
-    if (
-      jsonArea &&
-      typeof jsonArea === "string" &&
-      jsonArea.toLowerCase() === "networking"
-    ) {
-      return "redes";
-    }
-    // Se você padronizou os valores de "area" no seu JSON para corresponderem
-    // aos values do select HTML (ex: "banco-dados", "seguranca"),
-    // você pode simplificar ou remover esta função e usar jsonArea.toLowerCase() diretamente no filtro.
-    return jsonArea
-      ? typeof jsonArea === "string"
-        ? jsonArea.toLowerCase()
-        : jsonArea
-      : "";
-  }
-
-  function handleSearchAndFilter() {
-    if (
-      !searchInput ||
-      !filterFieldSelect ||
-      !sortBySelect ||
-      !yearFilterSelect ||
-      !areaFilterSelect
-    )
-      return;
-
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    const searchField = filterFieldSelect.value;
-    const sortBy = sortBySelect.value;
-    const selectedYearValue = yearFilterSelect.value;
-    const selectedAreaValue = areaFilterSelect.value;
-
-    if (suggestionsContainer) {
-      suggestionsContainer.innerHTML = "";
-      suggestionsContainer.style.display = "none";
-      activeSuggestionIndex = -1;
-    }
-
-    if (!Array.isArray(allProjects)) {
-      console.warn("allProjects não é um array ao tentar filtrar e ordenar.");
-      currentFilteredResults = [];
-      resetAndDisplayProjects();
-      return;
-    }
-
-    let newFilteredResults = allProjects.filter((project) => {
-      if (!project) return false;
-      if (
-        selectedYearValue !== "all" &&
-        (!project.year || project.year.toString() !== selectedYearValue)
-      )
-        return false;
-      if (
-        selectedAreaValue !== "all" &&
-        (!project.area ||
-          mapJsonAreaToFilterValue(project.area) !== selectedAreaValue)
-      )
-        return false;
-
-      if (searchTerm) {
-        const titleMatch =
-          project.title && project.title.toLowerCase().includes(searchTerm);
-        const authorMatch =
-          project.author && project.author.toLowerCase().includes(searchTerm);
-        const summaryMatch =
-          project.summary && project.summary.toLowerCase().includes(searchTerm);
-        const techMatch =
-          Array.isArray(project.technologies) &&
-          project.technologies.some(
-            (tech) => tech && tech.toLowerCase().includes(searchTerm)
-          );
-        if (searchField === "title" && !titleMatch) return false;
-        if (searchField === "author" && !authorMatch) return false;
-        if (
-          searchField === "all" &&
-          !(titleMatch || authorMatch || summaryMatch || techMatch)
-        )
-          return false;
-      }
-      return true;
-    });
-
-    switch (sortBy) {
-      case "date-desc":
-      case "relevance":
-        newFilteredResults.sort(
-          (a, b) =>
-            b.year - a.year || (a.title || "").localeCompare(b.title || "")
-        );
-        break;
-      case "date-asc":
-        newFilteredResults.sort(
-          (a, b) =>
-            a.year - b.year || (a.title || "").localeCompare(b.title || "")
-        );
-        break;
-      case "citations":
-        newFilteredResults.sort(
-          (a, b) => b.citations - a.citations || b.year - a.year
-        );
-        break;
-    }
-    currentFilteredResults = newFilteredResults;
-    resetAndDisplayProjects();
-  }
-
-  // --- 5. CONFIGURAÇÃO DOS EVENT LISTENERS ---
-  function updateActiveSuggestion(items) {
-    items.forEach((item, index) => {
-      if (index === activeSuggestionIndex) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
-    });
-  }
-
+  // --- CONFIGURAÇÃO DOS EVENT LISTENERS ---
   function setupEventListeners() {
-    // Logs de depuração para cada seletor
-    console.log("--- Iniciando setupEventListeners ---");
-    console.log("Verificando searchForm:", searchForm);
-    console.log("Verificando searchInput:", searchInput);
-    console.log("Verificando filterFieldSelect:", filterFieldSelect);
-    console.log("Verificando sortBySelect:", sortBySelect);
-    console.log("Verificando yearFilterSelect:", yearFilterSelect);
-    console.log("Verificando areaFilterSelect:", areaFilterSelect);
-    console.log("Verificando suggestionsContainer:", suggestionsContainer);
-    console.log("Verificando verMaisBtn:", verMaisBtn);
-
+    // console.log("--- Iniciando setupEventListeners na Home ---");
     if (
       !searchForm ||
       !searchInput ||
@@ -463,47 +338,18 @@ document.addEventListener("DOMContentLoaded", () => {
       !verMaisBtn
     ) {
       console.error(
-        "ERRO CRÍTICO: Um ou mais elementos de UI NÃO foram encontrados. Listeners podem não funcionar."
+        "HOME JS: ERRO CRÍTICO - Um ou mais elementos de UI não foram encontrados para configurar listeners."
       );
-      if (!searchForm)
-        console.error(
-          "Elemento 'searchForm' (id='search-form') não encontrado."
-        );
-      if (!searchInput)
-        console.error(
-          "Elemento 'searchInput' (id='search-input') não encontrado."
-        );
-      if (!filterFieldSelect)
-        console.error(
-          "Elemento 'filterFieldSelect' (id='filter-field') não encontrado."
-        );
-      if (!sortBySelect)
-        console.error("Elemento 'sortBySelect' (id='sort-by') não encontrado.");
-      if (!yearFilterSelect)
-        console.error(
-          "Elemento 'yearFilterSelect' (id='year-filter') não encontrado."
-        );
-      if (!areaFilterSelect)
-        console.error(
-          "Elemento 'areaFilterSelect' (id='area-filter') não encontrado."
-        );
-      if (!suggestionsContainer)
-        console.error(
-          "Elemento 'suggestionsContainer' (id='search-suggestions') não encontrado."
-        );
-      if (!verMaisBtn)
-        console.error(
-          "Elemento 'verMaisBtn' (id='ver-mais-btn') não encontrado."
-        );
+      // Adicione logs individuais para cada elemento se precisar depurar qual está faltando
       return;
     }
 
     searchForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      handleSearchAndFilter();
+      handleFilterOrSortChange();
     });
 
-    searchInput.addEventListener("input", updateSearchSuggestions);
+    searchInput.addEventListener("input", updateSearchSuggestionsWithApi);
 
     searchInput.addEventListener("keydown", (e) => {
       if (!suggestionsContainer) return;
@@ -531,14 +377,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    filterFieldSelect.addEventListener("change", () => {
-      if (typeof updateSearchSuggestions === "function")
-        updateSearchSuggestions();
-      handleSearchAndFilter();
-    });
-    sortBySelect.addEventListener("change", handleSearchAndFilter);
-    yearFilterSelect.addEventListener("change", handleSearchAndFilter);
-    areaFilterSelect.addEventListener("change", handleSearchAndFilter);
+    filterFieldSelect.addEventListener("change", handleFilterOrSortChange);
+    sortBySelect.addEventListener("change", handleFilterOrSortChange);
+    yearFilterSelect.addEventListener("change", handleFilterOrSortChange);
+    areaFilterSelect.addEventListener("change", handleFilterOrSortChange);
+
+    verMaisBtn.addEventListener("click", loadMoreProjectsOnClick);
 
     document.addEventListener("click", (event) => {
       if (
@@ -552,30 +396,73 @@ document.addEventListener("DOMContentLoaded", () => {
         activeSuggestionIndex = -1;
       }
     });
-
-    verMaisBtn.addEventListener("click", loadMoreProjects);
-
-    console.log("Event listeners configurados com SUCESSO.");
+    // console.log("HOME JS: Event listeners configurados com SUCESSO.");
   }
-  // Inicia o processo
-  fetchProjects();
+
+  function updateActiveSuggestion(items) {
+    // Definindo a função que faltava
+    items.forEach((item, index) => {
+      if (index === activeSuggestionIndex) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  }
+
+  // --- INICIALIZAÇÃO DA PÁGINA HOME ---
+  function initializeHomePage() {
+    if (!projectTemplate) {
+      console.error(
+        "CRÍTICO (Home): O <template id='projeto-template'> não foi encontrado!"
+      );
+      if (projectListContainer)
+        projectListContainer.innerHTML =
+          "<p class='no-results-message'>Erro: Template de projeto ausente.</p>";
+      if (verMaisBtn) verMaisBtn.style.display = "none";
+      return;
+    }
+    populateYearFilterWithApi();
+    handleFilterOrSortChange();
+    setupEventListeners();
+  }
+
+  // Espera a API estar pronta
+  if (window.estudioIdeias && window.estudioIdeias.projects) {
+    // console.log("HOME JS: API estudioIdeias já pronta. Inicializando...");
+    initializeHomePage();
+  } else {
+    // console.log("HOME JS: Aguardando evento 'estudioApiReady'...");
+    document.addEventListener(
+      "estudioApiReady",
+      function handler() {
+        // console.log("HOME JS: Evento 'estudioApiReady' recebido. Inicializando página home.");
+        document.removeEventListener("estudioApiReady", handler);
+        initializeHomePage();
+      },
+      { once: true }
+    );
+
+    setTimeout(() => {
+      if (
+        window.estudioIdeias &&
+        window.estudioIdeias.projects &&
+        !document.body.dataset.homeInitializedByApi
+      ) {
+        // console.warn("HOME JS: Inicializando via fallback setTimeout.");
+        document.body.dataset.homeInitializedByApi = "true";
+        initializeHomePage();
+      } else if (
+        !window.estudioIdeias &&
+        !document.body.dataset.homeInitializedByApi
+      ) {
+        console.error(
+          "HOME JS: API não carregou após timeout. Verifique o script da API (projetos.js)."
+        );
+        if (projectListContainer)
+          projectListContainer.innerHTML =
+            "<p class='no-results-message'>Falha ao carregar base de dados.</p>";
+      }
+    }, 1500);
+  }
 });
-
-
-window.onload = () => {
-  const projects = window.estudioIdeias.projects.paginate({
-    page: 1,
-    // perPage: 20,
-    // search: '',
-    // searchBy: '', // title, author or all
-    // orderBy: 'newest', // newest, oldest, citations
-    // year: '',
-    // area: '',
-  })
-  // window.estudioIdeias.projects.count()
-  // window.estudioIdeias.projects.get(id)
-  // window.estudioIdeias.projects.add({ ... })
-  // window.estudioIdeias.projects.getAvailableYears()
-
-  console.log('PROJETOS', projects);
-}
