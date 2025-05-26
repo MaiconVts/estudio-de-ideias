@@ -1,112 +1,206 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estúdio de Ideias</title>
-    <link rel="icon" type="image/png" href="./assets/img/logoIcone-azulDark.png">
-    <link rel="stylesheet" href="./assets/css/login.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/img/logoIcone-azulDark.png"
+    />
+    <link rel="stylesheet" href="./assets/css/login.css" /> <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
     <script defer src="./assets/js/header.js"></script>
-     <!-- Fonte Montserrat e Roboto (Google Fonts) -->
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- HEADER-->
+    <script defer src="./assets/js/login.js"></script> <script
+      defer
+      src="https://kit.fontawesome.com/fba2b126ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="header-flex-container">
-        <div class="header-brand"> <div class="logo-container">
-                <a href="index.html">
-                    <img src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png" alt="Logo Estúdio de Ideias" width="60px" height="60px" />
-                </a>
-            </div>
-            <a href="index.html" class="link-title">
-                <h1 class="site-title">ESTÚDIO DE IDEIAS</h1> </a>
+      <div class="header-brand">
+        <div class="logo-container">
+          <a href="index.html">
+            <img
+              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+              alt="Logo Estúdio de Ideias"
+              width="60px"
+              height="60px"
+            />
+          </a>
         </div>
-    
-        <nav class="navbar">
-            <div class="menu-icon"> <img src="assets/img/list.png" alt="Menu" width="40" height="40" class="nav-icon" id="menuIconImg" /> <ul class="dropdown-menu" id="mainDropdownMenu"> <li><a href="./index.html">Início</a></li>
-                    <li><a href="./projetos.html">Projetos</a></li>
-                    <li><a href="./submissao.html">Envio de Projetos</a></li>
-                    <li><a href="./favoritos.html">Favoritos</a></li>
-                    <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-                    <li><a href="./login.html">Área Restrita</a></li>
-                    <li><a href="./login.html" class="nav-login-link">Login</a></li>
-                </ul>
-            </div>
-        </nav>
+        <a href="index.html" class="link-title">
+          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
+        </a>
+      </div>
+      <nav class="navbar">
+        <div class="menu-icon">
+          <img
+            src="assets/img/list.png"
+            alt="Menu"
+            width="40"
+            height="40"
+            class="nav-icon"
+            id="menuIconImg"
+          />
+          <ul class="dropdown-menu" id="mainDropdownMenu">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
+            <li><a href="./submissao.html">Envio de Projetos</a></li>
+            <li><a href="./favoritos.html">Favoritos</a></li>
+            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+            <li><a href="./login.html">Área Restrita</a></li>
+            <li><a href="./login.html" class="nav-login-link">Login</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
-    <!--CONTEÚDO PRINCIPAL-->
-    <main>
-        <section class="login-section">
-            <h2>Login</h2>
-            <form action="./login" method="post">
-                <label for="login-email">Email:</label>
-                <input type="email" id="login-email" name="email" required>
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" name="password" required>
-                <button type="submit">Login</button>
+
+    <main class="login-page-main-content">
+      <div class="container">
+        <div class="content first-content">
+          <div class="first-column">
+            <h2 class="title title-primary">Bem-vindo(a) de volta!</h2>
+            <p class="description description-primary">Para se manter conectado conosco no Estúdio de Ideias,</p>
+            <p class="description description-primary">por favor, acesse com seus dados pessoais.</p>
+            <button id="signin" class="btn btn-primary" type="button">Entrar</button>
+          </div>
+          <div class="second-column">
+            <h2 class="title title-second">Crie sua Conta</h2>
+            <div class="social-media">
+              <ul class="list-social-media">
+                <li class="item-social-media">
+                  <a class="link-social-media" href="#" aria-label="Cadastrar com Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="item-social-media">
+                  <a class="link-social-media" href="#" aria-label="Cadastrar com Google">
+                    <i class="fab fa-google-plus-g"></i> </a>
+                </li>
+                <li class="item-social-media">
+                  <a class="link-social-media" href="#" aria-label="Cadastrar com LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="description description-second">ou use seu e-mail para se registrar:</p>
+            <form class="form" action="#" method="post"> <label class="label-input" for="signup-name">
+                <i class="far fa-user icon-modify"></i>
+                <input type="text" id="signup-name" placeholder="Nome Completo" required>
+              </label>
+
+              <label class="label-input" for="signup-email">
+                <i class="far fa-envelope icon-modify"></i>
+                <input type="email" id="signup-email" placeholder="Seu E-mail" required>
+              </label>
+
+              <label class="label-input" for="signup-password">
+                <i class="fas fa-lock icon-modify"></i>
+                <input type="password" id="signup-password" placeholder="Crie uma Senha Forte" required>
+              </label>
+
+              <button class="btn btn-second" type="submit">Cadastrar</button>
             </form>
-        </section>
-        <section class="signup-section">
-            <h2>Sign Up</h2>
-            <form action="./signup" method="post">
-                <label for="signup-name">Name:</label>
-                <input type="text" id="signup-name" name="name" required>
-                <label for="signup-email">Email:</label>
-                <input type="email" id="signup-email" name="email" required>
-                <label for="signup-password">Password:</label>
-                <input type="password" id="signup-password" name="password" required>
-                <button type="submit">Sign Up</button>
+          </div>
+          </div>
+        <div class="content second-content">
+          <div class="first-column">
+            <h2 class="title title-primary">Olá, amigo!</h2>
+            <p class="description description-primary">É novo(a) por aqui no Estúdio de Ideias?</p>
+            <p class="description description-primary">Insira alguns dados e comece sua jornada conosco.</p>
+            <button id="signup" class="btn btn-primary" type="button">Criar Conta</button>
+          </div>
+          <div class="second-column">
+            <h2 class="title title-second">Acessar o Estúdio</h2>
+            <div class="social-media">
+              <ul class="list-social-media">
+                <li class="item-social-media">
+                  <a class="link-social-media" href="#" aria-label="Entrar com Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="item-social-media">
+                  <a class="link-social-media" href="#" aria-label="Entrar com Google">
+                    <i class="fab fa-google-plus-g"></i> </a>
+                </li>
+                <li class="item-social-media">
+                  <a class="link-social-media" href="#" aria-label="Entrar com LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="description description-second">ou use sua conta de e-mail:</p>
+            <form class="form" action="#" method="post"> <label class="label-input" for="signin-email">
+                <i class="far fa-envelope icon-modify"></i>
+                <input type="email" id="signin-email" placeholder="Seu E-mail" required>
+              </label>
+
+              <label class="label-input" for="signin-password">
+                <i class="fas fa-lock icon-modify"></i>
+                <input type="password" id="signin-password" placeholder="Sua Senha" required>
+              </label>
+
+              <a class="password" href="#">Esqueceu sua senha?</a>
+              <button class="btn btn-second" type="submit">Entrar</button>
             </form>
-        </section>
-    </main>
-    <!--RODAPÉ-->
-    <footer class="site-footer">
-        <div class="footer-top-bar"></div>
-        <div class="footer-main">
-            <div class="footer-section">
-                <h4 class="footer-title">Sobre o Estúdio</h4>
-                <p class="footer-text">
-                    Um espaço dedicado a conectar estudantes e profissionais através de projetos acadêmicos inovadores.
-                </p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Navegação</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Projetos</a></li>
-                    <li><a href="#">Áreas</a></li>
-                    <li><a href="#">Publicar Projeto</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Recursos Acadêmicos</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Normas de Publicação</a></li>
-                    <li><a href="#">Guia de Apresentação</a></li>
-                    <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Tutoriais Técnicos</a></li>
-                </ul>
-            </div>
+          </div>
+          </div>
         </div>
-        <!-- Nova linha azul de contato -->
-        <div class="footer-contact-bar">
-            <div class="footer-contact-container">
-                <h4 class="footer-contact-title">Contato</h4>
-                <ul class="footer-contact-links">
-                    <li><a href="#">Fale Conosco</a></li>
-                    <li><a href="#">Perguntas Frequentes</a></li>
-                    <li><a href="#">Trabalhe Conosco</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                </ul>
-            </div>
+      </main> <footer class="site-footer">
+      <div class="footer-top-bar"></div>
+      <div class="footer-main">
+        <div class="footer-section">
+          <h4 class="footer-title">Sobre o Estúdio</h4>
+          <p class="footer-text">
+            Um espaço dedicado a conectar estudantes e profissionais através de
+            projetos acadêmicos inovadores.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p class="footer-copy">
-                © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os direitos reservados.
-            </p>
+        <div class="footer-section">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Projetos</a></li>
+            <li><a href="#">Áreas</a></li>
+            <li><a href="#">Publicar Projeto</a></li>
+          </ul>
         </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Recursos Acadêmicos</h4>
+          <ul class="footer-links">
+            <li><a href="#">Normas de Publicação</a></li>
+            <li><a href="#">Guia de Apresentação</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Tutoriais Técnicos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-contact-bar">
+        <div class="footer-contact-container">
+          <h4 class="footer-contact-title">Contato</h4>
+          <ul class="footer-contact-links">
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
+          direitos reservados.
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
