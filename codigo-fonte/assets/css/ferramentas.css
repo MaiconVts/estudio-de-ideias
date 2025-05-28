@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 /* Search Section */
@@ -28,10 +29,10 @@
 
 /* Header (titulo acima da barra, se quiser usar) */
 .search-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 36px;
     font-weight: 600;
-    color: #0A1931;
+    color: #0a1931;
     margin-bottom: 40px;
 }
 
@@ -55,9 +56,9 @@
     font-size: 18px;
     border: none;
     border-radius: 10px;
-    background-color: #F5F7FA;
-    color: #0A1931;
-    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    color: #0a1931;
+    font-family: "Roboto", sans-serif;
     outline: none;
 }
 
@@ -66,17 +67,17 @@
     flex: 1 1 100%;
     padding: 20px;
     font-size: 18px;
-    background-color: #0A1931;
-    color: #FFFFFF;
+    background-color: #0a1931;
+    color: #ffffff;
     border: none;
     border-radius: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-    background-color: #185ADB;
+    background-color: #185adb;
 }
 
 /* Área de filtros abaixo da search bar */
@@ -104,17 +105,17 @@
     /* Ocupa todo o espaço disponível do item */
     padding: 10px 20px;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    border: 2px solid #0A1931;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid #0a1931;
     border-radius: 6px;
-    background-color: #FFFFFF;
-    color: #0A1931;
+    background-color: #ffffff;
+    color: #0a1931;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .filter-select:hover {
-    background-color: #E2E8F0;
+    background-color: #e2e8f0;
 }
 
 /* Área que lista todos os projetos */
@@ -140,7 +141,6 @@
     gap: 16px;
 }
 
-
 /* Pequena animação no hover */
 .project-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -151,7 +151,7 @@
     text-align: center;
     font-size: 24px;
     font-weight: 700;
-    color: #185ADB;
+    color: #185adb;
     margin-bottom: 8px;
 }
 
@@ -173,88 +173,104 @@
     gap: 8px;
 }
 
-
 /* Estilo das tags */
 .project-tag {
     background-color: #e3edff;
-    color: #185ADB;
+    color: #185adb;
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 500;
 }
 
-/* Descrição do projeto */
-.project-description {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
+.project__title {
+    font-size: 1.2rem !important;
+    font-weight: 500;
+    line-height: 1.2rem;
 }
 
-/* Estilização do conteúdo da página */
-
-.main-container {
-    display: flex;
-    justify-content: space-around;
-    line-height: 2;
-    padding: 2rem 1rem 3rem 1rem;
+.ferramentas-container {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
 }
 
-.column-left {
+.ferramentas-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 30px;
 }
 
-.container {
-    max-width: 700px;
-    font-family: 'Roboto', sans-serif;
-    .title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-    }
+.filtro {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-.imagem-quadrada {
-    float: left;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    max-width: 300px;
-    margin-right: 1rem;
-    overflow: hidden;
-    
+.filtro h2 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
 }
 
-.imagem-quadrada img {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
+.filtro label,
+.filtro select {
     display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-size: 1rem;
 }
 
-.clear {
-    clear: both;
-    margin-top: 3rem;
-}
-
-
-.banner {
-    background: #185ADB;
-    height: 200px;
-    margin: 0;
+.cards {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    font-size: 2em;
-    font-weight: bold;
 }
 
-@media screen and (max-width: 1200px) {
-    .main-container {
-        display: flex;
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 300px;
+    max-width: 350px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h5 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.card a {
+    align-self: flex-start;
+    text-decoration: none;
+    background-color: #003366;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .cards {
         flex-direction: column;
-        align-content: center;
         align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
     }
 }
