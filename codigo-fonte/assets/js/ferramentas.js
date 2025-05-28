@@ -2,7 +2,7 @@ const ferramentas = [
   {
     titulo: "Gerador de Referências ABNT",
     descricao: "Ferramenta online para criar referências no padrão ABNT.",
-    link: "https://www.more.edu.br/abnt",
+    link: "https://www.mybib.com/pt/ferramentas/gerador-referencias-abnt",
     categoria: "abnt"
   },
   {
@@ -14,7 +14,7 @@ const ferramentas = [
   {
     titulo: "Git e GitHub para Iniciantes",
     descricao: "Guia passo a passo para versionamento de projetos.",
-    link: "https://www.rocketseat.com.br/discover",
+    link: "https://www.freecodecamp.org/portuguese/news/tutorial-de-git-e-github-controle-de-versao-para-iniciantes/",
     categoria: "git"
   },
   {
