@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="./assets/css/admin_panel.css" />
     <link rel="stylesheet" href="./assets/css/header.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
+    <script defer src="./assets/js/projetos.js"></script>
+    <script defer src="./assets/js/admin_panel.js"></script>
+    <script defer src="./assets/js/header_menu_toggle.js"></script>
     <script defer src="./assets/js/header.js"></script>
 
     <link
@@ -30,27 +33,44 @@
   </head>
   <body>
     <header class="header-flex-container">
-      <div class="header-brand"> <div class="logo-container">
-              <a href="./index.html">
-                  <img src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png" alt="Logo Estúdio de Ideias" width="60px" height="60px" />
-              </a>
-          </div>
-          <a href="./index.html" class="link-title">
-              <h1 class="site-title">ESTÚDIO DE IDEIAS</h1> </a>
+      <div class="header-brand">
+        <div class="logo-container">
+          <a href="./index.html">
+            <img
+              src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+              alt="Logo Estúdio de Ideias"
+              width="60px"
+              height="60px"
+            />
+          </a>
+        </div>
+        <a href="./index.html" class="link-title">
+          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
+        </a>
       </div>
-  
+
       <nav class="navbar">
-          <div class="menu-icon"> <img src="./assets/img/list.png" alt="Menu" width="40" height="40" class="nav-icon" id="menuIconImg" /> <ul class="dropdown-menu" id="mainDropdownMenu"> <li><a href="./index.html">Início</a></li>
-                  <li><a href="./projetos.html">Projetos</a></li>
-                  <li><a href="./submissao.html">Envio de Projetos</a></li>
-                  <li><a href="./favoritos.html">Favoritos</a></li>
-                  <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-                  <li><a href="./login.html">Área Restrita</a></li>
-                  <li><a href="./login.html" class="nav-login-link">Login</a></li>
-              </ul>
-          </div>
+        <div class="menu-icon">
+          <img
+            src="./assets/img/list.png"
+            alt="Menu"
+            width="40"
+            height="40"
+            class="nav-icon"
+            id="menuIconImg"
+          />
+          <ul class="dropdown-menu" id="mainDropdownMenu">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
+            <li><a href="./submissao.html">Envio de Projetos</a></li>
+            <li><a href="./favoritos.html">Favoritos</a></li>
+            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+            <li><a href="./login.html">Área Restrita</a></li>
+            <li><a href="./login.html" class="nav-login-link">Login</a></li>
+          </ul>
+        </div>
       </nav>
-  </header>
+    </header>
 
     <main class="admin-panel-main">
       <div class="admin-panel-container">
@@ -71,100 +91,7 @@
                     <th>Ações</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a
-                        href="#"
-                        class="details-link"
-                        title="Ver detalhes do projeto"
-                        >Sistema de Gestão Acadêmica</a
-                      >
-                    </td>
-                    <td>João Silva, Maria Oliveira</td>
-                    <td>02/05/2025</td>
-                    <td><span class="status-pending">Pendente</span></td>
-                    <td>
-                      <div class="action-buttons-group">
-                        <button
-                          type="button"
-                          class="action-btn approve-btn"
-                          title="Aprovar"
-                        >
-                          <i class="fas fa-check"></i> Aprovar
-                        </button>
-                        <button
-                          type="button"
-                          class="action-btn reject-btn"
-                          title="Rejeitar"
-                        >
-                          <i class="fas fa-times"></i> Rejeitar
-                        </button>
-                        <button
-                          type="button"
-                          class="action-btn correct-btn"
-                          title="Solicitar Correções"
-                        >
-                          <i class="fas fa-edit"></i> Correção
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a
-                        href="#"
-                        class="details-link"
-                        title="Ver detalhes do projeto"
-                        >Plataforma E-commerce B2B</a
-                      >
-                    </td>
-                    <td>Carlos Pereira</td>
-                    <td>01/05/2025</td>
-                    <td><span class="status-pending">Pendente</span></td>
-                    <td>
-                      <div class="action-buttons-group">
-                        <button
-                          type="button"
-                          class="action-btn approve-btn"
-                          title="Aprovar"
-                        >
-                          <i class="fas fa-check"></i> Aprovar
-                        </button>
-                        <button
-                          type="button"
-                          class="action-btn reject-btn"
-                          title="Rejeitar"
-                        >
-                          <i class="fas fa-times"></i> Rejeitar
-                        </button>
-                        <button
-                          type="button"
-                          class="action-btn correct-btn"
-                          title="Solicitar Correções"
-                        >
-                          <i class="fas fa-edit"></i> Correção
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a
-                        href="#"
-                        class="details-link"
-                        title="Ver detalhes do projeto"
-                        >App Mobile de Saúde</a
-                      >
-                    </td>
-                    <td>Ana Souza, Pedro Lima</td>
-                    <td>28/04/2025</td>
-                    <td><span class="status-approved">Aprovado</span></td>
-                    <td>
-                      <span class="moderated-text">Já moderado</span>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody id="submissoes-tbody"></tbody>
               </table>
             </div>
 
@@ -235,8 +162,5 @@
         </p>
       </div>
     </footer>
-
-    <script src="./assets/js/admin_panel.js"></script>
-    <script src="./assets/js/header_menu_toggle.js"></script>
   </body>
 </html>
