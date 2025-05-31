@@ -66,7 +66,7 @@ const db = {
 const projects = {
   async seed() {
     // corrigindo o caminho para o ERRO 404
-    const response = await fetch("/assets/data/projects.json");
+    const response = await fetch("/codigo-fonte/assets/data/projects.json");
     let data = await response.json();
 
     // Adiciona o status padrão e data de criação a cada projeto inicial
