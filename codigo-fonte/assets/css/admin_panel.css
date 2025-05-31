@@ -511,3 +511,16 @@ table thead th {
     gap: 2px;
   }
 }
+
+.status-correcao-solicitada {
+  /* Nome da classe baseada no que o JS vai gerar */
+  font-weight: 500;
+  padding: 0.3em 0.6em;
+  border-radius: 0.25rem;
+  font-size: 0.8em;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #856404; /* Mesma cor do Pendente, por exemplo, ou uma nova */
+  background-color: #fff3cd; /* Mesma cor do Pendente, ou uma nova, ex: um laranja claro */
+}

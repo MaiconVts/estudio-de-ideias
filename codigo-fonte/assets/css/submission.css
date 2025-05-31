@@ -1,305 +1,185 @@
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+/* 1. CONTAINER PRINCIPAL DA PÁGINA DE SUBMISSÃO */
+.submission-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: calc(100vh - 160px);
 }
 
-/* Search Section */
-.search-section {
-    width: 100%;
-    min-height: 500px;
-    padding: 80px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(../img/natureza.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+/* 2. CARD DO FORMULÁRIO */
+.submission-container {
+  background-color: #ffffff;
+  padding: 35px 45px 40px; /* Mais padding, especialmente inferior */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra um pouco mais definida */
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  border-top: 6px solid #0a1931; /* Borda superior com a cor primária escura */
 }
 
-/* Container principal */
-.search-container {
-    text-align: center;
-    max-width: 1200px;
-    width: 100%;
+.submission-container h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #0a1931; /* Azul Escuro Principal */
+  font-size: 2.1rem; /* Tamanho do título */
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-top: 15px; /* Espaço após a borda */
 }
 
-/* Header (titulo acima da barra, se quiser usar) */
-.search-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
-    font-weight: 600;
-    color: #0A1931;
-    margin-bottom: 40px;
+.submission-container p {
+  font-family: "Roboto", sans-serif;
+  color: #6b7280; /* Cinza para texto secundário */
+  font-size: 1rem;
+  margin-bottom: 35px;
+  line-height: 1.6;
+  max-width: 600px; /* Limita largura do parágrafo para melhor leitura */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Formulário de busca */
-.search-form {
-    display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha */
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    max-width: 800px;
-    margin: 0 auto;
+.submission-container form {
+  text-align: left;
 }
 
-/* Campo de input */
-/* Campo de texto da busca */
-.search-input {
-    flex: 1 1 100%;
-    padding: 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    background-color: #F5F7FA;
-    color: #0A1931;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
+/* 3. GRUPOS DE FORMULÁRIO, LABELS E INPUTS */
+.submission-container .form-group {
+  margin-bottom: 22px; /* Espaçamento entre campos */
 }
 
-/* Botão principal (ao lado do input) */
-.search-button {
-    flex: 1 1 100%;
-    padding: 20px;
-    font-size: 18px;
-    background-color: #0A1931;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.submission-container .form-group label {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #185adb; /* Azul de Destaque para os labels */
+  margin-bottom: 8px;
+  font-size: 0.9rem;
 }
 
-.search-button:hover {
-    background-color: #185ADB;
+.submission-container .form-group input[type="text"],
+.submission-container .form-group input[type="number"],
+.submission-container .form-group input[type="url"],
+.submission-container .form-group select,
+.submission-container .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background-color: #fdfdfd; /* Fundo do input muito levemente acinzentado */
+  border: 1px solid #d1d5db; /* Borda cinza um pouco mais visível */
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* Área de filtros abaixo da search bar */
-/* Área de filtros */
-.search-filters {
-    display: flex;
-    flex-wrap: wrap; /* 🎯 Deixa quebrar para a linha de baixo se não couber */
-    justify-content: center; /* Mantém centralizado quando quebra */
-    gap: 10px;
-    max-width: 800px;
-    margin: 20px auto 0 auto;
-    padding: 0 10px; /* Um pouquinho de padding para não colar nas bordas */
+.submission-container .form-group input::placeholder,
+.submission-container .form-group textarea::placeholder {
+  color: #9ca3af; /* Placeholder um pouco mais escuro */
 }
 
-/* Cada botão de filtro */
-.filter-item {
-    flex: 0 1 auto;
+.submission-container .form-group input[type="text"]:focus,
+.submission-container .form-group input[type="number"]:focus,
+.submission-container .form-group input[type="url"]:focus,
+.submission-container .form-group select:focus,
+.submission-container .form-group textarea:focus {
+  outline: none;
+  border-color: #185adb;
+  background-color: #fff;
+  box-shadow: 0 0 0 3.5px rgba(24, 90, 219, 0.12); /* Sombra de foco um pouco maior */
 }
 
-.filter-select {
-    width: 100%; /* Ocupa todo o espaço disponível do item */
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    border: 2px solid #0A1931;
-    border-radius: 6px;
-    background-color: #FFFFFF;
-    color: #0A1931;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.submission-container .form-group textarea {
+  min-height: 110px;
+  resize: vertical;
 }
 
-.filter-select:hover {
-    background-color: #E2E8F0;
+.submission-container .form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234B5563' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); /* Seta do select */
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
 }
 
-/* Área que lista todos os projetos */
-.results-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+/* 4. BOTÃO DE SUBMISSÃO */
+.submission-container .submit-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #185adb; /* Azul de Destaque como cor principal */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.1s ease,
+    box-shadow 0.25s ease;
+  text-align: center;
+  margin-top: 25px;
+  box-shadow: 0 3px 8px rgba(24, 90, 219, 0.25);
 }
 
-/* Caixa de cada projeto */
-.project-card {
-    background-color: #ffffff;
-    border: 1px solid #dce3f0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 32px;
-    margin: 40px auto;
-    width: 70%; /* Ocupa 70% da tela */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.submission-container .submit-btn:hover {
+  background-color: #0a1931; /* Azul Escuro no hover */
+  box-shadow: 0 5px 12px rgba(10, 25, 49, 0.3);
+}
+
+.submission-container .submit-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(10, 25, 49, 0.2);
+}
+
+/* 6. MEDIA QUERIES BÁSICAS (para responsividade) */
+@media (max-width: 768px) {
+  .submission-main {
+    padding: 30px 15px;
   }
-  
-  
-/* Pequena animação no hover */
-.project-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Título do projeto */
-.project-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 700;
-    color: #185ADB;
-    margin-bottom: 8px;
-}
-
-/* Link no título */
-.project-link {
-    text-decoration: none;
-    color: inherit;
+  .submission-container {
+    padding: 25px; /* Simplificado */
+    margin-top: 15px;
+    margin-bottom: 30px;
   }
-
-  .project-link:hover {
-    text-decoration: underline;
+  .submission-container h1 {
+    font-size: 1.9rem;
   }
+}
 
-/* Tags logo abaixo do título */
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+@media (max-width: 480px) {
+  .submission-main {
+    padding: 20px 10px;
   }
-  
-
-/* Estilo das tags */
-.project-tag {
-    background-color: #e3edff;
-    color: #185ADB;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 500;
+  .submission-container {
+    padding: 20px 15px;
   }
-
-/* Descrição do projeto */
-.project-description {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5; /* Light grey background */
-    color: #333; /* Charcoal text */
-}
-
-.container {
-    max-width: 800px; /* Limit form width for better readability */
-}
-
-.submission-card {
-    background-color: #ffffff; /* White card background */
-    border: none; /* Remove default border */
-    border-radius: 8px; /* Slightly rounded corners */
-}
-
-.card-header {
-    background-color: #e0e0e0; /* Lighter grey header */
-    border-bottom: 1px solid #bdbdbd; /* Separator line */
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-.card-header h1 {
-    font-weight: 500;
-    color: #424242; /* Darker grey for header text */
-}
-
-.card-body {
-    padding: 2rem; /* More padding inside the card */
-}
-
-/* Material Design Inspired Input Fields */
-.form-floating > .form-control {
-    border: none;
-    border-bottom: 1px solid #bdbdbd; /* Bottom border only */
-    border-radius: 0;
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.form-floating > .form-control:focus {
-    box-shadow: none;
-    border-bottom: 2px solid #424242; /* Darker border on focus */
-}
-
-.form-floating > label {
-    color: #757575; /* Grey label */
-    padding-left: 0;
-}
-
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label {
-    transform: scale(0.85) translateY(-0.8rem) translateX(0.15rem); /* Adjust label animation */
-    color: #424242;
-}
-
-.form-select {
-    border: 1px solid #bdbdbd;
-    background-color: #fafafa;
-}
-
-.form-select:focus {
-    border-color: #424242;
-    box-shadow: none;
-}
-
-
-/* Buttons */
-.file-button {
-    background-color: #eeeeee; /* Light grey button */
-    color: #424242; /* Dark grey text */
-    border: 1px dashed #bdbdbd; /* Dashed border */
-    text-align: left;
-    font-weight: 500;
-}
-
-.file-button:hover {
-    background-color: #e0e0e0;
-    border-color: #9e9e9e;
-}
-
-.submit-button {
-    background-color: #0A1931; /* Charcoal primary button */
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.submit-button:hover {
-    background-color: #424242; /* Darker charcoal on hover */
-}
-
-/* Checkbox */
-.form-check-input {
-    border-color: #bdbdbd;
-}
-.form-check-input:checked {
-    background-color: #616161;
-    border-color: #616161;
-}
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem rgba(97, 97, 97, 0.25); /* Charcoal focus ring */
-}
-
-.form-check-label {
-    color: #616161; /* Medium grey */
+  .submission-container h1 {
+    font-size: 1.7rem;
+  }
+  .submission-container p {
     font-size: 0.9rem;
-}
-
-.card-footer {
-    background-color: #f5f5f5; /* Match body background */
-    border-top: 1px solid #e0e0e0;
+    margin-bottom: 25px;
+  }
+  .submission-container .form-group label {
     font-size: 0.85rem;
+  }
+  .submission-container .form-group input[type="text"],
+  .submission-container .form-group input[type="number"],
+  .submission-container .form-group input[type="url"],
+  .submission-container .form-group select,
+  .submission-container .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  .submission-container .submit-btn {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
 }

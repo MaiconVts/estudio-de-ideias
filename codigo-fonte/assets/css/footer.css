@@ -137,3 +137,29 @@
     color: #718096; /* Cinza bem sutil */
     margin: 0;
 }
+/* 5. BOTÃO DE VOLTAR AO TOPO (mantendo o seu estilo que você adicionou) */
+.scroll-to-top-button {
+  display: none; /* JavaScript vai mudar para 'flex' ou 'block' */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 2000; /* Bem alto para garantir que fique por cima */
+
+  background-color: #185adb; /* Cor que você definiu */
+  color: white;
+  border: 2px solid black; /* Sua borda */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+
+  /* Para centralizar a seta (se usar display: flex no JS) */
+  align-items: center;
+  justify-content: center;
+  line-height: 1; /* Para alinhamento vertical da seta, se não for flex */
+}
+
+.scroll-to-top-button:hover {
+  background-color: #6ea6ff; /* Seu hover */
+}

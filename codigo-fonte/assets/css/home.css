@@ -301,8 +301,6 @@
 
 
 
-/* Em assets/css/style.css (ou um CSS específico da home) */
-
 .scroll-to-top-button {
     display: none; /* JavaScript vai mudar para 'flex' ou 'block' */
     position: fixed;
