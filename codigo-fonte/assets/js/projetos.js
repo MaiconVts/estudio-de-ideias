@@ -66,7 +66,7 @@ const db = {
 const projects = {
   async seed() {
     // corrigindo o caminho para o ERRO 404
-    const response = await fetch("/codigo-fonte/assets/data/projects.json");
+    const response = await fetch("./assets/data/projects.json");
     let data = await response.json();
 
     // Adiciona o status padrão e data de criação a cada projeto inicial
@@ -135,7 +135,7 @@ const projects = {
 
   get(id) {
     const data = db.readAsMap(collections.projects);
-    return data[id] ?? null;
+    return data[id] ? { ...data[id], id } : null;
   },
   /* Parte original da API*/
   // add(payload) {
@@ -196,6 +196,12 @@ const projects = {
     const uniqueYears = [...new Set(years)];
     return uniqueYears.sort((a, b) => b - a);
   },
+  getAvailableAreas() {
+    const data = db.readAsSet(collections.projects);
+    const areas = data.map((item) => item.area);
+    const uniqueAreas = [...new Set(areas)];
+    return uniqueAreas.sort((a, b) => a.localeCompare(b));
+  },
 };
 
 const favorites = {
@@ -216,6 +222,11 @@ const favorites = {
       data[id] = { favoritedAt: new Date() };
     }
     db.setCollection(collections.favorites, data);
+  },
+
+  isFavorite(id) {
+    const data = db.readAsMap(collections.favorites);
+    return data[id] !== undefined;
   },
 };
 

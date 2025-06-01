@@ -8,12 +8,14 @@
       rel="icon"
       type="image/png"
       href="./assets/img/logoIcone-azulDark.png"
-      .
     />
-    <link rel="stylesheet" href="./assets/css/favoritos.css" . />
-    <link rel="stylesheet" href="./assets/css/header.css" . />
-    <link rel="stylesheet" href="./assets/css/footer.css" . />
-    <script defer src="./assets/js/header.js"></script>
+    <link rel="stylesheet" href="./assets/css/favoritos.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/projetos.js"></script>
+    <script src="./assets/js/projetos-utils.js"></script>
+    <script defer src="./assets/js/favoritos.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
@@ -23,16 +25,16 @@
     <header class="header-flex-container">
       <div class="header-brand">
         <div class="logo-container">
-          <a href="index.html">
+          <a href="./index.html">
             <img
-              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+              src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
               alt="Logo Estúdio de Ideias"
               width="60px"
               height="60px"
             />
           </a>
         </div>
-        <a href="index.html" class="link-title">
+        <a href="./index.html" class="link-title">
           <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
         </a>
       </div>
@@ -40,7 +42,7 @@
       <nav class="navbar">
         <div class="menu-icon">
           <img
-            src="assets/img/list.png"
+            src="./assets/img/list.png"
             alt="Menu"
             width="40"
             height="40"
@@ -61,39 +63,9 @@
     </header>
 
     <main class="main-content">
-      <div class="auth-user">
-        <div class="auth-user__info">
-          <img src="assets/img/user.png" alt="Usuário" />
-          <div>
-            <p class="auth-user__info-name">João P. Silva</p>
-            <p class="auth-user__info-email">joao.silva@gmail.com</p>
-          </div>
-          <a href="#" class="auth-user__info-logout">Sair</a>
-        </div>
-      </div>
-
       <section class="projects">
-        <div class="projects__header">
-          <p><strong>5</strong> projetos favoritados</p>
-        </div>
-
-        <div class="projects-list">
-          <article class="project">
-            <h2 class="project__title">
-              1. Sistema de Gerenciamento de Tarefas com React e Node.js
-            </h2>
-            <div class="project__meta">
-              <p>Autor: <strong>Silva, João P.</strong></p>
-              <p>Publicado em <strong>jun/2025</strong></p>
-            </div>
-            <div class="project__actions">
-              <a href="#" class="project__link">Acessar documento</a>
-              <button type="button" class="project__link">
-                Remover dos favoritos
-              </button>
-            </div>
-          </article>
-        </div>
+        <div class="projects__header"></div>
+        <div class="projects-list"></div>
       </section>
     </main>
 

@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="./assets/css/projetos.css" />
     <link rel="stylesheet" href="./assets/css/header.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
-    <script defer src="./assets/js/header.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/projetos.js"></script>
+    <script src="./assets/js/projetos-utils.js"></script>
+    <script defer src="./assets/js/projetos-page.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
@@ -63,43 +66,40 @@
       <aside class="sidebar-filter">
         <h4>Filtrar projetos</h4>
 
-        <form class="filter-form">
+        <form class="filter-form" method="GET">
           <input
-            type="text"
+            type="search"
+            name="search"
             class="filter-form__input"
             placeholder="Buscar projetos, autores..."
           />
 
           <div class="filter-form__field">
-            <select class="filter-form__select">
-              <option value="all">Todos</option>
+            <select class="filter-form__select" name="searchBy">
+              <option value="">Todos</option>
               <option value="title">Título</option>
               <option value="author">Autor</option>
-              <option value="year">Ano</option>
             </select>
           </div>
 
           <div class="filter-form__field">
-            <select class="filter-form__select">
-              <option value="relevance">Ordenar por</option>
-              <option value="date-desc">Mais Recente</option>
-              <option value="date-asc">Mais Antigo</option>
+            <select class="filter-form__select" name="orderBy">
+              <option value="">Ordenar por</option>
+              <option value="newest">Mais Recente</option>
+              <option value="oldest">Mais Antigo</option>
               <option value="citations">Mais Citados</option>
             </select>
           </div>
 
           <div class="filter-form__field">
-            <select class="filter-form__select">
-              <option value="all">Ano</option>
-              <option value="2024">2024</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
+            <select class="filter-form__select" name="year">
+              <option value="">Ano</option>
             </select>
           </div>
 
           <div class="filter-form__field">
-            <select class="filter-form__select">
-              <option value="all">Áreas de Atuação</option>
+            <select class="filter-form__select" name="area">
+              <option value="">Áreas de Atuação</option>
               <option value="frontend">Frontend</option>
               <option value="backend">Backend</option>
               <option value="mobile">Mobile</option>
@@ -110,40 +110,19 @@
           </div>
 
           <button type="submit" class="filter-form__button">Buscar</button>
+
+          <button type="reset" class="filter-form__button filter-form__button--reset">Limpar</button>
         </form>
       </aside>
 
       <section class="projects">
         <div class="projects__header">
-          <p>Resultados: <strong>3.031</strong></p>
+          <p>Resultados: <strong>0</strong></p>
         </div>
 
-        <div class="projects-list">
-          <article class="project">
-            <h2 class="project__title">
-              1. Sistema de Gerenciamento de Tarefas com React e Node.js
-            </h2>
-            <div class="project__meta">
-              <p>Autor: <strong>Silva, João P.</strong></p>
-              <p>Publicado em <strong>jun/2025</strong></p>
-            </div>
-            <div class="project__actions">
-              <a href="#" class="project__link">Acessar documento</a>
-              <button
-                type="button"
-                class="project__link project__link--reverse"
-              >
-                Adicionar aos favoritos
-              </button>
-            </div>
-          </article>
-        </div>
+        <div class="projects-list"></div>
 
-        <div class="pagination">
-          <button class="pagination__button" disabled>Anterior</button>
-          <span class="pagination__current-page">1</span>
-          <button class="pagination__button">Próximo</button>
-        </div>
+        <div class="pagination"></div>
       </section>
     </main>
 
