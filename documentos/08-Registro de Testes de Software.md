@@ -35,12 +35,13 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
 
   <li><strong>CT-02: Verificar a filtragem avançada (sucesso)</strong><br>
     <em>(Associado ao RF-04)</em><br>
-    <strong>Responsável pelo Teste (Tester):</strong> <code>[Vinícius Silva ou Colega Designado]</code><br>
-    <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
+    <strong>Responsável pelo Teste (Tester):</strong> <code>Vinícius Silva</code><br>
+    <strong>Data da Execução:</strong> <code>07/06/2025</code><br>
     <strong>Resultado Obtido:</strong> A seleção de filtros de "Ano" e "Área de Atuação" na página de listagem de projetos resultou na correta atualização da lista, exibindo apenas os projetos que atendiam a ambos os critérios selecionados.<br>
     <strong>Status:</strong> <code>Passou</code><br>
     <strong>Evidências:</strong><br>
-    <code>[SCREENSHOT: Página de projetos com filtros aplicados e lista de resultados correspondente]</code>
+
+https://github.com/user-attachments/assets/fa21bcab-fd17-4f94-8527-5ff948d89e58
   </li>
   <hr>
 
@@ -57,23 +58,24 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
 
   <li><strong>CT-04: Favoritar e desfavoritar um projeto</strong><br>
     <em>(Associado ao RF-07)</em><br>
-    <strong>Responsável pelo Teste (Tester):</strong> <code>[Vinícius Silva ou Colega Designado]</code><br>
-    <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
+    <strong>Responsável pelo Teste (Tester):</strong> <code>Vinícius Silva</code><br>
+    <strong>Data da Execução:</strong> <code>07/06/2025</code><br>
     <strong>Resultado Obtido:</strong> A funcionalidade de favoritar um projeto funcionou como esperado: o projeto foi adicionado à lista de "Favoritos" e salvo no `localStorage`. Ao desfavoritar, o projeto foi corretamente removido da lista de "Favoritos" e do `localStorage`.<br>
     <strong>Status:</strong> <code>Passou</code><br>
     <strong>Evidências:</strong><br>
-    <code>[SCREENSHOT: Página de Favoritos mostrando projeto adicionado E localStorage com favorito]</code>
+
+https://github.com/user-attachments/assets/621ca2b8-3cc5-414b-964a-a7282aa78016
   </li>
   <hr>
 
   <li><strong>CT-05: Verificar exibição das categorias/tags nos cards</strong><br>
     <em>(Associado ao RF-08)</em><br>
-    <strong>Responsável pelo Teste (Tester):</strong> <code>[Vinícius Silva ou Colega Designado]</code><br>
-    <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
+    <strong>Responsável pelo Teste (Tester):</strong> <code>Vinícius Silva</code><br>
+    <strong>Data da Execução:</strong> <code>07/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Os cards de projeto na página de listagem exibiram as tags de categoria (área, tecnologias) de forma clara e correta, correspondendo aos dados de cada projeto.<br>
     <strong>Status:</strong> <code>Passou</code><br>
     <strong>Evidências:</strong><br>
-    <code>[SCREENSHOT: Cards de projeto na lista mostrando as tags de categoria]</code>
+    <img src="./img/ct-05-evidencia.png" />
   </li>
   <hr>
 
