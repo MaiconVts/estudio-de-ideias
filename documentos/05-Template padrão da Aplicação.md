@@ -31,7 +31,7 @@ A identidade visual do projeto segue a proposta acadêmica e tecnológica, trans
 Exibe um resumo da proposta da aplicação e uma barra de busca centralizada com filtros inteligentes para facilitar a pesquisa de projetos acadêmicos.
 
  <figure> 
-  <img src="./documentos/img/Home.png"> 
+  <img src="./img/Home.png"> 
 </figure>
 
 ---
@@ -41,7 +41,7 @@ Exibe um resumo da proposta da aplicação e uma barra de busca centralizada com
 Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um resumo do conteúdo. Cada projeto pode ser clicado para visualização completa.
 
  <figure> 
-  <img src="./documentos/img/Projetos.png"> 
+  <img src="./img/Projetos.png"> 
 </figure>
 
 ---
@@ -51,7 +51,7 @@ Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um re
 Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um resumo do conteúdo. Cada projeto pode ser clicado para visualização completa.
 
  <figure> 
-  <img src="./documentos/img/Details.png"> 
+  <img src="./img/Details.png"> 
 </figure>
 
 ---
@@ -61,7 +61,7 @@ Apresenta os projetos disponíveis com título, tags (autor, área, ano) e um re
 Exibe os projetos salvos pelo usuário como favoritos, possibilitando acesso rápido a conteúdos relevantes previamente marcados.
 
   <figure> 
-  <img src="./documentos/img/Favoritos.png"> 
+  <img src="./img/Favoritos.png"> 
 </figure>
 
 ---
@@ -71,7 +71,7 @@ Exibe os projetos salvos pelo usuário como favoritos, possibilitando acesso rá
 Oferece dicas, links úteis e tutoriais para auxiliar os usuários no desenvolvimento de projetos acadêmicos.
 
 <figure> 
-  <img src="./documentos/img/Ferramentas.png"> 
+  <img src="./img/Ferramentas.png"> 
 </figure>
 
 ---
@@ -81,7 +81,7 @@ Oferece dicas, links úteis e tutoriais para auxiliar os usuários no desenvolvi
 Formulário de autenticação e criação de conta. Inclui opções de recuperação de senha e redirecionamento ao painel do usuário.
 
 <figure> 
-  <img src="./documentos/img/Login.png"> 
+  <img src="./img/Login.png"> 
 </figure>
 ---
 
@@ -90,7 +90,7 @@ Formulário de autenticação e criação de conta. Inclui opções de recupera�
 Ambiente restrito destinado à equipe moderadora, com funcionalidades para aprovação, rejeição ou edição de projetos enviados.
 
 <figure> 
-  <img src="./documentos/img/AreaModerador.png"> 
+  <img src="./img/AreaModerador.png"> 
 </figure>
 ---
 
@@ -99,7 +99,7 @@ Ambiente restrito destinado à equipe moderadora, com funcionalidades para aprov
 Permite aos alunos submeter projetos, preenchendo um formulário com todas as informações necessárias para o registro do projeto.
 
 <figure> 
-  <img src="./documentos/img/Submission.png"> 
+  <img src="./img/Submission.png"> 
 </figure>
 ---
 
@@ -110,5 +110,5 @@ O logotipo do **Estúdio de Ideias** combina o símbolo de uma **lâmpada** (rep
 As cores escolhidas, predominantemente em tons de azul, transmitem **seriedade, conhecimento e tecnologia**.
 
 <figure> 
-  <img src="./documentos/img/logo.png"> 
+  <img src="./img/logo.png"> 
 </figure>

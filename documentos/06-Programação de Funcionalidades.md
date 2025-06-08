@@ -10,7 +10,7 @@ O acesso à tela de cadastro poderá ser feito através da opção de menu “Ca
 
 **Exemplo da tela de cadastro:**  
 <figure> 
-  <img src="./documentos/img/Login.png"> 
+  <img src="./img/Login.png"> 
 </figure>
 
 **Requisito atendido:**  
@@ -38,7 +38,7 @@ O acesso à tela de login poderá ser feito através do menu “Entrar”. As es
 
 **Exemplo da tela de login:**  
 <figure> 
-  <img src="./documentos/img/Login.png"> 
+  <img src="./img/Login.png"> 
 </figure>
 
 **Requisito atendido:**  
@@ -66,7 +66,7 @@ Na página inicial, os usuários encontram uma barra de pesquisa centralizada qu
 
 **Exemplo da tela Home com barra de pesquisa:**  
  <figure> 
-  <img src="./documentos/img/Home.png"> 
+  <img src="./img/Home.png"> 
 </figure>
 
 
@@ -95,7 +95,7 @@ Esta tela permite que os moderadores validem e gerenciem os documentos submetido
 
 **Exemplo da tela de Administração:**  
 <figure> 
-  <img src="./documentos/img/AreaModerador.png"> 
+  <img src="./img/AreaModerador.png"> 
 </figure>
 
 **Artefatos da funcionalidade:**
@@ -117,7 +117,7 @@ Esta tela exibe detalhes completos do projeto, incluindo título, autores, resum
 
 **Exemplo da tela de Detalhes do Projeto:**  
  <figure> 
-  <img src="./documentos/img/Details.png"> 
+  <img src="./img/Details.png"> 
 </figure>
 
 **Artefatos da funcionalidade:**
@@ -140,7 +140,7 @@ Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alu
 
 **Exemplo da tela de Ferramentas:**
 <figure> 
-  <img src="./documentos/img/Ferramentas.png"> 
+  <img src="./img/Ferramentas.png"> 
 </figure>
 
 **Artefatos da funcionalidade:**
@@ -163,7 +163,7 @@ Esta tela mostra os projetos que o usuário marcou como favoritos, facilitando o
 
 **Exemplo da tela de Favoritos:**
  <figure> 
-  <img src="./documentos/img/Favoritos.png"> 
+  <img src="./img/Favoritos.png"> 
 </figure>
 
 **Requisito atendido:**  
@@ -189,7 +189,7 @@ Esta tela lista os projetos disponíveis, permitindo ao usuário filtrar e orden
 
 **Exemplo da tela de Projetos:**
 <figure> 
-  <img src="./documentos/img/Projetos.png"> 
+  <img src="./img/Projetos.png"> 
 </figure>
 
 **Artefatos da funcionalidade:**
@@ -212,7 +212,7 @@ Esta tela permite aos alunos submeter projetos, preenchendo um formulário com t
 
 **Exemplo da tela de Submissão(Envio de Projetos):**
 <figure> 
-  <img src="./documentos/img/Submission.png"> 
+  <img src="./img/Submission.png"> 
 </figure>
 
 **Artefatos da funcionalidade:**
