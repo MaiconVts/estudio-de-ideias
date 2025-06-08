@@ -18,14 +18,16 @@ RF-001: O site deve permitir ao usuário cadastrar uma conta.
 
 **Artefatos da funcionalidade:**
 
-- `cadastro.html`
-- `cadastro.css`
-- `cadastro.js`
-- `mobile-navbar.js`
+- `login.html`
+- `assets/css/login.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/header.js`
+- `assets/js/login.js`
 
 **Instruções de acesso:**  
 Abra um navegador e informe a seguinte URL:  
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaLogin/index.html*  
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/login.html*  
 Clique em “Cadastre-se” no menu superior para acessar a tela de cadastro.
 
 ---
@@ -47,13 +49,15 @@ RF-002: O site deve permitir ao usuário fazer o login da sua conta.
 **Artefatos da funcionalidade:**
 
 - `login.html`
-- `login.css`
-- `login.js`
-- `mobile-navbar.js`
+- `assets/css/login.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/header.js`
+- `assets/js/login.js`
 
 **Instruções de acesso:**  
 Acesse:  
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaLogin/index.html*  
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/login.html*  
 Clique em “Entrar” no menu superior para acessar a tela de login.
 
 ---
@@ -76,13 +80,16 @@ RF-003: Campo de busca aberto para pesquisa de projetos.
 **Artefatos da funcionalidade:**
 
 - `index.html`
-- `style.css`
-- `home.js`
-- `mobile-navbar.js`
+- `assets/css/home.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/home.js`
+- `assets/js/projetos.js`
+- `assets/js/header.js`
 
 **Instruções de acesso:**  
 Acesse a Home Page em:  
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaHome/index.html*  
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/index.html*  
 Utilize a barra de busca no centro da página para pesquisar.
 
 ---
@@ -100,9 +107,13 @@ Esta tela permite que os moderadores validem e gerenciem os documentos submetido
 
 **Artefatos da funcionalidade:**
 
-- `paginaAdmin/index.html`
-- `paginaAdmin/assets/css/admin_panel.css`
-- `paginaAdmin/assets/js/admin_panel.js`
+- `admin.html`
+- `assets/css/admin_panel.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/admin_panel.js`
+- `assets/js/projetos.js`
+- `assets/js/header.js`
 
 **Instruções de acesso:**  
 Acesse a área de administração após fazer o login.
@@ -122,13 +133,16 @@ Esta tela exibe detalhes completos do projeto, incluindo título, autores, resum
 
 **Artefatos da funcionalidade:**
 
-- `paginaDetalhesProjetos/index.html`
-- `paginaDetalhesProjetos/assets/css/style.css`
-- `paginaDetalhesProjetos/assets/js/script.js`
+- `detalhes.html`
+- `assets/css/detalhes.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/projetos.js`
+- `assets/js/header.js`
 
 **Instruções de acesso:**  
 Clique em um projeto exibido para ver seus detalhes
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaDetalhesProjetos/index.html*
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/detalhes.html*
 
 ---
 
@@ -145,13 +159,16 @@ Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alu
 
 **Artefatos da funcionalidade:**
 
-- `paginaFerramentas/index.html`
-- `paginaFerramentas/assets/css/style.css`
-- `paginaFerramentas/assets/js/script.js`
+- `ferramentas.html`
+- `assets/css/ferramentas.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/ferramentas.js`
+- `assets/js/header.js`
 
 **Instruções de acesso:**  
 Acesse a seção de ferramentas a partir do menu de navegação ou através do link: 
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaFerramentas/index.html*
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/ferramentas.html*
 
 ---
 
@@ -171,13 +188,17 @@ RF-007: Permitir que o visitante possa marcar como favorito um documento e visua
 
 **Artefatos da funcionalidade:**
 
-- `index.html`
-- `style.css`
-- `list.png`
-- `user.png`
+- `favoritos.html`
+- `assets/css/favoritos.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/header.js`
+- `assets/js/projetos.js`
+- `assets/js/projetos-utils.js`
+- `assets/js/favoritos.js`
 
 **Instruções de acesso:**  
-- Acesse a página em https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaFavoritos/index.html
+- Acesse a página em https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/favoritos.html
 
 ---
 
@@ -194,13 +215,18 @@ Esta tela lista os projetos disponíveis, permitindo ao usuário filtrar e orden
 
 **Artefatos da funcionalidade:**
 
-- `paginaProjetos/index.html`
-- `paginaProjetos/assets/css/style.css`
-- `paginaProjetos/assets/js/script.js`
+- `projetos.html`
+- `assets/css/projetos.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/header.js`
+- `assets/js/projetos.js`
+- `assets/js/projetos-utils.js`
+- `assets/js/projetos-page.js`
 
 **Instruções de acesso:**  
 Utilize os filtros e a barra de pesquisa para encontrar projetos de seu interesse, e acesse pelo link para visualizar: 
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaProjetos/index.html*
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/projetos.html*
 
 ---
 
@@ -217,10 +243,14 @@ Esta tela permite aos alunos submeter projetos, preenchendo um formulário com t
 
 **Artefatos da funcionalidade:**
 
-- `paginaSubmissao/index.html`
-- `paginaSubmissao/assets/css/style.css`
-- `paginaSubmissao/assets/js/script.js`
+- `submissao.html`
+- `assets/css/submission.css`
+- `assets/css/header.css`
+- `assets/css/footer.css`
+- `assets/js/header.js`
+- `assets/js/projetos.js`
+- `assets/js/submissao.js`
 
 **Instruções de acesso:**  
 Clique na opção de envio de projeto no menu para acessar a tela de submissão, ou acesse pelo link: 
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/paginaSubmissao/index.html*
+*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/submissao.html*
