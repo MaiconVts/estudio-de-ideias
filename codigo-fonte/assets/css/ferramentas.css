@@ -20,14 +20,12 @@
     background-position: center;
 }
 
-/* Container principal */
 .search-container {
     text-align: center;
     max-width: 1200px;
     width: 100%;
 }
 
-/* Header (titulo acima da barra, se quiser usar) */
 .search-title {
     font-family: "Montserrat", sans-serif;
     font-size: 36px;
@@ -36,11 +34,9 @@
     margin-bottom: 40px;
 }
 
-/* Formulário de busca */
 .search-form {
     display: flex;
     flex-wrap: wrap;
-    /* Permite quebrar linha */
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -48,8 +44,6 @@
     margin: 0 auto;
 }
 
-/* Campo de input */
-/* Campo de texto da busca */
 .search-input {
     flex: 1 1 100%;
     padding: 20px;
@@ -62,7 +56,6 @@
     outline: none;
 }
 
-/* Botão principal (ao lado do input) */
 .search-button {
     flex: 1 1 100%;
     padding: 20px;
@@ -80,29 +73,22 @@
     background-color: #185adb;
 }
 
-/* Área de filtros abaixo da search bar */
-/* Área de filtros */
 .search-filters {
     display: flex;
     flex-wrap: wrap;
-    /* 🎯 Deixa quebrar para a linha de baixo se não couber */
     justify-content: center;
-    /* Mantém centralizado quando quebra */
     gap: 10px;
     max-width: 800px;
     margin: 20px auto 0 auto;
     padding: 0 10px;
-    /* Um pouquinho de padding para não colar nas bordas */
 }
 
-/* Cada botão de filtro */
 .filter-item {
     flex: 0 1 auto;
 }
 
 .filter-select {
     width: 100%;
-    /* Ocupa todo o espaço disponível do item */
     padding: 10px 20px;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
@@ -118,14 +104,12 @@
     background-color: #e2e8f0;
 }
 
-/* Área que lista todos os projetos */
 .results-list {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* Caixa de cada projeto */
 .project-card {
     background-color: #ffffff;
     border: 1px solid #dce3f0;
@@ -134,19 +118,16 @@
     padding: 32px;
     margin: 40px auto;
     width: 70%;
-    /* Ocupa 70% da tela */
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-/* Pequena animação no hover */
 .project-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Título do projeto */
 .project-title {
     text-align: center;
     font-size: 24px;
@@ -155,7 +136,6 @@
     margin-bottom: 8px;
 }
 
-/* Link no título */
 .project-link {
     text-decoration: none;
     color: inherit;
@@ -165,7 +145,6 @@
     text-decoration: underline;
 }
 
-/* Tags logo abaixo do título */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -208,6 +187,18 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
+.filtro select {
+     padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid #0A1931;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #0A1931;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .filtro h2 {
     margin-bottom: 20px;
     font-size: 1.6rem;
@@ -216,10 +207,12 @@
 .filtro label,
 .filtro select {
     display: block;
-    width: 100%;
+    width: 350px;
+    max-width: 100%;
     margin-bottom: 10px;
     font-family: inherit;
     font-size: 1rem;
+    padding: .25rem;
 }
 
 .cards {
