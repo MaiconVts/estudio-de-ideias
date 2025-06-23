@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const statusClass = (sub.status || 'pendente').toLowerCase().replace(/\s+/g, '-');
 
             tr.innerHTML = `
-                <td><a href="/codigo-fonte/paginaDetalhesProjetos/index.html?id=${sub.id}" class="details-link" title="Ver detalhes do projeto">${sub.title || 'Sem título'}</a></td>
+                <td><a href="./detalhes.html?id=${sub.id}" class="details-link" title="Ver detalhes do projeto">${sub.title || 'Sem título'}</a></td>
                 <td>${sub.author || 'Sem autor'}</td>
                 <td>${dataCriacao}</td>
                 <td><span class="status-${statusClass}">${sub.status || 'Pendente'}</span></td>

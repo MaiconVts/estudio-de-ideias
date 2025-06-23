@@ -1,29 +1,28 @@
-message: Please cite this software using these metadata.
-title:
+message: "Please cite this software using these metadata."
+title: "Estúdio de Ideias"
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: "Rodrigues"
+    given-names: "Alan"
+  - family-names: "Moreira"
+    given-names: "Eduardo"
+  - family-names: "Vaz"
+    given-names: "Hugo"
+  - family-names: "Theodoro"
+    given-names: "Maicon"
+  - family-names: "Silva"
+    given-names: "Vinícius"
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: "Rodrigo Costa"
+    given-names: "Marco"
 keywords:
-  - 
-  - 
-repository-code: 
+  - "estúdio de ideias"
+  - "projeto estúdio de ideias"
+  - "gestão do conhecimento"
+  - "repositório de projetos"
+languages:
+  - pt
+repository-code: "https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1"
+url: "https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/index.html"
 version: 1.0.0
-date-released: 2023-10-31
+date-released: 2025-06-22

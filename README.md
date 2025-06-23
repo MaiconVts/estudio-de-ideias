@@ -13,10 +13,10 @@ A plataforma visa solucionar o problema da perda de conhecimento valioso após a
 ## Integrantes
 
 * Allan Rodrigues
-* Maicon Theodoro
-* Vinicius Silva
-* Hugo Vaz
 * Eduardo Moreira
+* Hugo Vaz
+* Maicon Theodoro
+* Vinícius Silva
 
 ## Orientador
 
@@ -33,12 +33,12 @@ A plataforma visa solucionar o problema da perda de conhecimento valioso após a
 <li><a href="documentos/06-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
 <li><a href="documentos/07-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
 <li><a href="documentos/08-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
-<li><a href="documentos/09-Referências.md"> Referências Bibliográficas</a></li>
+<li><a href="documentos/09-Referências Bibliográficas.md"> Referências Bibliográficas</a></li>
 </ol>
 
 # Hospedagem
 
-https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/index.html
+- [Clique para acessar o projeto](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/index.html)
 
 # Código-Fonte
 

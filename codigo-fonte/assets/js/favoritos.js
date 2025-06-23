@@ -35,6 +35,7 @@
     }
 
     projects.forEach((project) => {
+      if (!project) return;
       const projectElement = window.estudioIdeiasUtils.createProjectElement(
         project,
         true
