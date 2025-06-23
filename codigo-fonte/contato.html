@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - Estúdio de Ideias</title>
+
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Fontes Google (Montserrat e Roboto) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Compartilhado -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS Específico desta página -->
+    <link rel="stylesheet" href="assets/css/contato.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/logoIcone-azulDark.png"
+    />
+  </head>
+  <body>
+    <!-- HEADER (Seu módulo, inserido aqui) -->
+    <header class="header-flex-container">
+      <div class="header-brand">
+        <div class="logo-container">
+          <a href="index.html">
+            <img
+              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+              alt="Logo Estúdio de Ideias"
+              width="60px"
+              height="60px"
+            />
+          </a>
+        </div>
+        <a href="index.html" class="link-title">
+          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <div class="menu-icon">
+          <img
+            src="assets/img/list.png"
+            alt="Menu"
+            width="40"
+            height="40"
+            class="nav-icon"
+            id="menuIconImg"
+          />
+          <ul class="dropdown-menu" id="mainDropdownMenu">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
+            <li><a href="./submissao.html">Envio de Projetos</a></li>
+            <li><a href="./favoritos.html">Favoritos</a></li>
+            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+            <li><a href="./login.html">Área Restrita</a></li>
+            <li><a href="./login.html" class="nav-login-link">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal da Página de Contato -->
+    <main class="contact-page-main">
+        <div class="contact-container">
+            <header class="page-header">
+                <h1>Fale Conosco</h1>
+                <p>
+                    Tem alguma dúvida, sugestão ou feedback? Adoraríamos ouvir você!
+                </p>
+            </header>
+
+            <div class="contact-content-wrapper">
+                <!-- Coluna do Formulário -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Seu Nome</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                placeholder="Digite seu nome completo"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Seu E-mail</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                placeholder="exemplo@email.com"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                required
+                                placeholder="Sobre o que você gostaria de falar?"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Sua Mensagem</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                required
+                                placeholder="Escreva sua mensagem aqui..."
+                            ></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                    <div id="form-feedback" class="form-feedback"></div>
+                </div>
+
+                <!-- Coluna de Informações de Contato -->
+                <div class="contact-info-container">
+                    <h3>Nossos Canais</h3>
+                    <p>Você também pode nos encontrar aqui:</p>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span
+                                ><strong>E-mail:</strong> contato@estudiodeideias.com</span
+                            >
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Telefone:</strong> (31) 99999-9999</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span
+                                ><strong>Endereço:</strong> Av. Exemplo, 123 - Belo Horizonte,
+                                MG</span
+                            >
+                        </li>
+                    </ul>
+                    <div class="contact-social-media">
+                        <a href="#" aria-label="Facebook"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
+                        <a href="#" aria-label="Twitter"
+                            ><i class="fab fa-twitter"></i
+                        ></a>
+                        <a href="#" aria-label="LinkedIn"
+                            ><i class="fab fa-linkedin-in"></i
+                        ></a>
+                        <a href="#" aria-label="Instagram"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER ATUALIZADO -->
+    <footer class="site-footer">
+        <div class="footer-top-bar"></div>
+        <div class="footer-main">
+            <div class="footer-section">
+                <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
+                <p class="footer-text">
+                    Um espaço dedicado a conectar estudantes e profissionais através de
+                    projetos acadêmicos inovadores.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="#">Áreas</a></li>
+                    <li><a href="submissao.html">Publicar Projeto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Recursos Acadêmicos</h4>
+                <ul class="footer-links">
+                    <li><a href="normas.html">Normas de Publicação</a></li>
+                    <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-contact-bar">
+            <div class="footer-contact-container">
+                <h4 class="footer-contact-title">Contato e Informações</h4>
+                <ul class="footer-contact-links">
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                    <li><a href="faq.html">Perguntas Frequentes</a></li>
+                    <li><a href="carreiras.html">Trabalhe Conosco</a></li>
+                    <li><a href="privacidade.html">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">
+                © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
+                direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão "Voltar ao Topo" -->
+    <button
+        id="scrollToTopBtn"
+        class="scroll-to-top-button"
+        title="Voltar ao topo"
+    >
+        &uarr;
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/contato.js"></script>
+</body>
+</html>

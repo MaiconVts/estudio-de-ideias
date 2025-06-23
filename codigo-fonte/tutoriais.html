@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutoriais Técnicos - Estúdio de Ideias</title>
+
+    <!-- Fontes Google (Montserrat e Roboto) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Compartilhado -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS Reutilizável para páginas estáticas -->
+    <link rel="stylesheet" href="assets/css/static_page_style.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/logoIcone-azulDark.png"
+    />
+  </head>
+  <body>
+    <!-- HEADER (Reutilizado das outras páginas) -->
+    <header class="header-flex-container">
+      <div class="header-brand">
+        <div class="logo-container">
+          <a href="index.html">
+            <img
+              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+              alt="Logo Estúdio de Ideias"
+              width="60px"
+              height="60px"
+            />
+          </a>
+        </div>
+        <a href="index.html" class="link-title">
+          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <div class="menu-icon">
+          <img
+            src="assets/img/list.png"
+            alt="Menu"
+            width="40"
+            height="40"
+            class="nav-icon"
+            id="menuIconImg"
+          />
+          <ul class="dropdown-menu" id="mainDropdownMenu">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
+            <li><a href="./submissao.html">Envio de Projetos</a></li>
+            <li><a href="./favoritos.html">Favoritos</a></li>
+            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+            <li><a href="./login.html">Área Restrita</a></li>
+            <li><a href="./login.html" class="nav-login-link">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal da Página de Tutoriais Técnicos -->
+    <main class="static-page-main">
+      <div class="static-page-container">
+        <header class="page-header">
+          <h1>Tutoriais Técnicos</h1>
+          <p>Aprenda novas habilidades com nossos guias passo a passo.</p>
+        </header>
+
+        <article class="static-content">
+          <section>
+            <h2>Frontend</h2>
+            <p>
+              Tutoriais focados nas tecnologias de construção de interfaces de
+              usuário modernas e interativas.
+            </p>
+            <ul>
+              <li>
+                <strong>Iniciando com React:</strong> Crie seu primeiro
+                componente e entenda o conceito de estados (states) e
+                propriedades (props).
+              </li>
+              <li>
+                <strong>Estilização com Flexbox e Grid:</strong> Domine os
+                fundamentos do CSS moderno para criar layouts responsivos e
+                complexos com facilidade.
+              </li>
+              <li>
+                <strong>Consumindo APIs com JavaScript (Fetch API):</strong>
+                Aprenda a fazer requisições a servidores externos e a exibir os
+                dados em sua página.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Backend</h2>
+            <p>
+              Aprenda a construir a lógica, os servidores e os bancos de dados
+              que dão vida às aplicações.
+            </p>
+            <ul>
+              <li>
+                <strong
+                  >Construindo uma API RESTful com Node.js e Express:</strong
+                >
+                Guia passo a passo para criar endpoints, manipular requisições e
+                conectar a um banco de dados.
+              </li>
+              <li>
+                <strong>Introdução ao Django:</strong> Desenvolva uma aplicação
+                web completa com o poderoso framework Python, desde os modelos
+                até os templates.
+              </li>
+              <li>
+                <strong>Autenticação com JWT (JSON Web Tokens):</strong> Entenda
+                como proteger suas rotas de API e gerenciar sessões de usuário
+                de forma segura.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Bases de Dados</h2>
+            <p>
+              Essencial para qualquer aplicação, aprenda a modelar e gerenciar
+              os dados dos seus projetos.
+            </p>
+            <ul>
+              <li>
+                <strong>Modelagem de Dados Relacional (SQL):</strong> Aprenda os
+                conceitos de normalização e crie esquemas eficientes para bancos
+                como PostgreSQL e MySQL.
+              </li>
+              <li>
+                <strong>Primeiros Passos com MongoDB (NoSQL):</strong> Entenda
+                as diferenças de um banco de dados orientado a documentos e crie
+                suas primeiras coleções.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Ferramentas e DevOps</h2>
+            <p>
+              Otimize seu fluxo de trabalho e aprenda a gerenciar e implantar
+              seus projetos.
+            </p>
+            <ul>
+              <li>
+                <strong>Controle de Versão com Git e GitHub:</strong> Do `git
+                init` ao `pull request`, aprenda os comandos essenciais para
+                trabalhar em equipe e gerenciar seu código.
+              </li>
+              <li>
+                <strong>Introdução ao Docker:</strong> Aprenda a containerizar
+                suas aplicações para garantir um ambiente de desenvolvimento e
+                produção consistente.
+              </li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!-- FOOTER (Reutilizado das outras páginas) -->
+    <footer class="site-footer">
+      <div class="footer-top-bar"></div>
+      <div class="footer-main">
+        <div class="footer-section">
+          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
+          <p class="footer-text">
+            Um espaço dedicado a conectar estudantes e profissionais através de
+            projetos acadêmicos inovadores.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <!-- Link para Áreas pode ser uma página futura -->
+            <li><a href="#">Áreas</a></li>
+            <li><a href="submissao.html">Publicar Projeto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Recursos Acadêmicos</h4>
+          <ul class="footer-links">
+            <!-- Links atualizados para as novas páginas -->
+            <li><a href="normas.html">Normas de Publicação</a></li>
+            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Seção de contato com links que já estavam corretos -->
+      <div class="footer-contact-bar">
+        <div class="footer-contact-container">
+          <h4 class="footer-contact-title">Contato e Informações</h4>
+          <ul class="footer-contact-links">
+            <li><a href="contato.html">Fale Conosco</a></li>
+            <li><a href="faq.html">Perguntas Frequentes</a></li>
+            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
+            <li><a href="privacidade.html">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
+          direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Botão "Voltar ao Topo" -->
+    <button
+      id="scrollToTopBtn"
+      class="scroll-to-top-button"
+      title="Voltar ao topo"
+    >
+      &uarr;
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/tutoriais.js"></script>
+  </body>
+</html>

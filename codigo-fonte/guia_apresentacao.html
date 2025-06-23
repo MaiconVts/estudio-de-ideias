@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia de Apresentação - Estúdio de Ideias</title>
+
+    <!-- Fontes Google (Montserrat e Roboto) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Compartilhado -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS Específico para páginas estáticas (reutilizado) -->
+    <link rel="stylesheet" href="assets/css/static_page_style.css" />
+    <script defer src="./assets/js/header.js"></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/logoIcone-azulDark.png"
+    />
+  </head>
+  <body>
+    <!-- HEADER (Reutilizado das outras páginas) -->
+    <header class="header-flex-container">
+      <div class="header-brand">
+        <div class="logo-container">
+          <a href="index.html">
+            <img
+              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+              alt="Logo Estúdio de Ideias"
+              width="60px"
+              height="60px"
+            />
+          </a>
+        </div>
+        <a href="index.html" class="link-title">
+          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <div class="menu-icon">
+          <img
+            src="assets/img/list.png"
+            alt="Menu"
+            width="40"
+            height="40"
+            class="nav-icon"
+            id="menuIconImg"
+          />
+          <ul class="dropdown-menu" id="mainDropdownMenu">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
+            <li><a href="./submissao.html">Envio de Projetos</a></li>
+            <li><a href="./favoritos.html">Favoritos</a></li>
+            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+            <li><a href="./login.html">Área Restrita</a></li>
+            <li><a href="./login.html" class="nav-login-link">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal da Página de Guia de Apresentação -->
+    <main class="static-page-main">
+      <div class="static-page-container">
+        <header class="page-header">
+          <h1>Guia de Apresentação</h1>
+          <p>
+            Dicas para criar uma documentação de projeto clara e impactante.
+          </p>
+        </header>
+
+        <article class="static-content">
+          <section>
+            <h2>1. A Importância de um Bom Resumo (Abstract)</h2>
+            <p>
+              O resumo é o primeiro contato que os outros usuários terão com o
+              seu projeto. Ele deve ser conciso, claro e cativante. Em um ou
+              dois parágrafos, explique o problema que seu projeto busca
+              resolver, a solução que você desenvolveu e os principais
+              resultados ou funcionalidades. Pense nele como o "pitch" do seu
+              projeto.
+            </p>
+          </section>
+
+          <section>
+            <h2>2. Estrutura da Documentação</h2>
+            <p>
+              Uma documentação bem estruturada facilita o entendimento.
+              Recomendamos a seguinte estrutura para o seu arquivo principal
+              (.PDF ou .DOCX):
+            </p>
+            <ul>
+              <li>
+                <strong>Introdução:</strong> Contextualize o problema e
+                apresente a relevância do seu projeto.
+              </li>
+              <li>
+                <strong>Objetivos:</strong> Liste os objetivos gerais e
+                específicos que você pretendia alcançar.
+              </li>
+              <li>
+                <strong>Metodologia e Tecnologias:</strong> Descreva a abordagem
+                utilizada e justifique a escolha das tecnologias, frameworks e
+                linguagens.
+              </li>
+              <li>
+                <strong>Desenvolvimento e Implementação:</strong> Detalhe as
+                etapas de desenvolvimento, a arquitetura do sistema e as
+                funcionalidades mais importantes. Imagens, diagramas e
+                fluxogramas são muito bem-vindos aqui.
+              </li>
+              <li>
+                <strong>Resultados e Discussão:</strong> Apresente os resultados
+                alcançados. O que funcionou? O que não funcionou? Quais foram os
+                desafios?
+              </li>
+              <li>
+                <strong>Conclusão e Trabalhos Futuros:</strong> Conclua suas
+                ideias e sugira possíveis melhorias ou próximos passos para o
+                projeto.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>3. Dicas para o Código-Fonte (se aplicável)</h2>
+            <p>
+              Se você estiver compartilhando o código-fonte (em um arquivo .ZIP,
+              por exemplo), garanta que ele esteja bem organizado:
+            </p>
+            <ul>
+              <li>
+                Inclua um arquivo `README.md` na raiz do projeto explicando como
+                instalar as dependências e rodar o projeto localmente.
+              </li>
+              <li>Use nomes de arquivos e pastas claros e descritivos.</li>
+              <li>
+                Comente as partes mais complexas do seu código para facilitar o
+                entendimento por outros desenvolvedores.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>4. Apresentação Visual</h2>
+            <p>
+              A primeira impressão conta. Certifique-se de que sua documentação
+              e apresentação visual (se houver) estejam limpas e profissionais.
+              Use uma formatação consistente, fontes legíveis e um layout bem
+              organizado. Para apresentações, use gráficos e imagens de alta
+              qualidade para ilustrar seus pontos.
+            </p>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!-- FOOTER (Reutilizado das outras páginas) -->
+    <footer class="site-footer">
+      <div class="footer-top-bar"></div>
+      <div class="footer-main">
+        <div class="footer-section">
+          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
+          <p class="footer-text">
+            Um espaço dedicado a conectar estudantes e profissionais através de
+            projetos acadêmicos inovadores.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <!-- Link para Áreas pode ser uma página futura -->
+            <li><a href="#">Áreas</a></li>
+            <li><a href="submissao.html">Publicar Projeto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Recursos Acadêmicos</h4>
+          <ul class="footer-links">
+            <!-- Links atualizados para as novas páginas -->
+            <li><a href="normas.html">Normas de Publicação</a></li>
+            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Seção de contato com links que já estavam corretos -->
+      <div class="footer-contact-bar">
+        <div class="footer-contact-container">
+          <h4 class="footer-contact-title">Contato e Informações</h4>
+          <ul class="footer-contact-links">
+            <li><a href="contato.html">Fale Conosco</a></li>
+            <li><a href="faq.html">Perguntas Frequentes</a></li>
+            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
+            <li><a href="privacidade.html">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
+          direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Botão "Voltar ao Topo" -->
+    <button
+      id="scrollToTopBtn"
+      class="scroll-to-top-button"
+      title="Voltar ao topo"
+    >
+      &uarr;
+    </button>
+
+    <!-- Scripts (Não se esqueça de criar este arquivo JS para o menu do header funcionar) -->
+    <script src="assets/js/guia_apresentacao.js"></script>
+  </body>
+</html>

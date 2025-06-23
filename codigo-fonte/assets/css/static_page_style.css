@@ -1,0 +1,157 @@
+/* assets/css/static_page_style.css */
+/* Este arquivo pode ser reutilizado para todas as páginas estáticas (Privacidade, Normas, FAQ, etc.) */
+
+/* --- Layout Principal da Página Estática --- */
+.static-page-main {
+  background-color: #f8f9fa; /* Fundo cinza bem claro para a área de conteúdo */
+  padding: 40px 20px;
+  min-height: calc(
+    100vh - 91px - 350px
+  ); /* Altura mínima: tela - header - footer (ajuste os valores se o tamanho deles mudar) */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha o card no topo */
+}
+
+.static-page-container {
+  max-width: 800px; /* Largura ideal para leitura de texto */
+  width: 100%;
+  margin: 0 auto; /* Centraliza o container */
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Cabeçalho da Página (Título e Subtítulo) --- */
+.page-header {
+  text-align: center;
+  border-bottom: 2px solid #185adb; /* Linha de destaque azul */
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem; /* Título grande e impactante */
+  color: #0a1931; /* Azul escuro do tema */
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 1rem;
+  color: #6c757d; /* Cinza para o subtítulo/data */
+  margin: 0;
+  font-style: italic;
+}
+
+/* --- Conteúdo Principal do Artigo --- */
+.static-content section {
+  margin-bottom: 35px; /* Espaço entre as seções */
+}
+
+.static-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0a1931;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e9ecef; /* Linha sutil separadora para subtítulos */
+}
+
+.static-content p,
+.static-content li {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8; /* Espaçamento entre linhas generoso para leitura */
+  color: #343a40; /* Cor de texto escura para bom contraste */
+  margin-bottom: 15px;
+}
+
+.static-content ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+
+.static-content li {
+  margin-bottom: 10px;
+}
+
+/* --- Estilos para o Accordion de FAQ --- */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre cada pergunta */
+}
+
+.faq-item {
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.faq-item[open] {
+  /* Estilo quando o item está aberto */
+  background-color: #f8f9fa;
+}
+
+.faq-item summary {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  color: #0a1931;
+  padding: 15px 20px;
+  cursor: pointer;
+  list-style: none; /* Remove o marcador padrão */
+  position: relative;
+  display: block; /* Garante que ocupe a largura toda */
+}
+
+.faq-item summary::-webkit-details-marker {
+  /* Esconde o marcador no Chrome/Safari */
+  display: none;
+}
+
+.faq-item summary::after {
+  /* Cria um ícone de seta customizado */
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #185adb;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "−"; /* Muda o ícone para um sinal de menos quando aberto */
+  transform: translateY(-50%);
+}
+
+.faq-answer {
+  padding: 0px 20px 20px 20px; /* Padding para a resposta */
+  border-top: 1px solid #e9ecef;
+  margin: 0 20px;
+}
+
+.faq-answer p {
+  margin-bottom: 0; /* Remove a margem extra do último parágrafo da resposta */
+}
+
+/* --- Responsividade para telas menores --- */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  .static-content h2,
+  .faq-item summary {
+    /* Aplica a redução de fonte também ao sumário do FAQ */
+    font-size: 1.3rem;
+  }
+  .static-page-container {
+    padding: 20px;
+  }
+}

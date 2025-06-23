@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carreiras - Estúdio de Ideias</title>
+
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Fontes Google (Montserrat e Roboto) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Compartilhado -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS Específico desta página -->
+    <link rel="stylesheet" href="assets/css/carreiras.css" />
+    <script defer src="assets/js/carreiras.js"></script>
+    <script defer src="./assets/js/header.js"></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/logoIcone-azulDark.png"
+    />
+  </head>
+  <body>
+    <!-- HEADER (Seu módulo, inserido aqui) -->
+    <header class="header-flex-container">
+      <div class="header-brand">
+        <div class="logo-container">
+          <a href="index.html">
+            <img
+              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
+              alt="Logo Estúdio de Ideias"
+              width="60px"
+              height="60px"
+            />
+          </a>
+        </div>
+        <a href="index.html" class="link-title">
+          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <div class="menu-icon">
+          <img
+            src="assets/img/list.png"
+            alt="Menu"
+            width="40"
+            height="40"
+            class="nav-icon"
+            id="menuIconImg"
+          />
+          <ul class="dropdown-menu" id="mainDropdownMenu">
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
+            <li><a href="./submissao.html">Envio de Projetos</a></li>
+            <li><a href="./favoritos.html">Favoritos</a></li>
+            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
+            <li><a href="./login.html">Área Restrita</a></li>
+            <li><a href="./login.html" class="nav-login-link">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal da Página de Carreiras -->
+    <main class="careers-page-main">
+      <header class="careers-header-hero">
+        <div class="hero-content">
+          <h1>Junte-se à Nossa Equipe</h1>
+          <p>
+            Faça parte de um ambiente inovador que transforma ideias em
+            realidade e impulsiona o futuro da tecnologia acadêmica.
+          </p>
+        </div>
+      </header>
+
+      <div class="careers-container">
+        <section class="careers-section" id="culture">
+          <h2>Nossa Cultura</h2>
+          <p class="section-intro">
+            No Estúdio de Ideias, valorizamos a colaboração, a criatividade e o
+            aprendizado contínuo. Nosso ambiente é projetado para que todos
+            possam contribuir, crescer e fazer a diferença.
+          </p>
+          <div class="values-grid">
+            <div class="value-card">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Inovação</h3>
+              <p>
+                Encorajamos a experimentação e a busca por soluções criativas
+                para desafios complexos.
+              </p>
+            </div>
+            <div class="value-card">
+              <i class="fas fa-users"></i>
+              <h3>Colaboração</h3>
+              <p>
+                Acreditamos que os melhores resultados nascem do trabalho em
+                equipe e da diversidade de perspectivas.
+              </p>
+            </div>
+            <div class="value-card">
+              <i class="fas fa-graduation-cap"></i>
+              <h3>Aprendizado</h3>
+              <p>
+                Oferecemos um ambiente de constante desenvolvimento, com acesso
+                a novas tecnologias e projetos desafiadores.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="careers-section" id="openings">
+          <h2>Vagas Abertas</h2>
+          <p class="section-intro">
+            Estamos sempre em busca de novos talentos para se juntarem à nossa
+            missão. Confira nossas posições abertas:
+          </p>
+          <div class="job-listings-container">
+            <!-- Exemplo de Vaga 1 -->
+            <div class="job-listing">
+              <div class="job-info">
+                <h3 class="job-title">
+                  Desenvolvedor(a) Frontend Pleno (React)
+                </h3>
+                <p class="job-location">
+                  <i class="fas fa-map-marker-alt"></i> Remoto / Belo Horizonte,
+                  MG
+                </p>
+              </div>
+              <a href="#" class="apply-button">Ver Detalhes</a>
+            </div>
+            <!-- Exemplo de Vaga 2 -->
+            <div class="job-listing">
+              <div class="job-info">
+                <h3 class="job-title">Moderador(a) de Conteúdo Técnico</h3>
+                <p class="job-location">
+                  <i class="fas fa-map-marker-alt"></i> Remoto
+                </p>
+              </div>
+              <a href="#" class="apply-button">Ver Detalhes</a>
+            </div>
+            <!-- Exemplo de Vaga 3 (sem vagas) -->
+            <div class="no-openings">
+              <p>
+                No momento, não temos outras vagas abertas, mas adoraríamos
+                conhecer você! Envie seu currículo para nosso banco de talentos
+                através da nossa <a href="contato.html">página de contato</a>.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- RODAPÉ ATUALIZADO -->
+    <footer class="site-footer">
+      <div class="footer-top-bar"></div>
+      <div class="footer-main">
+        <div class="footer-section">
+          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
+          <p class="footer-text">
+            Um espaço dedicado a conectar estudantes e profissionais através de
+            projetos acadêmicos inovadores.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <!-- Link para Áreas pode ser uma página futura -->
+            <li><a href="#">Áreas</a></li>
+            <li><a href="submissao.html">Publicar Projeto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Recursos Acadêmicos</h4>
+          <ul class="footer-links">
+            <!-- Links atualizados para as novas páginas -->
+            <li><a href="normas.html">Normas de Publicação</a></li>
+            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Seção de contato com links que já estavam corretos -->
+      <div class="footer-contact-bar">
+        <div class="footer-contact-container">
+          <h4 class="footer-contact-title">Contato e Informações</h4>
+          <ul class="footer-contact-links">
+            <li><a href="contato.html">Fale Conosco</a></li>
+            <li><a href="faq.html">Perguntas Frequentes</a></li>
+            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
+            <li><a href="privacidade.html">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
+          direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Botão "Voltar ao Topo" -->
+    <button
+      id="scrollToTopBtn"
+      class="scroll-to-top-button"
+      title="Voltar ao topo"
+    >
+      &uarr;
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/carreiras.js"></script>
+  </body>
+</html>
