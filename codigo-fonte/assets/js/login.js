@@ -64,7 +64,7 @@ if (signinForm) {
 
       localStorage.setItem('usuarioLogado', JSON.stringify(validUser));
       signinForm.reset();
-      window.location.href = '../../admin.html';
+      window.location.href = '/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/admin.html';
     } else {
       alert('Usuário ou senha inválidos.');
     }
