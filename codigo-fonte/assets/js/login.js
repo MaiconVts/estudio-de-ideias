@@ -64,7 +64,7 @@ if (signinForm) {
 
       localStorage.setItem('usuarioLogado', JSON.stringify(validUser));
       signinForm.reset();
-      window.location.href = '/codigo-fonte/admin.html';
+      window.location.href = '../../admin.html';
     } else {
       alert('Usuário ou senha inválidos.');
     }
