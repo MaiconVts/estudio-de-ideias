@@ -7,6 +7,6 @@
 
 2. Vídeo de apresentação do projeto
 
-[Vídeo de Apresentação do Projeto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/blob/main/apresentacao/output.mp4)
+[Vídeo de Apresentação do Projeto](https://vimeo.com/1097078388?share=copy#t=0)
 
 
