@@ -38,7 +38,7 @@ A plataforma visa solucionar o problema da perda de conhecimento valioso após a
 
 # Hospedagem
 
-- [Clique para acessar o projeto](https://MaiconVts/meu-projeto-estudo-de-ideias/codigo-fonte/index.html)
+- [Clique para acessar o projeto](https://maiconvts.github.io/estudio-de-ideias)
 
 # Código-Fonte
 
