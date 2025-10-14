@@ -1,0 +1,37 @@
+name: Deploy to Github Pages
+
+on: 
+  push:
+    branches: 
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build: 
+    runs-on: ubuntu-least
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name:
+        uses: actions/configure-pages@v5
+
+      - name:
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './codigo-fonte'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    enviroment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Deploy to Github Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
