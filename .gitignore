@@ -1,2 +1,25 @@
 .aider*
 .vscode
+# ai-design: linhas do template
+.vs/
+.vscode/
+.idea/
+node_modules/
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.impeccable/*.local.json
+.playwright-mcp/
+Thumbs.db
+.DS_Store
+qualidade/relatorios/
+qualidade/exemplo/dist/
+# ai-design: só local (para versionar, apague este bloco)
+/.claude/
+/.mcp.json
+/CLAUDE.md
+/DESIGN.md
+/prompts/
+/qualidade/
+/skills-lock.json
