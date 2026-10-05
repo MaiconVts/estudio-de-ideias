@@ -3,219 +3,144 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Submissão de Projeto - Estúdio de Ideias</title>
-
-    <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <title>Publicar projeto · Estúdio de Ideias</title>
+    <meta name="description" content="Envie seu projeto de ADS para o acervo: título, resumo, tecnologias e documento, com moderação antes de publicar." />
+    <link rel="canonical" href="https://maiconvts.github.io/estudio-de-ideias/submissao.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Publicar projeto" />
+    <meta property="og:description" content="Envie seu projeto de ADS para o acervo: título, resumo, tecnologias e documento, com moderação antes de publicar." />
+    <meta property="og:url" content="https://maiconvts.github.io/estudio-de-ideias/submissao.html" />
+    <meta property="og:image" content="https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="preload" href="./assets/fonts/geologica-300-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/mundo.css" />
+    <script defer src="./assets/js/layout.js"></script>
 
     <link rel="stylesheet" href="./assets/css/submission.css" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="./assets/img/logoIcone-azulDark.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/marca.svg" />
+    <script defer src="./assets/vendor/gsap.min.js"></script>
+    <script defer src="./assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="./assets/vendor/SplitText.min.js"></script>
+    <script defer src="./assets/vendor/lenis.min.js"></script>
+    <script defer src="./assets/js/motion-base.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Publicar projeto · Estúdio de Ideias",
+        "description": "Envie seu projeto de ADS para o acervo: título, resumo, tecnologias e documento, com moderação antes de publicar.",
+        "url": "https://maiconvts.github.io/estudio-de-ideias/submissao.html",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@id": "https://maiconvts.github.io/estudio-de-ideias/#site"
+        }
+      }
+    </script>
   </head>
   <body>
-    <header class="header-flex-container">
-      <div class="header-brand">
-        <div class="logo-container">
-          <a href="index.html">
-            <img
-              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
-              alt="Logo Estúdio de Ideias"
-              width="60px"
-              height="60px"
-            />
-          </a>
-        </div>
-        <a href="index.html" class="link-title">
-          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
-        </a>
-      </div>
+    <header id="site-header"></header>
 
-      <nav class="navbar">
-        <div class="menu-icon">
-          <img
-            src="assets/img/list.png"
-            alt="Menu"
-            width="40"
-            height="40"
-            class="nav-icon"
-            id="menuIconImg"
-          />
-          <ul class="dropdown-menu" id="mainDropdownMenu">
-            <li><a href="./index.html">Início</a></li>
-            <li><a href="./projetos.html">Projetos</a></li>
-            <li><a href="./submissao.html">Envio de Projetos</a></li>
-            <li><a href="./favoritos.html">Favoritos</a></li>
-            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-            <li><a href="./login.html">Área Restrita</a></li>
-            <li><a href="./login.html" class="nav-login-link">Login</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main class="submission-main">
-      <div class="submission-container">
-        <h1>Submeter Novo Projeto</h1>
-        <p>
-          Preencha os campos abaixo para registrar seu projeto em nossa
-          plataforma. Após o envio, ele passará por uma análise da moderação.
-        </p>
-
-        <form id="submission-form" novalidate>
-          <div class="form-group">
-            <label for="title">Título do Projeto</label>
-            <input type="text" id="title" name="title" required />
+    <main id="conteudo" class="main-content">
+      <section class="page-hero" aria-labelledby="page-title">
+          <svg class="page-hero__grid malha" data-efeito="grade" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="malha-pagina" width="56" height="97" patternUnits="userSpaceOnUse">
+                <path class="crease-m" d="M0 0 L56 97" />
+                <path class="crease-v" d="M56 0 L0 97" />
+                <path class="crease-h" d="M0 48.5 H56" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#malha-pagina)" />
+          </svg>
+          <div class="page-hero__glow" data-efeito="glow" aria-hidden="true"></div>
+          <svg class="page-hero__fold" data-efeito="parallax" viewBox="0 0 270 170" aria-hidden="true" focusable="false">
+            <path class="face-m" d="M0 30 L80 10 L110 80 L30 100 Z" />
+            <path class="face-v" d="M80 10 L160 30 L190 100 L110 80 Z" />
+            <path class="face-m" d="M160 30 L240 10 L270 80 L190 100 Z" />
+            <path class="face-v" d="M30 100 L110 80 L80 150 L0 170 Z" />
+            <path class="face-m" d="M110 80 L190 100 L160 170 L80 150 Z" />
+            <path class="face-v" d="M190 100 L270 80 L240 150 L160 170 Z" />
+            <path class="face-f" d="M110 80 L124 88 L106 92 Z" />
+          </svg>
+          <div class="page-hero__inner">
+              <h1 id="page-title" class="page-hero__title">Submeter novo projeto</h1>
+              <p class="page-hero__lede">Preencha os campos abaixo para registrar seu projeto em nossa plataforma. Após o envio, ele passará por uma análise da moderação.</p>
+              <div class="spec-plate" data-efeito="vidro"><dl class="spec-plate__list"><div><dt>Campos</dt><dd class="num">07</dd></div><div><dt>Etapa</dt><dd class="num">Moderação</dd></div><div><dt>Formato</dt><dd class="num">Link</dd></div></dl></div>
           </div>
+        </section>
 
-          <div class="form-group">
-            <label for="author">Autor(es)</label>
-            <input
-              type="text"
-              id="author"
-              name="author"
-              placeholder="Ex: João da Silva, Maria Oliveira"
-              required
-            />
-          </div>
+      <div class="page-body form-layout">
+        <section class="panel" aria-labelledby="form-titulo" data-reveal>
+          <h2 id="form-titulo" class="panel__title">Dados do projeto</h2>
+          <form id="submission-form" class="form-grid" novalidate>
+              <div class="field">
+                <label for="title">Título do Projeto <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="text" id="title" name="title" required />
+              </div>
+              <div class="field">
+                <label for="author">Autor(es) <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="text" id="author" name="author" placeholder="Ex: João da Silva, Maria Oliveira" autocomplete="name" required />
+              </div>
+              <div class="field field--half">
+                <label for="year">Ano de Publicação <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="number" id="year" name="year" min="2020" max="2026" placeholder="Ex: 2026" inputmode="numeric" required />
+              </div>
+              <div class="field field--half">
+                <label for="area">Área do Conhecimento <span class="field__required" aria-hidden="true">*</span></label>
+                <select id="area" name="area" required>
+                  <option value="" disabled selected>Selecione uma área</option>
+                  <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+                  <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                  <option value="Ciência de Dados">Ciência de Dados</option>
+                  <option value="Inteligência Artificial">Inteligência Artificial</option>
+                  <option value="Segurança da Informação">Segurança da Informação</option>
+                  <option value="Outra">Outra</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="technologies">Tecnologias Utilizadas <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="text" id="technologies" name="technologies" placeholder="Ex: HTML, CSS, JavaScript" aria-describedby="technologies-dica" required />
+                <p class="field__hint" id="technologies-dica">Separadas por vírgula.</p>
+              </div>
+              <div class="field">
+                <label for="summary">Resumo do Projeto <span class="field__required" aria-hidden="true">*</span></label>
+                <textarea id="summary" name="summary" rows="5" placeholder="Descreva brevemente o objetivo e a solução do seu projeto." required></textarea>
+              </div>
+              <div class="field">
+                <label for="file">Link para o Arquivo ou Repositório <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="url" id="file" name="file" placeholder="https://github.com/seu-usuario/seu-projeto" required />
+              </div>
+              <p id="submission-status" class="form-status" role="status" aria-live="polite"></p>
+              <div class="form-actions">
+                <button type="submit" class="btn-ink submit-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Enviar para Moderação</button>
+              </div>
+          </form>
+        </section>
 
-          <div class="form-group">
-            <label for="year">Ano de Publicação</label>
-            <input
-              type="number"
-              id="year"
-              name="year"
-              min="2020"
-              max="2025"
-              placeholder="Ex: 2025"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="area">Área do Conhecimento</label>
-            <select id="area" name="area" required>
-              <option value="" disabled selected>Selecione uma área</option>
-              <option value="Desenvolvimento Web">Desenvolvimento Web</option>
-              <option value="Desenvolvimento Mobile">
-                Desenvolvimento Mobile
-              </option>
-              <option value="Ciência de Dados">Ciência de Dados</option>
-              <option value="Inteligência Artificial">
-                Inteligência Artificial
-              </option>
-              <option value="Segurança da Informação">
-                Segurança da Informação
-              </option>
-              <option value="Outra">Outra</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="technologies">Tecnologias Utilizadas</label>
-            <input
-              type="text"
-              id="technologies"
-              name="technologies"
-              placeholder="Separadas por vírgula. Ex: HTML, CSS, JavaScript"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="summary">Resumo do Projeto</label>
-            <textarea
-              id="summary"
-              name="summary"
-              rows="5"
-              placeholder="Descreva brevemente o objetivo e a solução do seu projeto."
-              required
-            ></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="file">Link para o Arquivo ou Repositório</label>
-            <input
-              type="url"
-              id="file"
-              name="file"
-              placeholder="https://github.com/seu-usuario/seu-projeto"
-              required
-            />
-          </div>
-
-          <button type="submit" class="submit-btn">
-            Enviar para Moderação
-          </button>
-        </form>
+        <aside class="form-layout__aside panel" aria-labelledby="etapas-titulo" data-reveal>
+          <h2 id="etapas-titulo" class="panel__title">Como funciona</h2>
+          <ol class="steps">
+            <li><strong>Envio</strong> Você preenche os dados e o link do projeto.</li>
+            <li><strong>Moderação</strong> A equipe confere as informações e pode pedir correções.</li>
+            <li><strong>Acervo</strong> Aprovado, o projeto passa a aparecer na listagem.</li>
+          </ol>
+          <a class="link-arrow" href="./normas.html">Ler as normas de publicação</a>
+        </aside>
       </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-top-bar"></div>
-      <div class="footer-main">
-        <div class="footer-section">
-          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
-          <p class="footer-text">
-            Um espaço dedicado a conectar estudantes e profissionais através de
-            projetos acadêmicos inovadores.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <!-- Link para Áreas pode ser uma página futura -->
-            <li><a href="#">Áreas</a></li>
-            <li><a href="submissao.html">Publicar Projeto</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Recursos Acadêmicos</h4>
-          <ul class="footer-links">
-            <!-- Links atualizados para as novas páginas -->
-            <li><a href="normas.html">Normas de Publicação</a></li>
-            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Seção de contato com links que já estavam corretos -->
-      <div class="footer-contact-bar">
-        <div class="footer-contact-container">
-          <h4 class="footer-contact-title">Contato e Informações</h4>
-          <ul class="footer-contact-links">
-            <li><a href="contato.html">Fale Conosco</a></li>
-            <li><a href="faq.html">Perguntas Frequentes</a></li>
-            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
-          direitos reservados.
-        </p>
-      </div>
-    </footer>
+        <footer id="site-footer"></footer>
 
-    <!-- Botão "Voltar ao Topo" -->
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top-button"
-      title="Voltar ao topo"
-    >
-      &uarr;
-    </button>
-
+    <script defer src="./assets/js/conta.js"></script>
     <script defer src="./assets/js/projetos.js"></script>
+    <script defer src="./assets/js/formularios.js"></script>
     <script defer src="./assets/js/submissao.js"></script>
-    <script defer src="./assets/js/header.js"></script>
   </body>
 </html>

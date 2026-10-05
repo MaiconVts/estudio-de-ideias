@@ -3,237 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contato - Estúdio de Ideias</title>
-
-    <!-- Font Awesome para ícones -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Fontes Google (Montserrat e Roboto) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSS Compartilhado -->
-    <link rel="stylesheet" href="assets/css/header.css" />
-    <link rel="stylesheet" href="assets/css/footer.css" />
-
-    <!-- CSS Específico desta página -->
+    <title>Contato · Estúdio de Ideias</title>
+    <meta name="description" content="Fale com a equipe do Estúdio de Ideias: dúvidas, sugestões e problemas com publicações." />
+    <link rel="canonical" href="https://maiconvts.github.io/estudio-de-ideias/contato.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contato" />
+    <meta property="og:description" content="Fale com a equipe do Estúdio de Ideias: dúvidas, sugestões e problemas com publicações." />
+    <meta property="og:url" content="https://maiconvts.github.io/estudio-de-ideias/contato.html" />
+    <meta property="og:image" content="https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="preload" href="./assets/fonts/geologica-300-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/mundo.css" />
+    <script defer src="./assets/js/layout.js"></script>
     <link rel="stylesheet" href="assets/css/contato.css" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/img/logoIcone-azulDark.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/marca.svg" />
+    <script defer src="./assets/vendor/gsap.min.js"></script>
+    <script defer src="./assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="./assets/vendor/SplitText.min.js"></script>
+    <script defer src="./assets/vendor/lenis.min.js"></script>
+    <script defer src="./assets/js/motion-base.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contato · Estúdio de Ideias",
+        "description": "Fale com a equipe do Estúdio de Ideias: dúvidas, sugestões e problemas com publicações.",
+        "url": "https://maiconvts.github.io/estudio-de-ideias/contato.html",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@id": "https://maiconvts.github.io/estudio-de-ideias/#site"
+        }
+      }
+    </script>
   </head>
   <body>
-    <!-- HEADER (Seu módulo, inserido aqui) -->
-    <header class="header-flex-container">
-      <div class="header-brand">
-        <div class="logo-container">
-          <a href="index.html">
-            <img
-              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
-              alt="Logo Estúdio de Ideias"
-              width="60px"
-              height="60px"
-            />
-          </a>
-        </div>
-        <a href="index.html" class="link-title">
-          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
-        </a>
-      </div>
+    <header id="site-header"></header>
+    <main id="conteudo" class="main-content">
+      <section class="page-hero" aria-labelledby="page-title">
+          <svg class="page-hero__grid malha" data-efeito="grade" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="malha-pagina" width="56" height="97" patternUnits="userSpaceOnUse">
+                <path class="crease-m" d="M0 0 L56 97" />
+                <path class="crease-v" d="M56 0 L0 97" />
+                <path class="crease-h" d="M0 48.5 H56" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#malha-pagina)" />
+          </svg>
+          <div class="page-hero__glow" data-efeito="glow" aria-hidden="true"></div>
+          <svg class="page-hero__fold" data-efeito="parallax" viewBox="0 0 270 170" aria-hidden="true" focusable="false">
+            <path class="face-m" d="M0 30 L80 10 L110 80 L30 100 Z" />
+            <path class="face-v" d="M80 10 L160 30 L190 100 L110 80 Z" />
+            <path class="face-m" d="M160 30 L240 10 L270 80 L190 100 Z" />
+            <path class="face-v" d="M30 100 L110 80 L80 150 L0 170 Z" />
+            <path class="face-m" d="M110 80 L190 100 L160 170 L80 150 Z" />
+            <path class="face-v" d="M190 100 L270 80 L240 150 L160 170 Z" />
+            <path class="face-f" d="M110 80 L124 88 L106 92 Z" />
+          </svg>
+          <div class="page-hero__inner">
+              <h1 id="page-title" class="page-hero__title">Fale conosco</h1>
+              <p class="page-hero__lede">Tem alguma dúvida, sugestão ou feedback? Adoraríamos ouvir você!</p>
+              <div class="spec-plate" data-efeito="vidro"><dl class="spec-plate__list"><div><dt>Canais</dt><dd class="num">03</dd></div><div><dt>Cidade</dt><dd class="num">Belo Horizonte</dd></div></dl></div>
+          </div>
+        </section>
 
-      <nav class="navbar">
-        <div class="menu-icon">
-          <img
-            src="assets/img/list.png"
-            alt="Menu"
-            width="40"
-            height="40"
-            class="nav-icon"
-            id="menuIconImg"
-          />
-          <ul class="dropdown-menu" id="mainDropdownMenu">
-            <li><a href="./index.html">Início</a></li>
-            <li><a href="./projetos.html">Projetos</a></li>
-            <li><a href="./submissao.html">Envio de Projetos</a></li>
-            <li><a href="./favoritos.html">Favoritos</a></li>
-            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-            <li><a href="./login.html">Área Restrita</a></li>
-            <li><a href="./login.html" class="nav-login-link">Login</a></li>
+      <div class="page-body form-layout">
+        <section class="panel" aria-labelledby="mensagem-titulo" data-reveal>
+          <h2 id="mensagem-titulo" class="panel__title">Mensagem</h2>
+          <form id="contactForm" class="contact-form form-grid" novalidate>
+              <div class="field field--half">
+                <label for="name">Seu Nome <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome completo" autocomplete="name" required />
+              </div>
+              <div class="field field--half">
+                <label for="email">Seu E-mail <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="subject">Assunto <span class="field__required" aria-hidden="true">*</span></label>
+                <input type="text" id="subject" name="subject" placeholder="Sobre o que você gostaria de falar?" required />
+              </div>
+              <div class="field">
+                <label for="message">Sua Mensagem <span class="field__required" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
+              </div>
+              <p id="form-feedback" class="form-feedback form-status" role="status" aria-live="polite"></p>
+              <div class="form-actions">
+                <button type="submit" class="btn-ink submit-button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Enviar Mensagem</button>
+              </div>
+          </form>
+        </section>
+
+        <aside class="form-layout__aside panel" aria-labelledby="canais-titulo" data-reveal>
+          <h2 id="canais-titulo" class="panel__title">Nossos Canais</h2>
+          <p class="panel__intro">Você também pode nos encontrar aqui:</p>
+          <ul class="info-list">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span><strong>E-mail</strong> contato@estudiodeideias.com</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><strong>Telefone</strong> (31) 99999-9999</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span><strong>Endereço</strong> Av. Exemplo, 123 - Belo Horizonte, MG</span></li>
           </ul>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Conteúdo Principal da Página de Contato -->
-    <main class="contact-page-main">
-        <div class="contact-container">
-            <header class="page-header">
-                <h1>Fale Conosco</h1>
-                <p>
-                    Tem alguma dúvida, sugestão ou feedback? Adoraríamos ouvir você!
-                </p>
-            </header>
-
-            <div class="contact-content-wrapper">
-                <!-- Coluna do Formulário -->
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Seu Nome</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                placeholder="Digite seu nome completo"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Seu E-mail</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                placeholder="exemplo@email.com"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Assunto</label>
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                required
-                                placeholder="Sobre o que você gostaria de falar?"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Sua Mensagem</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="6"
-                                required
-                                placeholder="Escreva sua mensagem aqui..."
-                            ></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">
-                            Enviar Mensagem
-                        </button>
-                    </form>
-                    <div id="form-feedback" class="form-feedback"></div>
-                </div>
-
-                <!-- Coluna de Informações de Contato -->
-                <div class="contact-info-container">
-                    <h3>Nossos Canais</h3>
-                    <p>Você também pode nos encontrar aqui:</p>
-                    <ul class="contact-info-list">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span
-                                ><strong>E-mail:</strong> contato@estudiodeideias.com</span
-                            >
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span><strong>Telefone:</strong> (31) 99999-9999</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span
-                                ><strong>Endereço:</strong> Av. Exemplo, 123 - Belo Horizonte,
-                                MG</span
-                            >
-                        </li>
-                    </ul>
-                    <div class="contact-social-media">
-                        <a href="#" aria-label="Facebook"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a href="#" aria-label="Twitter"
-                            ><i class="fab fa-twitter"></i
-                        ></a>
-                        <a href="#" aria-label="LinkedIn"
-                            ><i class="fab fa-linkedin-in"></i
-                        ></a>
-                        <a href="#" aria-label="Instagram"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <ul class="social-row">
+            <li><a class="social-link" href="https://github.com/MaiconVts/estudio-de-ideias" aria-label="Código do projeto no GitHub"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a></li>
+          </ul>
+        </aside>
+      </div>
     </main>
 
-    <!-- FOOTER ATUALIZADO -->
-    <footer class="site-footer">
-        <div class="footer-top-bar"></div>
-        <div class="footer-main">
-            <div class="footer-section">
-                <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
-                <p class="footer-text">
-                    Um espaço dedicado a conectar estudantes e profissionais através de
-                    projetos acadêmicos inovadores.
-                </p>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Navegação</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="projetos.html">Projetos</a></li>
-                    <li><a href="#">Áreas</a></li>
-                    <li><a href="submissao.html">Publicar Projeto</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Recursos Acadêmicos</h4>
-                <ul class="footer-links">
-                    <li><a href="normas.html">Normas de Publicação</a></li>
-                    <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
-                    <li><a href="eventos.html">Eventos</a></li>
-                    <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-contact-bar">
-            <div class="footer-contact-container">
-                <h4 class="footer-contact-title">Contato e Informações</h4>
-                <ul class="footer-contact-links">
-                    <li><a href="contato.html">Fale Conosco</a></li>
-                    <li><a href="faq.html">Perguntas Frequentes</a></li>
-                    <li><a href="carreiras.html">Trabalhe Conosco</a></li>
-                    <li><a href="privacidade.html">Política de Privacidade</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="footer-copy">
-                © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
-                direitos reservados.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Botão "Voltar ao Topo" -->
-    <button
-        id="scrollToTopBtn"
-        class="scroll-to-top-button"
-        title="Voltar ao topo"
-    >
-        &uarr;
-    </button>
-
-    <!-- Scripts -->
-    <script src="assets/js/header.js"></script>
-    <script src="assets/js/contato.js"></script>
+    <footer id="site-footer"></footer>
+    <script defer src="./assets/js/formularios.js"></script>
+    <script defer src="./assets/js/contato.js"></script>
 </body>
 </html>

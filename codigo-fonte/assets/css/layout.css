@@ -1,0 +1,390 @@
+/* assets/css/layout.css
+   Header, footer, botão de topo e skip link, montados por assets/js/layout.js.
+   Mundo visual: folha Miura. Controles cortados a 60°, rótulos em mono. */
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: color-mix(in oklab, var(--sheet) 88%, transparent);
+  backdrop-filter: blur(var(--header-blur)) saturate(var(--glass-saturate));
+  border-bottom: var(--hairline) solid var(--mountain-line);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  max-width: var(--container-max);
+  min-height: var(--header-height);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-brand__mark {
+  width: 40px;
+  height: 28px;
+  flex: none;
+  transition: transform var(--duration-slow) var(--ease-fold);
+}
+
+.site-brand__name {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.site-brand__mark .m-ink { fill: var(--ink); }
+.site-brand__mark .m-foil { fill: var(--foil); }
+.site-brand__mark .m-valley { fill: var(--valley-deep); }
+.site-brand__mark .m-crease { fill: none; stroke: var(--sheet); stroke-width: 1; }
+
+@media (hover: hover) and (pointer: fine) {
+  .site-brand:hover .site-brand__mark {
+    transform: skewX(var(--skew-tab));
+  }
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__list > li {
+  position: relative;
+  display: flex;
+}
+
+/* Vinco diagonal entre os itens */
+.site-nav__list > li + li::before {
+  content: "";
+  align-self: center;
+  width: var(--hairline);
+  height: 18px;
+  background: var(--mountain-line);
+  transform: skewX(var(--skew-crease));
+}
+
+.site-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-min);
+  padding: 0 var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+}
+
+.site-nav__link:hover {
+  color: var(--ink);
+  background-color: var(--mountain-soft);
+}
+
+.site-nav__link[aria-current="page"] {
+  color: var(--ink);
+  background-color: var(--valley);
+  clip-path: polygon(var(--cut-sm) 0, 100% 0, calc(100% - var(--cut-sm)) 100%, 0 100%);
+}
+
+.site-nav__link--cta {
+  margin-left: var(--space-3);
+  padding: 0 var(--space-5);
+  background: var(--foil);
+  color: var(--ink);
+  font-weight: 600;
+  clip-path: polygon(var(--cut-sm) 0, 100% 0, calc(100% - var(--cut-sm)) 100%, 0 100%);
+}
+
+.site-nav__list > li:has(.site-nav__link--cta)::before {
+  display: none;
+}
+
+.site-nav__link--cta:hover,
+.site-nav__link--cta[aria-current="page"] {
+  background: var(--foil-light);
+  color: var(--ink);
+}
+
+.site-nav__link:focus-visible {
+  clip-path: none;
+}
+
+.site-nav__toggle {
+  display: none;
+  width: var(--control-min);
+  height: var(--control-min);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: var(--hairline) solid var(--mountain-line);
+  background: var(--sheet-white);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.site-nav__toggle svg {
+  width: var(--icon-md);
+  height: var(--icon-md);
+}
+
+@media (max-width: 992px) {
+  .site-nav {
+    position: relative;
+  }
+  .site-nav__toggle {
+    display: inline-flex;
+  }
+  .site-nav__list {
+    position: absolute;
+    top: calc(100% + var(--space-3));
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 240px;
+    padding: var(--space-2);
+    background: var(--sheet-white);
+    border: var(--hairline) solid var(--mountain-line);
+    box-shadow: var(--shadow-lift);
+  }
+  .site-nav__list.is-open {
+    display: flex;
+  }
+  .site-nav__list > li + li::before {
+    display: none;
+  }
+  .site-nav__link {
+    width: 100%;
+  }
+  .site-nav__link--cta {
+    justify-content: center;
+    margin: var(--space-2) 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header__inner {
+    padding: 0 var(--space-4);
+  }
+  .site-brand__name {
+    font-size: var(--text-sm);
+    letter-spacing: 0.12em;
+  }
+}
+
+/* ---------- Footer: o verso da folha ---------- */
+.site-footer {
+  position: relative;
+  margin-top: var(--space-9);
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  font-size: var(--text-sm);
+  /* Borda superior cortada na diagonal, como a última dobra */
+  clip-path: polygon(0 var(--space-6), 100% 0, 100% 100%, 0 100%);
+  padding-top: var(--space-6);
+}
+
+.site-footer a {
+  color: var(--color-footer-text);
+  text-decoration: none;
+  text-underline-offset: var(--nudge);
+}
+
+.site-footer a:hover {
+  color: var(--color-footer-heading);
+  text-decoration: underline;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(2, 1fr);
+  gap: var(--space-7);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5) var(--space-7);
+}
+
+.footer-title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-footer-heading);
+}
+
+.footer-text {
+  max-width: 38ch;
+  margin: 0;
+  line-height: 1.65;
+}
+
+.footer-links {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-contact-bar {
+  border-top: var(--hairline) solid var(--color-footer-line);
+}
+
+.footer-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-5);
+  list-style: none;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-5) var(--space-6);
+}
+
+/* Crédito do desenvolvedor: ícone e assinatura, link discreto como os demais do rodapé */
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--control-min);
+  font-size: var(--text-xs);
+}
+
+.footer-credit img {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+.footer-credit strong {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: var(--underline-offset);
+}
+
+.site-footer .footer-credit:hover {
+  text-decoration: none;
+}
+
+.footer-credit:hover strong {
+  text-decoration-thickness: var(--underline-thickness);
+}
+
+.footer-copy {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* ---------- Voltar ao topo ---------- */
+.scroll-to-top-button {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-lg);
+  height: var(--control-lg);
+  padding: 0;
+  border: 0;
+  background: var(--ink);
+  color: var(--sheet);
+  clip-path: polygon(var(--cut-sm) 0, 100% 0, 100% calc(100% - var(--cut-sm)), calc(100% - var(--cut-sm)) 100%, 0 100%, 0 var(--cut-sm));
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(var(--space-3));
+  pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+}
+
+/* Alcançado por Tab mesmo no alto da página: aparece ao receber foco */
+.scroll-to-top-button:focus-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  outline: none;
+  background: var(--valley-deep);
+}
+
+.scroll-to-top-button.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.scroll-to-top-button:hover {
+  background: var(--valley-deep);
+}
+
+.scroll-to-top-button svg {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+/* ---------- Lenis (folha oficial do pacote, embutida para não bloquear o primeiro paint) ---------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}

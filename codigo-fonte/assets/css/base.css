@@ -1,0 +1,281 @@
+/* assets/css/base.css
+   Tokens de design e base global. Carregado antes de qualquer outro CSS.
+   Componentes devem usar estas variáveis em vez de valores fixos. */
+
+/* Fontes locais (subconjunto latin, cobre o português): sem bloqueio de terceiros no primeiro paint */
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/chakra-petch-500.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/chakra-petch-600.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/chakra-petch-700.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url("../fonts/geologica-300-600.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/martian-mono-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/martian-mono-400.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Mundo visual: folha Miura (documentos/05-Template padrão da Aplicação.md).
+     Folha fosca, vincos de montanha e vale, foil dourado só na ação que conta. */
+  --sheet: #f7f7f5;
+  --sheet-white: #ffffff;
+  --mountain: #b9b6ae;
+  --mountain-soft: #e7e5e0;
+  --mountain-line: #d3d0c8;
+  --valley: #cfe0f2;
+  --valley-line: #b7cde6;
+  --valley-deep: #2e4f86;
+  --foil: #d4af37;
+  --foil-light: #e7cd72;
+  --foil-deep: #a8852a;
+  --foil-ink: #8a6b1c; /* foil para texto: 5:1 sobre branco */
+  --ink: #0b0b0c;
+  --ink-soft: #2a2b30;
+
+  /* Nomes antigos, mantidos para as páginas que ainda os usam */
+  --color-ink: var(--ink);
+  --color-brand: var(--valley-deep);
+  --color-brand-strong: #213b66;
+  --color-brand-soft: #e6eef8;
+
+  /* Superfícies e texto */
+  --color-bg: var(--sheet);
+  --color-surface: var(--sheet-white);
+  --color-border: var(--mountain-line);
+  --color-text: var(--ink-soft);
+  --color-text-muted: #5c5d64;
+  --color-selection: var(--valley);
+
+  /* Rodapé: o verso da folha */
+  --color-footer-bg: var(--ink);
+  --color-footer-bg-2: #131316;
+  --color-footer-bg-3: #19191d;
+  --color-footer-text: #b4b2ab;
+  --color-footer-heading: var(--sheet);
+  --color-footer-line: #2b2b30;
+
+  /* Feedback */
+  --color-success: #1f7a47;
+  --color-danger: #b8322a;
+  --color-warning: #8a6514;
+
+  /* Tipografia */
+  --font-display: "Chakra Petch", "Segoe UI", sans-serif;
+  --font-heading: var(--font-display);
+  --font-body: "Geologica", system-ui, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.8rem;
+  --text-sm: 0.9rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: clamp(1.9rem, 1.4rem + 2vw, 2.75rem);
+  --text-display: clamp(2.1rem, 0.9rem + 5vw, 4.6rem);
+  --tracking-mono: 0.08em;
+  --tracking-display: -0.01em;
+
+  /* Espaçamento */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Forma: geometria de 60°. O corte é a largura do chanfro dos controles */
+  --fold-angle: 60deg;
+  --cut: 14px;
+  --cut-sm: 8px;
+  --cut-lg: 22px;
+  --glass-bg: rgb(255 255 255 / 0.62);
+  --glass-border: rgb(255 255 255 / 0.85);
+  --glass-blur: 14px;
+  --measure: 68ch;
+  --hairline: 1px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-full: 999px;
+  --shadow-sm: 0 1px 2px rgb(11 11 12 / 0.06);
+  --shadow-md: 0 10px 24px -12px rgb(11 11 12 / 0.22);
+  --shadow-lift: 0 18px 36px -18px rgb(11 11 12 / 0.3);
+  --glow-foil: drop-shadow(0 10px 28px rgb(212 175 55 / 0.45));
+
+  /* Controles e gestos: alvo de toque, aperto, elevação, empurrão da seta */
+  --control-min: 44px;
+  --control-lg: 48px;
+  --icon-sm: 20px;
+  --icon-md: 22px;
+  --icon-stroke: 2;
+  --press-scale: 0.97;
+  --pop-scale: 1.1;
+  --foil-glow-blur: 28; /* desfoque do brilho do foil no canvas da Home, em px */
+  --lift: -4px;
+  --nudge: 4px;
+  --reveal-shift: 24px;
+  --underline-offset: 5px;
+  --underline-thickness: 2px;
+  --header-blur: 10px;
+  --glass-saturate: 1.2;
+  --card-min: 272px;
+  --skew-crease: -30deg;
+  --skew-tab: -8deg;
+
+  /* Layout */
+  --container-max: 1240px;
+  --card-min: 280px;
+  --rail-min: 240px;
+  --rail-max: 288px;
+  --aside-max: 300px;
+  --label-col: 10ch;
+  --header-height: 72px;
+
+  /* Motion: uma só linguagem. A dobra puxa devagar e assenta firme */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-fold: cubic-bezier(0.7, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 520ms;
+  --duration-unfold: 1800ms;
+  --stagger: 60ms;
+  --scroll-offset: 80px;
+  /* Mesmas curvas no GSAP: power4.out ~ --ease-out, power3.inOut ~ --ease-fold */
+  --gsap-ease-out: power4.out;
+  --gsap-ease-fold: power3.inOut;
+
+  /* Foco: o realce mais forte da página vai só no foco */
+  --focus-ring: 0 0 0 2px var(--sheet-white), 0 0 0 4px var(--valley-deep);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background: var(--color-selection);
+  color: var(--ink);
+}
+
+html {
+  scrollbar-color: var(--mountain) var(--sheet);
+  accent-color: var(--valley-deep);
+  caret-color: var(--valley-deep);
+  /* Foco por Tab nunca para sob o cabeçalho fixo nem sob o botão de topo (WCAG 2.4.11) */
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+  scroll-padding-bottom: calc(var(--control-lg) + var(--space-5) * 2);
+}
+
+main {
+  flex-grow: 1;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--valley-deep);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 3000;
+  padding: var(--space-2) var(--space-4);
+  background: var(--ink);
+  color: var(--sheet);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

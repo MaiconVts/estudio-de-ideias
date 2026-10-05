@@ -1,154 +1,168 @@
-window.addEventListener('DOMContentLoaded', () => {
-    console.log("admin_panel.js carregado e DOM pronto.");
+// assets/js/admin_panel.js
+// Fila de moderação: lista as submissões não aprovadas e aplica aprovar, rejeitar ou
+// pedir correção. As placas do cabeçalho mostram quantas estão em cada estado.
+// Só abre com sessão de moderador (conta.js); sem ela, a fila dá lugar ao aviso de acesso.
+(async () => {
+  const tabelaBody = document.getElementById("submissoes-tbody");
+  const alertas = document.getElementById("admin-alertas");
+  const dialogo = document.getElementById("confirmar-acao");
+  if (!tabelaBody) return;
 
-    // Verifica se a API de projetos está disponível no escopo global
-    if (!window.estudioIdeias || !window.estudioIdeias.projects) {
-        console.error('ERRO CRÍTICO: API window.estudioIdeias.projects não encontrada!');
-        const tbody = document.getElementById('submissoes-tbody');
-        if (tbody) {
-            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: red;">Erro crítico: API de projetos não carregada. O painel não pode funcionar.</td></tr>';
-        }
-        return; // Interrompe a execução do script se a API não estiver disponível
+  const sessao = window.estudioConta?.sessao();
+  if (!sessao || sessao.papel !== "moderador") {
+    document.querySelector(".data-table-wrap").hidden = true;
+    document.querySelector(".moderation__bloqueio").hidden = false;
+    return;
+  }
+  const conta = document.querySelector(".moderation__conta");
+  conta.querySelector('[data-conta="nome"]').textContent = `Conectado como ${sessao.nome}`;
+  conta.hidden = false;
+  document.getElementById("sair").addEventListener("click", () => {
+    window.estudioConta.sair();
+    window.location.href = "./login.html";
+  });
+
+  const ICONES = {
+    aprovar: '<path d="M20 6 9 17l-5-5"/>',
+    rejeitar: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    corrigir: '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+  };
+  const icone = (nome) =>
+    `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONES[nome]}</svg>`;
+
+  function linhaUnica(texto, tipo) {
+    const modificador = tipo ? ` data-table__message--${tipo}` : "";
+    tabelaBody.innerHTML = `<tr><td colspan="5" class="data-table__message${modificador}"></td></tr>`;
+    tabelaBody.querySelector("td").textContent = texto;
+  }
+
+  if (!window.estudioIdeias || !window.estudioIdeias.projects) {
+    linhaUnica("Erro crítico: API de projetos não carregada. O painel não pode funcionar.", "erro");
+    return;
+  }
+
+  await window.estudioIdeias.ready;
+  const { projects } = window.estudioIdeias;
+
+  function exibirAlerta(mensagem, tipo) {
+    const alerta = document.createElement("p");
+    alerta.className = `alerta alerta--${tipo}`;
+    alerta.textContent = mensagem;
+    alertas.replaceChildren(alerta);
+    setTimeout(() => alerta.remove(), 4000);
+  }
+
+  // "Correção Solicitada" -> "correcao-solicitada"
+  const classeStatus = (status) =>
+    (status || "Pendente")
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+
+  const botao = (acao, classe, rotulo, id) =>
+    `<button type="button" class="action-btn ${classe}" data-id="${id}">${icone(acao)} ${rotulo}</button>`;
+
+  function atualizarPlacas(submissions) {
+    const conta = (status) => submissions.filter((s) => (s.status || "Pendente") === status).length;
+    const pend = document.querySelector('[data-plate="pendentes"]');
+    const corr = document.querySelector('[data-plate="correcao"]');
+    if (pend) pend.textContent = String(conta("Pendente")).padStart(2, "0");
+    if (corr) corr.textContent = String(conta("Correção Solicitada")).padStart(2, "0");
+  }
+
+  function renderTable() {
+    if (typeof projects.getSubmissions !== "function") {
+      linhaUnica("Erro ao carregar submissões: API incompleta.", "erro");
+      return;
     }
 
-    const { projects } = window.estudioIdeias; // Pega o módulo 'projects' da API global
-    const tabelaBody = document.getElementById('submissoes-tbody');
+    const submissions = projects.getSubmissions();
+    atualizarPlacas(submissions);
+    tabelaBody.innerHTML = "";
 
-    // Verifica se o elemento da tabela foi encontrado
-    if (!tabelaBody) {
-        console.error('ERRO CRÍTICO: Elemento com ID "submissoes-tbody" não encontrado no HTML.');
-        return; // Interrompe se a tabela não for encontrada
+    if (submissions.length === 0) {
+      linhaUnica("Nenhuma submissão para análise no momento. Envie um projeto pela página Enviar projeto e ele aparece aqui.");
+      return;
     }
 
-    // --- FUNÇÃO PARA EXIBIR ALERTAS VISUAIS ---
-    function exibirAlerta(mensagem, tipo) {
-        const alertaDiv = document.createElement("div");
-        alertaDiv.className = `alerta ${tipo}`; // Certifique-se que as classes CSS 'alerta', 'sucesso', 'erro' existam
-        alertaDiv.textContent = mensagem;
-        document.body.appendChild(alertaDiv);
-        
-        // Remove o alerta após 3 segundos
-        setTimeout(() => {
-            if (alertaDiv.parentNode) { // Verifica se o alerta ainda está no DOM
-                alertaDiv.remove();
-            }
-        }, 3000);
+    submissions.forEach((sub) => {
+      const tr = document.createElement("tr");
+      let dataCriacao = "Data Indisponível";
+      if (sub.createdAt) dataCriacao = new Date(sub.createdAt).toLocaleDateString("pt-BR");
+      else if (sub.id) dataCriacao = new Date(sub.id).toLocaleDateString("pt-BR");
+
+      let acoes = "";
+      if (sub.status === "Pendente") {
+        acoes = [
+          botao("aprovar", "approve-btn", "Aprovar", sub.id),
+          botao("rejeitar", "reject-btn", "Rejeitar", sub.id),
+          botao("corrigir", "correct-btn", "Correção", sub.id),
+        ].join("");
+      } else if (sub.status === "Correção Solicitada") {
+        acoes = [
+          botao("aprovar", "approve-btn", "Aprovar", sub.id),
+          botao("rejeitar", "reject-btn", "Rejeitar", sub.id),
+        ].join("");
+      }
+
+      tr.innerHTML = `
+        <td data-rotulo="Projeto"><a class="details-link"></a></td>
+        <td data-rotulo="Membros"></td>
+        <td data-rotulo="Submissão" class="num"></td>
+        <td data-rotulo="Status"><span class="status-badge status-${classeStatus(sub.status)}"></span></td>
+        <td data-rotulo="Ações">${acoes ? `<div class="action-buttons-group" role="group">${acoes}</div>` : '<span class="moderated-text"></span>'}</td>`;
+
+      const titulo = sub.title || "Sem título";
+      const link = tr.querySelector(".details-link");
+      link.href = `./detalhes.html?id=${encodeURIComponent(sub.id)}`;
+      link.textContent = titulo;
+      tr.children[1].textContent = sub.author || "Sem autor";
+      tr.children[2].textContent = dataCriacao;
+      tr.querySelector(".status-badge").textContent = sub.status || "Pendente";
+      const grupo = tr.querySelector(".action-buttons-group");
+      if (grupo) grupo.setAttribute("aria-label", `Ações para ${titulo}`);
+      const moderado = tr.querySelector(".moderated-text");
+      if (moderado) moderado.textContent = `Status: ${sub.status}`;
+      tabelaBody.appendChild(tr);
+    });
+  }
+
+  const ACOES = {
+    "approve-btn": ["Aprovado", "Tem certeza que deseja APROVAR este projeto?", "Projeto APROVADO com sucesso!"],
+    "reject-btn": ["Rejeitado", "Tem certeza que deseja REJEITAR este projeto?", "Projeto REJEITADO."],
+    "correct-btn": [
+      "Correção Solicitada",
+      "Tem certeza que deseja solicitar CORREÇÕES para este projeto?",
+      "CORREÇÃO SOLICITADA para o projeto.",
+    ],
+  };
+
+  tabelaBody.addEventListener("click", (event) => {
+    const button = event.target.closest(".action-btn");
+    if (!button) return;
+    const chave = Object.keys(ACOES).find((classe) => button.classList.contains(classe));
+    if (!chave) return;
+    const [novoStatus, confirmacao, feedback] = ACOES[chave];
+    dialogo.querySelector("#dialogo-texto").textContent = confirmacao;
+    dialogo.returnValue = "";
+    dialogo.addEventListener("close", () => {
+      if (dialogo.returnValue === "confirmar") aplicar(button.dataset.id, novoStatus, feedback);
+      else button.focus();
+    }, { once: true });
+    dialogo.showModal();
+  });
+
+  function aplicar(id, novoStatus, feedback) {
+    if (typeof projects.updateStatus !== "function") {
+      exibirAlerta("Erro crítico: Não foi possível atualizar o status do projeto.", "erro");
+      return;
     }
-
-    // --- FUNÇÃO PARA RENDERIZAR A TABELA DE SUBMISSÕES ---
-    function renderTable() {
-        // Verifica se as funções necessárias da API existem
-        if (!projects.getSubmissions || typeof projects.getSubmissions !== 'function') {
-            console.error("ERRO: Função projects.getSubmissions() não encontrada ou não é uma função na API.");
-            tabelaBody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: red;">Erro ao carregar submissões: API incompleta.</td></tr>';
-            return;
-        }
-
-        const submissions = projects.getSubmissions(); // Pega apenas os projetos que não estão 'Aprovado'
-        tabelaBody.innerHTML = ''; // Limpa a tabela antes de preencher
-
-        if (submissions.length === 0) {
-            tabelaBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Nenhuma submissão para análise no momento.</td></tr>';
-            return;
-        }
-
-        submissions.forEach(sub => {
-            const tr = document.createElement('tr');
-            // Usa 'createdAt' se existir, senão usa 'id' (timestamp) como fallback para a data
-            const dataCriacao = sub.createdAt ? new Date(sub.createdAt).toLocaleDateString('pt-BR') : (sub.id ? new Date(sub.id).toLocaleDateString('pt-BR') : 'Data Indisponível');
-            
-            let actionButtonsHTML = '';
-            if (sub.status === 'Pendente') {
-                actionButtonsHTML = `
-                    <div class="action-buttons-group">
-                        <button type="button" class="action-btn approve-btn" title="Aprovar" data-id="${sub.id}">
-                            <i class="fas fa-check"></i> Aprovar
-                        </button>
-                        <button type="button" class="action-btn reject-btn" title="Rejeitar" data-id="${sub.id}">
-                            <i class="fas fa-times"></i> Rejeitar
-                        </button>
-                        <button type="button" class="action-btn correct-btn" title="Solicitar Correção" data-id="${sub.id}">
-                            <i class="fas fa-edit"></i> Correção
-                        </button>
-                    </div>
-                `;
-            } else if (sub.status === 'Correção Solicitada') {
-                actionButtonsHTML = `
-                    <div class="action-buttons-group">
-                         <button type="button" class="action-btn approve-btn" title="Aprovar Após Correção" data-id="${sub.id}">
-                            <i class="fas fa-check"></i> Aprovar
-                        </button>
-                        <button type="button" class="action-btn reject-btn" title="Rejeitar Mesmo Após Correção" data-id="${sub.id}">
-                            <i class="fas fa-times"></i> Rejeitar
-                        </button>
-                    </div>
-                `;
-            } else { // Status 'Aprovado' ou 'Rejeitado' não são pegos por getSubmissions, mas por segurança:
-                actionButtonsHTML = `<span class="moderated-text">Status: ${sub.status}</span>`;
-            }
-            
-            // Gera a classe de status dinamicamente, tratando espaços.
-            const statusClass = (sub.status || 'pendente').toLowerCase().replace(/\s+/g, '-');
-
-            tr.innerHTML = `
-                <td><a href="./detalhes.html?id=${sub.id}" class="details-link" title="Ver detalhes do projeto">${sub.title || 'Sem título'}</a></td>
-                <td>${sub.author || 'Sem autor'}</td>
-                <td>${dataCriacao}</td>
-                <td><span class="status-${statusClass}">${sub.status || 'Pendente'}</span></td>
-                <td>${actionButtonsHTML}</td>
-            `;
-            tabelaBody.appendChild(tr);
-        });
-    }
-
-    // --- FUNÇÃO PARA LIDAR COM AÇÕES DE MODERAÇÃO ---
-    function handleModeration(event) {
-        const button = event.target.closest('.action-btn');
-        if (!button) return; // Sai se o clique não foi em um botão de ação
-
-        const idDoProjeto = button.dataset.id;
-        let novoStatus = '';
-        let mensagemConfirmacao = '';
-
-        if (button.classList.contains('approve-btn')) {
-            novoStatus = 'Aprovado';
-            mensagemConfirmacao = 'Tem certeza que deseja APROVAR este projeto?';
-        } else if (button.classList.contains('reject-btn')) {
-            novoStatus = 'Rejeitado';
-            mensagemConfirmacao = 'Tem certeza que deseja REJEITAR este projeto?';
-        } else if (button.classList.contains('correct-btn')) {
-            novoStatus = 'Correção Solicitada';
-            mensagemConfirmacao = 'Tem certeza que deseja solicitar CORREÇÕES para este projeto?';
-        }
-
-        if (novoStatus && mensagemConfirmacao) {
-            if (confirm(mensagemConfirmacao)) { // Pede confirmação ao usuário
-                // Verifica se a função de update da API existe
-                if (!projects.updateStatus || typeof projects.updateStatus !== 'function') {
-                    console.error("ERRO: Função projects.updateStatus() não encontrada ou não é uma função na API.");
-                    exibirAlerta("Erro crítico: Não foi possível atualizar o status do projeto.", "erro");
-                    return;
-                }
-                projects.updateStatus(idDoProjeto, novoStatus); // Chama a função da API para atualizar o status
-                
-                let mensagemFeedback = '';
-                if (novoStatus === 'Aprovado') {
-                    mensagemFeedback = 'Projeto APROVADO com sucesso!';
-                } else if (novoStatus === 'Rejeitado') {
-                    mensagemFeedback = 'Projeto REJEITADO.';
-                } else if (novoStatus === 'Correção Solicitada') {
-                    mensagemFeedback = 'CORREÇÃO SOLICITADA para o projeto.';
-                }
-                
-                exibirAlerta(mensagemFeedback, 'sucesso'); // Exibe o feedback visual
-                renderTable(); // Re-renderiza a tabela para refletir a mudança de status
-            }
-        }
-    }
-
-    // Adiciona o listener de eventos à tabela (delegação de eventos)
-    tabelaBody.addEventListener('click', handleModeration);
-
-    // Renderiza a tabela na carga inicial da página
+    projects.updateStatus(id, novoStatus);
+    exibirAlerta(feedback, "sucesso");
     renderTable();
-});
+    document.getElementById("fila-titulo").focus();
+  }
+
+  renderTable();
+})();

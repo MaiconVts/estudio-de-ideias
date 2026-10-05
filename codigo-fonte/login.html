@@ -3,288 +3,152 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Estúdio de Ideias</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="./assets/img/logoIcone-azulDark.png"
-    />
+    <title>Entrar · Estúdio de Ideias</title>
+    <meta name="description" content="Entre ou crie sua conta no Estúdio de Ideias para publicar projetos e guardar favoritos." />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://maiconvts.github.io/estudio-de-ideias/login.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Entrar" />
+    <meta property="og:description" content="Entre ou crie sua conta no Estúdio de Ideias para publicar projetos e guardar favoritos." />
+    <meta property="og:url" content="https://maiconvts.github.io/estudio-de-ideias/login.html" />
+    <meta property="og:image" content="https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="preload" href="./assets/fonts/geologica-300-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/mundo.css" />
+    <script defer src="./assets/js/layout.js"></script>
+    <link rel="icon" type="image/svg+xml" href="./assets/img/marca.svg" />
     <link rel="stylesheet" href="./assets/css/login.css" />
-    <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/footer.css" />
-    <script defer src="./assets/js/header.js"></script>
+    <script defer src="./assets/js/formularios.js"></script>
+    <script defer src="./assets/js/conta.js"></script>
     <script defer src="./assets/js/login.js"></script>
-    <script
-      defer
-      src="https://kit.fontawesome.com/fba2b126ed.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <script defer src="./assets/vendor/gsap.min.js"></script>
+    <script defer src="./assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="./assets/vendor/SplitText.min.js"></script>
+    <script defer src="./assets/vendor/lenis.min.js"></script>
+    <script defer src="./assets/js/motion-base.js"></script>
   </head>
   <body>
-    <header class="header-flex-container">
-      <div class="header-brand">
-        <div class="logo-container">
-          <a href="index.html">
-            <img
-              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
-              alt="Logo Estúdio de Ideias"
-              width="60px"
-              height="60px"
-            />
-          </a>
-        </div>
-        <a href="index.html" class="link-title">
-          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
-        </a>
-      </div>
-      <nav class="navbar">
-        <div class="menu-icon">
-          <img
-            src="assets/img/list.png"
-            alt="Menu"
-            width="40"
-            height="40"
-            class="nav-icon"
-            id="menuIconImg"
-          />
-          <ul class="dropdown-menu" id="mainDropdownMenu">
-            <li><a href="./index.html">Início</a></li>
-            <li><a href="./projetos.html">Projetos</a></li>
-            <li><a href="./submissao.html">Envio de Projetos</a></li>
-            <li><a href="./favoritos.html">Favoritos</a></li>
-            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-            <li><a href="./login.html">Área Restrita</a></li>
-            <li><a href="./login.html" class="nav-login-link">Login</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <header id="site-header"></header>
 
-    <main class="login-page-main-content">
-      <div class="container">
-        <div class="content first-content">
-          <div class="first-column">
-            <h2 class="title title-primary">Bem-vindo(a) de volta!</h2>
-            <p class="description description-primary">
-              Para se manter conectado conosco no Estúdio de Ideias,
-            </p>
-            <p class="description description-primary">
-              por favor, acesse com seus dados pessoais.
-            </p>
-            <button id="signin" class="btn btn-primary" type="button">
-              Entrar
-            </button>
+    <main id="conteudo" class="main-content auth" data-modo="entrar">
+      <section class="page-hero" aria-labelledby="page-title">
+          <svg class="page-hero__grid malha" data-efeito="grade" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="malha-pagina" width="56" height="97" patternUnits="userSpaceOnUse">
+                <path class="crease-m" d="M0 0 L56 97" />
+                <path class="crease-v" d="M56 0 L0 97" />
+                <path class="crease-h" d="M0 48.5 H56" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#malha-pagina)" />
+          </svg>
+          <div class="page-hero__glow" data-efeito="glow" aria-hidden="true"></div>
+          <svg class="page-hero__fold" data-efeito="parallax" viewBox="0 0 270 170" aria-hidden="true" focusable="false">
+            <path class="face-m" d="M0 30 L80 10 L110 80 L30 100 Z" />
+            <path class="face-v" d="M80 10 L160 30 L190 100 L110 80 Z" />
+            <path class="face-m" d="M160 30 L240 10 L270 80 L190 100 Z" />
+            <path class="face-v" d="M30 100 L110 80 L80 150 L0 170 Z" />
+            <path class="face-m" d="M110 80 L190 100 L160 170 L80 150 Z" />
+            <path class="face-v" d="M190 100 L270 80 L240 150 L160 170 Z" />
+            <path class="face-f" d="M110 80 L124 88 L106 92 Z" />
+          </svg>
+          <div class="page-hero__inner">
+              <h1 id="page-title" class="page-hero__title">Sua conta</h1>
+              <p class="page-hero__lede">Entre para publicar projetos e acompanhar a moderação, ou crie sua conta com nome, e-mail e senha.</p>
+              <div class="spec-plate" data-efeito="vidro"><dl class="spec-plate__list"><div><dt>Acesso</dt><dd class="num">E-mail</dd></div><div><dt>Dados</dt><dd class="num">Navegador</dd></div></dl></div>
           </div>
-          <div class="second-column">
-            <h2 class="title title-second">Crie sua Conta</h2>
-            <div class="social-media">
-              <ul class="list-social-media">
-                <li class="item-social-media">
-                  <a
-                    class="link-social-media"
-                    href="#"
-                    aria-label="Cadastrar com Facebook"
-                  >
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="item-social-media">
-                  <a
-                    class="link-social-media"
-                    href="#"
-                    aria-label="Cadastrar com Google"
-                  >
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                </li>
-                <li class="item-social-media">
-                  <a
-                    class="link-social-media"
-                    href="#"
-                    aria-label="Cadastrar com LinkedIn"
-                  >
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
+        </section>
+
+      <div class="page-body form-layout">
+        <div class="auth__forms">
+          <section id="painel-conectado" class="panel auth__panel" aria-labelledby="titulo-conectado" hidden>
+            <h2 id="titulo-conectado" class="panel__title">Você está conectado</h2>
+            <p class="auth__quem"><span data-conta="nome"></span> · <span data-conta="papel"></span></p>
+            <p class="auth__or" data-conta="email"></p>
+            <div class="form-actions">
+              <a id="ir-painel" class="btn-ink" href="./admin.html">Abrir a moderação</a>
+              <button id="sair" class="password link-arrow" type="button">Sair da conta</button>
             </div>
-            <p class="description description-second">
-              ou use seu e-mail para se registrar:
-            </p>
-            <form class="form">
-              <label class="label-input" for="signup-name">
-                <i class="far fa-user icon-modify"></i>
-                <input
-                  type="text"
-                  id="signup-name"
-                  placeholder="Nome Completo"
-                  required
-                />
-              </label>
+          </section>
 
-              <label class="label-input" for="signup-email">
-                <i class="far fa-envelope icon-modify"></i>
-                <input
-                  type="email"
-                  id="signup-email"
-                  placeholder="Seu E-mail"
-                  required
-                />
-              </label>
-
-              <label class="label-input" for="signup-password">
-                <i class="fas fa-lock icon-modify"></i>
-                <input
-                  type="password"
-                  id="signup-password"
-                  placeholder="Crie uma Senha Forte"
-                  required
-                />
-              </label>
-
-              <button class="btn btn-second" type="submit">Cadastrar</button>
-            </form>
-          </div>
-        </div>
-        <div class="content second-content">
-          <div class="first-column">
-            <h2 class="title title-primary">Olá, amigo!</h2>
-            <p class="description description-primary">
-              É novo(a) por aqui no Estúdio de Ideias?
-            </p>
-            <p class="description description-primary">
-              Insira alguns dados e comece sua jornada conosco.
-            </p>
-            <button id="signup" class="btn btn-primary" type="button">
-              Criar Conta
-            </button>
-          </div>
-          <div class="second-column">
-            <h2 class="title title-second">Acessar o Estúdio</h2>
-            <div class="social-media">
-              <ul class="list-social-media">
-                <li class="item-social-media">
-                  <a
-                    class="link-social-media"
-                    href="#"
-                    aria-label="Entrar com Facebook"
-                  >
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="item-social-media">
-                  <a
-                    class="link-social-media"
-                    href="#"
-                    aria-label="Entrar com Google"
-                  >
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
-                </li>
-                <li class="item-social-media">
-                  <a
-                    class="link-social-media"
-                    href="#"
-                    aria-label="Entrar com LinkedIn"
-                  >
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
+          <section id="painel-entrar" class="panel auth__panel" aria-labelledby="titulo-entrar" data-reveal>
+            <h2 id="titulo-entrar" class="panel__title">Acessar o Estúdio</h2>
+            <div class="auth__demo">
+              <p class="auth__or">Conta de demonstração · moderador</p>
+              <dl class="auth__cred">
+                <div><dt>E-mail</dt><dd><code>demo@estudiodeideias.app</code></dd></div>
+                <div><dt>Senha</dt><dd><code>demo1234</code></dd></div>
+              </dl>
+              <button id="entrar-demo" class="btn-foil" type="button">Entrar com a conta demo</button>
             </div>
-            <p class="description description-second">
-              ou use sua conta de e-mail:
-            </p>
-            <form class="form">
-              <label class="label-input" for="signin-email">
-                <i class="far fa-envelope icon-modify"></i>
-                <input
-                  type="email"
-                  id="signin-email"
-                  placeholder="Seu E-mail"
-                  required
-                />
-              </label>
-
-              <label class="label-input" for="signin-password">
-                <i class="fas fa-lock icon-modify"></i>
-                <input
-                  type="password"
-                  id="signin-password"
-                  placeholder="Sua Senha"
-                  required
-                />
-              </label>
-
-              <a class="password" href="#">Esqueceu sua senha?</a>
-              <button class="btn btn-second" type="submit">Entrar</button>
+            <p class="auth__or">ou use sua conta de e-mail:</p>
+            <form id="signin-form" class="form-grid" novalidate>
+              <div class="field">
+                <label for="signin-email">E-mail</label>
+                <input type="email" id="signin-email" placeholder="Seu E-mail" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="signin-password">Senha</label>
+                <input type="password" id="signin-password" placeholder="Sua Senha" autocomplete="current-password" required />
+              </div>
+              <p id="signin-status" class="form-status" role="status" aria-live="polite"></p>
+              <div class="form-actions">
+                <button class="btn-ink" type="submit">Entrar</button>
+                <button id="esqueci" class="password link-arrow" type="button">Esqueceu sua senha?</button>
+              </div>
             </form>
-          </div>
+          </section>
+
+          <section id="painel-cadastrar" class="panel auth__panel" aria-labelledby="titulo-cadastrar" hidden>
+            <h2 id="titulo-cadastrar" class="panel__title">Crie sua Conta</h2>
+            <p class="auth__or">Novas contas entram como autor:</p>
+            <form id="signup-form" class="form-grid" novalidate>
+              <div class="field">
+                <label for="signup-name">Nome completo</label>
+                <input type="text" id="signup-name" placeholder="Nome Completo" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="signup-email">E-mail</label>
+                <input type="email" id="signup-email" placeholder="Seu E-mail" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="signup-password">Senha</label>
+                <input type="password" id="signup-password" placeholder="Crie uma Senha Forte" autocomplete="new-password" required />
+              </div>
+              <p id="signup-status" class="form-status" role="status" aria-live="polite"></p>
+              <div class="form-actions">
+                <button class="btn-ink" type="submit">Cadastrar</button>
+              </div>
+            </form>
+          </section>
         </div>
+
+        <aside class="form-layout__aside panel auth__switch" data-reveal>
+          <div class="auth__swap" data-para="entrar">
+            <h2 class="panel__title">Olá, amigo!</h2>
+            <p>É novo(a) por aqui no Estúdio de Ideias?</p>
+            <p>Insira alguns dados e comece sua jornada conosco.</p>
+            <button id="signup" class="btn-foil" type="button" aria-controls="painel-cadastrar">Criar Conta</button>
+          </div>
+          <div class="auth__swap" data-para="cadastrar" hidden>
+            <h2 class="panel__title">Bem-vindo(a) de volta!</h2>
+            <p>Para se manter conectado conosco no Estúdio de Ideias, por favor, acesse com seus dados pessoais.</p>
+            <button id="signin" class="btn-foil" type="button" aria-controls="painel-entrar">Entrar</button>
+          </div>
+          <div class="auth__swap" data-para="conectado" hidden>
+            <h2 class="panel__title">Sessão neste navegador</h2>
+            <p>Sua conta e a sessão ficam guardadas só neste navegador, com a senha cifrada. A sessão vale por sete dias.</p>
+            <p>Para entrar com outra conta, saia primeiro.</p>
+          </div>
+        </aside>
       </div>
     </main>
-<footer class="site-footer">
-      <div class="footer-top-bar"></div>
-      <div class="footer-main">
-        <div class="footer-section">
-          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
-          <p class="footer-text">
-            Um espaço dedicado a conectar estudantes e profissionais através de
-            projetos acadêmicos inovadores.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <!-- Link para Áreas pode ser uma página futura -->
-            <li><a href="#">Áreas</a></li>
-            <li><a href="submissao.html">Publicar Projeto</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Recursos Acadêmicos</h4>
-          <ul class="footer-links">
-            <!-- Links atualizados para as novas páginas -->
-            <li><a href="normas.html">Normas de Publicação</a></li>
-            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Seção de contato com links que já estavam corretos -->
-      <div class="footer-contact-bar">
-        <div class="footer-contact-container">
-          <h4 class="footer-contact-title">Contato e Informações</h4>
-          <ul class="footer-contact-links">
-            <li><a href="contato.html">Fale Conosco</a></li>
-            <li><a href="faq.html">Perguntas Frequentes</a></li>
-            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
-          direitos reservados.
-        </p>
-      </div>
-    </footer>
-
-    <!-- Botão "Voltar ao Topo" -->
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top-button"
-      title="Voltar ao topo"
-    >
-      &uarr;
-    </button>
+    <footer id="site-footer"></footer>
   </body>
 </html>

@@ -3,210 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Estúdio de Ideias</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="./assets/img/logoIcone-azulDark.png"
-    />
+    <title>Estúdio de Ideias · Projetos de ADS da PUC Minas</title>
+    <meta name="description" content="Busque entre os projetos de Análise e Desenvolvimento de Sistemas da PUC Minas por título, autor, área ou ano, e publique o seu." />
+    <link rel="canonical" href="https://maiconvts.github.io/estudio-de-ideias/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Estúdio de Ideias" />
+    <meta property="og:description" content="Busque entre os projetos de Análise e Desenvolvimento de Sistemas da PUC Minas por título, autor, área ou ano, e publique o seu." />
+    <meta property="og:url" content="https://maiconvts.github.io/estudio-de-ideias/" />
+    <meta property="og:image" content="https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="preload" href="./assets/fonts/geologica-300-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/marca.svg" />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/mundo.css" />
     <link rel="stylesheet" href="./assets/css/home.css" />
-    <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <script defer src="./assets/js/layout.js"></script>
     <script defer src="./assets/js/projetos.js"></script>
+    <script defer src="./assets/js/projetos-utils.js"></script>
     <script defer src="./assets/js/home.js"></script>
-    <script defer src="./assets/js/header.js"></script>
-    <!-- Fonte Montserrat e Roboto (Google Fonts) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <script defer src="./assets/js/miura.js"></script>
+    <script defer src="./assets/vendor/gsap.min.js"></script>
+    <script defer src="./assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="./assets/vendor/SplitText.min.js"></script>
+    <script defer src="./assets/vendor/lenis.min.js"></script>
+    <script defer src="./assets/js/motion-base.js"></script>
+    <script defer src="./assets/js/home-motion.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://maiconvts.github.io/estudio-de-ideias/#site",
+            "name": "Estúdio de Ideias",
+            "url": "https://maiconvts.github.io/estudio-de-ideias/",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://maiconvts.github.io/estudio-de-ideias/#org" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://maiconvts.github.io/estudio-de-ideias/#org",
+            "name": "Estúdio de Ideias",
+            "url": "https://maiconvts.github.io/estudio-de-ideias/",
+            "logo": "https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png",
+            "description": "Repositório acadêmico que preserva e compartilha os projetos produzidos pelos estudantes de TI."
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <!-- HEADER-->
-    <header class="header-flex-container">
-      <div class="header-brand">
-        <div class="logo-container">
-          <a href="index.html">
-            <img
-              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
-              alt="Logo Estúdio de Ideias"
-              width="60px"
-              height="60px"
-            />
-          </a>
-        </div>
-        <a href="index.html" class="link-title">
-          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
-        </a>
-      </div>
+    <header id="site-header"></header>
+    <main id="conteudo">
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Malha de vincos a 60°: camada de fundo com parallax -->
+        <svg class="hero__grid" data-efeito="grade" aria-hidden="true" focusable="false">
+          <defs>
+            <pattern id="malha-miura" width="56" height="97" patternUnits="userSpaceOnUse">
+              <path class="crease-m" d="M0 0 L56 97" />
+              <path class="crease-v" d="M56 0 L0 97" />
+              <path class="crease-h" d="M0 48.5 H56" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#malha-miura)" />
+        </svg>
 
-      <nav class="navbar">
-        <div class="menu-icon">
-          <img
-            src="assets/img/list.png"
-            alt="Menu"
-            width="40"
-            height="40"
-            class="nav-icon"
-            id="menuIconImg"
-          />
-          <ul class="dropdown-menu" id="mainDropdownMenu">
-            <li><a href="./index.html">Início</a></li>
-            <li><a href="./projetos.html">Projetos</a></li>
-            <li><a href="./submissao.html">Envio de Projetos</a></li>
-            <li><a href="./favoritos.html">Favoritos</a></li>
-            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-            <li><a href="./login.html">Área Restrita</a></li>
-            <li><a href="./login.html" class="nav-login-link">Login</a></li>
-          </ul>
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <h1 id="hero-title" class="hero__title">
+              <span class="hero__line">Seu projeto não</span>
+              <span class="hero__line">fica dobrado</span>
+              <span class="hero__line">na gaveta.</span>
+            </h1>
+            <p class="hero__lede">
+              Busque entre os <strong class="num" data-total-projetos>125</strong> projetos de ADS da PUC Minas
+              por título, autor, área ou ano. Inspire-se no trabalho dos colegas e publique o seu.
+            </p>
+
+            <!-- O pacote: busca compacta que se desdobra nos filtros -->
+            <form id="search-form" class="packet" role="search" data-efeito="vidro" data-state="folded" autocomplete="off">
+              <div class="packet__row">
+                <label class="visually-hidden" for="search-input">Buscar projetos</label>
+                <svg class="packet__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+                <input
+                  type="search"
+                  id="search-input"
+                  class="packet__input"
+                  placeholder="Título, autor ou tecnologia"
+                  role="combobox"
+                  aria-autocomplete="list"
+                  aria-expanded="false"
+                  aria-controls="search-suggestions"
+                />
+                <button type="submit" class="btn-foil">Buscar</button>
+              </div>
+              <div id="search-suggestions" class="suggestions" role="listbox" aria-label="Sugestões"></div>
+
+              <button type="button" class="packet__unfold" aria-expanded="false" aria-controls="packet-filters">
+                <span class="packet__unfold-label">Mais filtros</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" /></svg>
+              </button>
+
+              <div id="packet-filters" class="packet__filters" inert>
+                <div class="packet__filters-inner">
+                  <div class="field">
+                    <label for="filter-field">Buscar em</label>
+                    <select id="filter-field">
+                      <option value="all">Título e autor</option>
+                      <option value="title">Só título</option>
+                      <option value="author">Só autor</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="sort-by">Ordem</label>
+                    <select id="sort-by">
+                      <option value="relevance">Mais recentes</option>
+                      <option value="date-asc">Mais antigos</option>
+                      <option value="citations">Mais citados</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="year-filter">Ano</label>
+                    <select id="year-filter">
+                      <option value="all">Todos</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="area-filter">Área</label>
+                    <select id="area-filter">
+                      <option value="all">Todas</option>
+                      <option value="frontend">Frontend</option>
+                      <option value="backend">Backend</option>
+                      <option value="mobile">Mobile</option>
+                      <option value="redes">Redes</option>
+                      <option value="banco-dados">Banco de Dados</option>
+                      <option value="seguranca">Segurança da Informação</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <figure class="hero__sheet" data-efeito="folha-miura particulas">
+            <canvas id="miura-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+            <figcaption class="spec-plate">
+              <span class="visually-hidden">Folha dobrada em padrão Miura que se abre mostrando as áreas do acervo.</span>
+              <dl class="spec-plate__list">
+                <div><dt>Acervo</dt><dd class="num" data-total-projetos>125</dd></div>
+                <div><dt>Áreas</dt><dd class="num">06</dd></div>
+                <div><dt>Anos</dt><dd class="num" data-intervalo-anos>2000–2025</dd></div>
+                <div aria-hidden="true"><dt>Dobra</dt><dd class="num" data-angulo>θ 85°</dd></div>
+              </dl>
+            </figcaption>
+            <button type="button" class="sheet-pause" aria-pressed="false" data-pausa data-controle-movimento>
+              <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5v14M15 5v14" /></svg>
+              <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z" /></svg>
+              <span class="sheet-pause__label">Pausar animação</span>
+            </button>
+          </figure>
         </div>
-      </nav>
-    </header>
-    <!--CONTEÚDO PRINCIPAL-->
-    <main>
-      <section class="search-section">
-        <div class="search-container">
-          <form id="search-form" class="search-form">
-            <input
-              type="text"
-              id="search-input"
-              class="search-input"
-              placeholder="Buscar projetos, autores..."
-            />
-            <button type="submit" class="search-button">Buscar</button>
-            <div id="search-suggestions" class="suggestions-container"></div>
-          </form>
-          <div class="search-filters">
-            <div class="filter-item">
-              <select id="filter-field" class="filter-select">
-                <option value="all">Campo de Busca</option>
-                <option value="title">Título</option>
-                <option value="author">Autor</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <select id="sort-by" class="filter-select">
-                <option value="relevance">Ordenar por</option>
-                <option value="date-desc">Mais Recente</option>
-                <option value="date-asc">Mais Antigo</option>
-                <option value="citations">Mais Citados</option>
-              </select>
-            </div>
-            <div class="filter-item">
-              <select id="year-filter" class="filter-select">
-                <option value="all">Ano</option>
-                <!-- Os anos virão via JavaScript -->
-              </select>
-            </div>
-            <div class="filter-item">
-              <select id="area-filter" class="filter-select">
-                <option value="all">Áreas de Atuação</option>
-                <option value="frontend">Frontend</option>
-                <option value="backend">Backend</option>
-                <option value="mobile">Mobile</option>
-                <option value="redes">Redes</option>
-                <option value="banco-dados">Banco de Dados</option>
-                <option value="seguranca">Segurança da Informação</option>
-              </select>
-            </div>
+
+        <!-- Teclas de área: atalhos para o filtro de área -->
+        <div class="area-keys" role="group" aria-label="Filtrar por área">
+          <button type="button" class="area-key" data-area="all" aria-pressed="true"><span class="area-key__code">TD</span><span class="area-key__name">Todas</span><span class="area-key__count num" data-contagem="all">125</span></button>
+          <button type="button" class="area-key" data-area="frontend" aria-pressed="false"><span class="area-key__code">FE</span><span class="area-key__name">Frontend</span><span class="area-key__count num" data-contagem="frontend">24</span></button>
+          <button type="button" class="area-key" data-area="backend" aria-pressed="false"><span class="area-key__code">BE</span><span class="area-key__name">Backend</span><span class="area-key__count num" data-contagem="backend">23</span></button>
+          <button type="button" class="area-key" data-area="banco-dados" aria-pressed="false"><span class="area-key__code">BD</span><span class="area-key__name">Banco de Dados</span><span class="area-key__count num" data-contagem="banco-dados">22</span></button>
+          <button type="button" class="area-key" data-area="seguranca" aria-pressed="false"><span class="area-key__code">SG</span><span class="area-key__name">Segurança</span><span class="area-key__count num" data-contagem="seguranca">22</span></button>
+          <button type="button" class="area-key" data-area="redes" aria-pressed="false"><span class="area-key__code">RD</span><span class="area-key__name">Redes</span><span class="area-key__count num" data-contagem="redes">20</span></button>
+          <button type="button" class="area-key" data-area="mobile" aria-pressed="false"><span class="area-key__code">MB</span><span class="area-key__name">Mobile</span><span class="area-key__count num" data-contagem="mobile">14</span></button>
+        </div>
+      </section>
+
+      <section class="acervo" id="acervo" aria-labelledby="acervo-title">
+        <div class="acervo__head">
+          <h2 id="acervo-title" class="acervo__title">O acervo aberto</h2>
+          <p id="result-count" class="acervo__count" aria-live="polite">Carregando projetos…</p>
+        </div>
+
+        <div id="lista-projetos" class="projetos-lista"></div>
+
+        <div class="ver-mais-container">
+          <button id="ver-mais-btn" class="btn-ink" type="button" hidden>Desdobrar mais projetos</button>
+        </div>
+      </section>
+
+      <section class="publique" aria-labelledby="publique-title">
+        <div class="publique__inner">
+          <h2 id="publique-title" class="publique__title">O seu trabalho também cabe nesta folha.</h2>
+          <p class="publique__text">
+            Envie o projeto da disciplina com resumo, tecnologias e o documento final. Ele ganha um código no acervo e fica à vista de quem vem depois.
+          </p>
+          <div class="publique__actions">
+            <a class="btn-foil" href="./submissao.html">Publicar projeto</a>
+            <a class="link-arrow" href="./normas.html">Ver as normas de envio</a>
           </div>
         </div>
       </section>
-      <!-- Modelo de card - fica escondido -->
-      <template id="projeto-template">
-        <article class="project-card">
-          <h3 class="project-title">
-            <a href="./detalhes.html" class="project-link">Título do Projeto</a>
-          </h3>
-
-          <section class="project-metadata project-tags-group">
-            <span class="project-tag author-info-tag"
-              >Autor: <span class="author-name-value">Nome do Autor</span></span
-            >
-            <span class="project-tag citations-info-tag"
-              >Citações: <span class="citations-count-value">0</span></span
-            >
-          </section>
-
-          <section
-            class="project-tags project-tags-group"
-            aria-label="Metadados do projeto"
-          >
-            <span class="project-tag area-tag">Área</span>
-            <span class="project-tag tech-tag">Tecnologia</span>
-            <span class="project-tag year-tag">Ano</span>
-          </section>
-
-          <p class="project-description">Resumo do Projeto</p>
-        </article>
-      </template>
-      <div id="lista-projetos" class="projetos-lista"></div>
-
-      <div class="ver-mais-container" style="text-align: center; padding: 20px">
-        <button id="ver-mais-btn" class="ver-mais-button" style="display: none">
-          Ver mais
-        </button>
-      </div>
     </main>
-    <!-- RODAPÉ ATUALIZADO -->
-    <footer class="site-footer">
-      <div class="footer-top-bar"></div>
-      <div class="footer-main">
-        <div class="footer-section">
-          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
-          <p class="footer-text">
-            Um espaço dedicado a conectar estudantes e profissionais através de
-            projetos acadêmicos inovadores.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <!-- Link para Áreas pode ser uma página futura -->
-            <li><a href="#">Áreas</a></li>
-            <li><a href="submissao.html">Publicar Projeto</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Recursos Acadêmicos</h4>
-          <ul class="footer-links">
-            <!-- Links atualizados para as novas páginas -->
-            <li><a href="normas.html">Normas de Publicação</a></li>
-            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Seção de contato com links que já estavam corretos -->
-      <div class="footer-contact-bar">
-        <div class="footer-contact-container">
-          <h4 class="footer-contact-title">Contato e Informações</h4>
-          <ul class="footer-contact-links">
-            <li><a href="contato.html">Fale Conosco</a></li>
-            <li><a href="faq.html">Perguntas Frequentes</a></li>
-            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
-          direitos reservados.
-        </p>
-      </div>
-    </footer>
-
-    <!-- Botão "Voltar ao Topo" -->
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top-button"
-      title="Voltar ao topo"
-    >
-      &uarr;
-    </button>
+    <footer id="site-footer"></footer>
   </body>
 </html>

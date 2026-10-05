@@ -3,79 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tutoriais Técnicos - Estúdio de Ideias</title>
-
-    <!-- Fontes Google (Montserrat e Roboto) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSS Compartilhado -->
-    <link rel="stylesheet" href="assets/css/header.css" />
-    <link rel="stylesheet" href="assets/css/footer.css" />
+    <title>Tutoriais técnicos · Estúdio de Ideias</title>
+    <meta name="description" content="Tutoriais para documentar, versionar e publicar projetos de desenvolvimento de sistemas." />
+    <link rel="canonical" href="https://maiconvts.github.io/estudio-de-ideias/tutoriais.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tutoriais técnicos" />
+    <meta property="og:description" content="Tutoriais para documentar, versionar e publicar projetos de desenvolvimento de sistemas." />
+    <meta property="og:url" content="https://maiconvts.github.io/estudio-de-ideias/tutoriais.html" />
+    <meta property="og:image" content="https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="preload" href="./assets/fonts/geologica-300-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/mundo.css" />
+    <script defer src="./assets/js/layout.js"></script>
 
     <!-- CSS Reutilizável para páginas estáticas -->
     <link rel="stylesheet" href="assets/css/static_page_style.css" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/img/logoIcone-azulDark.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/marca.svg" />
+    <script defer src="./assets/vendor/gsap.min.js"></script>
+    <script defer src="./assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="./assets/vendor/SplitText.min.js"></script>
+    <script defer src="./assets/vendor/lenis.min.js"></script>
+    <script defer src="./assets/js/motion-base.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Tutoriais técnicos · Estúdio de Ideias",
+        "description": "Tutoriais para documentar, versionar e publicar projetos de desenvolvimento de sistemas.",
+        "url": "https://maiconvts.github.io/estudio-de-ideias/tutoriais.html",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@id": "https://maiconvts.github.io/estudio-de-ideias/#site"
+        }
+      }
+    </script>
   </head>
   <body>
-    <!-- HEADER (Reutilizado das outras páginas) -->
-    <header class="header-flex-container">
-      <div class="header-brand">
-        <div class="logo-container">
-          <a href="index.html">
-            <img
-              src="assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
-              alt="Logo Estúdio de Ideias"
-              width="60px"
-              height="60px"
-            />
-          </a>
-        </div>
-        <a href="index.html" class="link-title">
-          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
-        </a>
-      </div>
-
-      <nav class="navbar">
-        <div class="menu-icon">
-          <img
-            src="assets/img/list.png"
-            alt="Menu"
-            width="40"
-            height="40"
-            class="nav-icon"
-            id="menuIconImg"
-          />
-          <ul class="dropdown-menu" id="mainDropdownMenu">
-            <li><a href="./index.html">Início</a></li>
-            <li><a href="./projetos.html">Projetos</a></li>
-            <li><a href="./submissao.html">Envio de Projetos</a></li>
-            <li><a href="./favoritos.html">Favoritos</a></li>
-            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-            <li><a href="./login.html">Área Restrita</a></li>
-            <li><a href="./login.html" class="nav-login-link">Login</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <header id="site-header"></header>
 
     <!-- Conteúdo Principal da Página de Tutoriais Técnicos -->
     <main class="static-page-main">
+      <section class="page-hero" aria-labelledby="page-title">
+          <svg class="page-hero__grid malha" data-efeito="grade" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="malha-pagina" width="56" height="97" patternUnits="userSpaceOnUse">
+                <path class="crease-m" d="M0 0 L56 97" />
+                <path class="crease-v" d="M56 0 L0 97" />
+                <path class="crease-h" d="M0 48.5 H56" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#malha-pagina)" />
+          </svg>
+          <div class="page-hero__glow" data-efeito="glow" aria-hidden="true"></div>
+          <svg class="page-hero__fold" data-efeito="parallax" viewBox="0 0 270 170" aria-hidden="true" focusable="false">
+            <path class="face-m" d="M0 30 L80 10 L110 80 L30 100 Z" />
+            <path class="face-v" d="M80 10 L160 30 L190 100 L110 80 Z" />
+            <path class="face-m" d="M160 30 L240 10 L270 80 L190 100 Z" />
+            <path class="face-v" d="M30 100 L110 80 L80 150 L0 170 Z" />
+            <path class="face-m" d="M110 80 L190 100 L160 170 L80 150 Z" />
+            <path class="face-v" d="M190 100 L270 80 L240 150 L160 170 Z" />
+            <path class="face-f" d="M110 80 L124 88 L106 92 Z" />
+          </svg>
+          <div class="page-hero__inner">
+              <h1 id="page-title" class="page-hero__title">Tutoriais técnicos</h1>
+              <p class="page-hero__lede">Aprenda novas habilidades com nossos guias passo a passo.</p>
+              <div class="spec-plate" data-efeito="vidro"><dl class="spec-plate__list"><div><dt>Tutoriais</dt><dd class="num">04</dd></div><div><dt>Leitura</dt><dd class="num">1 min</dd></div><div><dt>Revisão</dt><dd class="num">2025</dd></div></dl></div>
+          </div>
+        </section>
       <div class="static-page-container">
-        <header class="page-header">
-          <h1>Tutoriais Técnicos</h1>
-          <p>Aprenda novas habilidades com nossos guias passo a passo.</p>
-        </header>
 
-        <article class="static-content">
-          <section>
+        <article class="static-content prose">
+          <section data-reveal>
             <h2>Frontend</h2>
             <p>
               Tutoriais focados nas tecnologias de construção de interfaces de
@@ -100,7 +105,7 @@
             </ul>
           </section>
 
-          <section>
+          <section data-reveal>
             <h2>Backend</h2>
             <p>
               Aprenda a construir a lógica, os servidores e os bancos de dados
@@ -127,7 +132,7 @@
             </ul>
           </section>
 
-          <section>
+          <section data-reveal>
             <h2>Bases de Dados</h2>
             <p>
               Essencial para qualquer aplicação, aprenda a modelar e gerenciar
@@ -147,7 +152,7 @@
             </ul>
           </section>
 
-          <section>
+          <section data-reveal>
             <h2>Ferramentas e DevOps</h2>
             <p>
               Otimize seu fluxo de trabalho e aprenda a gerenciar e implantar
@@ -155,8 +160,8 @@
             </p>
             <ul>
               <li>
-                <strong>Controle de Versão com Git e GitHub:</strong> Do `git
-                init` ao `pull request`, aprenda os comandos essenciais para
+                <strong>Controle de Versão com Git e GitHub:</strong> Do <code>git init</code>
+                ao <code>pull request</code>, aprenda os comandos essenciais para
                 trabalhar em equipe e gerenciar seu código.
               </li>
               <li>
@@ -170,68 +175,7 @@
       </div>
     </main>
 
-    <!-- FOOTER (Reutilizado das outras páginas) -->
-    <footer class="site-footer">
-      <div class="footer-top-bar"></div>
-      <div class="footer-main">
-        <div class="footer-section">
-          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
-          <p class="footer-text">
-            Um espaço dedicado a conectar estudantes e profissionais através de
-            projetos acadêmicos inovadores.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <!-- Link para Áreas pode ser uma página futura -->
-            <li><a href="#">Áreas</a></li>
-            <li><a href="submissao.html">Publicar Projeto</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Recursos Acadêmicos</h4>
-          <ul class="footer-links">
-            <!-- Links atualizados para as novas páginas -->
-            <li><a href="normas.html">Normas de Publicação</a></li>
-            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Seção de contato com links que já estavam corretos -->
-      <div class="footer-contact-bar">
-        <div class="footer-contact-container">
-          <h4 class="footer-contact-title">Contato e Informações</h4>
-          <ul class="footer-contact-links">
-            <li><a href="contato.html">Fale Conosco</a></li>
-            <li><a href="faq.html">Perguntas Frequentes</a></li>
-            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
-          direitos reservados.
-        </p>
-      </div>
-    </footer>
+    <footer id="site-footer"></footer>
 
-    <!-- Botão "Voltar ao Topo" -->
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top-button"
-      title="Voltar ao topo"
-    >
-      &uarr;
-    </button>
-
-    <!-- Scripts -->
-    <script src="assets/js/tutoriais.js"></script>
   </body>
 </html>

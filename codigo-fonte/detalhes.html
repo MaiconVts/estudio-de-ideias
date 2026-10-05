@@ -3,183 +3,165 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalhes do Projeto - Estúdio de Ideias</title>
-    <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <title>Detalhes do projeto · Estúdio de Ideias</title>
+    <meta name="description" content="Resumo, ficha técnica, documento e leituras relacionadas de um projeto do acervo acadêmico Estúdio de Ideias." />
+    <link rel="canonical" href="https://maiconvts.github.io/estudio-de-ideias/detalhes.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Detalhes do projeto" />
+    <meta property="og:description" content="Resumo, ficha técnica, documento e leituras relacionadas de um projeto do acervo acadêmico Estúdio de Ideias." />
+    <meta property="og:url" content="https://maiconvts.github.io/estudio-de-ideias/detalhes.html" />
+    <meta property="og:image" content="https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="preload" href="./assets/fonts/geologica-300-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/mundo.css" />
+    <script defer src="./assets/js/layout.js"></script>
     <link rel="stylesheet" href="./assets/css/detalhes.css" />
     <script defer src="./assets/js/projetos.js"></script>
-    <script defer src="./assets/js/header.js"></script>
-    <link
-      rel="icon"
-      type="image/png"
-      href="./assets/img/logoIcone-azulDark.png"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <script defer src="./assets/js/projetos-utils.js"></script>
+    <script defer src="./assets/js/pdf-viewer.js"></script>
+    <script defer src="./assets/js/openalex.js"></script>
+    <script defer src="./assets/js/detalhes.js"></script>
+    <link rel="icon" type="image/svg+xml" href="./assets/img/marca.svg" />
+    <script defer src="./assets/vendor/gsap.min.js"></script>
+    <script defer src="./assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="./assets/vendor/SplitText.min.js"></script>
+    <script defer src="./assets/vendor/lenis.min.js"></script>
+    <script defer src="./assets/js/motion-base.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemPage",
+        "name": "Detalhes do projeto · Estúdio de Ideias",
+        "description": "Resumo, ficha técnica, documento e leituras relacionadas de um projeto do acervo acadêmico Estúdio de Ideias.",
+        "url": "https://maiconvts.github.io/estudio-de-ideias/detalhes.html",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@id": "https://maiconvts.github.io/estudio-de-ideias/#site"
+        }
+      }
+    </script>
   </head>
   <body>
-    <header class="header-flex-container">
-      <div class="logo-container">
-        <a href="./index.html"
-          ><img
-            src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
-            alt="Logo Estúdio de Ideias"
-            width="100px"
-            height="100px"
-        /></a>
-      </div>
-      <a href="./index.html" class="link-title"
-        ><p class="site-title">ESTÚDIO DE IDEIAS</p></a
-      >
-      <nav class="navbar">
-        <div class="menu-icon">
-          <img
-            src="./assets/img/list.png"
-            alt="Menu"
-            width="50"
-            height="50"
-            class="nav-icon"
-          />
-          <ul class="dropdown-menu">
-            <li><a href="./index.html">Início</a></li>
-            <li><a href="./projetos.html">Projetos</a></li>
-            <li><a href="./submissao.html">Envio de Projetos</a></li>
-            <li><a href="./favoritos.html">Favoritos</a></li>
-            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-            <li><a href="./login.html">Área Restrita</a></li>
-            <li><a href="./login.html">Login</a></li>
-          </ul>
+    <header id="site-header"></header>
+
+    <main class="detail">
+      <header class="page-hero detail__hero" data-aguarda>
+          <svg class="page-hero__grid malha" data-efeito="grade" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="malha-pagina" width="56" height="97" patternUnits="userSpaceOnUse">
+                <path class="crease-m" d="M0 0 L56 97" />
+                <path class="crease-v" d="M56 0 L0 97" />
+                <path class="crease-h" d="M0 48.5 H56" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#malha-pagina)" />
+          </svg>
+          <div class="page-hero__glow" data-efeito="glow" aria-hidden="true"></div>
+          <svg class="page-hero__fold" data-efeito="parallax" viewBox="0 0 270 170" aria-hidden="true" focusable="false">
+            <path class="face-m" d="M0 30 L80 10 L110 80 L30 100 Z" />
+            <path class="face-v" d="M80 10 L160 30 L190 100 L110 80 Z" />
+            <path class="face-m" d="M160 30 L240 10 L270 80 L190 100 Z" />
+            <path class="face-v" d="M30 100 L110 80 L80 150 L0 170 Z" />
+            <path class="face-m" d="M110 80 L190 100 L160 170 L80 150 Z" />
+            <path class="face-v" d="M190 100 L270 80 L240 150 L160 170 Z" />
+            <path class="face-f" d="M110 80 L124 88 L106 92 Z" />
+          </svg>
+          <div class="page-hero__inner">
+              <nav class="detail__breadcrumb" aria-label="Trilha de navegação">
+          <a href="projetos.html">Projetos</a>
+          <span aria-hidden="true">/</span>
+          <span id="detail-breadcrumb-current" aria-current="page">Detalhes</span>
+        </nav>
+        <p class="detail__area" id="detail-project-area"></p>
+        <h1 id="detail-project-title" class="page-hero__title detail__title">Detalhes do projeto</h1>
+        <p class="detail__author page-hero__lede" id="detail-project-author"></p>
+        <div class="detail__actions page-hero__actions" id="detail-actions" hidden>
+          <a class="btn-foil" id="detail-pdf-download" href="#" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14" /></svg>
+            Baixar PDF
+          </a>
+          <button class="btn-ink detail__fav" id="detail-favorite" type="button" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.5 2.9 1-6.1-4.4-4.3 6.1-.9z" /></svg>
+            <span>Favoritar</span>
+          </button>
         </div>
-      </nav>
-    </header>
+              <div class="spec-plate" data-efeito="vidro" id="detail-plate" hidden><dl class="spec-plate__list"><div><dt>Código</dt><dd class="num"><span data-plate="codigo">—</span></dd></div><div><dt>Ano</dt><dd class="num"><span data-plate="ano">—</span></dd></div><div><dt>Citações</dt><dd class="num"><span data-plate="citacoes">—</span></dd></div></dl></div>
+          </div>
+        </header>
 
-    <main class="project-detail-main-container">
-      <article
-        class="project-detail-card"
-        id="project-detail-content"
-        style="display: none"
-      >
-        <h2 class="project-title" id="detail-project-title">
-          Carregando Título...
-        </h2>
+      <article class="detail__article" id="project-detail-content" hidden aria-labelledby="detail-project-title">
+        <div class="detail__layout page-body">
+          <div class="detail__main">
+            <section class="detail__section" data-reveal aria-labelledby="resumo-titulo">
+              <h2 id="resumo-titulo">Resumo</h2>
+              <p class="detail__summary" id="detail-project-summary"></p>
+            </section>
 
-        <section class="project-team">
-          <h3>Autor(es)</h3>
-          <p id="detail-project-author">Carregando autor...</p>
-        </section>
+            <section class="detail__section" data-reveal aria-labelledby="documento-titulo">
+              <div class="detail__section-head">
+                <h2 id="documento-titulo">Documento</h2>
+                <span class="tag tag--muted">Simulado</span>
+              </div>
+              <div class="pdf-viewer" id="pdf-viewer">
+                <div class="pdf-viewer__stage">
+                  <canvas class="pdf-viewer__canvas" aria-label="Página do documento do projeto" role="img"></canvas>
+                  <p class="pdf-viewer__status" role="status">Carregando documento…</p>
+                </div>
+                <div class="pdf-viewer__toolbar">
+                  <button class="icon-button" type="button" data-pdf="prev" aria-label="Página anterior" disabled>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6" /></svg>
+                  </button>
+                  <span class="pdf-viewer__pages" aria-live="polite"><span data-pdf="current">–</span> de <span data-pdf="total">–</span></span>
+                  <button class="icon-button" type="button" data-pdf="next" aria-label="Próxima página" disabled>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg>
+                  </button>
+                  <a class="pdf-viewer__open" data-pdf="open" href="#" target="_blank" rel="noopener">Abrir em nova aba</a>
+                </div>
+              </div>
+              <p class="detail__note">
+                Documento gerado para demonstrar a plataforma a partir dos dados do projeto. As referências citadas nele são reais.
+              </p>
+            </section>
 
-        <section class="project-summary">
-          <h3>Resumo</h3>
-          <p id="detail-project-summary">Carregando resumo...</p>
-        </section>
+            <section class="detail__section" data-reveal aria-labelledby="leituras-titulo">
+              <h2 id="leituras-titulo">Leituras relacionadas</h2>
+              <p class="detail__note">Artigos científicos sobre o tema, consultados no <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>.</p>
+              <ul class="readings" id="detail-readings" aria-busy="true">
+                <li class="readings__placeholder"></li>
+                <li class="readings__placeholder"></li>
+                <li class="readings__placeholder"></li>
+              </ul>
+              <p class="detail__note" id="detail-readings-source"></p>
+            </section>
+          </div>
 
-        <div class="project-info-grid">
-          <p>
-            <strong>Ano de Publicação:</strong>
-            <span id="detail-project-year">...</span>
-          </p>
-          <p>
-            <strong>Área de Atuação:</strong>
-            <span id="detail-project-area">...</span>
-          </p>
-          <p>
-            <strong>Tecnologias Utilizadas:</strong>
-            <span id="detail-project-technologies">...</span>
-          </p>
-          <p>
-            <strong>Citações:</strong>
-            <span id="detail-project-citations">...</span>
-          </p>
-          <p>
-            <strong>Tipo/Categoria do Projeto:</strong>
-            <span id="detail-project-type">Não especificado</span>
-          </p>
-          <p>
-            <strong>Disciplina Associada:</strong>
-            <span id="detail-project-discipline">Não especificada</span>
-          </p>
+          <aside class="detail__aside panel" data-reveal aria-labelledby="ficha-titulo">
+            <h2 id="ficha-titulo" class="panel__title">Ficha técnica</h2>
+            <dl class="facts">
+              <div><dt>Ano</dt><dd id="detail-project-year"></dd></div>
+              <div><dt>Área</dt><dd id="detail-project-area-name"></dd></div>
+              <div><dt>Citações</dt><dd id="detail-project-citations"></dd></div>
+              <div><dt>Tecnologias</dt><dd><ul class="tags" id="detail-project-technologies"></ul></dd></div>
+              <div><dt>Pacote original</dt><dd id="detail-project-file"></dd></div>
+            </dl>
+          </aside>
         </div>
-
-        <section class="attached-files">
-          <h3>Download do Projeto</h3>
-          <p>
-            <a id="detail-project-download-link" href="#" target="_blank"
-              >Carregando link...</a
-            >
-          </p>
-        </section>
       </article>
 
-      <div
-        id="project-not-found"
-        class="project-not-found-message"
-        style="text-align: center; padding: 40px; display: none"
-      ></div>
+      <div class="page-body" id="project-not-found" hidden>
+        <div class="empty-state detail__empty">
+          <p id="project-not-found-message">O projeto que você procura não existe ou foi removido.</p>
+          <a class="link-arrow" href="projetos.html">Ver todos os projetos</a>
+        </div>
+      </div>
     </main>
 
-    <!-- RODAPÉ ATUALIZADO -->
-    <footer class="site-footer">
-      <div class="footer-top-bar"></div>
-      <div class="footer-main">
-        <div class="footer-section">
-          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
-          <p class="footer-text">
-            Um espaço dedicado a conectar estudantes e profissionais através de
-            projetos acadêmicos inovadores.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <!-- Link para Áreas pode ser uma página futura -->
-            <li><a href="#">Áreas</a></li>
-            <li><a href="submissao.html">Publicar Projeto</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Recursos Acadêmicos</h4>
-          <ul class="footer-links">
-            <!-- Links atualizados para as novas páginas -->
-            <li><a href="normas.html">Normas de Publicação</a></li>
-            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Seção de contato com links que já estavam corretos -->
-      <div class="footer-contact-bar">
-        <div class="footer-contact-container">
-          <h4 class="footer-contact-title">Contato e Informações</h4>
-          <ul class="footer-contact-links">
-            <li><a href="contato.html">Fale Conosco</a></li>
-            <li><a href="faq.html">Perguntas Frequentes</a></li>
-            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
-          direitos reservados.
-        </p>
-      </div>
-    </footer>
-
-    <!-- Botão "Voltar ao Topo" -->
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top-button"
-      title="Voltar ao topo"
-    >
-      &uarr;
-    </button>
-
-    <script defer src="./assets/js/detalhes.js"></script>
+    <footer id="site-footer"></footer>
   </body>
 </html>

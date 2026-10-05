@@ -1,367 +1,462 @@
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "roboto", sans-serif;
+/* assets/css/detalhes.css
+   Ficha do projeto. Cabeçalho .page-hero, painel e botões vêm de mundo.css;
+   aqui ficam trilha, título longo, documento, leituras e ficha técnica. */
+
+/* ---------- Cabeçalho ---------- */
+.detail__breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.detail__breadcrumb a {
+  /* Alvo de toque de 24 px (WCAG 2.5.8) sem mudar o desenho da trilha */
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--space-5);
+  color: var(--valley-deep);
+  text-underline-offset: var(--underline-offset);
+}
+
+#detail-breadcrumb-current {
+  max-width: 40ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.detail__area {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--valley-deep);
+}
+
+.detail__area:empty {
+  display: none;
+}
+
+/* Títulos de projeto são longos: escala menor que a das páginas de seção */
+.page-hero__title.detail__title {
+  max-width: 24ch;
+  font-size: var(--text-2xl);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.detail__author:empty {
+  display: none;
+}
+
+.detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.detail__actions[hidden] {
+  display: none;
+}
+
+.detail__actions svg {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.detail__fav[aria-pressed="true"] svg {
+  fill: var(--foil);
+  stroke: var(--foil);
+}
+
+@media (min-width: 900px) {
+  .page-hero__title.detail__title {
+    font-size: var(--text-3xl);
   }
-  
-  /* Search Section */
-  .search-section {
-    width: 100%;
-    min-height: 500px;
-    padding: 80px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url("../img/natureza.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+}
+
+/* ---------- Grade principal ---------- */
+.detail__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.detail__main {
+  display: grid;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+.detail__section h2 {
+  margin: 0 0 var(--space-4);
+  padding-top: var(--space-3);
+  border-top: var(--hairline) solid var(--mountain-line);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.detail__section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: var(--hairline) solid var(--mountain-line);
+}
+
+.detail__section-head h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.detail__summary {
+  max-width: var(--measure);
+  margin: 0;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.detail__note {
+  max-width: var(--measure);
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.detail__note a {
+  color: var(--valley-deep);
+  text-underline-offset: var(--underline-offset);
+}
+
+/* ---------- Tags ---------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-mono);
+  color: var(--ink);
+  background: var(--valley-line);
+  clip-path: polygon(0 0, calc(100% - var(--cut-sm)) 0, 100% var(--cut-sm), 100% 100%, 0 100%);
+}
+
+.tag--muted {
+  color: var(--color-text-muted);
+  background: var(--mountain-soft);
+}
+
+.tag--success {
+  color: var(--color-success);
+  background: color-mix(in oklch, var(--color-success) 12%, transparent);
+}
+
+/* ---------- Ficha técnica ---------- */
+.detail__aside .panel__title {
+  font-size: var(--text-lg);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.facts dt {
+  margin-bottom: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+#detail-project-file {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Visualizador de PDF: mesa escura com a folha por cima ---------- */
+.pdf-viewer {
+  overflow: hidden;
+  background: var(--ink);
+  clip-path: polygon(0 0, calc(100% - var(--cut-lg)) 0, 100% var(--cut-lg), 100% 100%, 0 100%);
+}
+
+.pdf-viewer__stage {
+  position: relative;
+  max-width: calc(var(--measure) + var(--space-8));
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-5) 0;
+}
+
+.pdf-viewer__canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 210 / 297; /* A4: reserva o espaço antes de desenhar */
+  background: var(--sheet-white);
+  box-shadow: var(--shadow-lift);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.pdf-viewer.is-ready .pdf-viewer__canvas {
+  opacity: 1;
+}
+
+.pdf-viewer__status {
+  position: absolute;
+  inset: var(--space-5) var(--space-5) 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--color-footer-text);
+}
+
+.pdf-viewer.is-ready .pdf-viewer__status {
+  display: none;
+}
+
+.pdf-viewer__status a {
+  color: var(--sheet);
+}
+
+.pdf-viewer__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  color: var(--sheet);
+}
+
+.pdf-viewer__pages {
+  min-width: 7ch;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.pdf-viewer__open {
+  margin-left: auto;
+  font-size: var(--text-sm);
+  color: var(--color-footer-text);
+  text-underline-offset: var(--underline-offset);
+}
+
+.pdf-viewer__open:hover {
+  color: var(--sheet);
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: var(--control-min);
+  height: var(--control-min);
+  padding: 0;
+  color: var(--sheet);
+  background: color-mix(in oklch, var(--sheet) 8%, transparent);
+  border: var(--hairline) solid color-mix(in oklch, var(--sheet) 18%, transparent);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.icon-button:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--sheet) 16%, transparent);
+}
+
+.icon-button:active:not(:disabled) {
+  transform: scale(var(--press-scale));
+}
+
+.icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon-button:focus-visible,
+.pdf-viewer__open:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.icon-button svg {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Leituras relacionadas ---------- */
+.readings {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.readings__item {
+  position: relative;
+  padding: var(--space-4) var(--space-5);
+  background: var(--sheet-white);
+  border: var(--hairline) solid var(--mountain-line);
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+  transition: border-color var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+
+.readings__title {
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* O título cobre o item inteiro como área de clique */
+.readings__title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.readings__title:focus-visible {
+  outline: none;
+  color: var(--valley-deep);
+  text-decoration-line: underline;
+  text-underline-offset: var(--underline-offset);
+}
+
+.readings__item:has(.readings__title:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
+.readings__meta {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.readings__placeholder {
+  height: calc(var(--control-min) * 2);
+  background: linear-gradient(90deg, var(--mountain-soft) 0%, var(--sheet-white) 50%, var(--mountain-soft) 100%);
+  background-size: 200% 100%;
+  animation: shimmer calc(var(--duration-unfold) * 1.4) linear infinite;
+}
+
+.readings__empty {
+  color: var(--color-text-muted);
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
   }
-  
-  /* Container principal */
-  .search-container {
-    text-align: center;
-    max-width: 1200px;
-    width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .readings__item:hover {
+    border-color: var(--valley-deep);
+    transform: translateX(var(--nudge));
   }
-  
-  /* Header (titulo acima da barra, se quiser usar) */
-  .search-title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 36px;
-    font-weight: 600;
-    color: #0a1931;
-    margin-bottom: 40px;
+  .readings__item:hover .readings__title {
+    color: var(--valley-deep);
   }
-  
-  /* Formulário de busca */
-  .search-form {
-    display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha */
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    max-width: 800px;
-    margin: 0 auto;
+}
+
+/* ---------- Não encontrado ---------- */
+.detail__empty p {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Responsivo ---------- */
+@media (min-width: 900px) {
+  .detail__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(var(--rail-min), var(--aside-max));
   }
-  
-  /* Campo de input */
-  /* Campo de texto da busca */
-  .search-input {
-    flex: 1 1 100%;
-    padding: 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    background-color: #f5f7fa;
-    color: #0a1931;
-    font-family: "Roboto", sans-serif;
-    outline: none;
+
+  .detail__aside {
+    position: sticky;
+    top: var(--scroll-offset);
   }
-  
-  /* Botão principal (ao lado do input) */
-  .search-button {
-    flex: 1 1 100%;
-    padding: 20px;
-    font-size: 18px;
-    background-color: #0a1931;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    font-family: "Roboto", sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 899px) {
+  .detail__aside {
+    order: -1;
   }
-  
-  .search-button:hover {
-    background-color: #185adb;
+
+  .facts {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
-  
-  /* Área de filtros abaixo da search bar */
-  /* Área de filtros */
-  .search-filters {
-    display: flex;
-    flex-wrap: wrap; /* 🎯 Deixa quebrar para a linha de baixo se não couber */
-    justify-content: center; /* Mantém centralizado quando quebra */
-    gap: 10px;
-    max-width: 800px;
-    margin: 20px auto 0 auto;
-    padding: 0 10px; /* Um pouquinho de padding para não colar nas bordas */
+
+  .facts > div:nth-child(n + 4) {
+    grid-column: 1 / -1;
   }
-  
-  /* Cada botão de filtro */
-  .filter-item {
-    flex: 0 1 auto;
+}
+
+@media (max-width: 480px) {
+  .pdf-viewer__stage {
+    padding: var(--space-3) var(--space-3) 0;
   }
-  
-  .filter-select {
-    width: 100%; /* Ocupa todo o espaço disponível do item */
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: "Roboto", sans-serif;
-    border: 2px solid #0a1931;
-    border-radius: 6px;
-    background-color: #ffffff;
-    color: #0a1931;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .filter-select:hover {
-    background-color: #e2e8f0;
-  }
-  
-  /* Área que lista todos os projetos */
-  .results-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  /* Caixa de cada projeto */
-  .project-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-    border: 1px solid #dce3f0;
-    border-radius: 12px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-    padding: 32px;
-    margin: 40px auto;
-    width: 70%; /* Ocupa 70% da tela */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Pequena animação no hover */
-  .project-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    transform: scale(1.02);
-  }
-  
-  /* Título do projeto */
-  .project-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 700;
-    color: #185adb;
-    margin-bottom: 8px;
-  }
-  
-  /* Link no título */
-  .project-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .project-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Tags logo abaixo do título */
-  .project-tags {
-    display: flex;
+
+  .pdf-viewer__toolbar {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+    padding-inline: var(--space-3);
   }
-  
-  /* Estilo das tags */
-  .project-tag {
-    background-color: #e3edff;
-    color: #185adb;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
-  
-  /* Descrição do projeto */
-  .project-description {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  .auth-user__info-logout {
-    font-size: 14px;
-    color: #0a1931;
-    text-decoration: none;
-    margin-left: auto;
-  }
-  
-  .login-section,
-  .signup-section {
-    max-width: 400px;
-    margin: 2em auto;
-    background: #fff;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-section h2,
-  .signup-section h2 {
-    text-align: center;
-    margin-bottom: 1em;
-    color: #0a1931;
-  }
-  
-  .login-section form,
-  .signup-section form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  
-  .login-section input,
-  .signup-section input {
-    padding: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .login-section button,
-  .signup-section button {
-    padding: 0.5em;
-    background: #0a1931;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-  }
-  
-  .login-section button:hover,
-  .signup-section button:hover {
-    background: #185adb;
-  }
-  
 
-/* Estilos específicos para a página de detalhes do projeto */
-
-body {
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
-    font-family: "Roboto", sans-serif; /* Garante a fonte base */
-}
-
-/* Container principal para o conteúdo da página de detalhes */
-.project-detail-main-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Card principal que exibe todas as informações do projeto */
-.project-detail-card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    padding: 30px 40px;
-    margin-bottom: 30px;
-    width: 100%;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    /* 'display: none;' é controlado via JS para mostrar após o carregamento */
-}
-
-/* Título do projeto na página de detalhes */
-.project-detail-card .project-title {
-    font-size: 2.2em;
-    color: #0A1931;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #185ADB;
-    text-align: left;
-}
-
-/* Cabeçalhos das seções internas do card (Ex: "Resumo", "Equipe") */
-.project-detail-card h3 {
-    font-size: 1.4em;
-    color: #185ADB;
-    margin-bottom: 10px;
-}
-
-/* Estilo base para parágrafos e spans dentro do card */
-.project-detail-card p,
-.project-detail-card span {
-    font-size: 1.05em;
-    color: #455a64;
-    line-height: 1.7;
-}
-
-/* Estilo para os rótulos em negrito (Ex: "Ano de Publicação:") */
-.project-detail-card strong {
-    color: #0A1931;
-    font-weight: 600;
-}
-
-/* Container para o grid de informações pontuais (Ano, Área, Tecnologias, etc.) */
-.project-detail-card .project-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 15px 0;
-}
-
-/* Estilo para cada item de informação dentro do grid */
-.project-detail-card .project-info-grid p {
+  .pdf-viewer__open {
+    flex-basis: 100%;
     margin: 0;
-    padding: 8px;
-}
-
-/* Seção de download de arquivos */
-.project-detail-card .attached-files a {
-    display: inline-block;
-    background-color: #185ADB;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
-}
-
-.project-detail-card .attached-files a:hover {
-    background-color: #0A1931;
-}
-
-/* Mensagem exibida quando um projeto não é encontrado */
-.project-not-found-message {
-    background-color: #fff3cd;
-    color: #664d03;
-    border: 1px solid #ffeeba;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 700px;
-    margin: 40px auto;
     text-align: center;
-    /* 'display: none;' é controlado via JS */
+  }
 }
 
-/* Título dentro da mensagem de "não encontrado" */
-.project-not-found-message h2 {
-    color: #583c00;
-    margin-bottom: 10px;
-}
-
-/* Link dentro da mensagem de "não encontrado" */
-.project-not-found-message a {
-    color: #0d6efd;
-    text-decoration: underline;
-}
-
-.project-not-found-message a:hover {
-    color: #0a58ca;
+@media (prefers-reduced-motion: reduce) {
+  .readings__placeholder {
+    animation: none;
+  }
 }

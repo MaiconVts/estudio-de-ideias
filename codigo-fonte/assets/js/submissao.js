@@ -1,59 +1,58 @@
-window.addEventListener('DOMContentLoaded', () => {
-    console.log("submissao.js carregado e DOM pronto.");
+// assets/js/submissao.js
+// Envio de projeto para a fila de moderação. Validação e mensagens vêm de formularios.js.
+(async () => {
+  const form = document.getElementById("submission-form");
+  const statusEl = document.getElementById("submission-status");
+  const forms = window.estudioIdeiasForms;
+  if (!form || !forms) return;
+  forms.acompanhar(form);
 
-    const form = document.getElementById('submission-form');
-    
-    // Verifica se a API e a função 'add' estão disponíveis
-    if (!window.estudioIdeias || !window.estudioIdeias.projects || !window.estudioIdeias.projects.add) {
-        console.error('ERRO: API de projetos (estudioIdeias.projects.add) não encontrada.');
-        alert('Erro crítico ao carregar a página. A funcionalidade de submissão pode não funcionar.');
-        return;
+  const anoCampo = document.getElementById("year");
+  const anoAtual = new Date().getFullYear();
+  anoCampo.max = String(anoAtual);
+  anoCampo.placeholder = `Ex: ${anoAtual}`;
+
+  // Com sessão aberta, o autor começa com o nome da conta
+  const sessao = window.estudioConta?.sessao();
+  const autorCampo = document.getElementById("author");
+  if (sessao && !autorCampo.value) autorCampo.value = sessao.nome;
+
+  await window.estudioIdeias?.ready;
+  const addProject = window.estudioIdeias?.projects?.add;
+  if (!addProject) {
+    forms.status(statusEl, "erro", "Não foi possível carregar o envio de projetos. Recarregue a página e tente de novo.");
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    forms.status(statusEl);
+    if (!forms.validar(form)) return;
+
+    const formData = new FormData(form);
+    const payload = {
+      title: formData.get("title").trim(),
+      author: formData.get("author").trim(),
+      year: parseInt(formData.get("year"), 10),
+      area: formData.get("area"),
+      technologies: formData.get("technologies").split(",").map((tech) => tech.trim()).filter(Boolean),
+      summary: formData.get("summary").trim(),
+      file: formData.get("file").trim(),
+    };
+
+    if (!payload.technologies.length) {
+      forms.marcar(document.getElementById("technologies"), "Informe ao menos uma tecnologia.");
+      document.getElementById("technologies").focus();
+      return;
     }
-    const addProject = window.estudioIdeias.projects.add;
 
-    if (!form) {
-        console.error('ERRO: Formulário com id "submission-form" não encontrado.');
-        return;
+    try {
+      addProject(payload);
+      form.reset();
+      forms.status(statusEl, "sucesso", "Seu projeto foi enviado para moderação. Ele aparecerá na plataforma depois de aprovado.");
+    } catch (error) {
+      console.error("Erro ao salvar o projeto:", error);
+      forms.status(statusEl, "erro", "Ocorreu um erro ao enviar seu projeto. Tente novamente.");
     }
-
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        console.log('Formulário enviado.');
-
-        const formData = new FormData(form);
-        
-        const payload = {
-            title: formData.get('title').trim(),
-            author: formData.get('author').trim(),
-            year: parseInt(formData.get('year'), 10),
-            area: formData.get('area'),
-            technologies: formData.get('technologies').split(',').map(tech => tech.trim()).filter(tech => tech),
-            summary: formData.get('summary').trim(),
-            file: formData.get('file').trim()
-        };
-        console.log('Payload montado:', payload);
-
-        if (!payload.title || !payload.author || !payload.year || !payload.area || !payload.technologies.length || !payload.summary || !payload.file) {
-            alert('Por favor, preencha todos os campos obrigatórios.');
-            console.warn('Validação falhou. Campos obrigatórios:', payload);
-            return;
-        }
-
-        try {
-            const novoProjeto = addProject(payload);
-            console.log('Projeto adicionado via API:', novoProjeto);
-            
-            // Mensagem para o usuário comum
-            alert('Seu projeto foi enviado com sucesso para moderação!\nEle poderá aparecer na plataforma após ser aprovado.');
-            form.reset(); 
-            
-            // A linha de redirecionamento para o admin foi REMOVIDA.
-            // O usuário permanece na página de submissão ou você pode redirecioná-lo
-            // para outra página pública, se desejar (veja sugestões abaixo).
-
-        } catch (error) {
-            console.error('Erro ao tentar salvar o projeto via API:', error);
-            alert('Ocorreu um erro ao enviar seu projeto. Verifique o console para mais detalhes e tente novamente.');
-        }
-    });
-});
+  });
+})();

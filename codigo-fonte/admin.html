@@ -3,176 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Painel de Controle - Moderação</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>Moderação · Estúdio de Ideias</title>
+    <meta name="description" content="Painel interno de moderação dos projetos enviados ao acervo." />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://maiconvts.github.io/estudio-de-ideias/admin.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Moderação" />
+    <meta property="og:description" content="Painel interno de moderação dos projetos enviados ao acervo." />
+    <meta property="og:url" content="https://maiconvts.github.io/estudio-de-ideias/admin.html" />
+    <meta property="og:image" content="https://maiconvts.github.io/estudio-de-ideias/assets/img/og-estudio.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="preload" href="./assets/fonts/geologica-300-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/mundo.css" />
+    <link rel="stylesheet" href="./assets/css/projetos.css" />
+    <script defer src="./assets/js/layout.js"></script>
 
     <link rel="stylesheet" href="./assets/css/admin_panel.css" />
-    <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <script defer src="./assets/js/conta.js"></script>
     <script defer src="./assets/js/projetos.js"></script>
     <script defer src="./assets/js/admin_panel.js"></script>
-    <script defer src="./assets/js/header.js"></script>
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="./assets/img/logoIcone-azulDark.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/marca.svg" />
+    <script defer src="./assets/vendor/gsap.min.js"></script>
+    <script defer src="./assets/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="./assets/vendor/SplitText.min.js"></script>
+    <script defer src="./assets/vendor/lenis.min.js"></script>
+    <script defer src="./assets/js/motion-base.js"></script>
   </head>
   <body>
-    <header class="header-flex-container">
-      <div class="header-brand">
-        <div class="logo-container">
-          <a href="./index.html">
-            <img
-              src="./assets/img/logoVariations/iconeOnly/logoIcone-azulDark.png"
-              alt="Logo Estúdio de Ideias"
-              width="60px"
-              height="60px"
-            />
-          </a>
-        </div>
-        <a href="./index.html" class="link-title">
-          <h1 class="site-title">ESTÚDIO DE IDEIAS</h1>
-        </a>
-      </div>
+    <header id="site-header"></header>
 
-      <nav class="navbar">
-        <div class="menu-icon">
-          <img
-            src="./assets/img/list.png"
-            alt="Menu"
-            width="40"
-            height="40"
-            class="nav-icon"
-            id="menuIconImg"
-          />
-          <ul class="dropdown-menu" id="mainDropdownMenu">
-            <li><a href="./index.html">Início</a></li>
-            <li><a href="./projetos.html">Projetos</a></li>
-            <li><a href="./submissao.html">Envio de Projetos</a></li>
-            <li><a href="./favoritos.html">Favoritos</a></li>
-            <li><a href="./ferramentas.html">Ferramentas Recomendadas</a></li>
-            <li><a href="./login.html">Área Restrita</a></li>
-            <li><a href="./login.html" class="nav-login-link">Login</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main class="admin-panel-main">
-      <div class="admin-panel-container">
-        <section class="moderation-card">
-          <header class="moderation-card-header">
-            <h1>Painel de Controle - Moderação de Projetos</h1>
-          </header>
-          <div class="moderation-card-body">
-            <h5>Projetos Pendentes de Análise</h5>
-            <div class="admin-table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Título do Projeto</th>
-                    <th>Membros</th>
-                    <th>Data de Submissão</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                <tbody id="submissoes-tbody"></tbody>
-              </table>
-            </div>
-
-            <nav
-              class="admin-pagination"
-              aria-label="Navegação de páginas de projetos"
-            >
-              <ul>
-                <li><a href="#" class="page-link disabled">Anterior</a></li>
-                <li><a href="#" class="page-link active">1</a></li>
-                <li><a href="#" class="page-link">2</a></li>
-                <li><a href="#" class="page-link">3</a></li>
-                <li><a href="#" class="page-link">Próxima</a></li>
-              </ul>
-            </nav>
+    <main id="conteudo" class="main-content">
+      <section class="page-hero" aria-labelledby="page-title">
+          <svg class="page-hero__grid malha" data-efeito="grade" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="malha-pagina" width="56" height="97" patternUnits="userSpaceOnUse">
+                <path class="crease-m" d="M0 0 L56 97" />
+                <path class="crease-v" d="M56 0 L0 97" />
+                <path class="crease-h" d="M0 48.5 H56" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#malha-pagina)" />
+          </svg>
+          <div class="page-hero__glow" data-efeito="glow" aria-hidden="true"></div>
+          <svg class="page-hero__fold" data-efeito="parallax" viewBox="0 0 270 170" aria-hidden="true" focusable="false">
+            <path class="face-m" d="M0 30 L80 10 L110 80 L30 100 Z" />
+            <path class="face-v" d="M80 10 L160 30 L190 100 L110 80 Z" />
+            <path class="face-m" d="M160 30 L240 10 L270 80 L190 100 Z" />
+            <path class="face-v" d="M30 100 L110 80 L80 150 L0 170 Z" />
+            <path class="face-m" d="M110 80 L190 100 L160 170 L80 150 Z" />
+            <path class="face-v" d="M190 100 L270 80 L240 150 L160 170 Z" />
+            <path class="face-f" d="M110 80 L124 88 L106 92 Z" />
+          </svg>
+          <div class="page-hero__inner">
+              <h1 id="page-title" class="page-hero__title">Moderação de projetos</h1>
+              <p class="page-hero__lede">Painel de controle da área restrita do moderador: aprove, rejeite ou peça correção dos projetos enviados.</p>
+              <div class="spec-plate" data-efeito="vidro"><dl class="spec-plate__list"><div><dt>Pendentes</dt><dd class="num"><span data-plate="pendentes">—</span></dd></div><div><dt>Em correção</dt><dd class="num"><span data-plate="correcao">—</span></dd></div><div><dt>Acesso</dt><dd class="num">Restrito</dd></div></dl></div>
           </div>
-          <footer class="moderation-card-footer">
-            <p>Plataforma Estúdio de Ideias - Área Restrita do Moderador</p>
-          </footer>
+        </section>
+
+      <div class="page-body">
+        <section class="moderation" aria-labelledby="fila-titulo" data-reveal>
+          <div class="projects__header">
+            <h2 id="fila-titulo" class="projects__title" tabindex="-1">Projetos Pendentes de Análise</h2>
+            <p class="moderation__conta" hidden><span data-conta="nome"></span> <button id="sair" class="link-arrow" type="button">Sair</button></p>
+          </div>
+          <div class="empty-state moderation__bloqueio" hidden>
+            <p class="empty-state__title">Área restrita a moderadores</p>
+            <p>Entre com uma conta de moderação para ver a fila. Para conhecer o painel, use a conta demo na <a href="./login.html?volta=admin.html">página de acesso</a>.</p>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Título do Projeto</th>
+                  <th scope="col">Membros</th>
+                  <th scope="col">Data de Submissão</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="submissoes-tbody"></tbody>
+            </table>
+          </div>
+          <p class="moderation__note">Plataforma Estúdio de Ideias - Área Restrita do Moderador</p>
         </section>
       </div>
+      <div id="admin-alertas" class="alertas" role="status" aria-live="polite"></div>
+      <dialog id="confirmar-acao" class="dialogo" aria-labelledby="dialogo-titulo" aria-describedby="dialogo-texto">
+        <form method="dialog" class="dialogo__corpo">
+          <h2 id="dialogo-titulo" class="panel__title">Confirmar moderação</h2>
+          <p id="dialogo-texto"></p>
+          <div class="form-actions">
+            <button class="btn-ink" type="submit" value="confirmar">Confirmar</button>
+            <button class="link-arrow dialogo__cancelar" type="submit" value="cancelar" autofocus>Cancelar</button>
+          </div>
+        </form>
+      </dialog>
     </main>
 
-    <!-- RODAPÉ ATUALIZADO -->
-    <footer class="site-footer">
-      <div class="footer-top-bar"></div>
-      <div class="footer-main">
-        <div class="footer-section">
-          <h4 class="footer-title">Sobre o Estúdio de Ideias</h4>
-          <p class="footer-text">
-            Um espaço dedicado a conectar estudantes e profissionais através de
-            projetos acadêmicos inovadores.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <!-- Link para Áreas pode ser uma página futura -->
-            <li><a href="#">Áreas</a></li>
-            <li><a href="submissao.html">Publicar Projeto</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4 class="footer-title">Recursos Acadêmicos</h4>
-          <ul class="footer-links">
-            <!-- Links atualizados para as novas páginas -->
-            <li><a href="normas.html">Normas de Publicação</a></li>
-            <li><a href="guia_apresentacao.html">Guia de Apresentação</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="tutoriais.html">Tutoriais Técnicos</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Seção de contato com links que já estavam corretos -->
-      <div class="footer-contact-bar">
-        <div class="footer-contact-container">
-          <h4 class="footer-contact-title">Contato e Informações</h4>
-          <ul class="footer-contact-links">
-            <li><a href="contato.html">Fale Conosco</a></li>
-            <li><a href="faq.html">Perguntas Frequentes</a></li>
-            <li><a href="carreiras.html">Trabalhe Conosco</a></li>
-            <li><a href="privacidade.html">Política de Privacidade</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2025 Estúdio de Ideias — Plataforma Acadêmica de TI. Todos os
-          direitos reservados.
-        </p>
-      </div>
-    </footer>
-
-    <!-- Botão "Voltar ao Topo" -->
-    <button
-      id="scrollToTopBtn"
-      class="scroll-to-top-button"
-      title="Voltar ao topo"
-    >
-      &uarr;
-    </button>
+    <footer id="site-footer"></footer>
   </body>
 </html>

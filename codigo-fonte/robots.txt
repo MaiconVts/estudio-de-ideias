@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maiconvts.github.io/estudio-de-ideias/sitemap.xml

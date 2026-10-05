@@ -1,0 +1,677 @@
+{
+  "fonte": "OpenAlex (https://openalex.org), licença CC0",
+  "gerado_em": "2026-10-05",
+  "areas": {
+    "frontend": [
+      {
+        "titulo": "A framework for improving web accessibility and usability of Open Course Ware sites",
+        "ano": 2017,
+        "autores": [
+          "Germania Rodríguez Morales",
+          "Jennifer Pérez",
+          "Samanta Cueva Carrión"
+        ],
+        "mais_autores": true,
+        "fonte": "Computers & Education",
+        "doi": "https://doi.org/10.1016/j.compedu.2017.02.013",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2592358397"
+      },
+      {
+        "titulo": "Evaluating the usability of the information architecture of academic library websites",
+        "ano": 2018,
+        "autores": [
+          "Isabel Mariann Silvis",
+          "Theo Bothma",
+          "De Beer"
+        ],
+        "mais_autores": false,
+        "fonte": "Library Hi Tech",
+        "doi": "https://doi.org/10.1108/lht-07-2017-0151",
+        "acesso_aberto": "https://repository.up.ac.za/bitstream/2263/75479/1/Silvis_Evaluating_2019.pdf",
+        "openalex": "https://openalex.org/W2903056677"
+      },
+      {
+        "titulo": "Responsive Web Design with HTML and CSS",
+        "ano": 2024,
+        "autores": [
+          "Gurmeet Singh, Ruchi Rathi Saboo, Ritesh Mathur"
+        ],
+        "mais_autores": false,
+        "fonte": "resMilitaris",
+        "doi": "https://doi.org/10.48047/resmil.v9i1.22",
+        "acesso_aberto": "https://resmilitaris.net/index.php/resmilitaris/article/download/4435/3441",
+        "openalex": "https://openalex.org/W2897043817"
+      },
+      {
+        "titulo": "Automatic web content personalization through reinforcement learning",
+        "ano": 2016,
+        "autores": [
+          "Stefano Ferretti",
+          "Silvia Mirri",
+          "Catia Prandi"
+        ],
+        "mais_autores": true,
+        "fonte": "Journal of Systems and Software",
+        "doi": "https://doi.org/10.1016/j.jss.2016.02.008",
+        "acesso_aberto": "https://www.sciencedirect.com/science/article/pii/S0164121216000443/pdf",
+        "openalex": "https://openalex.org/W2265908272"
+      },
+      {
+        "titulo": "Evaluating Web and Mobile User Interfaces With Semiotics: An Empirical Study",
+        "ano": 2020,
+        "autores": [
+          "Muhammad Nazrul Islam",
+          "Harry Bouwman",
+          "A.K.M. Najmul Islam"
+        ],
+        "mais_autores": false,
+        "fonte": "IEEE Access",
+        "doi": "https://doi.org/10.1109/access.2020.2991840",
+        "acesso_aberto": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09084106.pdf",
+        "openalex": "https://openalex.org/W3021013005"
+      },
+      {
+        "titulo": "Guiding Novice Web Workers in Making Image Descriptions Using Templates",
+        "ano": 2015,
+        "autores": [
+          "Valerie S. Morash",
+          "Yue-Ting Siu",
+          "Joshua A. Miele"
+        ],
+        "mais_autores": true,
+        "fonte": "ACM Transactions on Accessible Computing",
+        "doi": "https://doi.org/10.1145/2764916",
+        "acesso_aberto": "https://dl.acm.org/doi/pdf/10.1145/2764916?download=true",
+        "openalex": "https://openalex.org/W2295423240"
+      },
+      {
+        "titulo": "Digital equity and accessible MOOCs: Accessibility evaluations of mobile MOOCs for learners with visual impairments",
+        "ano": 2019,
+        "autores": [
+          "Kyudong Park",
+          "Hyo‐Jeong So",
+          "Hyunjin Cha"
+        ],
+        "mais_autores": false,
+        "fonte": "Australasian Journal of Educational Technology",
+        "doi": "https://doi.org/10.14742/ajet.5521",
+        "acesso_aberto": "https://ajet.org.au/index.php/AJET/article/download/5521/1636",
+        "openalex": "https://openalex.org/W2996993588"
+      },
+      {
+        "titulo": "Virtual Reality Usability and Accessibility for Cultural Heritage Practices: Challenges Mapping and Recommendations",
+        "ano": 2021,
+        "autores": [
+          "Hwei Teeng Chong",
+          "Chen Kim Lim",
+          "Minhaz Farid Ahmed"
+        ],
+        "mais_autores": true,
+        "fonte": "Electronics",
+        "doi": "https://doi.org/10.3390/electronics10121430",
+        "acesso_aberto": "https://www.mdpi.com/2079-9292/10/12/1430/pdf?version=1623753333",
+        "openalex": "https://openalex.org/W3169814146"
+      }
+    ],
+    "backend": [
+      {
+        "titulo": "Microservices Architecture",
+        "ano": 2025,
+        "autores": [],
+        "mais_autores": false,
+        "fonte": "International Research Journal of Modernization in Engineering Technology and Science",
+        "doi": "https://doi.org/10.56726/irjmets66464",
+        "acesso_aberto": "https://doi.org/10.56726/irjmets66464",
+        "openalex": "https://openalex.org/W1572499759"
+      },
+      {
+        "titulo": "A Systematic Mapping Study on Microservices Architecture in DevOps",
+        "ano": 2020,
+        "autores": [
+          "Muhammad Waseem",
+          "Peng Liang",
+          "Mojtaba Shahin"
+        ],
+        "mais_autores": false,
+        "fonte": "Journal of Systems and Software",
+        "doi": "https://doi.org/10.1016/j.jss.2020.110798",
+        "acesso_aberto": "https://arxiv.org/pdf/2008.07729",
+        "openalex": "https://openalex.org/W3068636631"
+      },
+      {
+        "titulo": "Monolithic vs. Microservice Architecture: A Performance and Scalability Evaluation",
+        "ano": 2022,
+        "autores": [
+          "Grzegorz Blinowski",
+          "Anna Ojdowska",
+          "Adam Przybyłek"
+        ],
+        "mais_autores": false,
+        "fonte": "IEEE Access",
+        "doi": "https://doi.org/10.1109/access.2022.3152803",
+        "acesso_aberto": "https://ieeexplore.ieee.org/ielx7/6287639/9668973/09717259.pdf",
+        "openalex": "https://openalex.org/W4213108923"
+      },
+      {
+        "titulo": "Microservice API Evolution in Practice: A Study on Strategies and Challenges",
+        "ano": 2024,
+        "autores": [
+          "Alexander Lercher",
+          "Johann Glock",
+          "Christian Macho"
+        ],
+        "mais_autores": true,
+        "fonte": "Journal of Systems and Software",
+        "doi": "https://doi.org/10.1016/j.jss.2024.112110",
+        "acesso_aberto": "https://doi.org/10.1016/j.jss.2024.112110",
+        "openalex": "https://openalex.org/W4398201223"
+      },
+      {
+        "titulo": "A Survey on Microservices Architecture: Principles, Patterns and Migration Challenges",
+        "ano": 2023,
+        "autores": [
+          "Victor Velepucha",
+          "Pamela Flores"
+        ],
+        "mais_autores": false,
+        "fonte": "IEEE Access",
+        "doi": "https://doi.org/10.1109/access.2023.3305687",
+        "acesso_aberto": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10220070.pdf",
+        "openalex": "https://openalex.org/W4385834032"
+      },
+      {
+        "titulo": "Microservice Security Agent Based On API Gateway in Edge Computing",
+        "ano": 2019,
+        "autores": [
+          "Rongxu Xu",
+          "Wenquan Jin",
+          "Do‐Hyeun Kim"
+        ],
+        "mais_autores": false,
+        "fonte": "Sensors",
+        "doi": "https://doi.org/10.3390/s19224905",
+        "acesso_aberto": "https://www.mdpi.com/1424-8220/19/22/4905/pdf?version=1574233763",
+        "openalex": "https://openalex.org/W2983462835"
+      },
+      {
+        "titulo": "Emerging Trends, Challenges, and Experiences in DevOps and Microservice APIs",
+        "ano": 2019,
+        "autores": [
+          "Uwe Zdun",
+          "Erik Wittern",
+          "Philipp Leitner"
+        ],
+        "mais_autores": false,
+        "fonte": "IEEE Software",
+        "doi": "https://doi.org/10.1109/ms.2019.2947982",
+        "acesso_aberto": "https://ieeexplore.ieee.org/ielx7/52/8938100/08938118.pdf",
+        "openalex": "https://openalex.org/W2996653382"
+      },
+      {
+        "titulo": "MicroShare: Privacy-Preserved Medical Resource Sharing through MicroService Architecture",
+        "ano": 2018,
+        "autores": [
+          "Yilong Yang",
+          "Quan Zu",
+          "Peng Liu"
+        ],
+        "mais_autores": true,
+        "fonte": "International Journal of Biological Sciences",
+        "doi": "https://doi.org/10.7150/ijbs.24617",
+        "acesso_aberto": "http://www.ijbs.com/v14p0907.pdf",
+        "openalex": "https://openalex.org/W2807291012"
+      }
+    ],
+    "mobile": [
+      {
+        "titulo": "Project-Based Learning Approach for Teaching Mobile Application Development Using Visualization Technology",
+        "ano": 2020,
+        "autores": [
+          "Zhanat Kunapianovna Nurbekova",
+          "В В Гриншкун",
+          "Gaukhar Aimicheva"
+        ],
+        "mais_autores": true,
+        "fonte": "International Journal of Emerging Technologies in Learning (iJET)",
+        "doi": "https://doi.org/10.3991/ijet.v15i08.12335",
+        "acesso_aberto": "https://online-journals.org/index.php/i-jet/article/download/12335/6901",
+        "openalex": "https://openalex.org/W3019879875"
+      },
+      {
+        "titulo": "Using Project-Based-Learning in a mobile application development course—An experience report",
+        "ano": 2015,
+        "autores": [
+          "Rita Francese",
+          "Carmine Gravino",
+          "Michele Risi"
+        ],
+        "mais_autores": true,
+        "fonte": "Journal of Visual Languages & Computing",
+        "doi": "https://doi.org/10.1016/j.jvlc.2015.10.019",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2180819058"
+      },
+      {
+        "titulo": "Taxonomy of Cross-Platform Mobile Applications Development Approaches",
+        "ano": 2015,
+        "autores": [
+          "Wafaa S. El-Kassas",
+          "Bassem A. Abdullah",
+          "Ahmed Hassan Yousef"
+        ],
+        "mais_autores": true,
+        "fonte": "Ain Shams Engineering Journal",
+        "doi": "https://doi.org/10.1016/j.asej.2015.08.004",
+        "acesso_aberto": "https://www.sciencedirect.com/science/article/pii/S2090447915001276/pdf",
+        "openalex": "https://openalex.org/W2194917138"
+      },
+      {
+        "titulo": "Development of mobile application through design-based research",
+        "ano": 2018,
+        "autores": [
+          "Buddhini Gayathri Jayatilleke",
+          "Gaya R. Ranawaka",
+          "Chamali Wijesekera"
+        ],
+        "mais_autores": true,
+        "fonte": "AAOU Journal/AAOU journal",
+        "doi": "https://doi.org/10.1108/aaouj-02-2018-0013",
+        "acesso_aberto": "https://doi.org/10.1108/aaouj-02-2018-0013",
+        "openalex": "https://openalex.org/W2890843461"
+      },
+      {
+        "titulo": "Design, development, and evaluation of a mobile learning application for computing education",
+        "ano": 2017,
+        "autores": [
+          "Solomon Sunday Oyelere",
+          "Jarkko T Suhonen",
+          "Greg M. Wajiga"
+        ],
+        "mais_autores": true,
+        "fonte": "Education and Information Technologies",
+        "doi": "https://doi.org/10.1007/s10639-017-9613-2",
+        "acesso_aberto": "https://erepo.uef.fi/bitstreams/5a12c26d-61fe-46fc-b30c-6b8bd006619f/download",
+        "openalex": "https://openalex.org/W2620380205"
+      },
+      {
+        "titulo": "A Conceptual Framework for Determining Quality Requirements for Mobile Learning Applications Using Delphi Method",
+        "ano": 2022,
+        "autores": [
+          "Mohammed Amin Almaiah",
+          "Fahima Hajjej",
+          "Abdalwali Lutfi"
+        ],
+        "mais_autores": true,
+        "fonte": "Electronics",
+        "doi": "https://doi.org/10.3390/electronics11050788",
+        "acesso_aberto": "https://www.mdpi.com/2079-9292/11/5/788/pdf?version=1646832191",
+        "openalex": "https://openalex.org/W4214836448"
+      },
+      {
+        "titulo": "A Comprehensive Study of Mobile Robot: History, Developments, Applications, and Future Research Perspectives",
+        "ano": 2022,
+        "autores": [
+          "Ravi Raj K.G",
+          "Andrzej Kos"
+        ],
+        "mais_autores": false,
+        "fonte": "Applied Sciences",
+        "doi": "https://doi.org/10.3390/app12146951",
+        "acesso_aberto": "https://www.mdpi.com/2076-3417/12/14/6951/pdf?version=1657610064",
+        "openalex": "https://openalex.org/W4284975089"
+      },
+      {
+        "titulo": "MobiByte: An Application Development Model for Mobile Cloud Computing",
+        "ano": 2015,
+        "autores": [
+          "Atta ur Rehman Khan",
+          "Atta ur Rehman Khan",
+          "Mazliza Othman"
+        ],
+        "mais_autores": true,
+        "fonte": "Journal of Grid Computing",
+        "doi": "https://doi.org/10.1007/s10723-015-9335-x",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2056165903"
+      }
+    ],
+    "redes": [
+      {
+        "titulo": "Software-Defined Networking: A survey",
+        "ano": 2015,
+        "autores": [
+          "Hamid Farhady",
+          "HyunYong Lee",
+          "Akihiro Nakao"
+        ],
+        "mais_autores": false,
+        "fonte": "Computer Networks",
+        "doi": "https://doi.org/10.1016/j.comnet.2015.02.014",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2768411980"
+      },
+      {
+        "titulo": "A Survey of Security in Software Defined Networks",
+        "ano": 2015,
+        "autores": [
+          "Sandra Scott-Hayward",
+          "Sriram Natarajan",
+          "Sakir Sezer"
+        ],
+        "mais_autores": false,
+        "fonte": "IEEE Communications Surveys & Tutorials",
+        "doi": "https://doi.org/10.1109/comst.2015.2453114",
+        "acesso_aberto": "https://pure.qub.ac.uk/en/publications/88f854cd-8b26-4b47-a8d1-4c7f28302a2a",
+        "openalex": "https://openalex.org/W2275015310"
+      },
+      {
+        "titulo": "Software defined networks: A survey",
+        "ano": 2016,
+        "autores": [
+          "Rahim Masoudi",
+          "Ali Ghaffari"
+        ],
+        "mais_autores": false,
+        "fonte": "Journal of Network and Computer Applications",
+        "doi": "https://doi.org/10.1016/j.jnca.2016.03.016",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2332400373"
+      },
+      {
+        "titulo": "Security in Software Defined Networks: A Survey",
+        "ano": 2015,
+        "autores": [
+          "Ijaz Ahmad",
+          "Suneth Namal",
+          "Mika Ylianttila"
+        ],
+        "mais_autores": true,
+        "fonte": "IEEE Communications Surveys & Tutorials",
+        "doi": "https://doi.org/10.1109/comst.2015.2474118",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2112700013"
+      },
+      {
+        "titulo": "Software‐defined networking (SDN): a survey",
+        "ano": 2016,
+        "autores": [
+          "Kamal Benzekki",
+          "Abdeslam El Fergougui",
+          "Abdelbaki El Belrhiti El Alaoui"
+        ],
+        "mais_autores": false,
+        "fonte": "Security and Communication Networks",
+        "doi": "https://doi.org/10.1002/sec.1737",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2587508615"
+      },
+      {
+        "titulo": "Advancing Software-Defined Networks: A Survey",
+        "ano": 2017,
+        "autores": [
+          "Jacob H. Cox",
+          "Joaquín Chung",
+          "Sean Patrick Donovan"
+        ],
+        "mais_autores": true,
+        "fonte": "IEEE Access",
+        "doi": "https://doi.org/10.1109/access.2017.2762291",
+        "acesso_aberto": "https://doi.org/10.1109/access.2017.2762291",
+        "openalex": "https://openalex.org/W2763937804"
+      },
+      {
+        "titulo": "Security of Software Defined Networks: A survey",
+        "ano": 2015,
+        "autores": [
+          "Izzat Mahmoud Alsmadi",
+          "Dianxiang Xu"
+        ],
+        "mais_autores": false,
+        "fonte": "Computers & Security",
+        "doi": "https://doi.org/10.1016/j.cose.2015.05.006",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W627952783"
+      },
+      {
+        "titulo": "Software-Defined Networking for Internet of Things: A Survey",
+        "ano": 2017,
+        "autores": [
+          "Samaresh Bera",
+          "Sudip Misra",
+          "Athanasios V. Vasilakos"
+        ],
+        "mais_autores": false,
+        "fonte": "IEEE Internet of Things Journal",
+        "doi": "https://doi.org/10.1109/jiot.2017.2746186",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2753580776"
+      }
+    ],
+    "banco-dados": [
+      {
+        "titulo": "Performance Analysis of NoSQL and Relational Databases with CouchDB and MySQL for Application’s Data Storage",
+        "ano": 2020,
+        "autores": [
+          "Cornelia Aurora Győrödi",
+          "Diana V. Dumşe-Burescu",
+          "Doina Rodica Zmaranda"
+        ],
+        "mais_autores": true,
+        "fonte": "Applied Sciences",
+        "doi": "https://doi.org/10.3390/app10238524",
+        "acesso_aberto": "https://www.mdpi.com/2076-3417/10/23/8524/pdf",
+        "openalex": "https://openalex.org/W3107161718"
+      },
+      {
+        "titulo": "Comparative Study Between the MySQL Relational Database and the MongoDB NoSQL Database",
+        "ano": 2021,
+        "autores": [
+          "Houcine Matallah",
+          "Ghalem Belalem",
+          "Karim Bouamrane"
+        ],
+        "mais_autores": false,
+        "fonte": "International Journal of Software Science and Computational Intelligence",
+        "doi": "https://doi.org/10.4018/ijssci.2021070104",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W3172364449"
+      },
+      {
+        "titulo": "BASE analysis of NoSQL database",
+        "ano": 2015,
+        "autores": [
+          "Deka Ganesh Chandra"
+        ],
+        "mais_autores": false,
+        "fonte": "Future Generation Computer Systems",
+        "doi": "https://doi.org/10.1016/j.future.2015.05.003",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W208654116"
+      },
+      {
+        "titulo": "Improving the energy efficiency of relational and NoSQL databases via query optimizations",
+        "ano": 2019,
+        "autores": [
+          "Divya Mahajan",
+          "Cody Blakeney",
+          "Ziliang Zong"
+        ],
+        "mais_autores": false,
+        "fonte": "Sustainable Computing Informatics and Systems",
+        "doi": "https://doi.org/10.1016/j.suscom.2019.01.017",
+        "acesso_aberto": "https://doi.org/10.1016/j.suscom.2019.01.017",
+        "openalex": "https://openalex.org/W2922464275"
+      },
+      {
+        "titulo": "NoSQL real-time database performance comparison",
+        "ano": 2017,
+        "autores": [
+          "Diogo Augusto Pereira",
+          "Wagner Ourique de Morais",
+          "Edison Pignaton de Freitas"
+        ],
+        "mais_autores": false,
+        "fonte": "International Journal of Parallel Emergent and Distributed Systems",
+        "doi": "https://doi.org/10.1080/17445760.2017.1307367",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2599950327"
+      },
+      {
+        "titulo": "Choosing the right NoSQL database for the job: a quality attribute evaluation",
+        "ano": 2015,
+        "autores": [
+          "João Ricardo Lourenço",
+          "Bruno Cabral",
+          "Paulo Carreiro"
+        ],
+        "mais_autores": true,
+        "fonte": "Journal Of Big Data",
+        "doi": "https://doi.org/10.1186/s40537-015-0025-0",
+        "acesso_aberto": "https://journalofbigdata.springeropen.com/track/pdf/10.1186/s40537-015-0025-0",
+        "openalex": "https://openalex.org/W2115615663"
+      },
+      {
+        "titulo": "Performance of Graph and Relational Databases in Complex Queries",
+        "ano": 2022,
+        "autores": [
+          "Petri Kotiranta",
+          "Marko Junkkari",
+          "Jyrki Nummenmaa"
+        ],
+        "mais_autores": false,
+        "fonte": "Applied Sciences",
+        "doi": "https://doi.org/10.3390/app12136490",
+        "acesso_aberto": "https://www.mdpi.com/2076-3417/12/13/6490/pdf?version=1656314810",
+        "openalex": "https://openalex.org/W4283643162"
+      },
+      {
+        "titulo": "An Introduction of NoSQL Databases Based on Their Categories and Application Industries",
+        "ano": 2019,
+        "autores": [
+          "Jeang-Kuo Chen",
+          "Wei-Zhe Lee"
+        ],
+        "mais_autores": false,
+        "fonte": "Algorithms",
+        "doi": "https://doi.org/10.3390/a12050106",
+        "acesso_aberto": "https://www.mdpi.com/1999-4893/12/5/106/pdf?version=1559011753",
+        "openalex": "https://openalex.org/W2945989534"
+      }
+    ],
+    "seguranca": [
+      {
+        "titulo": "Survey of intrusion detection systems: techniques, datasets and challenges",
+        "ano": 2019,
+        "autores": [
+          "Ansam Khraisat",
+          "Iqbal Gondal",
+          "Peter W. Vamplew"
+        ],
+        "mais_autores": true,
+        "fonte": "Cybersecurity",
+        "doi": "https://doi.org/10.1186/s42400-019-0038-7",
+        "acesso_aberto": "https://link.springer.com/content/pdf/10.1186/s42400-019-0038-7.pdf",
+        "openalex": "https://openalex.org/W2958285686"
+      },
+      {
+        "titulo": "Evaluating Computer Intrusion Detection Systems",
+        "ano": 2015,
+        "autores": [
+          "Aleksandar Milenkoski",
+          "Marco Paulo Amorim Vieira",
+          "Samuel Kounev"
+        ],
+        "mais_autores": true,
+        "fonte": "ACM Computing Surveys",
+        "doi": "https://doi.org/10.1145/2808691",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2160841769"
+      },
+      {
+        "titulo": "Effective Intrusion Detection System Using XGBoost",
+        "ano": 2018,
+        "autores": [
+          "Sukhpreet Singh Dhaliwal",
+          "Abdullah-Al Nahid",
+          "Hassan Abbas"
+        ],
+        "mais_autores": false,
+        "fonte": "Information",
+        "doi": "https://doi.org/10.3390/info9070149",
+        "acesso_aberto": "https://www.mdpi.com/2078-2489/9/7/149/pdf?version=1529562450",
+        "openalex": "https://openalex.org/W2808779485"
+      },
+      {
+        "titulo": "Deep Learning Approach for Intelligent Intrusion Detection System",
+        "ano": 2019,
+        "autores": [
+          "R. Vinayakumar",
+          "Mamoun Alazab",
+          "K. P. Soman"
+        ],
+        "mais_autores": true,
+        "fonte": "IEEE Access",
+        "doi": "https://doi.org/10.1109/access.2019.2895334",
+        "acesso_aberto": "https://ieeexplore.ieee.org/ielx7/6287639/8600701/08681044.pdf",
+        "openalex": "https://openalex.org/W2926701059"
+      },
+      {
+        "titulo": "Explainable Artificial Intelligence for Intrusion Detection System",
+        "ano": 2022,
+        "autores": [
+          "Shruti Patil",
+          "V. Vijayakumar",
+          "Siddiqui Mohd Mazhar"
+        ],
+        "mais_autores": true,
+        "fonte": "Electronics",
+        "doi": "https://doi.org/10.3390/electronics11193079",
+        "acesso_aberto": "https://www.mdpi.com/2079-9292/11/19/3079/pdf?version=1664275754",
+        "openalex": "https://openalex.org/W4297538900"
+      },
+      {
+        "titulo": "An intelligent intrusion detection system",
+        "ano": 2019,
+        "autores": [
+          "Nevrus Kaja",
+          "Adnan Shaout",
+          "Di Ma"
+        ],
+        "mais_autores": false,
+        "fonte": "Applied Intelligence",
+        "doi": "https://doi.org/10.1007/s10489-019-01436-1",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2943152233"
+      },
+      {
+        "titulo": "A novel statistical technique for intrusion detection systems",
+        "ano": 2017,
+        "autores": [
+          "Enamul Kabir",
+          "Jiankun Hu",
+          "Hua Wang"
+        ],
+        "mais_autores": true,
+        "fonte": "Future Generation Computer Systems",
+        "doi": "https://doi.org/10.1016/j.future.2017.01.029",
+        "acesso_aberto": null,
+        "openalex": "https://openalex.org/W2579916179"
+      },
+      {
+        "titulo": "An Explainable Machine Learning Framework for Intrusion Detection Systems",
+        "ano": 2020,
+        "autores": [
+          "Maonan Wang",
+          "Kangfeng Zheng",
+          "Yanqing Yang"
+        ],
+        "mais_autores": true,
+        "fonte": "IEEE Access",
+        "doi": "https://doi.org/10.1109/access.2020.2988359",
+        "acesso_aberto": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09069273.pdf",
+        "openalex": "https://openalex.org/W3017093935"
+      }
+    ]
+  }
+}

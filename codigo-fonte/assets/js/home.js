@@ -1,468 +1,284 @@
-// paginaHome/assets/js/script.js (Refatorado para usar a API em window.estudioIdeias)
+// assets/js/home.js
+// Página inicial: busca, filtros, teclas de área e sugestões a partir de window.estudioIdeias.
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Seletores DOM Globais
-  const searchInput = document.getElementById("search-input");
   const searchForm = document.getElementById("search-form");
+  const searchInput = document.getElementById("search-input");
   const filterFieldSelect = document.getElementById("filter-field");
   const sortBySelect = document.getElementById("sort-by");
   const yearFilterSelect = document.getElementById("year-filter");
   const areaFilterSelect = document.getElementById("area-filter");
   const projectListContainer = document.getElementById("lista-projetos");
-  const projectTemplate = document.getElementById("projeto-template");
-  // console.log('DEBUG: Elemento projectTemplate encontrado no DOM:', projectTemplate);
   const suggestionsContainer = document.getElementById("search-suggestions");
   const verMaisBtn = document.getElementById("ver-mais-btn");
+  const resultCount = document.getElementById("result-count");
+  const unfoldBtn = document.querySelector(".packet__unfold");
+  const areaKeys = document.querySelectorAll(".area-key");
 
-  // Variáveis de estado para filtros e paginação
+  const PROJECTS_PER_LOAD = 8;
+
+  const SORT_MAP = { relevance: "newest", "date-desc": "newest", "date-asc": "oldest", citations: "citations" };
+
   let currentPage = 1;
-  const PROJECTS_PER_LOAD = 8; // Quantos projetos carregar por vez
+  let shownCount = 0;
+  let activeSuggestionIndex = -1;
+  let filters = { search: "", searchBy: "all", sortBy: "relevance", year: "", area: "" };
 
-  // Estado atual dos filtros
-  let currentSearchTerm = "";
-  let currentSearchBy = "all";
-  let currentSortBy = "relevance"; // Valor inicial do select
-  let currentYear = ""; // Vazio para "Todos"
-  let currentArea = ""; // Vazio para "Todas"
+  const api = () => window.estudioIdeias.projects;
+  const formatNumber = (n) => window.estudioIdeiasUtils.formatNumber(n);
 
-  // Mapeamento dos valores do select de ordenação para os valores da API
-  function mapSortValue(selectValue) {
-    const map = {
-      "date-desc": "newest",
-      relevance: "newest",
-      "date-asc": "oldest",
-      citations: "citations",
-    };
-    return map[selectValue] || "newest"; // Default para 'newest' se não mapeado
-  }
-
-  // --- FUNÇÕES DE RENDERIZAÇÃO ---
-  function getDisplayArea(areaValue) {
-    if (!areaValue) return "Não especificada";
-    const areaMap = {
-      networking: "Redes", // Se o JSON da API ainda usa 'networking'
-      frontend: "Frontend",
-      backend: "Backend",
-      mobile: "Mobile",
-      "banco-dados": "Banco de Dados", // Se o JSON da API usa 'banco-dados'
-      seguranca: "Segurança da Informação", // Se o JSON da API usa 'seguranca'
-      database: "Banco de Dados", // Fallback se a API usar 'database'
-      cybersecurity: "Segurança da Informação", // Fallback se a API usar 'cybersecurity'
-    };
-    return areaMap[String(areaValue).toLowerCase()] || areaValue;
-  }
-
+  // --- Cartão (compartilhado em projetos-utils.js) ---
   function renderProjectCard(project) {
-    if (!projectTemplate || !projectTemplate.content) {
-      console.error(
-        "ERRO em renderProjectCard: projectTemplate ou .content é inválido."
-      );
-      const errorDiv = document.createElement("div");
-      errorDiv.classList.add("project-card-error");
-      errorDiv.textContent = `Erro: Template do card não pôde ser carregado.`;
-      errorDiv.style.color = "red";
-      return errorDiv;
-    }
-    const cardContent = projectTemplate.content.cloneNode(true);
-    const cardElement = cardContent.firstElementChild;
-    if (!cardElement) {
-      console.error(
-        "ERRO em renderProjectCard: Nenhum elemento filho encontrado dentro do template."
-      );
-      const errorDiv = document.createElement("div");
-      errorDiv.textContent = "Erro interno no template do card.";
-      errorDiv.style.color = "red";
-      return errorDiv;
-    }
-
-    const titleLink = cardElement.querySelector(".project-title a");
-    if (titleLink) {
-      titleLink.textContent = project.title || "Título Indisponível";
-      // A API (db.readAsSet) adiciona 'id' (UUID) ao objeto projeto.
-      // Ajuste 'detalhes_projeto.html' para o nome correto da sua página de detalhes, se diferente.
-      titleLink.href = `detalhes.html?id=${encodeURIComponent(
-        project.id || ""
-      )}`;
-    }
-
-    // Preenche o nome do autor no span com classe 'author-name-value'
-    const authorNameSpan = cardElement.querySelector(".author-name-value");
-    if (authorNameSpan) {
-      authorNameSpan.textContent = project.author || "Desconhecido";
-    }
-
-    // Preenche o número de citações no span com classe 'citations-count-value'
-    const citationsCountSpan = cardElement.querySelector(
-      ".citations-count-value"
-    );
-    if (citationsCountSpan) {
-      citationsCountSpan.textContent =
-        project.citations !== undefined ? project.citations.toString() : "0";
-    }
-
-    const areaTag = cardElement.querySelector(".area-tag");
-    if (areaTag) areaTag.textContent = getDisplayArea(project.area);
-
-    const techTag = cardElement.querySelector(".tech-tag");
-    if (techTag)
-      techTag.textContent = Array.isArray(project.technologies)
-        ? project.technologies.join(", ")
-        : "N/A";
-
-    const yearTag = cardElement.querySelector(".year-tag");
-    if (yearTag) yearTag.textContent = project.year || "N/A";
-
-    const descriptionP = cardElement.querySelector(".project-description");
-    if (descriptionP)
-      descriptionP.textContent = project.summary || "Sem resumo.";
-
-    return cardElement;
+    const favorites = window.estudioIdeias.favorites;
+    return window.estudioIdeiasUtils.createProjectElement(project, favorites ? favorites.isFavorite(project.id) : null);
   }
 
-  // --- LÓGICA DE EXIBIÇÃO E "VER MAIS" COM A API ---
-  function updateVerMaisButton(totalProjectsInFilter, projectsFetchedThisTime) {
-    if (!verMaisBtn) return;
-    const totalCurrentlyVisible =
-      (currentPage - 1) * PROJECTS_PER_LOAD + projectsFetchedThisTime;
+  function showMessage(text, { erro = false, limpar = false } = {}) {
+    const p = document.createElement("p");
+    p.className = "no-results-message";
+    if (erro) p.dataset.tipo = "erro";
+    p.textContent = text;
+    if (limpar) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn-ink";
+      btn.textContent = "Limpar busca e filtros";
+      btn.addEventListener("click", resetFilters);
+      p.append(document.createElement("br"), btn);
+    }
+    projectListContainer.replaceChildren(p);
+  }
 
-    if (totalCurrentlyVisible < totalProjectsInFilter) {
-      verMaisBtn.style.display = "inline-block";
+  function updateCount(total) {
+    if (!resultCount) return;
+    const hasFilter = filters.search || filters.year || filters.area;
+    if (total === 0) {
+      resultCount.textContent = "Nenhum projeto encontrado";
+    } else if (hasFilter) {
+      resultCount.textContent = `${formatNumber(total)} ${total === 1 ? "projeto encontrado" : "projetos fictícios encontrados"} · exibindo ${shownCount}`;
     } else {
-      verMaisBtn.style.display = "none";
+      resultCount.textContent = `${formatNumber(total)} projetos fictícios no acervo · exibindo ${shownCount}`;
     }
   }
 
+  // --- Listagem ---
   function displayFilteredProjects() {
-    if (!window.estudioIdeias || !window.estudioIdeias.projects) {
-      console.error("HOME JS: API estudioIdeias.projects não está pronta.");
-      if (projectListContainer)
-        projectListContainer.innerHTML =
-          "<p class='no-results-message'>Erro ao carregar API de dados dos projetos.</p>";
-      if (verMaisBtn) verMaisBtn.style.display = "none";
-      return;
-    }
-    if (!projectListContainer) {
-      console.error(
-        "HOME JS: Container da lista de projetos (lista-projetos) não encontrado."
-      );
-      return;
-    }
-
-    const params = {
+    const data = api().paginate({
       page: currentPage,
       perPage: PROJECTS_PER_LOAD,
-      search: currentSearchTerm || null,
-      searchBy: currentSearchBy,
-      orderBy: mapSortValue(currentSortBy),
-      year: currentYear || null,
-      area: currentArea || null,
-    };
-
-    const paginatedData = window.estudioIdeias.projects.paginate(params);
+      search: filters.search || null,
+      searchBy: filters.searchBy,
+      orderBy: SORT_MAP[filters.sortBy] || "newest",
+      year: filters.year || null,
+      area: filters.area || null,
+    });
 
     if (currentPage === 1) {
-      projectListContainer.innerHTML = "";
+      projectListContainer.replaceChildren();
+      shownCount = 0;
     }
 
-    if (
-      paginatedData &&
-      paginatedData.results &&
-      paginatedData.results.length > 0
-    ) {
-      paginatedData.results.forEach((project) => {
-        if (project) {
-          const projectCardElement = renderProjectCard(project);
-          projectListContainer.appendChild(projectCardElement);
-        }
-      });
-      updateVerMaisButton(paginatedData.total, paginatedData.results.length);
+    const results = (data && data.results) || [];
+    if (results.length) {
+      const fragment = document.createDocumentFragment();
+      results.forEach((project) => fragment.appendChild(renderProjectCard(project)));
+      projectListContainer.appendChild(fragment);
+      shownCount += results.length;
+      projectListContainer.dispatchEvent(new CustomEvent("projetos:renderizados", { bubbles: true }));
     } else if (currentPage === 1) {
-      projectListContainer.innerHTML =
-        '<p class="no-results-message">Nenhum projeto encontrado com os critérios selecionados.</p>';
-      updateVerMaisButton(0, 0);
-    } else {
-      updateVerMaisButton(paginatedData.total, 0);
+      showMessage("Nenhum projeto corresponde a essa busca. Tente outro termo ou abra os filtros.", { limpar: true });
     }
+
+    const total = (data && data.total) || 0;
+    verMaisBtn.hidden = shownCount >= total;
+    updateCount(total);
+  }
+
+  function readFilters() {
+    filters = {
+      search: searchInput.value.toLowerCase().trim(),
+      searchBy: filterFieldSelect.value,
+      sortBy: sortBySelect.value,
+      year: yearFilterSelect.value === "all" ? "" : yearFilterSelect.value,
+      area: areaFilterSelect.value === "all" ? "" : areaFilterSelect.value,
+    };
   }
 
   function handleFilterOrSortChange() {
     currentPage = 1;
-    currentSearchTerm = searchInput
-      ? searchInput.value.toLowerCase().trim()
-      : "";
-    currentSearchBy = filterFieldSelect ? filterFieldSelect.value : "all";
-    currentSortBy = sortBySelect ? sortBySelect.value : "relevance";
-    currentYear = yearFilterSelect
-      ? yearFilterSelect.value === "all"
-        ? ""
-        : yearFilterSelect.value
-      : "";
-    currentArea = areaFilterSelect
-      ? areaFilterSelect.value === "all"
-        ? ""
-        : areaFilterSelect.value
-      : "";
-
+    readFilters();
+    syncAreaKeys();
     displayFilteredProjects();
   }
 
-  function loadMoreProjectsOnClick() {
-    currentPage++;
-    displayFilteredProjects();
+  function resetFilters() {
+    searchInput.value = "";
+    [filterFieldSelect, sortBySelect, yearFilterSelect, areaFilterSelect].forEach((s) => (s.selectedIndex = 0));
+    handleFilterOrSortChange();
+    searchInput.focus();
   }
 
-  // --- POPULAR FILTRO DE ANO COM A API ---
-  function populateYearFilterWithApi() {
-    if (
-      !window.estudioIdeias ||
-      !window.estudioIdeias.projects ||
-      !yearFilterSelect
-    )
-      return;
+  // --- Teclas de área (atalhos do select de área) ---
+  function syncAreaKeys() {
+    const value = areaFilterSelect.value;
+    areaKeys.forEach((key) => key.setAttribute("aria-pressed", String(key.dataset.area === value)));
+  }
 
-    const years = window.estudioIdeias.projects.getAvailableYears();
+  function fillHeroData() {
+    const all = api().paginate({ page: 1, perPage: 10000 });
+    const projects = all.results || [];
+    const counts = {};
+    projects.forEach((p) => (counts[p.area] = (counts[p.area] || 0) + 1));
 
-    const defaultOption = yearFilterSelect.options[0];
-    yearFilterSelect.innerHTML = "";
-    if (defaultOption) yearFilterSelect.appendChild(defaultOption);
+    document.querySelectorAll("[data-total-projetos]").forEach((el) => (el.textContent = formatNumber(all.total)));
+    document.querySelectorAll("[data-contagem]").forEach((el) => {
+      const area = el.dataset.contagem;
+      el.textContent = area === "all" ? all.total : counts[area] || 0;
+    });
 
-    if (years && years.length > 0) {
-      years.forEach((year) => {
-        const option = document.createElement("option");
-        option.value = year;
-        option.textContent = year;
-        yearFilterSelect.appendChild(option);
-      });
+    const years = api().getAvailableYears().map(Number).filter(Boolean);
+    if (years.length) {
+      const range = `${Math.min(...years)}–${Math.max(...years)}`;
+      document.querySelectorAll("[data-intervalo-anos]").forEach((el) => (el.textContent = range));
     }
   }
 
-  // --- SUGESTÕES DE BUSCA COM A API ---
-  function updateSearchSuggestionsWithApi() {
-    if (
-      !window.estudioIdeias ||
-      !searchInput ||
-      !filterFieldSelect ||
-      !suggestionsContainer
-    )
-      return;
+  function populateYearFilter() {
+    const first = yearFilterSelect.options[0];
+    yearFilterSelect.replaceChildren(first);
+    api().getAvailableYears().forEach((year) => yearFilterSelect.add(new Option(year, year)));
+  }
 
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    const searchField = filterFieldSelect.value;
-
-    suggestionsContainer.innerHTML = "";
+  // --- Sugestões ---
+  function closeSuggestions() {
+    suggestionsContainer.replaceChildren();
+    suggestionsContainer.classList.remove("is-open");
+    searchInput.setAttribute("aria-expanded", "false");
+    searchInput.removeAttribute("aria-activedescendant");
     activeSuggestionIndex = -1;
-
-    if (searchTerm.length < 2) {
-      suggestionsContainer.style.display = "none";
-      return;
-    }
-    const paginatedSuggestions = window.estudioIdeias.projects.paginate({
-      search: searchTerm,
-      searchBy: searchField,
-      perPage: 5,
-    });
-
-    const suggestedItems = [];
-    if (
-      paginatedSuggestions &&
-      paginatedSuggestions.results &&
-      paginatedSuggestions.results.length > 0
-    ) {
-      paginatedSuggestions.results.forEach((project) => {
-        let matchText = null;
-        let originalTextToFillInput = project.title || "";
-        if (searchField === "title" || searchField === "all") {
-          if (
-            project.title &&
-            project.title.toLowerCase().includes(searchTerm)
-          ) {
-            matchText = project.title;
-          }
-        }
-        if (!matchText && (searchField === "author" || searchField === "all")) {
-          if (
-            project.author &&
-            project.author.toLowerCase().includes(searchTerm)
-          ) {
-            matchText = `${project.author} (Autor)`;
-            originalTextToFillInput = project.author;
-          }
-        }
-
-        if (
-          matchText &&
-          !suggestedItems.some(
-            (item) => item.text.toLowerCase() === matchText.toLowerCase()
-          )
-        ) {
-          suggestedItems.push({
-            text: matchText,
-            fillValue: originalTextToFillInput,
-          });
-        }
-      });
-    }
-
-    if (suggestedItems.length > 0) {
-      suggestionsContainer.style.display = "block";
-      suggestedItems.forEach((item, index) => {
-        const suggestionDiv = document.createElement("div");
-        suggestionDiv.classList.add("suggestion-item");
-        suggestionDiv.textContent = item.text;
-        suggestionDiv.dataset.index = index;
-        suggestionDiv.addEventListener("click", () => {
-          searchInput.value = item.fillValue;
-          suggestionsContainer.innerHTML = "";
-          suggestionsContainer.style.display = "none";
-          activeSuggestionIndex = -1;
-          handleFilterOrSortChange();
-        });
-        suggestionsContainer.appendChild(suggestionDiv);
-      });
-    } else {
-      suggestionsContainer.style.display = "none";
-    }
   }
 
-  // --- CONFIGURAÇÃO DOS EVENT LISTENERS ---
-  function setupEventListeners() {
-    // console.log("--- Iniciando setupEventListeners na Home ---");
-    if (
-      !searchForm ||
-      !searchInput ||
-      !filterFieldSelect ||
-      !sortBySelect ||
-      !yearFilterSelect ||
-      !areaFilterSelect ||
-      !suggestionsContainer ||
-      !verMaisBtn
-    ) {
-      console.error(
-        "HOME JS: ERRO CRÍTICO - Um ou mais elementos de UI não foram encontrados para configurar listeners."
-      );
-      // Adicione logs individuais para cada elemento se precisar depurar qual está faltando
-      return;
-    }
+  function updateSuggestions() {
+    const term = searchInput.value.toLowerCase().trim();
+    const field = filterFieldSelect.value;
+    closeSuggestions();
+    if (term.length < 2) return;
 
-    searchForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      handleFilterOrSortChange();
-    });
-
-    searchInput.addEventListener("input", updateSearchSuggestionsWithApi);
-
-    searchInput.addEventListener("keydown", (e) => {
-      if (!suggestionsContainer) return;
-      const items = suggestionsContainer.querySelectorAll(".suggestion-item");
-      if (suggestionsContainer.style.display === "block" && items.length > 0) {
-        if (e.key === "ArrowDown") {
-          e.preventDefault();
-          activeSuggestionIndex = (activeSuggestionIndex + 1) % items.length;
-          updateActiveSuggestion(items);
-        } else if (e.key === "ArrowUp") {
-          e.preventDefault();
-          activeSuggestionIndex =
-            (activeSuggestionIndex - 1 + items.length) % items.length;
-          updateActiveSuggestion(items);
-        } else if (e.key === "Enter") {
-          if (activeSuggestionIndex > -1 && items[activeSuggestionIndex]) {
-            e.preventDefault();
-            items[activeSuggestionIndex].click();
-          }
-        } else if (e.key === "Escape") {
-          suggestionsContainer.innerHTML = "";
-          suggestionsContainer.style.display = "none";
-          activeSuggestionIndex = -1;
-        }
+    const { results = [] } = api().paginate({ search: term, searchBy: field, perPage: 5 });
+    const items = [];
+    results.forEach((project) => {
+      let item = null;
+      if ((field === "title" || field === "all") && project.title?.toLowerCase().includes(term)) {
+        item = { text: project.title, fill: project.title, kind: "TÍT" };
+      } else if ((field === "author" || field === "all") && project.author?.toLowerCase().includes(term)) {
+        item = { text: project.author, fill: project.author, kind: "AUT" };
       }
+      if (item && !items.some((i) => i.text.toLowerCase() === item.text.toLowerCase())) items.push(item);
     });
 
-    filterFieldSelect.addEventListener("change", handleFilterOrSortChange);
-    sortBySelect.addEventListener("change", handleFilterOrSortChange);
-    yearFilterSelect.addEventListener("change", handleFilterOrSortChange);
-    areaFilterSelect.addEventListener("change", handleFilterOrSortChange);
-
-    verMaisBtn.addEventListener("click", loadMoreProjectsOnClick);
-
-    document.addEventListener("click", (event) => {
-      if (
-        searchInput &&
-        suggestionsContainer &&
-        !searchInput.contains(event.target) &&
-        !suggestionsContainer.contains(event.target)
-      ) {
-        suggestionsContainer.innerHTML = "";
-        suggestionsContainer.style.display = "none";
-        activeSuggestionIndex = -1;
-      }
+    if (!items.length) return;
+    items.forEach((item, index) => {
+      const option = document.createElement("div");
+      option.className = "suggestion-item";
+      option.id = `sugestao-${index}`;
+      option.setAttribute("role", "option");
+      option.dataset.kind = item.kind;
+      option.textContent = item.text;
+      option.addEventListener("click", () => {
+        searchInput.value = item.fill;
+        closeSuggestions();
+        handleFilterOrSortChange();
+      });
+      suggestionsContainer.appendChild(option);
     });
-    // console.log("HOME JS: Event listeners configurados com SUCESSO.");
+    suggestionsContainer.classList.add("is-open");
+    searchInput.setAttribute("aria-expanded", "true");
   }
 
   function updateActiveSuggestion(items) {
-    // Definindo a função que faltava
     items.forEach((item, index) => {
-      if (index === activeSuggestionIndex) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
+      const active = index === activeSuggestionIndex;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-selected", String(active));
+    });
+    if (items[activeSuggestionIndex]) searchInput.setAttribute("aria-activedescendant", items[activeSuggestionIndex].id);
+  }
+
+  // --- Eventos ---
+  function setupEventListeners() {
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      closeSuggestions();
+      handleFilterOrSortChange();
+      document.getElementById("acervo").scrollIntoView({ block: "start" });
+    });
+
+    searchInput.addEventListener("input", updateSuggestions);
+    // Limpar pelo "x" do campo de busca restaura a lista
+    searchInput.addEventListener("search", () => {
+      if (!searchInput.value) handleFilterOrSortChange();
+    });
+
+    searchInput.addEventListener("keydown", (e) => {
+      const items = suggestionsContainer.querySelectorAll(".suggestion-item");
+      if (!items.length) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        const step = e.key === "ArrowDown" ? 1 : -1;
+        activeSuggestionIndex = (activeSuggestionIndex + step + items.length) % items.length;
+        updateActiveSuggestion(items);
+      } else if (e.key === "Enter" && activeSuggestionIndex > -1) {
+        e.preventDefault();
+        items[activeSuggestionIndex].click();
+      } else if (e.key === "Escape") {
+        closeSuggestions();
       }
+    });
+
+    [filterFieldSelect, sortBySelect, yearFilterSelect, areaFilterSelect].forEach((select) =>
+      select.addEventListener("change", handleFilterOrSortChange)
+    );
+
+    areaKeys.forEach((key) =>
+      key.addEventListener("click", () => {
+        areaFilterSelect.value = key.dataset.area;
+        areaFilterSelect.dispatchEvent(new Event("change"));
+      })
+    );
+
+    unfoldBtn.addEventListener("click", () => {
+      const open = searchForm.dataset.state !== "open";
+      searchForm.dataset.state = open ? "open" : "folded";
+      unfoldBtn.setAttribute("aria-expanded", String(open));
+      document.getElementById("packet-filters").inert = !open;
+      unfoldBtn.querySelector(".packet__unfold-label").textContent = open ? "Dobrar filtros" : "Mais filtros";
+      if (open) filterFieldSelect.focus({ preventScroll: true });
+    });
+
+    verMaisBtn.addEventListener("click", () => {
+      currentPage++;
+      displayFilteredProjects();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!searchForm.contains(event.target)) closeSuggestions();
     });
   }
 
-  // --- INICIALIZAÇÃO DA PÁGINA HOME ---
   function initializeHomePage() {
-    if (!projectTemplate) {
-      console.error(
-        "CRÍTICO (Home): O <template id='projeto-template'> não foi encontrado!"
-      );
-      if (projectListContainer)
-        projectListContainer.innerHTML =
-          "<p class='no-results-message'>Erro: Template de projeto ausente.</p>";
-      if (verMaisBtn) verMaisBtn.style.display = "none";
-      return;
-    }
-    populateYearFilterWithApi();
-    handleFilterOrSortChange();
+    populateYearFilter();
+    fillHeroData();
     setupEventListeners();
+    handleFilterOrSortChange();
   }
 
-  // Espera a API estar pronta
-  if (window.estudioIdeias && window.estudioIdeias.projects) {
-    // console.log("HOME JS: API estudioIdeias já pronta. Inicializando...");
-    initializeHomePage();
-  } else {
-    // console.log("HOME JS: Aguardando evento 'estudioApiReady'...");
-    document.addEventListener(
-      "estudioApiReady",
-      function handler() {
-        // console.log("HOME JS: Evento 'estudioApiReady' recebido. Inicializando página home.");
-        document.removeEventListener("estudioApiReady", handler);
-        initializeHomePage();
-      },
-      { once: true }
-    );
-
-    setTimeout(() => {
-      if (
-        window.estudioIdeias &&
-        window.estudioIdeias.projects &&
-        !document.body.dataset.homeInitializedByApi
-      ) {
-        // console.warn("HOME JS: Inicializando via fallback setTimeout.");
-        document.body.dataset.homeInitializedByApi = "true";
-        initializeHomePage();
-      } else if (
-        !window.estudioIdeias &&
-        !document.body.dataset.homeInitializedByApi
-      ) {
-        console.error(
-          "HOME JS: API não carregou após timeout. Verifique o script da API (projetos.js)."
-        );
-        if (projectListContainer)
-          projectListContainer.innerHTML =
-            "<p class='no-results-message'>Falha ao carregar base de dados.</p>";
-      }
-    }, 1500);
+  if (!window.estudioIdeias || !window.estudioIdeiasUtils || !projectListContainer) {
+    if (projectListContainer) showMessage("Não foi possível iniciar o acervo.", { erro: true });
+    return;
   }
+
+  window.estudioIdeias.ready.then(initializeHomePage).catch(() => {
+    showMessage(window.estudioIdeias.mensagemDeFalha, { erro: true });
+    if (resultCount) resultCount.textContent = "Acervo indisponível";
+  });
 });

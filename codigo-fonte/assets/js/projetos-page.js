@@ -7,14 +7,29 @@ function createPaginationButton(pageNumber, current = false) {
   url.searchParams.set("page", pageNumber);
   button.href = url.toString();
 
+  button.setAttribute("aria-label", `Página ${pageNumber}`);
   if (current) {
-    button.href = "javascript:void(0);";
+    button.removeAttribute("href");
+    button.setAttribute("aria-current", "page");
     button.classList.add("pagination__button--current");
   }
   return button;
 }
 
 (async () => {
+  try {
+    await window.estudioIdeias.ready;
+  } catch {
+    const lista = document.querySelector(".projects-list");
+    if (lista) {
+      lista.innerHTML = `
+        <div class="empty-state no-results-message" role="alert">
+          <p class="empty-state__title">Acervo indisponível.</p>
+          <p>${window.estudioIdeias.mensagemDeFalha}</p>
+        </div>`;
+    }
+    return;
+  }
   const url = new URL(window.location.href);
   const page = url.searchParams.get("page") || 1;
   const search = url.searchParams.get("search") || "";
@@ -57,12 +72,16 @@ function createPaginationButton(pageNumber, current = false) {
     const areaSelect = document.querySelector(
       ".filter-form select[name='area']"
     );
-    const optionElements = areas.map((area) => {
-      const option = document.createElement("option");
-      option.value = area;
-      option.textContent = area;
-      return option;
-    });
+    // só acrescenta áreas que o HTML ainda não lista (evita "frontend" ao lado de "Frontend")
+    const known = new Set([...areaSelect.options].map((option) => option.value));
+    const optionElements = areas
+      .filter((area) => area && !known.has(area))
+      .map((area) => {
+        const option = document.createElement("option");
+        option.value = area;
+        option.textContent = window.estudioIdeiasUtils.areaOf(area)?.nome || area;
+        return option;
+      });
     areaSelect.append(...optionElements);
   }
 
@@ -91,7 +110,11 @@ function createPaginationButton(pageNumber, current = false) {
 
   function renderTotalResults() {
     const totalResults = document.querySelector(".projects__header strong");
-    totalResults.textContent = projects.total;
+    totalResults.textContent = window.estudioIdeiasUtils.formatNumber(projects.total);
+    const totalPages = Math.max(1, Math.ceil(projects.total / perPage));
+    const plate = (name) => document.querySelector(`[data-plate="${name}"]`);
+    if (plate("total")) plate("total").textContent = window.estudioIdeiasUtils.formatNumber(projects.total);
+    if (plate("pagina")) plate("pagina").textContent = `${pageNumber}/${totalPages}`;
   }
 
   function renderProjects() {
@@ -99,10 +122,12 @@ function createPaginationButton(pageNumber, current = false) {
     projectsList.innerHTML = "";
 
     if (projects.results.length === 0) {
-      const noResultsMessage = document.createElement("p");
-      noResultsMessage.classList.add("no-results-message");
-      noResultsMessage.textContent = "Nenhum resultado encontrado.";
-      projectsList.appendChild(noResultsMessage);
+      projectsList.innerHTML = `
+        <div class="empty-state no-results-message">
+          <p class="empty-state__title">Nenhum resultado encontrado.</p>
+          <p>Tente outro termo, outra área ou limpe os filtros.</p>
+          <a class="link-arrow" href="./projetos.html">Ver todo o acervo</a>
+        </div>`;
       return;
     }
 
@@ -113,6 +138,7 @@ function createPaginationButton(pageNumber, current = false) {
       );
       projectsList.appendChild(projectElement);
     });
+    projectsList.dispatchEvent(new CustomEvent("projetos:renderizados", { bubbles: true }));
   }
 
   function renderPagination() {

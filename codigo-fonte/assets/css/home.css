@@ -1,328 +1,576 @@
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+/* assets/css/home.css
+   Página inicial no mundo Dobra Miura: o acervo é uma folha vincada,
+   a busca é o pacote fosco que se desdobra nos filtros. */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: var(--space-8) 0 var(--space-7);
+  border-bottom: var(--hairline) solid var(--mountain-line);
 }
 
-/* Search Section */
-.search-section {
-    width: 100%;
-    min-height: 500px;
-    padding: 80px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(../img/natureza.jpg); /* Certifique-se que este caminho está correto */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.hero__grid {
+  position: absolute;
+  inset: -10% 0;
+  z-index: -2;
+  width: 100%;
+  height: 120%;
+  pointer-events: none;
 }
 
-/* Container principal da busca */
-.search-container {
-    text-align: center;
-    max-width: 1200px;
-    width: 100%;
+.hero__grid path {
+  fill: none;
+  stroke-width: 1;
 }
 
-/* Header (titulo acima da barra, se quiser usar) */
-.search-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
-    font-weight: 600;
-    color: #0A1931; /* Ajuste a cor se o fundo for escuro e o texto estiver sumindo */
-    margin-bottom: 40px;
+.hero__grid .crease-m {
+  stroke: var(--mountain-line);
 }
 
-/* Formulário de busca */
-.search-form {
-    display: flex;
-    /* flex-wrap: wrap; /* Podemos manter ou remover dependendo do comportamento desejado em telas muito pequenas */
-                      /* Se remover, os itens tentarão se espremer. Se manter, o botão pode quebrar se não houver espaço. */
-                      /* Para input e botão na mesma linha, o ideal é que caibam. */
-    flex-wrap: nowrap; /* Vamos tentar nowrap para forçar a mesma linha e deixar os itens encolherem se necessário */
-    justify-content: center; 
-    align-items: center; 
-    gap: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative; 
+.hero__grid .crease-v {
+  stroke: var(--valley-line);
+  stroke-dasharray: 4 5;
 }
 
-/* Campo de input */
-/* Campo de input */
-.search-input {
-    flex-grow: 1; /* Permite que o input cresça para ocupar o espaço disponível */
-    flex-shrink: 1; /* Permite que o input encolha se necessário */
-    flex-basis: auto; /* Tamanho base automático, mas vai esticar por causa do grow:1 */
-    /* min-width: 200px; */ /* Pode definir um min-width para não ficar muito pequeno */
-    padding: 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    background-color: #F5F7FA;
-    color: #0A1931;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
+.hero__grid .crease-h {
+  stroke: var(--mountain-soft);
 }
 
-/* Botão principal (ao lado do input) */
-.search-button {
-    flex-grow: 0; /* Não deve crescer */
-    flex-shrink: 0; /* Não deve encolher (para manter o tamanho do seu texto/padding) */
-    flex-basis: auto; /* Tamanho baseado no conteúdo e padding */
-    padding: 20px;
-    font-size: 18px;
-    background-color: #0A1931;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--container-max);
+  min-height: min(640px, calc(100svh - var(--header-height) - 180px));
+  margin: 0 auto;
+  padding: 0 var(--space-5);
 }
 
-.search-button:hover {
-    background-color: #185ADB;
+.hero__copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-5);
+  max-width: 720px;
 }
 
-/* Estilos para o container de sugestões */
-.suggestions-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-top: none;
-    z-index: 1001;
-    max-height: 200px;
-    overflow-y: auto;
-    display: none;
-    text-align: left;
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.hero__title {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hero__line {
+  display: block;
+}
+
+/* Folga na máscara do SplitText para o til e os acentos das maiúsculas */
+.hero__word-mask {
+  padding-top: 0.2em;
+  margin-top: -0.2em;
+}
+
+/* Guia diagonal de 60° cortando o título, como na folha técnica */
+.hero__title::after {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 58%;
+  width: var(--hairline);
+  height: 124%;
+  background: var(--valley-deep);
+  opacity: 0.5;
+  transform: rotate(30deg);
+  transform-origin: top;
+  pointer-events: none;
+  z-index: -1; /* o vinco passa atrás da tinta */
+}
+
+.hero__lede {
+  max-width: 46ch;
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.hero__lede strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---------- Pacote de busca (vidro) ---------- */
+.packet {
+  position: relative;
+  max-width: 560px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(calc(var(--glass-saturate) + 0.1));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(calc(var(--glass-saturate) + 0.1));
+  border: var(--hairline) solid var(--glass-border);
+  box-shadow: var(--shadow-lift);
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+
+/* Fio dourado no topo: o lacre do pacote */
+.packet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--cut);
+  width: 96px;
+  height: 3px;
+  background: var(--foil);
+}
+
+.packet__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
+}
+
+.packet__icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.packet__input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--control-lg);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.packet__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.packet__input:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.packet__row:focus-within {
+  box-shadow: inset 0 -2px 0 var(--valley-deep);
+}
+
+.packet__input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.packet__unfold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-top: var(--hairline) dashed var(--mountain-line);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.packet__unfold:hover {
+  color: var(--ink);
+  background: rgb(255 255 255 / 0.5);
+}
+
+.packet__unfold svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform var(--duration-slow) var(--ease-fold);
+}
+
+.packet[data-state="open"] .packet__unfold svg {
+  transform: rotate(180deg);
+}
+
+/* Desdobra por grid-template-rows (sem animar altura) */
+.packet__filters {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-slow) var(--ease-fold);
+}
+
+.packet[data-state="open"] .packet__filters {
+  grid-template-rows: 1fr;
+}
+
+.packet__filters-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 var(--space-4);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-fold), visibility 0s linear var(--duration-slow);
+}
+
+/* Respiro de cima e de baixo como linhas da própria grade: some junto com a dobra */
+.packet__filters-inner::before,
+.packet__filters-inner::after {
+  content: "";
+  grid-column: 1 / -1;
+}
+.packet__filters-inner::after {
+  height: var(--space-1);
+}
+
+.packet[data-state="open"] .packet__filters-inner {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--duration-slow) var(--ease-fold), visibility 0s;
+}
+
+/* Sugestões */
+.suggestions {
+  display: none;
+  border-top: var(--hairline) solid var(--mountain-line);
+  background: var(--sheet-white);
+}
+
+.suggestions.is-open {
+  display: block;
 }
 
 .suggestion-item {
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--control-min);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  cursor: pointer;
 }
 
-.suggestion-item:hover {
-    background-color: #f0f0f0;
+.suggestion-item::before {
+  content: attr(data-kind);
+  flex: none;
+  width: 3.2em;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-mono);
+  color: var(--valley-deep);
 }
 
+.suggestion-item:hover,
 .suggestion-item.active {
-    background-color: #e0e0e0;
+  background: var(--valley);
+  color: var(--ink);
 }
 
-/* Área de filtros abaixo da search bar */
-.search-filters {
-    display: flex;
+/* ---------- Folha Miura ---------- */
+.hero__sheet {
+  position: relative;
+  margin: calc(var(--space-9) * -1) calc(var(--space-5) * -1) 0;
+  aspect-ratio: 4 / 3;
+}
+
+.hero__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__sheet .spec-plate {
+  position: absolute;
+  left: var(--space-5);
+  bottom: var(--space-4);
+}
+
+.sheet-pause {
+  position: absolute;
+  right: var(--space-5);
+  bottom: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: var(--hairline) solid var(--mountain-line);
+  background: var(--sheet-white);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.sheet-pause:hover {
+  background: var(--valley);
+}
+
+.sheet-pause svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.sheet-pause .icon-play,
+.sheet-pause[aria-pressed="true"] .icon-pause {
+  display: none;
+}
+
+.sheet-pause[aria-pressed="true"] .icon-play {
+  display: block;
+}
+
+.sheet-pause__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Teclas de área ---------- */
+.area-keys {
+  display: flex;
+  gap: var(--space-2);
+  max-width: var(--container-max);
+  margin: var(--space-6) auto 0;
+  padding: 0 var(--space-5) var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  /* No celular as teclas rolam de lado: cada uma assenta inteira na borda */
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: var(--space-5);
+  overscroll-behavior-x: contain;
+}
+
+.area-key {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: "code count" "name name";
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-4);
+  flex: 1 0 auto;
+  scroll-snap-align: start;
+  min-width: 128px;
+  min-height: 64px;
+  padding: var(--space-3) var(--space-5) var(--space-3) calc(var(--space-4) + var(--cut-sm));
+  border: 0;
+  background: var(--sheet-white);
+  box-shadow: inset 0 0 0 var(--hairline) var(--mountain-line);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  clip-path: polygon(var(--cut) 0, 100% 0, calc(100% - var(--cut)) 100%, 0 100%);
+  transition: background-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.area-key__code {
+  grid-area: code;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.area-key__count {
+  grid-area: count;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--color-text-muted);
+}
+
+.area-key__name {
+  grid-area: name;
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.area-key:hover {
+  background: var(--mountain-soft);
+}
+
+.area-key:active {
+  transform: scale(var(--press-scale));
+}
+
+.area-key[aria-pressed="true"] {
+  background: var(--ink);
+  box-shadow: none;
+  color: var(--sheet);
+}
+
+.area-key[aria-pressed="true"] .area-key__name,
+.area-key[aria-pressed="true"] .area-key__count {
+  color: var(--foil-light);
+}
+
+.area-key:focus-visible {
+  clip-path: none;
+}
+
+/* ---------- Publique ---------- */
+.publique {
+  position: relative;
+  max-width: var(--container-max);
+  margin: 0 auto var(--space-8);
+  padding: 0 var(--space-5);
+}
+
+.publique__inner {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-7) var(--space-6);
+  background:
+    linear-gradient(120deg, transparent 49.8%, var(--valley-line) 50%, transparent 50.2%) no-repeat right bottom / var(--space-9) var(--space-9),
+    var(--valley);
+  clip-path: polygon(0 0, calc(100% - var(--cut-lg)) 0, 100% var(--cut-lg), 100% 100%, var(--cut-lg) 100%, 0 calc(100% - var(--cut-lg)));
+}
+
+.publique__title {
+  max-width: 18ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1.02;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.publique__text {
+  max-width: 52ch;
+  margin: 0;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.publique__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-2);
+}
+
+/* ---------- Telas largas ---------- */
+@media (min-width: 900px) {
+  .hero {
+    padding: var(--space-8) 0 var(--space-7);
+  }
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* A folha ocupa a direita e passa por baixo do pacote */
+  .hero__sheet {
+    position: absolute;
+    top: -12%;
+    right: calc(var(--space-5) * -2);
+    bottom: -8%;
+    width: 74%;
+    margin: 0;
+    aspect-ratio: auto;
+  }
+  .hero__canvas {
+    mask-image: linear-gradient(90deg, transparent 0, #000 16%);
+  }
+  .hero__sheet .spec-plate {
+    left: 30%;
+    bottom: 14%;
+  }
+  .sheet-pause {
+    right: calc(var(--space-5) * 3);
+    bottom: 14%;
+  }
+  .publique__inner {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: end;
+    padding: var(--space-8) var(--space-8);
+  }
+  .publique__title {
+    grid-row: span 2;
+  }
+  .publique__actions {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: var(--space-6);
+  }
+  .packet__row {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    max-width: 800px;
-    margin: 20px auto 0 auto;
-    padding: 0 10px;
+  }
+  .packet__row .btn-foil {
+    flex: 1 0 100%;
+  }
+  .packet__filters-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .spec-plate__list {
+    grid-template-columns: repeat(2, auto);
+  }
+  /* No celular a placa sai de cima da folha e fica logo abaixo dela */
+  .hero__sheet {
+    aspect-ratio: auto;
+  }
+  .hero__canvas {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .hero__sheet .spec-plate {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    display: inline-block;
+    margin: var(--space-2) 0 0 var(--space-4);
+  }
+  .sheet-pause {
+    right: var(--space-4);
+    bottom: var(--space-3);
+  }
+  .area-key {
+    min-width: 112px;
+  }
 }
 
-/* Cada item de filtro */
-.filter-item {
-    flex: 1 1 auto;
-    min-width: 150px;
-}
-
-.filter-select {
-    width: 100%;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    border: 2px solid #0A1931;
-    border-radius: 6px;
-    background-color: #FFFFFF;
-    color: #0A1931;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.filter-select:hover {
-    background-color: #E2E8F0;
-}
-
-/* Área que lista todos os projetos */
-.projetos-lista {
-    display: grid; /* Muda para layout em grade */
-    /* Cria colunas responsivas: 
-       - 'auto-fit': ajusta o número de colunas para preencher o espaço.
-       - 'minmax(300px, 1fr)': cada coluna terá no mínimo 300px de largura 
-         e no máximo 1 fração do espaço disponível (distribuindo igualmente).
-       Isso significa que em telas largas você pode ter 3-4 colunas, 
-       em telas médias 2, e em telas pequenas 1 coluna. 
-       Ajuste '300px' conforme a largura mínima desejada para seus cards.
-    */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 25px; /* Espaçamento entre os cards (horizontal e vertical) */
-    padding: 40px 20px; /* Padding ao redor da grade de cards */
-}
-
-/* Caixa de cada projeto */
-.project-card {
-    background-color: #ffffff;
-    border: 1px solid #dce3f0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 25px;
-    /* Com o grid, 'margin: auto' para centralizar horizontalmente não é mais necessário,
-       e a largura será controlada pelo 'grid-template-columns'. */
-    /* width: 80%; (Removido ou ajustado) */
-    /* max-width: 700px; (Removido ou ajustado) */
-    width: 100%; /* O card ocupará 100% da célula do grid em que estiver */
-    text-align: left;
-    display: flex; /* Mantém o flex interno para alinhar o conteúdo do card */
-    flex-direction: column;
-    gap: 16px; /* Espaçamento entre os elementos dentro do card */
-    /* margin-bottom: 30px; (Removido, pois 'gap' do grid já cuida do espaçamento vertical) */
-}
-
-/* Pequena animação no hover */
-.project-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* Título do projeto */
-.project-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #185ADB;
-    margin-bottom: 8px;
-}
-
-
-
-/* Link no título */
-.project-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-
-/* Tags logo abaixo do título */
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 8px;
-}
- 
-/* Estilo das tags */
-.project-tag {
-    background-color: #e3edff;
-    color: #185ADB;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-/* Descrição do projeto */
-.project-description {
-    font-size: 15px;
-    color: #333;
-    line-height: 1.6;
-    font-family: "Roboto", sans-serif;
-}
-
-/* Mensagem de "Nenhum resultado" */
-.no-results-message {
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 18px;
-    color: #555;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 600px;
-}
-
-/* Em assets/css/style.css */
-
-/* Container para o botão "Ver mais" (opcional, para centralização) */
-.ver-mais-container {
-    text-align: center; /* Centraliza o botão se ele for inline-block ou inline */
-    padding: 20px 0;    /* Espaçamento acima e abaixo do botão */
-}
-
-/* Estilo principal do botão "Ver mais" */
-.ver-mais-button {
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: 500; /* Um pouco mais de peso na fonte */
-    background-color: #0A1931; /* Cor similar ao seu botão de busca */
-    color: #FFFFFF;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-block; /* Para que o text-align do pai funcione e para padding/margin corretos */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
-}
-
-.ver-mais-button:hover {
-    background-color: #0c50be; /* Cor do hover similar ao botão de busca */
-    transform: translateY(-2px); /* Leve elevação no hover */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.ver-mais-button:active { /* Efeito ao clicar */
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Estilo se o botão estiver desabilitado (ex: durante o carregamento, se você implementar isso) */
-.ver-mais-button:disabled { 
-    background-color: #cccccc; /* Cinza claro */
-    color: #666666;
-    cursor: not-allowed;
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-
-
-.scroll-to-top-button {
-    display: none; /* JavaScript vai mudar para 'flex' ou 'block' */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 2000; /* Bem alto para garantir que fique por cima */
-    
-    background-color: #185ADB; /* Cor bem chamativa para teste */
-    color: white;
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    
-    /* Para centralizar a seta (se usar display: flex no JS) */
-    align-items: center;
-    justify-content: center;
-    line-height: 1; 
-}
-
-.scroll-to-top-button:hover {
-    background-color: #6ea6ff;
+@media (prefers-reduced-motion: reduce) {
+  .packet__filters,
+  .packet__unfold svg {
+    transition: none;
+  }
 }

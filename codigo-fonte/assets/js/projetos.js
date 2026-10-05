@@ -63,6 +63,9 @@ const db = {
   },
 };
 
+// Só o que a moderação aprovou é público; projeto antigo sem status conta como aprovado
+const publicado = (item) => !item.status || item.status === "Aprovado";
+
 const projects = {
   async seed() {
     // corrigindo o caminho para o ERRO 404
@@ -88,7 +91,7 @@ const projects = {
       perPage = 20,
     } = params;
 
-    const data = db.readAsSet(collections.projects);
+    const data = db.readAsSet(collections.projects).filter(publicado);
     const searchTerm = utils.toString(search).toLowerCase();
     const areaString = utils.toString(area);
     const yearNumber = utils.isNumber(year) ? utils.toNumber(year) : null;
@@ -129,7 +132,7 @@ const projects = {
   },
 
   count() {
-    const data = db.readAsSet(collections.projects);
+    const data = db.readAsSet(collections.projects).filter(publicado);
     return data.length;
   },
 
@@ -175,9 +178,6 @@ const projects = {
     if (data[id]) {
       data[id].status = newStatus;
       db.setCollection(collections.projects, data);
-      console.log(
-        `AUDITORIA: Projeto ID ${id} atualizado para "${newStatus}".`
-      );
       return data[id];
     }
     return null;
@@ -191,13 +191,13 @@ const projects = {
   },
   // aqui as funções para a implementação da api na pagina admin termina
   getAvailableYears() {
-    const data = db.readAsSet(collections.projects);
+    const data = db.readAsSet(collections.projects).filter(publicado);
     const years = data.map((item) => item.year);
     const uniqueYears = [...new Set(years)];
     return uniqueYears.sort((a, b) => b - a);
   },
   getAvailableAreas() {
-    const data = db.readAsSet(collections.projects);
+    const data = db.readAsSet(collections.projects).filter(publicado);
     const areas = data.map((item) => item.area);
     const uniqueAreas = [...new Set(areas)];
     return uniqueAreas.sort((a, b) => a.localeCompare(b));
@@ -240,8 +240,19 @@ async function init() {
   }
 }
 
-(async () => {
-  await init();
-})();
+// `ready` resolve quando os dados já estão no localStorage (na primeira visita
+// eles vêm do projects.json). O evento serve a quem prefere escutar.
+const ready = init().then(() => {
+  document.dispatchEvent(new Event("estudioApiReady"));
+});
+// A falha pode chegar antes de as páginas se inscreverem; cada uma trata a sua ao aguardar `ready`
+ready.catch(() => {});
 
-window.estudioIdeias = { projects, favorites };
+// Aberto direto do disco (file://), o navegador bloqueia o fetch do projects.json.
+// Sem back-end não há como contornar: a mensagem diz como abrir o site.
+const mensagemDeFalha =
+  location.protocol === "file:"
+    ? "O acervo não carrega com o arquivo aberto direto do disco. Abra pelo endereço publicado ou por um servidor local (python -m http.server, dentro de codigo-fonte)."
+    : "Falha ao carregar a base de projetos. Recarregue a página para tentar de novo.";
+
+window.estudioIdeias = { projects, favorites, ready, mensagemDeFalha };
