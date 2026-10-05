@@ -22,6 +22,7 @@ Qualquer visitante, sem necessidade de cadastro, pode submeter um projeto para a
 1. A partir do menu principal (`NAV`), o usuário **clica na opção 'Enviar Projeto'**.
 2. Ele é direcionado para a **Página de Envio de Projeto**, onde preenche o título, descrição, anexa arquivos e outras informações pertinentes.
 3. Ao finalizar, ele **submete o formulário para moderação**. O projeto entra em uma fila de aprovação e não fica público imediatamente.
+4. Se houver sessão aberta (conta de autor), o nome do autor já vem preenchido.
 
 ### 3. Gerenciamento de Projetos Favoritos
 
@@ -32,14 +33,16 @@ A funcionalidade de favoritar projetos está disponível para todos e utiliza o 
 
 ### 4. Fluxo Exclusivo do Moderador
 
-Este é o único fluxo que exige autenticação e é restrito a usuários com permissões de administração.
+Este é o único fluxo que exige autenticação e é restrito a contas com o papel de moderador. Contas criadas pelo cadastro recebem o papel de autor; para avaliar este fluxo, use a conta demo (`demo@estudiodeideias.app` / `demo1234`), que é moderadora.
 
-1. O Moderador utiliza a **Página de Login/Cadastro** para se autenticar no sistema.
-2. Após o login bem-sucedido, o sistema o redireciona automaticamente para a **Área do Moderador**.
+1. O Moderador utiliza a **Página de Login/Cadastro** para se autenticar no sistema, ou o botão “Entrar com a conta demo”.
+2. Após o login bem-sucedido, o sistema o redireciona automaticamente para a **Área do Moderador**. Sem sessão de moderador, a área mostra um aviso de acesso no lugar da fila.
 3. Nesta página, ele visualiza a lista de projetos pendentes e toma uma decisão para cada um:
     * **Aprovar:** O projeto se torna público e passa a ser exibido na **Página Home**.
-    * **Rejeitar:** O projeto é descartado do sistema.
-    * **Revisão:** O Projeto é tido como "necessário revisão" para corrigir eventuais erros ou incongruências.
+    * **Rejeitar:** O projeto fica marcado como rejeitado e não é publicado.
+    * **Correção:** O projeto fica como "Correção Solicitada" para corrigir eventuais erros ou incongruências.
+
+   Cada decisão pede confirmação antes de ser aplicada.
 
 ---
 
@@ -139,6 +142,17 @@ As telas do sistema apresentam uma estrutura comum que é apresentada na figura 
   <img src="img/pagina-de-recomendações-de-ferramentas.png" alt="Página de Recomendações de Ferramentas" width="600">
   <br>
   <i>Figura 9 - Página de Recomendações de Ferramentas</i>
+</p>
+
+---
+## Interface implementada (redesign 2026)
+
+Os wireframes acima guiaram a primeira versão, de 2025. Em 2026 a interface foi redesenhada sem mudar a lógica, as rotas nem os dados: a mesma estrutura de cabeçalho, conteúdo e rodapé, agora com um sistema de tokens, tipografia própria e motion em toda tela. A comparação tela a tela, com capturas em desktop e mobile, está em [REDESIGN.md](../REDESIGN.md).
+
+<p align="center">
+  <img src="img/redesign/depois/home-desktop.jpg" alt="Página Home depois do redesign" width="600">
+  <br>
+  <i>Figura 10 - Página Home implementada (2026)</i>
 </p>
 
 ---

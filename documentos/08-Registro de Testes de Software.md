@@ -3,7 +3,11 @@
 Este documento registra os resultados da execução dos testes funcionais definidos no Plano de Testes da aplicação "Estúdio de Ideias".
 
 **Pré-requisitos para consulta:**
-* [Especificação do Projeto](docs/ESPECIFICACAO_PROJETO.md) * [Projeto de Interface](docs/PROJETO_INTERFACE.md) * [Plano de Testes de Software](PLANO_DE_TESTES.MD) ---
+* [Especificação do Projeto](<02-Especificação do Projeto.md>)
+* [Projeto de Interface](<04-Projeto de Interface.md>)
+* [Plano de Testes de Software](<07-Plano de Testes de Software.md>)
+
+---
 
 ## Resultados da Execução dos Casos de Teste Funcionais
 
@@ -16,7 +20,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Ao realizar a busca com um termo de projeto existente na Home Page, a lista de projetos foi atualizada, exibindo apenas os projetos que continham o termo buscado. A interface de resultados apresentou-se conforme o esperado.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-01](documentos/img/ct-01-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/ct-01-evidencia.webm">CT-01</a>
   </li>
   <hr>
 
@@ -26,7 +30,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Ao buscar por um termo sabidamente inexistente, a mensagem "Nenhum projeto encontrado" (ou similar) foi corretamente exibida na interface, e nenhum projeto foi listado.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-01-1l](documentos/img/ct-01-1l-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/ct-01-1l-evidencia.webm">CT-01-1l</a>
   </li>
   <hr>
 
@@ -36,7 +40,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>07/06/2025</code><br>
     <strong>Resultado Obtido:</strong> A seleção de filtros de "Ano" e "Área de Atuação" na página de listagem de projetos resultou na correta atualização da lista, exibindo apenas os projetos que atendiam a ambos os critérios selecionados.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-02](documentos/img/ct-02-evidencia.mp4)
+    <strong>Evidências:</strong><br> <a href="./img/ct-02-evidencia.mp4">CT-02</a>
   </li>
   <hr>
 
@@ -46,7 +50,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Ao clicar no título de um projeto listado, a página de detalhes foi carregada e exibiu corretamente todas as informações esperadas do projeto (título, autor, resumo, ano, área, tecnologias, link). O botão de download (simulado) estava presente e funcional.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-03](documentos/img/ct-03-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/ct-03-evidencia.webm">CT-03</a>
   </li>
   <hr>
 
@@ -56,7 +60,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>07/06/2025</code><br>
     <strong>Resultado Obtido:</strong> A funcionalidade de favoritar um projeto funcionou como esperado: o projeto foi adicionado à lista de "Favoritos" e salvo no `localStorage`. Ao desfavoritar, o projeto foi corretamente removido da lista de "Favoritos" e do `localStorage`.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-04](documentos/img/ct-04-evidencia.mp4)
+    <strong>Evidências:</strong><br> <a href="./img/ct-04-evidencia.mp4">CT-04</a>
   </li>
   <hr>
 
@@ -77,7 +81,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> A página "Ferramentas Recomendadas" foi carregada corretamente via menu, e os cards de ferramentas e tutoriais estavam visíveis e organizados conforme o design.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-06](documentos/img/ct-06-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/ct-06-evidencia.webm">CT-06</a>
   </li>
   <hr>
 
@@ -90,7 +94,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Evidências:</strong><br>
     <p><em>Alerta de sucesso e formulário limpo após submissão:</em></p>
     <p><em>Projeto listado na página de Administração com status "Pendente":</em></p>
-    [CT-07](documentos/img/ct-07-evidencia.webm)
+    <a href="./img/ct-07-evidencia.webm">CT-07</a>
   </li>
   <hr>
 
@@ -100,7 +104,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Ao tentar submeter o formulário com o campo "Título do Projeto" vazio, um alerta indicando "Por favor, preencha todos os campos obrigatórios." foi corretamente exibido. O projeto não foi salvo no `localStorage` e o formulário não foi limpo.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-07-I1](documentos/img/ct-07-1l-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/ct-07-1l-evidencia.webm">CT-07-I1</a>
   </li>
   <hr>
 
@@ -110,7 +114,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Na `paginaAdmin`, um projeto com status "Pendente" foi selecionado. Ao clicar em "Aprovar" e confirmar, o status do projeto foi alterado para "Aprovado" na interface e no `localStorage`. O alerta "Projeto APROVADO com sucesso!" foi exibido.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-08.1](documentos/img/CT-081-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/CT-081-evidencia.webm">CT-08.1</a>
   </li>
   <hr>
   
@@ -120,7 +124,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Na `paginaAdmin`, um projeto com status "Pendente" foi selecionado. Ao clicar em "Rejeitar" e confirmar, o status do projeto foi alterado para "Rejeitado" na interface e no `localStorage`. O alerta "Projeto REJEITADO." foi exibido.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-08.2](documentos/img/ct-082-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/ct-082-evidencia.webm">CT-08.2</a>
   </li>
   <hr>
 
@@ -130,7 +134,7 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
     <strong>Data da Execução:</strong> <code>01/06/2025</code><br>
     <strong>Resultado Obtido:</strong> Na `paginaAdmin`, um projeto com status "Pendente" foi selecionado. Ao clicar em "Correção" e confirmar, o status do projeto foi alterado para "Correção Solicitada" na interface e no `localStorage`. O alerta "CORREÇÃO SOLICITADA para o projeto." foi exibido.<br>
     <strong>Status:</strong> <code>Passou</code><br>
-    <strong>Evidências:</strong><br> [CT-09](documentos/img/ct-09-evidencia.webm)
+    <strong>Evidências:</strong><br> <a href="./img/ct-09-evidencia.webm">CT-09</a>
   </li>
   <hr>
 
@@ -141,5 +145,28 @@ A seguir são apresentados os resultados da execução de cada Caso de Teste (CT
 ## Avaliação Geral dos Testes
 
 Todos os Casos de Teste funcionais priorizados para os Requisitos Funcionais RF-01 a RF-12 foram executados. Os resultados obtidos confirmam que a aplicação "Estúdio de Ideias" atendeu aos critérios de êxito definidos, demonstrando estar funcional nas áreas testadas e operando conforme o planejado para a simulação frontend. As funcionalidades de submissão, moderação (aprovação, rejeição, solicitação de correção), busca, filtragem, visualização de detalhes e favoritos operaram conforme o esperado. As simulações de estatísticas, notificações e exportação também foram validadas com sucesso.
+
+---
+
+## Registro dos testes automatizados (outubro de 2026)
+
+Execução do kit automatizado descrito no [Plano de Testes](07-Plano%20de%20Testes%20de%20Software.md#testes-automatizados-2026), contra o site servido localmente com a CSP ativa.
+
+**Resultado:** todos os 290 testes passaram (acessibilidade, teclado, contraste, movimento reduzido e pausa, Lighthouse, SEO e efeitos presentes).
+
+Na primeira execução, 3 testes de movimento reduzido falharam na área do moderador: o texto do diálogo de confirmação, fechado até o moderador agir, contava como “texto escondido”. Assim como o miolo de um `<details>` fechado, esse texto fica oculto por escolha do usuário e não por causa do movimento, então o filtro do kit passou a ignorar `<dialog>` fechado. Na nova execução, os 3 passaram.
+
+**Lighthouse** (mediana de 3 execuções; meta: LCP ≤ 2,5 s e CLS ≤ 0,1):
+
+| Página | Performance | Acessibilidade | Boas práticas | SEO | LCP | CLS |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Home | 97 | 100 | 100 | 100 | 2,35 s | 0 |
+| Projetos | 97 | 100 | 100 | 100 | 2,22 s | 0 |
+| Submissão | 98 | 100 | 100 | 100 | 2,25 s | 0 |
+| Ferramentas | 98 | 100 | 100 | 100 | 2,03 s | 0 |
+| Detalhes | 96 | 100 | 96 | 100 | 2,17 s | 0,089 |
+| Páginas institucionais (normas, guia, eventos, tutoriais, FAQ, contato, carreiras, privacidade) | 98 | 100 | 100 | 100 | 2,00 a 2,02 s | 0 |
+
+Todas as páginas ficaram dentro das metas. A Home tem a menor folga no LCP, porque o elemento medido é o texto de abertura do hero, que aparece depois das fontes.
 
 ---

@@ -2,7 +2,7 @@ message: "Please cite this software using these metadata."
 title: "Estúdio de Ideias"
 authors:
   - family-names: "Rodrigues"
-    given-names: "Alan"
+    given-names: "Allan"
   - family-names: "Moreira"
     given-names: "Eduardo"
   - family-names: "Vaz"
@@ -22,7 +22,7 @@ keywords:
   - "repositório de projetos"
 languages:
   - pt
-repository-code: "https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1"
-url: "https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/index.html"
+repository-code: "https://github.com/MaiconVts/estudio-de-ideias"
+url: "https://maiconvts.github.io/estudio-de-ideias/"
 version: 1.0.0
 date-released: 2025-06-22

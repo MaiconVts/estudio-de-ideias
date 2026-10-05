@@ -1,16 +1,18 @@
 # Programação de Funcionalidades
 
+As telas abaixo são as da versão atual, depois do redesign de 2026. O antes e depois de cada uma está em [REDESIGN.md](../REDESIGN.md). Todas as páginas compartilham a mesma base: `base.css` (tokens e tipografia), `layout.css` (cabeçalho e rodapé), `mundo.css` (assinatura visual), `layout.js` (menu e “Minha conta”) e `motion-base.js` (linguagem de motion). Os dados ficam no `localStorage`, porque o projeto é só front-end.
+
 ---
 
 ## Tela de Cadastro (RF-001)
 
 **Responsável:** Hugo Vaz
 
-O acesso à tela de cadastro poderá ser feito através da opção de menu “Cadastre-se”. As estruturas de dados foram baseadas em HTML, CSS e JS.
+O cadastro fica na mesma página do login, no painel “Criar Conta”, e também abre direto pelo endereço `login.html#cadastro`. Sem servidor, a conta é guardada no navegador (`conta.js`): a senha nunca fica em texto puro, só o resumo SHA-256 com sal próprio de cada usuário (Web Crypto). Toda conta nova recebe o papel de autor. Nome, e-mail e senha são validados por `formularios.js`, com a mensagem de erro ligada ao campo, e um e-mail repetido é recusado.
 
 **Exemplo da tela de cadastro:**  
 <figure> 
-  <img src="./img/Login.png"> 
+  <img src="./img/redesign/depois/login-desktop.jpg" alt="Tela de login no redesign de 2026"> 
 </figure>
 
 **Requisito atendido:**  
@@ -19,16 +21,20 @@ RF-001: O site deve permitir ao usuário cadastrar uma conta.
 **Artefatos da funcionalidade:**
 
 - `login.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
 - `assets/css/login.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
-- `assets/js/header.js`
+- `assets/js/formularios.js`
+- `assets/js/conta.js`
 - `assets/js/login.js`
 
 **Instruções de acesso:**  
 Abra um navegador e informe a seguinte URL:  
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/login.html*  
-Clique em “Cadastre-se” no menu superior para acessar a tela de cadastro.
+*https://maiconvts.github.io/estudio-de-ideias/login.html*  
+Clique em “Criar Conta” ao lado do formulário de entrada.
 
 ---
 
@@ -36,11 +42,19 @@ Clique em “Cadastre-se” no menu superior para acessar a tela de cadastro.
 
 **Responsável:** Hugo Vaz
 
-O acesso à tela de login poderá ser feito através do menu “Entrar”. As estruturas de dados foram baseadas em HTML, CSS e JS.
+A tela de login abre pelo botão “Entrar” do menu. A sessão dura 7 dias, não guarda a senha e leva ao destino do papel: o moderador vai para a moderação, e o autor, para o envio de projetos. O parâmetro `?volta=` devolve a pessoa à página de onde veio. Com a sessão aberta, a página mostra quem está conectado e oferece “Sair”.
+
+Para avaliar o site sem criar conta, há uma conta demo com papel de moderador, criada no primeiro acesso, e o botão “Entrar com a conta demo” preenche tudo sozinho:
+
+| E-mail | Senha |
+| :--- | :--- |
+| `demo@estudiodeideias.app` | `demo1234` |
+
+Recuperação de senha, login social e verificação de e-mail dependem de back-end; “Esqueceu sua senha?” explica isso em vez de fingir um envio.
 
 **Exemplo da tela de login:**  
 <figure> 
-  <img src="./img/Login.png"> 
+  <img src="./img/redesign/depois/login-desktop.jpg" alt="Tela de login no redesign de 2026"> 
 </figure>
 
 **Requisito atendido:**  
@@ -49,16 +63,20 @@ RF-002: O site deve permitir ao usuário fazer o login da sua conta.
 **Artefatos da funcionalidade:**
 
 - `login.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
 - `assets/css/login.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
-- `assets/js/header.js`
+- `assets/js/formularios.js`
+- `assets/js/conta.js`
 - `assets/js/login.js`
 
 **Instruções de acesso:**  
 Acesse:  
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/login.html*  
-Clique em “Entrar” no menu superior para acessar a tela de login.
+*https://maiconvts.github.io/estudio-de-ideias/login.html*  
+Clique em “Entrar” no menu superior ou use o botão da conta demo.
 
 ---
 
@@ -70,7 +88,7 @@ Na página inicial, os usuários encontram uma barra de pesquisa centralizada qu
 
 **Exemplo da tela Home com barra de pesquisa:**  
  <figure> 
-  <img src="./img/Home.png"> 
+  <img src="./img/redesign/depois/home-desktop.jpg" alt="Tela de home no redesign de 2026"> 
 </figure>
 
 
@@ -80,16 +98,21 @@ RF-003: Campo de busca aberto para pesquisa de projetos.
 **Artefatos da funcionalidade:**
 
 - `index.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
 - `assets/css/home.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
-- `assets/js/home.js`
 - `assets/js/projetos.js`
-- `assets/js/header.js`
+- `assets/js/projetos-utils.js`
+- `assets/js/home.js`
+- `assets/js/miura.js`
+- `assets/js/home-motion.js`
 
 **Instruções de acesso:**  
 Acesse a Home Page em:  
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/index.html*  
+*https://maiconvts.github.io/estudio-de-ideias/index.html*  
 Utilize a barra de busca no centro da página para pesquisar.
 
 ---
@@ -98,25 +121,30 @@ Utilize a barra de busca no centro da página para pesquisar.
 
 **Responsável:** Allan
 
-Esta tela permite que os moderadores validem e gerenciem os documentos submetidos, com funcionalidade para aprovar, rejeitar ou solicitar correções.
+Esta tela permite que os moderadores validem os projetos enviados: aprovar, rejeitar ou pedir correção. As placas do cabeçalho contam quantos estão em cada estado. Cada ação pede confirmação num `<dialog>` nativo, e o aviso do resultado é lido pelos leitores de tela. Só uma sessão de moderador abre a fila; sem ela, a tabela dá lugar a um aviso de acesso com o link para o login. O projeto aprovado entra no acervo público.
 
 **Exemplo da tela de Administração:**  
 <figure> 
-  <img src="./img/AreaModerador.png"> 
+  <img src="./img/redesign/depois/admin-desktop.jpg" alt="Tela de admin no redesign de 2026"> 
 </figure>
 
 **Artefatos da funcionalidade:**
 
 - `admin.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
+- `assets/css/projetos.css`
 - `assets/css/admin_panel.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
-- `assets/js/admin_panel.js`
+- `assets/js/conta.js`
 - `assets/js/projetos.js`
-- `assets/js/header.js`
+- `assets/js/admin_panel.js`
 
 **Instruções de acesso:**  
-Acesse a área de administração após fazer o login.
+Entre com a conta demo (papel moderador): o login leva direto a
+*https://maiconvts.github.io/estudio-de-ideias/admin.html*
 
 ---
 
@@ -124,25 +152,31 @@ Acesse a área de administração após fazer o login.
 
 **Responsável:** Hugo Vaz
 
-Esta tela exibe detalhes completos do projeto, incluindo título, autores, resumo e um botão para download do documento.
+Esta tela exibe os detalhes completos do projeto: título, autor, ano, área, tecnologias, citações e resumo. O documento abre num visualizador de PDF feito com pdf.js, que também funciona no Chrome do Android, e pode ser baixado. A seção de leituras relacionadas vem da API pública do OpenAlex.
 
 **Exemplo da tela de Detalhes do Projeto:**  
  <figure> 
-  <img src="./img/Details.png"> 
+  <img src="./img/redesign/depois/detalhes-desktop.jpg" alt="Tela de detalhes no redesign de 2026"> 
 </figure>
 
 **Artefatos da funcionalidade:**
 
 - `detalhes.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
 - `assets/css/detalhes.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
 - `assets/js/projetos.js`
-- `assets/js/header.js`
+- `assets/js/projetos-utils.js`
+- `assets/js/pdf-viewer.js`
+- `assets/js/openalex.js`
+- `assets/js/detalhes.js`
 
 **Instruções de acesso:**  
-Clique em um projeto exibido para ver seus detalhes
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/detalhes.html*
+Clique em um projeto da lista para ver seus detalhes. A página recebe o projeto pelo parâmetro `id`:
+*https://maiconvts.github.io/estudio-de-ideias/detalhes.html?id=266e4868-43d3-4f29-b424-e1500cd4855b*
 
 ---
 
@@ -154,21 +188,23 @@ Esta tela apresenta recomendações, tutoriais e ferramentas que auxiliam os alu
 
 **Exemplo da tela de Ferramentas:**
 <figure> 
-  <img src="./img/Ferramentas.png"> 
+  <img src="./img/redesign/depois/ferramentas-desktop.jpg" alt="Tela de ferramentas no redesign de 2026"> 
 </figure>
 
 **Artefatos da funcionalidade:**
 
 - `ferramentas.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
 - `assets/css/ferramentas.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
 - `assets/js/ferramentas.js`
-- `assets/js/header.js`
 
 **Instruções de acesso:**  
 Acesse a seção de ferramentas a partir do menu de navegação ou através do link: 
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/ferramentas.html*
+*https://maiconvts.github.io/estudio-de-ideias/ferramentas.html*
 
 ---
 
@@ -180,7 +216,7 @@ Esta tela mostra os projetos que o usuário marcou como favoritos, facilitando o
 
 **Exemplo da tela de Favoritos:**
  <figure> 
-  <img src="./img/Favoritos.png"> 
+  <img src="./img/redesign/depois/favoritos-desktop.jpg" alt="Tela de favoritos no redesign de 2026"> 
 </figure>
 
 **Requisito atendido:**  
@@ -189,16 +225,18 @@ RF-007: Permitir que o visitante possa marcar como favorito um documento e visua
 **Artefatos da funcionalidade:**
 
 - `favoritos.html`
-- `assets/css/favoritos.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
-- `assets/js/header.js`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
+- `assets/css/projetos.css`
 - `assets/js/projetos.js`
 - `assets/js/projetos-utils.js`
 - `assets/js/favoritos.js`
 
 **Instruções de acesso:**  
-- Acesse a página em https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/favoritos.html
+- Acesse a página em https://maiconvts.github.io/estudio-de-ideias/favoritos.html
 
 ---
 
@@ -210,47 +248,53 @@ Esta tela lista os projetos disponíveis, permitindo ao usuário filtrar e orden
 
 **Exemplo da tela de Projetos:**
 <figure> 
-  <img src="./img/Projetos.png"> 
+  <img src="./img/redesign/depois/projetos-desktop.jpg" alt="Tela de projetos no redesign de 2026"> 
 </figure>
 
 **Artefatos da funcionalidade:**
 
 - `projetos.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
 - `assets/css/projetos.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
-- `assets/js/header.js`
 - `assets/js/projetos.js`
 - `assets/js/projetos-utils.js`
 - `assets/js/projetos-page.js`
 
 **Instruções de acesso:**  
 Utilize os filtros e a barra de pesquisa para encontrar projetos de seu interesse, e acesse pelo link para visualizar: 
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/projetos.html*
+*https://maiconvts.github.io/estudio-de-ideias/projetos.html*
 
 ---
 
-## Tela de Submissão(Envio de Projetos) (RF-009)
+## Tela de Submissão (Envio de Projetos) (RF-009)
 
-**Responsável:** Alan
+**Responsável:** Allan
 
-Esta tela permite aos alunos submeter projetos, preenchendo um formulário com todas as informações necessárias para o registro do projeto.
+Esta tela permite aos alunos enviar projetos por um formulário com todas as informações do registro. Com sessão aberta, o nome do autor já vem preenchido. O envio entra na fila de moderação com o status “Pendente” e só aparece no acervo depois de aprovado.
 
-**Exemplo da tela de Submissão(Envio de Projetos):**
+**Exemplo da tela de Submissão (Envio de Projetos):**
 <figure> 
-  <img src="./img/Submission.png"> 
+  <img src="./img/redesign/depois/submissao-desktop.jpg" alt="Tela de submissao no redesign de 2026"> 
 </figure>
 
 **Artefatos da funcionalidade:**
 
 - `submissao.html`
+- `assets/css/base.css`
+- `assets/css/layout.css`
+- `assets/css/mundo.css`
+- `assets/js/layout.js`
+- `assets/js/motion-base.js`
 - `assets/css/submission.css`
-- `assets/css/header.css`
-- `assets/css/footer.css`
-- `assets/js/header.js`
+- `assets/js/conta.js`
 - `assets/js/projetos.js`
+- `assets/js/formularios.js`
 - `assets/js/submissao.js`
 
 **Instruções de acesso:**  
 Clique na opção de envio de projeto no menu para acessar a tela de submissão, ou acesse pelo link: 
-*https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t5-projestudiodeideias-1/codigo-fonte/submissao.html*
+*https://maiconvts.github.io/estudio-de-ideias/submissao.html*

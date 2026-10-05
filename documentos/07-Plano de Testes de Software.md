@@ -3,7 +3,11 @@
 Este documento apresenta os cenários de testes utilizados na realização dos testes da aplicação "Estúdio de Ideias".
 
 **Pré-requisitos:**
-* [Especificação do Projeto](docs/ESPECIFICACAO_PROJETO.md) * [Projeto de Interface](docs/PROJETO_INTERFACE.md) * [Funcionalidades Implementadas](docs/FUNCIONALIDADES_IMPLEMENTADAS.md) **Requisitos para Execução dos Testes:**
+* [Especificação do Projeto](<02-Especificação do Projeto.md>)
+* [Projeto de Interface](<04-Projeto de Interface.md>)
+* [Funcionalidades Implementadas](<06-Programação de Funcionalidades.md>)
+
+**Requisitos para Execução dos Testes:**
 * Aplicação "Estúdio de Ideias" acessível.
 * Navegador da Internet: Chrome, Firefox ou Edge (versões mais recentes).
 * Dados de projetos (para busca, listagem, moderação) populados no `localStorage`.
@@ -382,6 +386,24 @@ A seguir são detalhados os casos de teste para os Requisitos Funcionais (RFs) d
   <td>Allan Rodrigues</td>
  </tr>
 </table>
+
+## Testes automatizados (2026)
+
+Depois do redesign, além dos casos manuais acima, o site foi verificado por um kit de testes automatizados (Playwright, axe-core e Lighthouse), que fazia parte do ambiente de design usado no redesign e não é versionado neste repositório. O kit sobe o site numa porta própria, com a política de segurança de conteúdo (CSP) ativa, e percorre as 16 páginas, inclusive a de detalhes de um projeto.
+
+| Arquivo | O que verifica |
+| :--- | :--- |
+| `acessibilidade.qualidade.mjs` | Regras WCAG 2.2 AA pelo axe, um `h1` por página, marcos e hierarquia de títulos |
+| `teclado.qualidade.mjs` | Tudo acionável por teclado, em ordem lógica, com foco visível e não encoberto |
+| `contraste.qualidade.mjs` | Contraste do texto medido sobre os efeitos (glow, vidro, partículas) no frame mais claro |
+| `movimento.qualidade.mjs` | Com `prefers-reduced-motion`, nenhum texto escondido nem animação contínua; controle de pausa (WCAG 2.2.2) que para e retoma o movimento |
+| `performance.qualidade.mjs` | Lighthouse em 3 execuções por página: LCP, CLS, TBT e notas |
+| `seo.qualidade.mjs` | `title`, descrição, canônica, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml` |
+| `efeitos.qualidade.mjs` | Cada camada da assinatura visual (`data-efeito`) presente nas páginas em que é esperada |
+
+**Como executar:** no ambiente de design, `npm test` dentro da pasta do kit e, depois, `npm run resumo` para o relatório em texto. Os resultados estão registrados no [Registro de Testes](08-Registro%20de%20Testes%20de%20Software.md#registro-dos-testes-automatizados-outubro-de-2026).
+
+**Critério de êxito:** todos os testes passam. Uma falha se corrige na implementação (carregamento, renderização, tratamento do texto), nunca removendo um efeito da assinatura.
 
 ---
 
