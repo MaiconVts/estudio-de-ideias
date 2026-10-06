@@ -257,6 +257,14 @@
   display: none;
 }
 
+/* Enquanto o documento carrega, a barra mostra só "Abrir em nova aba": sem "– de –" nem setas mortas.
+   visibility mantém o espaço reservado, sem deslocar o layout quando o PDF chega */
+.pdf-viewer:not(.is-ready) .pdf-viewer__pages,
+.pdf-viewer:not(.is-ready) [data-pdf="prev"],
+.pdf-viewer:not(.is-ready) [data-pdf="next"] {
+  visibility: hidden;
+}
+
 .pdf-viewer__status a {
   color: var(--sheet);
 }

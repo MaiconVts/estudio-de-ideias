@@ -68,6 +68,7 @@
     const title = el("h3", "project-title");
     const link = el("a", "project-link", project.title || "Título indisponível");
     link.href = `./detalhes.html?id=${encodeURIComponent(project.id || "")}`;
+    if (project.title) link.title = project.title; // título inteiro quando o cartão corta em 3 linhas
     title.append(link);
 
     const metadata = el("dl", "project-metadata");

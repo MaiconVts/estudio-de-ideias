@@ -231,6 +231,12 @@ button.link-arrow:focus-visible {
   font-weight: 600;
   line-height: 1.15;
   color: var(--ink);
+  /* Até 3 linhas: a grade fica regular e o título completo segue no DOM e na dica */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--title-lines);
+  line-clamp: var(--title-lines);
+  overflow: hidden;
 }
 
 .project-link {
