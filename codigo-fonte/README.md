@@ -135,4 +135,4 @@ Desenvolvedor responsável: Maicon Theodoro
 - Confirmação de aprovar e rejeitar em `<dialog>` acessível, no lugar do `confirm()` do navegador.  
 - Placeholders removidos: redes sociais e login social saíram; "Esqueceu sua senha?" explica que depende do servidor; vagas levam ao contato com o assunto preenchido.  
 - Últimos valores fixos levados para tokens; logs de depuração removidos.  
-- `REDESIGN.md` na raiz com o antes e depois das 16 telas.
+- `REDESIGN.md` na raiz com o antes e depois das telas principais.

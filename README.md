@@ -114,7 +114,7 @@ Este repositório é só o front-end, e ele vai até onde um navegador consegue 
 
 ## Redesign
 
-O antes e depois de cada uma das 16 telas, com as decisões de hierarquia, cópia, motion e acessibilidade, está em [`REDESIGN.md`](REDESIGN.md).
+O antes e depois das telas principais está em [`REDESIGN.md`](REDESIGN.md). Para mais detalhes, acesse https://maiconvts.github.io/estudio-de-ideias/.
 
 ## Como rodar
 
@@ -203,7 +203,7 @@ estudio-de-ideias/
 │       ├── data/            # projects.json, referencias.json
 │       ├── docs/            # um PDF por projeto
 │       └── img/
-├── REDESIGN.md              # antes e depois de cada tela
+├── REDESIGN.md              # antes e depois das telas principais
 ├── documentos/              # documentação acadêmica (contexto, especificação, testes…)
 ├── apresentacao/            # slides e vídeos da apresentação final
 ├── scripts/                 # geração dos PDFs e do snapshot de referências
