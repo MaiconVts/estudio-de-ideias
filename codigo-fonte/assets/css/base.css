@@ -179,6 +179,7 @@
   --aside-max: 300px;
   --label-col: 10ch;
   --header-height: 72px;
+  --sheet-band-min: 240px;
 
   /* Motion: uma só linguagem. A dobra puxa devagar e assenta firme */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

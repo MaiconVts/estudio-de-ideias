@@ -173,9 +173,10 @@
     for (const f of faces) {
       const isFoil = f.i === FOIL_CELL.i && f.j === FOIL_CELL.j;
       // Montanha em cinza quente, vale em azul claro; a luz clareia para o branco da folha
-      const base = isFoil ? colors.foil : f.j % 2 ? colors.valley : colors.mountainSoft;
+      // O painel dourado fica no foil claro: o ouro cheio é reservado à ação principal
+      const base = isFoil ? colors.foilLight : f.j % 2 ? colors.valley : colors.mountainSoft;
       const shade = isFoil
-        ? mix(colors.foil, colors.foilLight, f.light)
+        ? mix(colors.foilLight, colors.sheet, f.light * 0.45)
         : mix(mix(base, colors.mountain, 0.35), colors.sheet, Math.pow(f.light, 0.8));
 
       ctx.beginPath();

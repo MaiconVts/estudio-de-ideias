@@ -107,11 +107,12 @@
   clip-path: polygon(var(--cut-sm) 0, 100% 0, calc(100% - var(--cut-sm)) 100%, 0 100%);
 }
 
+/* "Entrar" em tinta: o foil fica só na ação principal da página */
 .site-nav__link--cta {
   margin-left: var(--space-3);
   padding: 0 var(--space-5);
-  background: var(--foil);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--sheet);
   font-weight: 600;
   clip-path: polygon(var(--cut-sm) 0, 100% 0, calc(100% - var(--cut-sm)) 100%, 0 100%);
 }
@@ -122,8 +123,8 @@
 
 .site-nav__link--cta:hover,
 .site-nav__link--cta[aria-current="page"] {
-  background: var(--foil-light);
-  color: var(--ink);
+  background: var(--valley-deep);
+  color: var(--sheet-white);
 }
 
 .site-nav__link:focus-visible {

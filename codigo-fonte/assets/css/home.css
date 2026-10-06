@@ -97,7 +97,8 @@
 }
 
 .hero__lede {
-  max-width: 46ch;
+  max-width: 34ch;
+  text-wrap: balance;
   margin: 0;
   font-size: var(--text-lg);
   font-weight: 300;
@@ -544,24 +545,28 @@
   .spec-plate__list {
     grid-template-columns: repeat(2, auto);
   }
-  /* No celular a placa sai de cima da folha e fica logo abaixo dela */
+  /* No celular a folha ganha faixa própria abaixo do pacote; placa e pausa dividem uma linha */
   .hero__sheet {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-5) calc(var(--space-5) * -1) 0;
     aspect-ratio: auto;
   }
   .hero__canvas {
+    grid-column: 1 / -1;
     height: auto;
+    min-height: var(--sheet-band-min);
     aspect-ratio: 4 / 3;
   }
   .hero__sheet .spec-plate {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    display: inline-block;
-    margin: var(--space-2) 0 0 var(--space-4);
+    position: static;
+    margin-left: var(--space-4);
   }
   .sheet-pause {
-    right: var(--space-4);
-    bottom: var(--space-3);
+    position: static;
+    margin-right: var(--space-4);
   }
   .area-key {
     min-width: 112px;

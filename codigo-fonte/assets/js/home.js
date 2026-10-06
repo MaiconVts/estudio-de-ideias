@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const PROJECTS_PER_LOAD = 8;
 
-  const SORT_MAP = { relevance: "newest", "date-desc": "newest", "date-asc": "oldest", citations: "citations" };
+  const SORT_MAP = { relevance: "", "date-desc": "newest", "date-asc": "oldest", citations: "citations" };
 
   let currentPage = 1;
   let shownCount = 0;
