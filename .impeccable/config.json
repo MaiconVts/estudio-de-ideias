@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "codigo-fonte/index.html"
+        ],
+        "createdAt": "2026-10-05T21:16:05.872Z",
+        "reason": "hero recorta grade e folha Miura de proposito; sugestoes da busca ficam dentro do pacote"
+      }
+    ]
+  }
+}

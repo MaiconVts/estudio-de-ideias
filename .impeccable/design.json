@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T21:21:28.566Z",
+  "title": "Design System: Estúdio de Ideias",
+  "extensions": {
+    "colorMeta": {
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Folha",
+        "canonical": "oklch(97.6% 0.003 106.4)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403e",
+          "#5e5e5c",
+          "#7d7d7b",
+          "#9e9e9d",
+          "#c4c4c2",
+          "#eeeeec"
+        ]
+      },
+      "sheet-white": {
+        "role": "neutral",
+        "displayName": "Folha branca",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ]
+      },
+      "mountain": {
+        "role": "neutral",
+        "displayName": "Montanha",
+        "canonical": "oklch(77.6% 0.012 89.7)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#26241e",
+          "#424039",
+          "#605d56",
+          "#807d76",
+          "#a19e96",
+          "#c7c4bc",
+          "#f1eee6"
+        ]
+      },
+      "mountain-soft": {
+        "role": "neutral",
+        "displayName": "Montanha suave",
+        "canonical": "oklch(92.2% 0.007 88.6)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#252420",
+          "#41403c",
+          "#5f5d59",
+          "#7f7d79",
+          "#a09e9a",
+          "#c6c4bf",
+          "#f0eee9"
+        ]
+      },
+      "mountain-line": {
+        "role": "neutral",
+        "displayName": "Linha de montanha",
+        "canonical": "oklch(85.8% 0.011 89.7)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#26241e",
+          "#424039",
+          "#605d56",
+          "#807d76",
+          "#a19e97",
+          "#c7c4bc",
+          "#f1eee6"
+        ]
+      },
+      "valley": {
+        "role": "secondary",
+        "displayName": "Azul de vale",
+        "canonical": "oklch(89.9% 0.031 249.7)",
+        "tonalRamp": [
+          "#030c18",
+          "#182532",
+          "#334150",
+          "#515f6f",
+          "#707f8f",
+          "#90a0b1",
+          "#b6c6d8",
+          "#dff1ff"
+        ]
+      },
+      "valley-line": {
+        "role": "secondary",
+        "displayName": "Vinco de vale",
+        "canonical": "oklch(84.0% 0.042 251.7)",
+        "tonalRamp": [
+          "#000b1c",
+          "#142538",
+          "#2f4156",
+          "#4c6075",
+          "#6b7f96",
+          "#8ca1b9",
+          "#b1c7df",
+          "#daf1ff"
+        ]
+      },
+      "valley-deep": {
+        "role": "secondary",
+        "displayName": "Azul de vale profundo",
+        "canonical": "oklch(43.1% 0.099 260.1)",
+        "tonalRamp": [
+          "#000234",
+          "#022053",
+          "#1e3e73",
+          "#3b5d95",
+          "#5a7db8",
+          "#7a9fdc",
+          "#9fc5ff",
+          "#c8f0ff"
+        ]
+      },
+      "foil": {
+        "role": "primary",
+        "displayName": "Foil dourado",
+        "canonical": "oklch(76.7% 0.139 91.1)",
+        "tonalRamp": [
+          "#1f0000",
+          "#3c1b00",
+          "#5b3900",
+          "#7b5800",
+          "#9c7800",
+          "#bf9a15",
+          "#e6c04c",
+          "#ffeb79"
+        ]
+      },
+      "foil-light": {
+        "role": "primary",
+        "displayName": "Foil claro",
+        "canonical": "oklch(85.1% 0.115 93.8)",
+        "tonalRamp": [
+          "#1b0400",
+          "#371f00",
+          "#543c00",
+          "#735b00",
+          "#947b14",
+          "#b69d40",
+          "#ddc368",
+          "#ffee92"
+        ]
+      },
+      "foil-deep": {
+        "role": "primary",
+        "displayName": "Foil profundo",
+        "canonical": "oklch(63.4% 0.114 86.9)",
+        "tonalRamp": [
+          "#1e0200",
+          "#3b1c00",
+          "#593900",
+          "#795800",
+          "#9a7817",
+          "#bd9942",
+          "#e4bf69",
+          "#ffea93"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "oklch(15.0% 0.002 286.1)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242425",
+          "#3f3f41",
+          "#5d5d5f",
+          "#7d7d7e",
+          "#9e9ea0",
+          "#c4c4c5",
+          "#eeeef0"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Tinta suave",
+        "canonical": "oklch(29.0% 0.009 276.8)",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#232429",
+          "#3e3f45",
+          "#5c5d63",
+          "#7c7d83",
+          "#9d9ea4",
+          "#c2c4ca",
+          "#edeef5"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Texto apagado",
+        "canonical": "oklch(48.0% 0.011 279.5)",
+        "tonalRamp": [
+          "#0a0b10",
+          "#23242a",
+          "#3e3f46",
+          "#5c5d64",
+          "#7c7d84",
+          "#9d9ea5",
+          "#c2c3cb",
+          "#edeef6"
+        ]
+      },
+      "footer-text": {
+        "role": "neutral",
+        "displayName": "Texto do rodapé",
+        "canonical": "oklch(76.3% 0.010 93.6)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#26241f",
+          "#41403a",
+          "#5f5e57",
+          "#7f7d77",
+          "#a09e97",
+          "#c6c4bd",
+          "#f1eee7"
+        ]
+      },
+      "footer-line": {
+        "role": "neutral",
+        "displayName": "Linha do rodapé",
+        "canonical": "oklch(29.1% 0.009 285.8)",
+        "tonalRamp": [
+          "#0b0b0f",
+          "#232328",
+          "#3f3f44",
+          "#5d5d63",
+          "#7c7d83",
+          "#9e9ea4",
+          "#c3c3ca",
+          "#eeeef4"
+        ]
+      },
+      "danger": {
+        "role": "error",
+        "displayName": "Erro",
+        "canonical": "oklch(52.2% 0.172 28.1)",
+        "tonalRamp": [
+          "#340000",
+          "#580000",
+          "#7c0205",
+          "#a13028",
+          "#c75348",
+          "#ed7668",
+          "#ff9c8c",
+          "#ffc6b5"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Só o título do hero, em caixa alta, por linhas."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de seção em caixa alta."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Título do cartão de projeto e sigla da tecla de área."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Frase de abertura do hero, até 46ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido, até 52ch."
+      },
+      "body-sm": {
+        "displayName": "Body pequeno",
+        "purpose": "Resumo do cartão, metadados e campos."
+      },
+      "label": {
+        "displayName": "Label mono",
+        "purpose": "Rótulos, navegação, códigos e leituras, em caixa alta."
+      },
+      "label-lg": {
+        "displayName": "Label mono grande",
+        "purpose": "Texto de botões e valores da placa."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-lift",
+        "value": "0 18px 36px -18px rgb(11 11 12 / 0.3)",
+        "purpose": "Pacote de busca, menu móvel e cartão em hover."
+      },
+      {
+        "name": "foil-glow",
+        "value": "canvas shadowColor foil a 55%, shadowBlur 28",
+        "purpose": "Só a célula de origem da folha Miura."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 2px solid #2e4f86; outline-offset: 3px",
+        "purpose": "Foco visível, o realce mais forte da página."
+      },
+      {
+        "name": "glass",
+        "value": "background: rgb(255 255 255 / 0.62); border: 1px solid rgb(255 255 255 / 0.85); backdrop-filter: blur(14px) saturate(1.3)",
+        "purpose": "Pacote de busca sobre a folha viva."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Estados, entradas e reveals (GSAP power4.out)."
+      },
+      {
+        "name": "ease-fold",
+        "value": "cubic-bezier(0.7, 0, 0.2, 1)",
+        "purpose": "Tudo que dobra: filtros do pacote, seta, marca, entrada do pacote (GSAP power3.inOut)."
+      },
+      {
+        "name": "duration-fast",
+        "value": "150ms",
+        "purpose": "Hover e pressionar."
+      },
+      {
+        "name": "duration-base",
+        "value": "220ms",
+        "purpose": "Cartão em hover, botão de topo."
+      },
+      {
+        "name": "duration-slow",
+        "value": "520ms",
+        "purpose": "Desdobrar filtros e reveals de scroll."
+      },
+      {
+        "name": "duration-unfold",
+        "value": "1800ms",
+        "purpose": "Desdobra inicial da folha Miura."
+      },
+      {
+        "name": "lenis",
+        "value": "lerp 0.12",
+        "purpose": "Scroll suave ligado ao ScrollTrigger."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "480px"
+      },
+      {
+        "name": "sm",
+        "value": "560px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "900px"
+      },
+      {
+        "name": "nav",
+        "value": "992px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão foil",
+      "kind": "button",
+      "refersTo": "button-foil",
+      "description": "Ação principal: buscar, publicar.",
+      "html": "<button class=\"ds-btn-foil\">Buscar</button>",
+      "css": ".ds-btn-foil{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;border:0;background:var(--foil,#d4af37);color:var(--ink,#0b0b0c);font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background-color 150ms cubic-bezier(0.23,1,0.32,1),transform 150ms cubic-bezier(0.23,1,0.32,1)}.ds-btn-foil:hover{background:var(--foil-light,#e7cd72)}.ds-btn-foil:active{transform:scale(0.97)}.ds-btn-foil:focus-visible{clip-path:none;outline:2px solid var(--valley-deep,#2e4f86);outline-offset:3px}"
+    },
+    {
+      "name": "Botão tinta",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Ação secundária, como desdobrar mais projetos.",
+      "html": "<button class=\"ds-btn-ink\">Desdobrar mais projetos</button>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;border:0;background:var(--ink,#0b0b0c);color:var(--sheet,#f7f7f5);font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background-color 150ms cubic-bezier(0.23,1,0.32,1),transform 150ms cubic-bezier(0.23,1,0.32,1)}.ds-btn-ink:hover{background:var(--valley-deep,#2e4f86)}.ds-btn-ink:active{transform:scale(0.97)}.ds-btn-ink:focus-visible{clip-path:none;outline:2px solid var(--valley-deep,#2e4f86);outline-offset:3px}"
+    },
+    {
+      "name": "Pacote de busca",
+      "kind": "input",
+      "refersTo": "search-packet",
+      "description": "Busca em vidro fosco com selo dourado, sobre a folha viva.",
+      "html": "<form class=\"ds-packet\" role=\"search\"><div class=\"ds-packet__row\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"#2a2b30\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-4-4\"/></svg><input class=\"ds-packet__input\" type=\"search\" placeholder=\"Título, autor ou tecnologia\" aria-label=\"Buscar projetos\"><button class=\"ds-packet__btn\" type=\"submit\">Buscar</button></div><button type=\"button\" class=\"ds-packet__unfold\">Mais filtros</button></form>",
+      "css": ".ds-packet{position:relative;max-width:560px;background:rgb(255 255 255 / 0.62);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgb(255 255 255 / 0.85);box-shadow:0 18px 36px -18px rgb(11 11 12 / 0.3);clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)}.ds-packet::before{content:\"\";position:absolute;top:0;left:14px;width:96px;height:3px;background:#d4af37}.ds-packet__row{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px}.ds-packet__row:focus-within{box-shadow:inset 0 -2px 0 #2e4f86}.ds-packet__input{flex:1;min-width:0;min-height:48px;border:0;background:transparent;font:inherit;color:#0b0b0c}.ds-packet__input:focus-visible{outline:none}.ds-packet__btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;border:0;background:#d4af37;color:#0b0b0c;font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background-color 150ms cubic-bezier(0.23,1,0.32,1),transform 150ms cubic-bezier(0.23,1,0.32,1)}.ds-packet__btn:hover{background:#e7cd72}.ds-packet__btn:active{transform:scale(0.97)}.ds-packet__btn:focus-visible{clip-path:none;outline:2px solid var(--valley-deep,#2e4f86);outline-offset:3px}.ds-packet__unfold{display:flex;width:100%;min-height:40px;padding:0 16px;align-items:center;border:0;border-top:1px dashed #d3d0c8;background:transparent;font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;color:#2a2b30;cursor:pointer}.ds-packet__unfold:hover{color:#0b0b0c;background:rgb(255 255 255 / 0.5)}.ds-packet__unfold:focus-visible{outline:2px solid #2e4f86;outline-offset:3px}"
+    },
+    {
+      "name": "Seleção",
+      "kind": "input",
+      "refersTo": "select-field",
+      "description": "Filtro com rótulo mono.",
+      "html": "<label class=\"ds-field\"><span>Ano</span><select><option>Todos</option><option>2025</option></select></label>",
+      "css": ".ds-field{display:grid;gap:4px;max-width:240px}.ds-field span{font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;color:#5c5d64}.ds-field select{min-height:44px;padding:0 32px 0 12px;border:1px solid #d3d0c8;border-radius:2px;background:#fff;font:inherit;font-size:0.9rem;color:#0b0b0c;cursor:pointer}.ds-field select:hover{border-color:#b9b6ae}.ds-field select:focus-visible{outline:2px solid #2e4f86;outline-offset:3px}"
+    },
+    {
+      "name": "Tecla de área",
+      "kind": "chip",
+      "refersTo": "area-key",
+      "description": "Atalho paralelogramo para filtrar por área.",
+      "html": "<div style=\"display:flex;gap:8px\"><button class=\"ds-key\" aria-pressed=\"true\"><b>ALL</b><small>125</small><span>Todas</span></button><button class=\"ds-key\" aria-pressed=\"false\"><b>FE</b><small>24</small><span>Frontend</span></button></div>",
+      "css": ".ds-key{display:grid;grid-template-columns:auto auto;grid-template-areas:\"c n\" \"t t\";align-items:baseline;justify-content:space-between;gap:4px 16px;min-width:128px;min-height:64px;padding:12px 24px;border:0;background:#fff;box-shadow:inset 0 0 0 1px #d3d0c8;color:#0b0b0c;text-align:left;cursor:pointer;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);transition:background-color 150ms cubic-bezier(0.23,1,0.32,1),transform 150ms cubic-bezier(0.23,1,0.32,1)}.ds-key b{grid-area:c;font-family:\"Chakra Petch\",sans-serif;font-size:1.375rem;line-height:1}.ds-key small{grid-area:n;font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.6875rem;color:#5c5d64}.ds-key span{grid-area:t;font-size:0.8rem;color:#2a2b30;white-space:nowrap}.ds-key:hover{background:#e7e5e0}.ds-key:active{transform:scale(0.97)}.ds-key[aria-pressed=\"true\"]{background:#0b0b0c;box-shadow:none;color:#f7f7f5}.ds-key[aria-pressed=\"true\"] small,.ds-key[aria-pressed=\"true\"] span{color:#e7cd72}.ds-key:focus-visible{clip-path:none;outline:2px solid var(--valley-deep,#2e4f86);outline-offset:3px}"
+    },
+    {
+      "name": "Cartão de projeto",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Painel da folha com aba de código e metadados.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card__tab\"><span>EI-0042</span><span class=\"ds-card__area\">FE</span></div><h3 class=\"ds-card__title\"><a href=\"#\">Sistema de reservas de salas</a></h3><p class=\"ds-card__desc\">Aplicação web para reserva de salas com calendário compartilhado.</p><dl class=\"ds-card__meta\"><div><dt>Autor</dt><dd>Ana Souza</dd></div><div><dt>Ano</dt><dd>2024</dd></div></dl></article>",
+      "css": ".ds-card{position:relative;display:flex;flex-direction:column;gap:12px;max-width:320px;padding:0 24px 24px;background:#fff;box-shadow:inset 0 0 0 1px #d3d0c8;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%);transition:box-shadow 220ms cubic-bezier(0.23,1,0.32,1),transform 220ms cubic-bezier(0.23,1,0.32,1)}.ds-card__tab{display:flex;justify-content:space-between;margin:0 -24px;padding:12px 32px 12px 24px;border-bottom:1px solid #d3d0c8;font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.6875rem;letter-spacing:0.08em;color:#2a2b30}.ds-card__area{padding:2px 8px;background:#cfe0f2;color:#2e4f86;font-weight:500}.ds-card__title{margin:8px 0 0;font-family:\"Chakra Petch\",sans-serif;font-size:1.375rem;font-weight:600;line-height:1.15;color:#0b0b0c}.ds-card__title a{color:inherit;text-decoration:none}.ds-card__title a::after{content:\"\";position:absolute;inset:0}.ds-card__title a:focus-visible{outline:none}.ds-card:has(a:focus-visible){box-shadow:inset 0 0 0 2px #2e4f86}.ds-card__desc{margin:0;font-size:0.9rem;line-height:1.6;color:#2a2b30}.ds-card__meta{display:grid;grid-template-columns:1fr auto;gap:16px;margin:0;padding-top:12px;border-top:1px dashed #d3d0c8}.ds-card__meta dt{font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;color:#5c5d64}.ds-card__meta dd{margin:0;font-size:0.9rem;color:#0b0b0c}.ds-card:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px #0b0b0c,0 18px 36px -18px rgb(11 11 12 / 0.3)}.ds-card:hover .ds-card__title{color:#2e4f86}"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Links mono separados por vincos inclinados, com CTA foil.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Início</a><a href=\"#\">Projetos</a><a href=\"#\">Favoritos</a><a href=\"#\" class=\"ds-nav__cta\">Publicar</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.6875rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#2a2b30;text-decoration:none;transition:color 150ms cubic-bezier(0.23,1,0.32,1),background-color 150ms cubic-bezier(0.23,1,0.32,1)}.ds-nav a:hover{color:#0b0b0c;background:#e7e5e0}.ds-nav a[aria-current=\"page\"]{color:#0b0b0c;background:#cfe0f2;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}.ds-nav .ds-nav__cta{margin-left:12px;padding:0 24px;background:#d4af37;color:#0b0b0c;font-weight:600;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}.ds-nav .ds-nav__cta:hover{background:#e7cd72}.ds-nav a:focus-visible{clip-path:none;outline:2px solid var(--valley-deep,#2e4f86);outline-offset:3px}"
+    },
+    {
+      "name": "Placa de especificação",
+      "kind": "custom",
+      "refersTo": "spec-plate",
+      "description": "Leituras mono sobre a folha Miura.",
+      "html": "<div class=\"ds-spec\"><dl><div><dt>Acervo</dt><dd>125</dd></div><div><dt>Áreas</dt><dd>06</dd></div><div><dt>Anos</dt><dd>2000–2025</dd></div><div><dt>Dobra</dt><dd>θ 40°</dd></div></dl></div>",
+      "css": ".ds-spec{display:inline-block;padding:12px 16px;background:#fff;border:1px solid #d3d0c8;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%)}.ds-spec dl{display:grid;grid-template-columns:repeat(4,auto);gap:4px 24px;margin:0}.ds-spec div{display:grid;gap:2px}.ds-spec dt{font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;color:#5c5d64}.ds-spec dd{margin:0;font-family:\"Martian Mono\",ui-monospace,monospace;font-size:0.8rem;font-variant-numeric:tabular-nums;color:#0b0b0c}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A folha Miura que se desdobra",
+    "overview": "O acervo é uma folha de papel fosco vincada em padrão Miura-ori. A busca é o pacote compacto na mão do estudante; com um gesto ela se desdobra nos filtros, e o acervo se abre em células, cada área com sua sigla (FE, BE, BD, SG, RD, MB) e cada projeto com seu código de chamada (EI-0000). Tudo é desenhado sobre a mesma geometria de 60°: controles em paralelogramo, cantos de cartão cortados, divisores diagonais e a malha de vincos ao fundo.\n\nA assinatura visual da casa vive dentro desse mundo, não por cima dele. O hero é um banner rico: a malha de vincos em SVG ao fundo, a folha Miura em canvas que se desdobra no carregamento, abre mais com o scroll e respira de leve, a poeira dourada de papel no mesmo canvas, o brilho do foil como única fonte de luz e o pacote de busca em vidro fosco passando por cima da folha viva. O parallax separa grade e folha. Motion em toda tela (entrada, scroll e hover) é regra, e esses efeitos não são decoração a remover em refinamentos.\n\nA densidade é de ficha técnica: título display enorme contra rótulos mono pequenos, números tabulares, leituras de especificação (\"Acervo 125 · Áreas 06 · Dobra θ 85°\"). A cor é contida: folha branca, vincos em cinza quente e azul-pálido, tinta quase preta, e o foil dourado só onde está a ação que conta.",
+    "keyCharacteristics": [
+      "Folha branca fosca, vincos de montanha em cinza quente e de vale em azul-pálido, tinta quase preta.",
+      "Foil dourado reservado à ação principal, ao pacote de origem e ao selo de \"novo\".",
+      "Geometria de 60°: paralelogramos e cantos cortados por `clip-path`, quase sem raio.",
+      "Hero rico: malha SVG, folha Miura em canvas, poeira dourada, brilho do foil, vidro fosco e parallax.",
+      "Motion em toda tela, numa só linguagem: a dobra puxa devagar e assenta firme.",
+      "Leituras e códigos sempre em mono, com números tabulares."
+    ],
+    "rules": [
+      {
+        "name": "The Foil Is The Action Rule",
+        "body": "O dourado aparece só na ação que conta (buscar, publicar), na célula de origem da folha e no selo de novo. Nunca em fundo de seção, borda decorativa ou ícone.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light Is Hierarchy Rule",
+        "body": "Uma única fonte de luz por tela: o brilho do foil na folha do hero, perto do título e do botão de busca. Nada de luz espalhada em todos os cantos.",
+        "section": "colors"
+      },
+      {
+        "name": "The Strongest Mark Is Focus Rule",
+        "body": "O realce mais forte da página é o foco (contorno de 2px em `valley-deep` com afastamento de 3px). Nenhum hover compete com ele.",
+        "section": "colors"
+      },
+      {
+        "name": "The Spec Readout Rule",
+        "body": "Todo código, contagem e leitura técnica sai em mono com números tabulares (`font-variant-numeric: tabular-nums`), para os valores trocarem sem salto de layout.",
+        "section": "typography"
+      },
+      {
+        "name": "The Solid Title Rule",
+        "body": "Títulos em cor sólida (tinta); o destaque vem de escala e peso, nunca de texto em gradiente.",
+        "section": "typography"
+      },
+      {
+        "name": "The Living Glass Rule",
+        "body": "Vidro fosco só sobre algo vivo (a folha Miura, a malha de vincos) e em áreas delimitadas: o pacote de busca (branco a 62%, desfoque de 14px, borda branca a 85%) e o cabeçalho fixo. Nunca em contêiner que rola inteiro.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Glow Without Halo Rule",
+        "body": "O brilho nasce de elemento de luz desfocado (o `shadowBlur` do canvas ou `filter: drop-shadow`); nunca de `box-shadow` ou `text-shadow` coloridos.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat At Rest Rule",
+        "body": "Cartões, teclas e placas são planos em repouso; a sombra é resposta a estado (hover) ou marca de camada flutuante.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Cut Not Round Rule",
+        "body": "Canto é corte, não curva. Raios maiores que 2px não pertencem a este mundo.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Focus Uncuts Rule",
+        "body": "Todo controle recortado perde o `clip-path` no `:focus-visible`, para o contorno de foco aparecer inteiro.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** compor o hero com malha SVG de 60°, folha viva em canvas, poeira dourada, brilho do foil, vidro fosco e parallax, cada um com papel.",
+      "**Do** dar a toda tela entrada, reação ao scroll e hover, com as curvas `ease-out` e `ease-fold` e as durações dos tokens.",
+      "**Do** recortar controles e cartões com os cortes de 8, 14 ou 22px, e tirar o recorte no foco.",
+      "**Do** usar mono com números tabulares em todo código (EI-0000, FE, BE), contagem e leitura.",
+      "**Do** dar ao movimento contínuo (folha que respira, poeira) um botão de pausa no próprio visual e um quadro estático com `prefers-reduced-motion`.",
+      "**Do** manter efeitos de ponteiro (seta que avança, cartão que sobe, marca que inclina) dentro de `@media (hover: hover) and (pointer: fine)`.",
+      "**Do** usar ícones em SVG de traço único (2px, pontas arredondadas, no estilo Lucide) no corpo; Phosphor duotone em destaques e Tabler em painéis, cada família com um só traço."
+    ],
+    "donts": [
+      "**Don't** remover malha, folha, poeira, brilho, vidro ou parallax em refinamentos.",
+      "**Don't** usar 3D de biblioteca sem objeto real; a folha Miura é geometria desenhada em canvas, não cena decorativa.",
+      "**Don't** usar dourado fora da ação, da célula de origem e do selo de novo.",
+      "**Don't** arredondar cantos acima de 2px nem usar sombra colorida, `box-shadow` ou `text-shadow` como brilho.",
+      "**Don't** usar texto em gradiente nem vidro sobre fundo liso."
+    ]
+  }
+}

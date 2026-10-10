@@ -1,0 +1,6 @@
+{
+  "files": ["codigo-fonte/*.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}
